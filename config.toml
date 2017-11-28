@@ -1,0 +1,41 @@
+baseurl = "http://dfsnow.me/"
+title = "Projects"
+theme = "ghostwriter"
+languageCode = "en-us"
+copyright = "Dan Snow"
+
+[Author]
+    name = "Dan Snow"
+    profile = "https://github.com/dfsnow"
+
+[Taxonomies]
+    tag = "tags"
+
+[Params]
+    intro = true
+    headline = "dfsnow.me"
+    description = "Using R and Python to understand policy"
+    github = "https://github.com/dfsnow"
+    linkedin = "https://linkedin.com/in/dfsnow/"
+    email = "dfsnow@uchicago.edu"
+    opengraph = false
+    shareTwitter = false
+    shareFacebook = false
+    shareGooglePlus = false
+    shareLinkedIn = false
+    dateFormat = "Jan 2, 2006"
+    highlightJsUrl = ""
+    highlightJsLocalUrl = ""
+
+[Permalinks]
+    post = "/:year/:month/:day/:filename/"
+
+[[menu.main]]
+    name = "Projects"
+    url = "/"
+    weight = 1
+
+[[menu.main]]
+    name = "About"
+    url = "/page/about/"
+    weight = 2
