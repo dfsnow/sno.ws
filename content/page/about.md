@@ -1,14 +1,14 @@
 +++
 title = "About"
-date = 2017-11-28T12:13:50Z
 author = "Dan Snow"
-description = "Data nerd. R lover. Policy wonk."
+description = "R lover. Map nerd. Policy wonk."
 +++
 
 ## About
+My name is Dan Snow, I'm an MPP candidate at the University of Chicago Harris School of Public Policy. I'm a huge data nerd with an interest in data visualization, R, and local government. My hope is to use spatial data and visualization to better inform government and nonprofit decision-making.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec dolor in magna lobortis egestas. Suspendisse eu erat tempor, tristique neque eu, convallis nulla. Curabitur vel bibendum lacus, at semper mauris. Suspendisse aliquet commodo ex, sed sagittis metus aliquam id. Maecenas feugiat rutrum lorem vel imperdiet. Nullam ornare lectus ut enim finibus, et porttitor mi tincidunt. Aenean lacinia, leo quis vehicula eleifend, quam libero sagittis erat, at euismod augue mauris et sapien. Sed id vehicula lectus, sit amet auctor ipsum. Nunc sed massa vel ex condimentum aliquam in a enim. Cras enim sem, tristique eu enim ac, congue commodo mi. Integer quis orci at dolor blandit eleifend.
+My fascination with R started with a simple problem. I was trying automatically to find the Chicago ward number for each address in a large list. My old tools were not up to the task. Excel creaked, groaned, and then not-so-elegantly crashed as it tried to geocode 10,000 rows with a third-party plugin. So I went to the inter
+ 
 
 ## School
 
-Sed quis pulvinar nisi, sed dapibus lacus. Mauris tempus ex ut ipsum facilisis interdum. Integer feugiat urna sed feugiat tempor. Quisque dictum vestibulum feugiat. Nunc nec est volutpat lorem imperdiet egestas sit amet ut orci. Aliquam venenatis neque ipsum, a placerat lectus cursus at. Donec pellentesque tellus hendrerit faucibus posuere. Etiam gravida consequat lectus, volutpat consectetur velit convallis nec. Praesent sagittis luctus dignissim.

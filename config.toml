@@ -12,7 +12,7 @@ copyright = "Dan Snow"
     tag = "tags"
 
 [Params]
-    intro = true
+    intro = false
     headline = "dfsnow.me"
     description = "Using R and Python to understand policy"
     github = "https://github.com/dfsnow"
