@@ -1,0 +1,10 @@
+---
+title: Plotting Trump Tweets Over Time
+author: Dan Snow
+date: '2017-11-30'
+slug: trump-tweets
+categories: []
+tags: []
+---
+
+
