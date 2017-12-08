@@ -3,8 +3,6 @@ title: "Plotting Trump's Tweets Over Time"
 author: Dan Snow
 date: '2017-11-30'
 slug: trump-tweets
-categories: []
-tags: []
 ---
 
 This R markdown document generates a density plot of Donald Trump's tweets over time. It uses data collected from the Trump Twitter Archive GitHub. The code automatically adapts the plot to the number of years specified, back until 2011, which is when Trump started tweeting. 
