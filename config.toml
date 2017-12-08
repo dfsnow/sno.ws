@@ -2,3 +2,5 @@ theme = "onetwothree"
 baseURL = "http://dfsnow.me"
 languageCode = "en-us"
 title = "Daniel Snow"
+
+ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]

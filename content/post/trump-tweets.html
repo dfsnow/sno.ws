@@ -1,5 +1,5 @@
 ---
-title: Plotting Trump Tweets Over Time
+title: "Plotting Trump's Tweets Over Time"
 author: Dan Snow
 date: '2017-11-30'
 slug: trump-tweets
@@ -9,4 +9,130 @@ tags: []
 
 
 
+<p>This R markdown document generates a density plot of Donald Trump’s tweets over time. It uses data collected from the Trump Twitter Archive GitHub. The code automatically adapts the plot to the number of years specified, back until 2011, which is when Trump started tweeting.</p>
+<p>This chunk loads the necessary libraries. We’re going to use ggplot2 for the plotting, KernSmooth and MASS for density calculation, and viridis for color.</p>
+<pre class="r"><code>library(tidyverse)
+library(lubridate)
+library(jsonlite)
+library(scales)
+library(viridis)
+library(KernSmooth)
+library(MASS)
+library(glue)</code></pre>
+<p>This chunk sets the timezone within R. This may not be necessary for older systems, but OS X High Sierra doesn’t seem to work well with lubridate, so manual setting is required.</p>
+<pre class="r"><code>Sys.setenv(tz = &quot;America/Chicago&quot;)
+options(tz = &quot;America/Chicago&quot;)</code></pre>
+<p>This chunk imports data from GitHub, unzips each file, and then combines the JSONs into a data frame. It uses purrr to iterate over each file. It’s possible, though unwieldy, to download, unzip, and extract in one line.</p>
+<pre class="r"><code># Importing data from the Trump Twitter Archive GitHub
+tt.years &lt;- 2017
+tt.git &lt;- &quot;https://github.com/bpb27/trump_tweet_data_archive/raw/master/condensed_{y}.json.zip&quot;
 
+# Downloading files based on a vector of URLs
+map(tt.years, ~ glue(tt.git, y = tt.years)) %&gt;%
+  flatten_chr() %&gt;% unique() %&gt;%
+  map(., download.file(., basename(.), method = &quot;libcurl&quot;))
+
+# Unzipping files and combining them in a data frame
+dir(pattern = &quot;*.zip&quot;, full.names = TRUE) %&gt;%
+  keep(~any(grepl(&quot;*.json&quot;, unzip(., list=TRUE)$Name))) %&gt;%
+  map_df(function(x) {
+      temp &lt;- tempdir()
+      fromJSON(unzip(x, grep(x, &quot;*.json&quot;), exdir = temp)) %&gt;%
+        mutate(x, year = as.character(str_extract_all(x, &quot;\\d+&quot;)))
+  }) -&gt; tt.df
+
+# Cleaning up the downloaded .zip files
+map(dir(pattern = &quot;*.json.zip&quot;), file.remove)</code></pre>
+<p>Working with timezones and dates in R is a huge pain, but lubridate fortunately makes things a bit easier. This chunk extracts the time and month from the <code>created_at</code> column of the JSONs and formats them as POSIXct objects for use with ggplot2.</p>
+<pre class="r"><code># Converting the created_at time to POSIX, removing the date, and changing the timezone
+tt.df$time &lt;- as.POSIXct(tt.df$created_at, format = &quot;%a %b %d %H:%M:%S&quot;, tz = &quot;UTC&quot;)
+tt.df$month &lt;- format(tt.df$time, format = &quot;%m&quot;)
+tt.df$date &lt;- as.POSIXct(paste(tt.df$year, tt.df$month, &quot;01&quot;, sep = &quot;/&quot;),
+                         format = &quot;%Y/%m/%d&quot;, tz = &quot;UTC&quot;)
+tt.df$time &lt;- format(tt.df$time, format = &quot;%H:%M:%S&quot;, tz = &quot;America/New_York&quot;)</code></pre>
+<pre><code>## Warning in as.POSIXlt.POSIXct(x, tz): unknown timezone &#39;zone/tz/2017c.1.0/
+## zoneinfo/America/Chicago&#39;</code></pre>
+<pre class="r"><code>tt.df$time &lt;- as.POSIXct(tt.df$time, format = &quot;%H:%M:%S&quot;, tz = &quot;UTC&quot;)
+tt.df &lt;- tt.df[!is.na(tt.df$time),]</code></pre>
+<p>This chunk provides various density functions using KernSmooth and MASS. The functions are used to calculate the relative density of tweets, which is the used as the color aesthetic in the plot.</p>
+<pre class="r"><code># 2D density function which groups across months
+tt.density &lt;- function(x, y, n = 100) {
+  den &lt;- kde2d(x = x, y = y, n = n)
+  dx &lt;- findInterval(x, den$x)
+  dy &lt;- findInterval(y, den$y)
+  dd &lt;- cbind(dx, dy)
+  return(den$z[dd])
+}
+
+# 1D density function for entire time period
+# tt.density2 &lt;- function(x) {
+#   den &lt;- bkde(x = x)
+#   i &lt;- findInterval(x, den$x)
+#   return(den$y[i])
+# }
+# tt.df$density &lt;- tt.density(as.numeric(tt.df$time))
+
+# 1D density function for each month
+# tt.df$density3 &lt;- tt.df %&gt;%
+#   group_by(date) %&gt;%
+#   nest() %&gt;%
+#   { map(.$data, ~ tt.density(as.numeric(.$time))) } %&gt;%
+#   unlist()
+
+tt.df$density &lt;- tt.density(as.numeric(tt.df$time), as.numeric(tt.df$date))</code></pre>
+<p>This chunk creates the final plot, which shows Trump’s tweets by month by hour. Note that correlation between Trump’s tweet times and Fox &amp; Friends airtime is not necessarily causative. It’s possible that Trump just has a morning routine of tweeting or that he only has time to heavily tweet in the morning. In the future, I plan to do computational text analysis of Trump’s tweets vs Fox &amp; Friends transcripts establish a stronger causal link.</p>
+<pre class="r"><code>ggplot() +
+  geom_tile(
+    data = tt.df,
+    aes(date, time, color = density),
+    size = .3) +
+  geom_hline(
+    aes(yintercept = c(
+      as.POSIXct(paste(Sys.Date(), &quot;6:00:00&quot;), tz = &quot;UTC&quot;),
+      as.POSIXct(paste(Sys.Date(), &quot;9:00:00&quot;), tz = &quot;UTC&quot;)),
+    linetype = &quot;Start/Stop&quot;),
+    color = &quot;indianred&quot;,
+    size = 1.2,
+    show.legend = TRUE) +
+  scale_y_datetime(
+    labels = date_format(&quot;%H:%M&quot;),
+    breaks = date_breaks(&quot;2 hour&quot;),
+    expand = c(0, 0),
+    limits = c(
+      as.POSIXct(paste(Sys.Date(), &quot;00:00:00&quot;), tz = &quot;UTC&quot;),
+      as.POSIXct(paste(Sys.Date(), &quot;24:00:00&quot;), tz = &quot;UTC&quot;))) +
+  scale_x_datetime(
+    breaks = date_breaks(
+      paste(round(interval(min(tt.df$date), now()) / months(1)) / 9, &quot;months&quot;)),
+    labels = ifelse(length(tt.years) &gt; 1, date_format(&quot;%b %y&quot;), date_format(&quot;%b&quot;)),
+    expand = c(0, 0)) +
+  labs(
+    x = &quot;Month&quot;,
+    y = &quot;Time&quot;,
+    title = glue(
+      &quot;Trump Tweet Density vs. Fox &amp; Friends Airtime, {y}&quot;,
+      y = ifelse(
+        length(tt.years) &gt; 1,
+        paste(min(tt.years), max(tt.years), sep = &quot; - &quot;),
+        tt.years)),
+    subtitle = &quot;Tweets plotted by month and minute. Collected from trumptwitterarchive.com.&quot;,
+    color = &quot;Tweet Density&quot;) +
+  scale_color_viridis(
+    breaks = c(
+      max(tt.df$density),
+      (max(tt.df$density) + min(tt.df$density)) / 2,
+      min(tt.df$density)),
+    labels = c(&quot;High&quot;, &quot;Mid&quot;, &quot;Low&quot;)) +
+  scale_linetype_manual(
+    name = &quot;Fox &amp; Friends&quot;,
+    values = c(&quot;Start/Stop&quot; = &quot;longdash&quot;)) +
+  theme_minimal() +
+  theme(
+    axis.text.x = element_text(size = 12, margin = margin(t = 8, unit = &quot;pt&quot;)),
+    axis.text.y = element_text(size = 12),
+    axis.title.y = element_blank(),
+    axis.title.x = element_blank(),
+    plot.title = element_text(size = 16, face = &quot;bold&quot;),
+    plot.subtitle = element_text(size = 12, margin = margin(b = 8, unit = &quot;pt&quot;)),
+    plot.margin = unit(c(10,10,20,10), &quot;pt&quot;))</code></pre>
+<p><img src="/post/trump-tweets_files/figure-html/create_plot-1.png" width="1152" /></p>
