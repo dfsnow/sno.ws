@@ -1,0 +1,43 @@
+#multi.theme-dracula .content { background: #282a36; color:white; }
+#multi.theme-dracula .list .active, #multi.theme-dracula .list li:hover { background:#44475a; }
+#multi.theme-dracula .list .dirty { color:white; }
+
+.cm-s-dracula.CodeMirror { color: white; background: #282a36; }
+.cm-s-dracula div.CodeMirror-selected {background: #202020 !important;}
+.cm-s-dracula .CodeMirror-gutters {background: #282a36; border-right: 0px;}
+.cm-s-dracula .CodeMirror-linenumber {color: #505050;}
+.cm-s-dracula .CodeMirror-cursor {border-left: 1px solid #b0b0b0 !important;}
+
+.cm-s-dracula span.cm-header{color: white; }
+.cm-s-dracula span.cm-comment {color: #6272a4;}
+.cm-s-dracula span.cm-atom {color: #bd93f9;}
+.cm-s-dracula span.cm-number {color: #bd93f9;}
+
+.cm-s-dracula span.cm-quote { color: white; }
+.cm-s-dracula span.cm-pre { color: white; }
+.cm-s-dracula span.cm-meta { color: #8be9fd; }
+.cm-s-dracula span.cm-unit { color: white; }
+.cm-s-dracula span.cm-property {color: #8be9fd; font-style: italic;}
+.cm-s-dracula span.cm-attribute {color: #50fa7b; }
+.cm-s-dracula span.cm-qualifier {color: #50fa7b; }
+.cm-s-dracula span.cm-keyword {color: #ff79c6; }
+.cm-s-dracula span.cm-string {color: #f1fa8c;}
+.cm-s-dracula span.cm-string-2 { color: white; }
+.cm-s-dracula span.cm-operator { color:#50fa7b; }
+
+.cm-s-dracula span.cm-special {color: white;}
+.cm-s-dracula span.cm-variable {color: white;}
+.cm-s-dracula span.cm-variable-2 {color: white;}
+.cm-s-dracula span.cm-variable-3 {color: white;}
+.cm-s-dracula span.cm-def {color: #50fa7b; }
+.cm-s-dracula span.cm-error {background: #ac4142; color: #b0b0b0;}
+
+.cm-s-dracula span.cm-tag {color: #ff79c6;}
+.cm-s-dracula span.cm-link {color: white;}
+
+.cm-s-dracula .CodeMirror-activeline-background {background: #44475a;}
+
+.cm-s-dracula span.cm-bracket {color: white;}
+.cm-s-dracula .CodeMirror-nonmatchingbracket { color: white; }
+.cm-s-dracula .CodeMirror-matchingbracket .CodeMirror-matchingbracket { text-decoration: underline; color: #f8f8f2 !important;}
+
