@@ -1,12 +1,9 @@
 ---
-title: About
-description: What does Minimo even means?!
+title: About Me
+linkTitle: About
 menu: main
 weight: -210
+slug: about
 ---
 
-Mínimo is a Spanish word that roughly translate to Minimal.
-
-Minimo is a minimalist theme for Hugo.
-
-Minimo keeps the focus on your content and lets it shine!
+I'm a graduate student at the University of Chicago Harris School of Public Policy. I also work as a data analyst and project manager at Chinese Mutual Aid Association, an immigrant-focused social services agency located on Chicago's north side. I like R, Python, data visualization, baking and biking. All opinions are my own. 
