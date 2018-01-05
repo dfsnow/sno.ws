@@ -1,0 +1,15 @@
+{{ partial "header" . }}
+
+<main class='main'>
+  <section class='list-container'>
+    <div class='list'>
+      {{ range .Paginator.Pages }}
+        {{ .Render "li" }}
+      {{ end }}
+    </div>
+
+    {{ partial "nav/pagination" . }}
+  </section>
+</main>
+
+{{ partial "footer" . }}
