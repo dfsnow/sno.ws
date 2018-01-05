@@ -1,5 +1,5 @@
 ---
-title: About Me
+title: About
 linkTitle: About
 menu: main
 weight: -210
