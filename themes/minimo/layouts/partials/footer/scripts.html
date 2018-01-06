@@ -1,5 +1,8 @@
 <script src='{{ print "/assets/js/" .Site.Data.assets.main.js | relURL }}'></script>
-
+<script src='{{ "/assets/js/highlight.pack.js" | absURL }}'></script>
+<script>
+  hljs.initHighlightingOnLoad();
+</script>
 {{- range .Site.Params.assets.customJS -}}
   <script src='{{ . | relURL }}'></script>
 {{- end -}}
