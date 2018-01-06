@@ -1,6 +1,8 @@
 <script src='{{ print "/assets/js/" .Site.Data.assets.main.js | relURL }}'></script>
-<script src='{{ "/assets/js/highlight.pack.js" | relURL }}'></script>
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/r.min.js"></script>
 <script>
+  hljs.configure({languages: []});
   hljs.initHighlightingOnLoad();
 </script>
 {{- range .Site.Params.assets.customJS -}}
