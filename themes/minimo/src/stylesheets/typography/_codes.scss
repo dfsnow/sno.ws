@@ -6,6 +6,7 @@ pre {
 
   text-align: initial;
   max-width: 100%;
+  padding: 0;
   margin-bottom: 1.725em;
   overflow: auto;
   word-wrap: normal;
@@ -32,7 +33,7 @@ var {
 
     & > div,
     & > pre {
-      padding: 1em 1.5em;
+      padding: 0;
     }
   }
 }
