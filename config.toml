@@ -60,6 +60,11 @@ platforms = ["email","github","facebook","twitter","instagram","codepen","linked
 [permalinks]
 page = "/:slug/"
 
+[[menu.main]]
+name = "Jupyter"
+identifier = "jupyterhub"
+url = "https://jupyter.dfsnow.me:8000"
+
 [blackfriday]
 hrefTargetBlank = true
 

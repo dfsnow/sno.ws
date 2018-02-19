@@ -1,7 +1,7 @@
 ---
 title: Dan Snow
-linkTitle: Blog
+linkTitle: Posts
 menu: main
 weight: -250
-slug: blog
+slug: post
 ---
