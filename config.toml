@@ -65,6 +65,11 @@ name = "Jupyter"
 identifier = "jupyterhub"
 url = "https://jupyter.dfsnow.me:8000"
 
+[[menu.main]]
+name = "RStudio"
+identifier = "rstudio"
+url = "https://rstudio.dfsnow.me"
+
 [blackfriday]
 hrefTargetBlank = true
 
