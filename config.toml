@@ -63,12 +63,17 @@ page = "/:slug/"
 [[menu.main]]
 name = "Jupyter"
 identifier = "jupyterhub"
-url = "https://jupyter.dfsnow.me:8000"
+url = "https://lab.dfsnow.me:8000"
 
 [[menu.main]]
 name = "RStudio"
 identifier = "rstudio"
-url = "https://rstudio.dfsnow.me"
+url = "https://lab.dfsnow.me"
+
+[[menu.main]]
+name = "Data"
+identifier = "data"
+url = "https://lab.dfsnow.me:8080"
 
 [blackfriday]
 hrefTargetBlank = true
