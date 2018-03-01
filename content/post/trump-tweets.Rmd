@@ -93,7 +93,7 @@ tt.df$density <- tt.density(as.numeric(tt.df$time), as.numeric(tt.df$date))
 ```
 
 This chunk creates the final plot, which shows Trump's tweets by month by hour. Note that correlation between Trump's tweet times and Fox & Friends airtime is not necessarily causative. It's possible that Trump just has a morning routine of tweeting or that he only has time to heavily tweet in the morning. In the future, I plan to do computational text analysis of Trump's tweets vs Fox & Friends transcripts establish a stronger causal link.
-```{r create_plot, results='hide', fig.width=12, fig.height=8}
+```{r create_plot, results='hide', fig.show='hide'}
 ggplot() +
   geom_tile(
     data = tt.df,
@@ -150,4 +150,5 @@ ggplot() +
     plot.margin = unit(c(10,10,20,10), "pt"))
 ```
 
+![Final Plot](https://dfsnow.me/post/trump-tweets_files/figure-html/create_plot-1.png)
 
