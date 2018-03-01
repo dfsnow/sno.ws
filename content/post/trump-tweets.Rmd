@@ -53,7 +53,7 @@ map(dir(pattern = "*.json.zip"), file.remove)
 
 Working with timezones and dates in R is a huge pain, but lubridate fortunately makes things a bit easier. This chunk extracts the time and month from the `created_at` column of the JSONs and formats them as POSIXct objects for use with ggplot2.
 ```{r tweet_times, results='hide'}
-# Converting the created_at time to POSIX, removing the date, and changing the timezone
+# Converting the created_at time to POSIX and changing the timezone
 tt.df$time <- as.POSIXct(
   tt.df$created_at,
   format = "%a %b %d %H:%M:%S",
@@ -133,7 +133,9 @@ ggplot() +
     breaks = date_breaks(
       paste(round(interval(min(tt.df$date),
                            now()) / months(1)) / 9, "months")),
-    labels = ifelse(length(tt.years) > 1, date_format("%b %y"), date_format("%b")),
+    labels = ifelse(length(tt.years) > 1,
+                    date_format("%b %y"),
+                    date_format("%b")),
     expand = c(0, 0)) +
   labs(
     x = "Month",
