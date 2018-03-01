@@ -150,5 +150,5 @@ ggplot() +
     plot.margin = unit(c(10,10,20,10), "pt"))
 ```
 
-![Final Plot](https://dfsnow.me/post/trump-tweets_files/figure-html/create_plot-1.png)
+[![trump-tweets](https://dfsnow.me/post/trump-tweets_files/figure-html/create_plot-1.png)](https://dfsnow.me/post/trump-tweets_files/figure-html/create_plot-1.png)
 
