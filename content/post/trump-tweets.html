@@ -118,9 +118,10 @@ tt.df$density &lt;- tt.density(
     breaks = date_breaks(
       paste(round(interval(min(tt.df$date),
                            now()) / months(1)) / 9, &quot;months&quot;)),
-    labels = ifelse(length(tt.years) &gt; 1,
-                    date_format(&quot;%b %y&quot;),
-                    date_format(&quot;%b&quot;)),
+    labels = ifelse(
+      length(tt.years) &gt; 1,
+      date_format(&quot;%b %y&quot;),
+      date_format(&quot;%b&quot;)),
     expand = c(0, 0)) +
   labs(
     x = &quot;Month&quot;,
@@ -131,8 +132,7 @@ tt.df$density &lt;- tt.density(
         length(tt.years) &gt; 1,
         paste(min(tt.years), max(tt.years), sep = &quot; - &quot;),
         tt.years)),
-    subtitle = &quot;Tweets plotted by month and minute.
-    Collected from trumptwitterarchive.com.&quot;,
+    subtitle = &quot;Tweets plotted by month and minute. Collected from trumptwitterarchive.com.&quot;,
     color = &quot;Tweet Density&quot;) +
   scale_color_viridis(
     breaks = c(

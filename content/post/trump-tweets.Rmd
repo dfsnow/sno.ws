@@ -133,9 +133,10 @@ ggplot() +
     breaks = date_breaks(
       paste(round(interval(min(tt.df$date),
                            now()) / months(1)) / 9, "months")),
-    labels = ifelse(length(tt.years) > 1,
-                    date_format("%b %y"),
-                    date_format("%b")),
+    labels = ifelse(
+      length(tt.years) > 1,
+      date_format("%b %y"),
+      date_format("%b")),
     expand = c(0, 0)) +
   labs(
     x = "Month",
@@ -146,8 +147,7 @@ ggplot() +
         length(tt.years) > 1,
         paste(min(tt.years), max(tt.years), sep = " - "),
         tt.years)),
-    subtitle = "Tweets plotted by month and minute.
-    Collected from trumptwitterarchive.com.",
+    subtitle = "Tweets plotted by month and minute. Collected from trumptwitterarchive.com.",
     color = "Tweet Density") +
   scale_color_viridis(
     breaks = c(
