@@ -31,8 +31,7 @@ This chunk imports data from GitHub, unzips each file, and then combines the JSO
 ```{r import_data, message=FALSE, results='hide', warning=FALSE}
 # Importing data from the Trump Twitter Archive GitHub
 tt.years <- 2017
-tt.git <- "https://github.com/bpb27/
-trump_tweet_data_archive/raw/master/condensed_{y}.json.zip"
+tt.git <- "https://github.com/bpb27/trump_tweet_data_archive/raw/master/condensed_{y}.json.zip"
 
 # Downloading files based on a vector of URLs
 map(tt.years, ~ glue(tt.git, y = tt.years)) %>%
