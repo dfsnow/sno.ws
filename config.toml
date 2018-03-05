@@ -20,7 +20,7 @@ pygmentsCodefences = false
 defaultContentLanguage = "en"
 
 [params.info]
-description = "Data Diver and Vim Enthusiast"
+description = "Doing Dumb Things With Data"
 title404 = "Nothing's here!"
 
 [params.assets]
@@ -74,6 +74,11 @@ url = "https://lab.dfsnow.me"
 name = "Data"
 identifier = "data"
 url = "https://lab.dfsnow.me:8080"
+
+[[menu.main]]
+name = "Grafana"
+identifier = "grafana"
+url = "https://lab.dfsnow.me:3000"
 
 [blackfriday]
 hrefTargetBlank = true
