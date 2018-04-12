@@ -9,13 +9,13 @@ tags: []
 
 
 
-<p>I recently bought a server to use for data analysis and web hosting. The server runs ESXi, a bare metal hypervisor used to create and manage virtual machines. Most of these VMs run Debian and are on 24/7, but I also wanted a Windows 10 VM for occasional gaming that I could switch on and off.</p>
-<p>Since ESXi is software, the Windows machine doesn’t have a physical power button. Instead, I had to boot up my laptop and login to the ESXi web client each time I wanted to start the VM. This quickly became annoying, and I began looking for an easier way. I whipped up a quick python script to make an Amazon Dash button into a portable VM power button. The script runs as a daemon on a Raspberry Pi Zero W I had sitting around. It can be adapted to issue any shell command, not just the SSH used here.</p>
+<p>I recently bought a server to use for data analysis and web hosting. The server runs ESXi, a bare metal hypervisor used to create and manage virtual machines (VMs). Most of these VMs run Debian and are on 24/7, but I also wanted a Windows 10 VM for occasional gaming that I could switch on and off.</p>
+<p>Since ESXi is software, the Windows machine I made doesn’t have a physical power button. Instead, I had to boot up my laptop and login to the ESXi web client each time I wanted to start the VM. This quickly became annoying, and I began looking for an easier way. I whipped up a quick python script to make an Amazon Dash button into a portable VM power button. The script runs as a daemon on a Raspberry Pi Zero W I had sitting around. It can be adapted to issue any shell command, not just the SSH used here.</p>
 <section id="setup" class="level2">
 <h2>Setup</h2>
-<p>The first thing you need to do is setup the Dash button via the Amazon shopping app. Go through all the initial steps of connecting to the your home network, but cancel before actually selecting a product.</p>
-<p>Next, you need to find the MAC address of your Dash button. You can do this by pressing the Dash button while looking in the connected clients section of your router’s web client. The Dash button should appear as a connected device (if only briefly).</p>
-<p>Change the gateway variable in the script below to the gateway of your router, and the MAC address to that of your Dash button. You can test the script by running <code>sudo /usr/bin/python3 scriptname.py</code>. This script needs to run as sudo/root for socket access. It will print “Button Pressed!” in stdout if successful. Make sure you’ve installed Python 3 and the scapy module.</p>
+<p>The first thing you need to do is setup the Dash button via the Amazon shopping app. Go through all the initial steps of connecting the button to your home network, but cancel before actually selecting a product.</p>
+<p>Next, you need to find the MAC address of your Dash button. You can do this by pressing the Dash button while looking at the connected clients section of your router’s web client. The Dash button should appear as a connected device (if only briefly).</p>
+<p>Finally, change the gateway variable in the script below to the gateway of your router and the MAC address to that of your Dash button. You can test the script by running <code>sudo /usr/bin/python3 scriptname.py</code>. This script needs to run as sudo/root for socket access. It will print “Button Pressed!” in stdout if successful. Make sure you’ve installed Python 3 and the scapy module. If you plan to use it for ESXi, edit vm_name and $USERNAME to fit your needs.</p>
 <pre class="python"><code>import datetime
 import subprocess
 from scapy.all import *
@@ -29,16 +29,19 @@ vm_name = &#39;whatevername&#39;
 # Get the vm id of your named vm from esxi
 all_vms = subprocess.check_output(
     [&#39;ssh&#39;, &#39;-i&#39;, &#39;/home/$USERNAME/.ssh/id_ed25519&#39;,
-     &#39;root@192.168.1.161&#39;, &#39;vim-cmd&#39;, &#39;vmsvc/getallvms&#39;, &#39;|grep&#39;, vm_name])
+     &#39;root@192.168.1.161&#39;, &#39;vim-cmd&#39;,
+     &#39;vmsvc/getallvms&#39;, &#39;|grep&#39;, vm_name])
 vm_id = str(all_vms)[2]
 
 # Power on the vm
-# You can edit this section to issue your own command by changing check_output()
+# You can edit this section to issue your own command
+# by the command in changing check_output()
 def dash_pressed():
-    print(&quot;Button pressed!&quot;)
+    print(&#39;Button pressed!&#39;)
     subprocess.check_output(
         [&#39;ssh&#39;, &#39;-i&#39;, &#39;/home/$USERNAME/.ssh/id_ed25519&#39;,
-         &#39;root@192.168.1.161&#39;, &#39;vim-cmd&#39;, &#39;vmsvc/power.on&#39;, str(vm_id)])
+         &#39;root@192.168.1.161&#39;, &#39;vim-cmd&#39;,
+         &#39;vmsvc/power.on&#39;, str(vm_id)])
 
 # ARP packet sniffing stuff
 def arp_display(pkt):
@@ -55,7 +58,7 @@ def arp_display(pkt):
 <h2>Service</h2>
 <p>If you’re running Raspbian or some other Linux distro you can make this script into a service using systemd. Start by creating the following file, substituting $NAME for your own script name:</p>
 <pre><code>/lib/systemd/system/$NAME.service</code></pre>
-<p>Edit the script to include the following:</p>
+<p>Edit the script to include the following, changing the path to your own script:</p>
 <pre><code>[Unit]
 Description=Whatever the function of your script is
 After=multi-user.target
@@ -70,7 +73,7 @@ WantedBy=multi-user.target</code></pre>
 <pre><code>sudo systemctl enable $NAME.service
 sudo systemctl daemon-reload
 sudo systemctl start $NAME.service</code></pre>
-<p>Now it will run all the time in the background, even after a reboot. To disable it, simple use:</p>
+<p>It will now run constantly in the background, even after a reboot. To disable it, simply use:</p>
 <pre><code>sudo systemctl stop $NAME.service
 sudo systemctl disable $NAME.service</code></pre>
 <p>And then delete the .service file you made earlier.</p>
