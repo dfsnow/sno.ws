@@ -1,0 +1,180 @@
+---
+title: Visualizing Transit Systems with R and GTFS Feeds
+author: Dan Snow
+date: '2018-07-18'
+slug: r-gtfs-feeds
+categories: ["tutorial"]
+tags: ["R", "spatial"]
+---
+
+
+
+<p><a href="https://dfsnow.me/post/r-grts-feeds_files/chicago_final.gif"><img src="https://dfsnow.me/post/r-grts-feeds_files/chicago_final.gif" alt="chicago-cta" /></a></p>
+<p>Up until about 6 months ago, spatial data manipulation in R was kind of a mess. It was slow, fragmented into different packages, and completely outclassed by PostGIS and geopandas. That all seems to have changed with the release of <a href="https://github.com/r-spatial/sf">sf</a>, which uses the simple features access model while providing PostGIS-like spatial manipulation functions and geopandas-like spatial dataframes. In other words, it’s awesome.</p>
+<p>I wanted a project to test out sf and the newly-released version of <a href="https://github.com/thomasp85/gganimate">gganimate</a>. I use a lot of transit and driving data for work, so I figured it might be fun to try to visualize a GTFS feed. A GTFS feed contains all the scheduling data for a city’s transit system, as well as stop locations, the shape of each train or bus line, and a bunch of other stuff. The goal is to make an animation which emulates the style of the game Mini Metro, with distinct, brightly colored train lines and little trains running on them. The challenge is to do it using <em>only</em> R, no PostGIS or Python allowed.</p>
+<section id="setup" class="level3">
+<h3>Setup</h3>
+<p>First we need to load the relevant libraries. Be sure to grab all of these from GitHub, the versions on CRAN are outdated and won’t work with this script.</p>
+<pre class="r"><code>library(imputeTS)
+library(ggplot2)
+library(gganimate)
+library(gtfsr)
+library(sf)</code></pre>
+</section>
+<section id="getting-the-data" class="level3">
+<h3>Getting The Data</h3>
+<p>Next we need to get a GTFS feed. I chose Chicago’s feed, but any feed should work with this script given a little tweaking. GTFS feeds are always zipped, per the standard, and there’s no need to unzip them. The <code>gtfsr</code> package will extract the GTFS feed into individual dataframes.</p>
+<pre class="r"><code>url &lt;- &quot;http://www.transitchicago.com/downloads/sch_data/google_transit.zip&quot;
+download.file(url, &quot;gtfs.zip&quot;)
+
+gtfs &lt;- import_gtfs(&quot;gtfs.zip&quot;, local = TRUE)</code></pre>
+<p>We need a temporary dataframe of only the train route IDs. We could also include buses here, but it would up the complexity a fair bit.</p>
+<pre class="r"><code>temp_df &lt;- gtfs[[&quot;routes_df&quot;]] %&gt;%
+  filter(route_type == 1) %&gt;%
+  select(route_id, route_long_name, route_color)</code></pre>
+</section>
+<section id="creating-static-spatial-geometries" class="level3">
+<h3>Creating Static Spatial Geometries</h3>
+<p>Next we need to create dataframes of the static geometries for lines and stops. To do so, we essentially need to aggregate all of the individual points that make up a line, order them, then convert them to an sf linestring.</p>
+<pre class="r"><code>lines_df &lt;- temp_df %&gt;%
+  inner_join(gtfs$trips_df, by = &quot;route_id&quot;) %&gt;%
+  distinct(route_id, shape_id) %&gt;%
+  left_join(gtfs$shapes_df, by = &quot;shape_id&quot;) %&gt;%
+  st_as_sf(coords = c(&quot;shape_pt_lon&quot;, &quot;shape_pt_lat&quot;), crs = 4326) %&gt;%
+  group_by(shape_id) %&gt;%
+  summarize(do_union = FALSE) %&gt;%
+  st_cast(&quot;LINESTRING&quot;) %&gt;%
+  left_join(gtfs$trips_df, by = &quot;shape_id&quot;) %&gt;%
+  group_by(route_id) %&gt;%
+  summarize() %&gt;% 
+  left_join(temp_df, by = &quot;route_id&quot;) %&gt;%
+  mutate(route_color = paste0(&quot;#&quot;, route_color))</code></pre>
+<p>Then do the same thing for individual stops. The reason there’s so many joins is because many of the attributes for each stop are stored in the separate dataframes created by gtfsr.</p>
+<pre class="r"><code>stops_df &lt;- temp_df %&gt;%
+  inner_join(gtfs$trips_df, by = &quot;route_id&quot;) %&gt;%
+  left_join(gtfs$stop_times_df, by = &quot;trip_id&quot;) %&gt;%
+  left_join(gtfs$stops_df, by = &quot;stop_id&quot;) %&gt;%
+  distinct(route_id, stop_id, route_color,
+           stop_lon, stop_lat, stop_sequence) %&gt;%
+  mutate(route_color = paste0(&quot;#&quot;, route_color)) %&gt;%
+  rename(
+    lat = stop_lat,
+    lon = stop_lon
+  )</code></pre>
+</section>
+<section id="creating-trips-and-interpolating" class="level3">
+<h3>Creating Trips and Interpolating</h3>
+<p>Here’s where it gets a little bit complicated. This animation works by moving the train cars from stop to stop (point to point) according to the schedule data from the GTFS feed. The problem is, if the cars move stop to stop, they will fly straight between stops, disregarding curves in the actual track. In order to move the train cars along their respective tracks, they need points from the actual track shape interspersed between each stop. We can extract these points from the points that make up the tracks, then merge them with the data for each inidividual trip.</p>
+<pre class="r"><code># Getting the points of each track
+shape_df &lt;- temp_df %&gt;%
+  inner_join(gtfs$trips_df, by = &quot;route_id&quot;) %&gt;%
+  distinct(route_id, shape_id) %&gt;%
+  left_join(gtfs$shapes_df, by = &quot;shape_id&quot;) %&gt;%
+  group_by(shape_id) %&gt;%
+  rename(
+    lat = shape_pt_lat,
+    lon = shape_pt_lon,
+    dist = shape_dist_traveled
+    ) %&gt;%
+  select(-shape_pt_sequence)
+
+# Creating a dataframe of all individual trips
+trips_df &lt;- temp_df %&gt;%
+  inner_join(gtfs$trips_df, by = &quot;route_id&quot;) %&gt;%
+  left_join(gtfs$stop_times_df, by = &quot;trip_id&quot;) %&gt;%
+  left_join(gtfs$stops_df, by = &quot;stop_id&quot;) %&gt;%
+  distinct(
+    route_id, route_color, shape_id, trip_id,
+    stop_lat, stop_lon, arrival_time, shape_dist_traveled) %&gt;%
+  rename(
+    lat = stop_lat,
+    lon = stop_lon,
+    dist = shape_dist_traveled
+  ) %&gt;%
+  mutate(time = as.POSIXct(
+    arrival_time,
+    format = &quot;%H:%M:%S&quot;,
+    tz = &quot;UTC&quot;)) %&gt;%
+  na.omit()</code></pre>
+<p>Next we merge the track points with the trips dataframe, ordering the points for each trip by the distance traveled for each car (which is available in both datasets). The cars move according to their scheduled arrival time at each stop, however there’s no scheduled times for the newly interspersed points. As such, we have to interpolate the arrival times for all the points between each stop. This can be done fairly easily with the <code>imputeTS</code> package.</p>
+<pre class="r"><code>trips_df &lt;- trips_df %&gt;%
+  bind_rows(temp_df_2) %&gt;%
+  group_by(trip_id) %&gt;%
+  arrange(trip_id, dist) %&gt;%
+  mutate(time = as.POSIXct(
+    na.interpolation(
+      as.numeric(time),
+      option = &quot;stine&quot;),
+    origin = &#39;1970-01-01&#39;, tz = &#39;UTC&#39;)
+    ) %&gt;%
+  fill(arrival_time) %&gt;%
+  select(trip_id, arrival_time, lat, lon, time, dist) %&gt;%
+  group_by(trip_id, dist) %&gt;%
+  filter(row_number() == 1)</code></pre>
+</section>
+<section id="plotting-and-animating" class="level3">
+<h3>Plotting and Animating</h3>
+<p>Next, we create the ggplot which will be animated with gganimate. gganimate will draw individual frames (plots) according to a field in your dataframe. It will tween the animation according to the number of frames specified, more frames = smoother animation.</p>
+<p>There are three geoms in each plot, the static lines, the static stops, and the dynamic, animated trips.</p>
+<pre class="r"><code>plot &lt;- ggplot() +
+  geom_point(
+    data = stops_df,
+    aes(x = lon, y = lat, color = route_id),
+    size = 2.5,
+    show.legend = FALSE
+    ) +
+  geom_sf(
+    data = lines_df,
+    aes(color = route_id),
+    show.legend = FALSE
+    ) +
+  geom_point(
+    data = trips_df,
+    aes(x = lon, y = lat),
+    size = 1.5,
+    shape = 15
+    ) + 
+  scale_color_manual(values = lines_df$route_color) +
+  transition_components(trip_id, time) +
+  ease_aes(&quot;sine-in-out&quot;) +
+  theme_bw() +
+  labs(
+    title = &quot;Chicago Rail (&#39;L&#39;) System Map&quot;,
+    subtitle = &#39;{frame_time}&#39;)  + 
+  theme(
+    line = element_blank(),
+    rect = element_blank(),
+    axis.text = element_blank(),
+    axis.title = element_blank(),
+    plot.title = element_text(
+      face = &quot;bold&quot;,
+      size = 24,
+      margin = margin(b = -70, t = 42)),
+    plot.subtitle = element_text(
+      size = 18,
+      margin = margin(b = -122, t = 80)),
+    panel.grid.major = element_line(colour = &quot;transparent&quot;)
+    ) + 
+  annotate(
+    &quot;text&quot;,
+    x = -87.9350395,
+    y = 41.734339,
+    label = &quot;Created by Dan Snow \ngithub.com/dfsnow&quot;,
+    hjust = 0,
+    size = 5,
+    color = &quot;grey60&quot;)</code></pre>
+<p>Next, we call animate() to render each individual plot as a png file. The specifications here will make a smooth animation but will take a long time to render. Generating 15,000 frames took about 4 hours on my machine. The individual pngs are saved in /tmp/.</p>
+<pre class="r"><code>frames &lt;- as.numeric(length(unique(trips_df$arrival_time))) * 3
+plot_mg &lt;- animate(
+  plot, frames, fps = 50, width = 1024, height = 1024)</code></pre>
+<p>Finally, we can put it all together by creating an mp4 file using ffmpeg. I use Docker for convenience. If you make over 10,000 frames you’ll have to rename the pngs to order them correctly. The files will go from <code>gganim_plot8888.png</code> to <code>08888.png</code>.</p>
+<pre class="bash"><code>ls *.png | rename &#39;s/gganim_plot//&#39;
+ls *.png | rename &#39;s/\d+/sprintf(&quot;%05d&quot;,$&amp;)/e&#39;
+
+docker run --rm -v /tmp/:/tmp jrottenberg/ffmpeg -framerate 50 \
+-pattern_type glob -i &#39;/tmp/*.png&#39; -c:v libx265 \
+-pix_fmt yuv420p plot.mp4
+
+docker cp {container_id}:/tmp/workdir/plot.mp4 plot.mp4</code></pre>
+<p>Overall, this method works fairly well and should be easy to adapt to other cities. There are a few weird glitches where trains will move very quickly between some stops. This is a side effect of interpolating the time of arrival for points along the tracks. The times are interpolated with linear approximation, but the points are not equidistant, so the time between two points 50 meters apart and 500 meters apart is the same. Nonetheless, the actual time that each train takes to travel between each official stop is accurate.</p>
+</section>

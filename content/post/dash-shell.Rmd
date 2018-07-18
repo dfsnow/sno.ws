@@ -1,17 +1,17 @@
 ---
-title: Using An Amazon Dash Button To Trigger Shell Commands
+title: Using an Amazon Dash Button to Trigger Shell Commands
 author: Dan Snow
 date: '2018-04-11'
 slug: dash-shell
-categories: []
-tags: []
+categories: ["tutorial"]
+tags: ["homelab", "networking", "python"]
 ---
 
 I recently bought a server to use for data analysis and web hosting. The server runs ESXi, a bare metal hypervisor used to create and manage virtual machines (VMs). Most of these VMs run Debian and are on 24/7, but I also wanted a Windows 10 VM for occasional gaming that I could switch on and off.
 
 Since ESXi is software, the Windows machine I made doesn't have a physical power button. Instead, I had to boot up my laptop and login to the ESXi web client each time I wanted to start the VM. This quickly became annoying, and I began looking for an easier way. I whipped up a quick python script to make an Amazon Dash button into a portable VM power button. The script runs as a daemon on a Raspberry Pi Zero W I had sitting around. It can be adapted to issue any shell command, not just the SSH used here.
 
-## Setup
+### Setup
 
 The first thing you need to do is setup the Dash button via the Amazon shopping app. Go through all the initial steps of connecting the button to your home network, but cancel before actually selecting a product.
 
@@ -59,7 +59,7 @@ def arp_display(pkt):
                 old_time = time.time()
 ```
 
-## Service
+### Service
 
 If you're running Raspbian or some other Linux distro you can make this script into a service using systemd. Start by creating the following file, substituting $NAME for your own script name:
 

@@ -1,22 +1,22 @@
 ---
-title: Using An Amazon Dash Button To Trigger Shell Commands
+title: Using an Amazon Dash Button to Trigger Shell Commands
 author: Dan Snow
 date: '2018-04-11'
 slug: dash-shell
-categories: []
-tags: []
+categories: ["tutorial"]
+tags: ["homelab", "networking", "python"]
 ---
 
 
 
 <p>I recently bought a server to use for data analysis and web hosting. The server runs ESXi, a bare metal hypervisor used to create and manage virtual machines (VMs). Most of these VMs run Debian and are on 24/7, but I also wanted a Windows 10 VM for occasional gaming that I could switch on and off.</p>
 <p>Since ESXi is software, the Windows machine I made doesn’t have a physical power button. Instead, I had to boot up my laptop and login to the ESXi web client each time I wanted to start the VM. This quickly became annoying, and I began looking for an easier way. I whipped up a quick python script to make an Amazon Dash button into a portable VM power button. The script runs as a daemon on a Raspberry Pi Zero W I had sitting around. It can be adapted to issue any shell command, not just the SSH used here.</p>
-<section id="setup" class="level2">
-<h2>Setup</h2>
+<section id="setup" class="level3">
+<h3>Setup</h3>
 <p>The first thing you need to do is setup the Dash button via the Amazon shopping app. Go through all the initial steps of connecting the button to your home network, but cancel before actually selecting a product.</p>
 <p>Next, you need to find the MAC address of your Dash button. You can do this by pressing the Dash button while looking at the connected clients section of your router’s web client. The Dash button should appear as a connected device (if only briefly).</p>
 <p>Finally, change the gateway variable in the script below to the gateway of your router and the MAC address to that of your Dash button. You can test the script by running <code>sudo /usr/bin/python3 scriptname.py</code>. This script needs to run as sudo/root for socket access. It will print “Button Pressed!” in stdout if successful. Make sure you’ve installed Python 3 and the scapy module. If you plan to use it for ESXi, edit vm_name and $USERNAME to fit your needs.</p>
-<pre class="python"><code>import datetime
+<pre class="r"><code>import datetime
 import subprocess
 from scapy.all import *
 
@@ -54,8 +54,8 @@ def arp_display(pkt):
                 dash_pressed()
                 old_time = time.time()</code></pre>
 </section>
-<section id="service" class="level2">
-<h2>Service</h2>
+<section id="service" class="level3">
+<h3>Service</h3>
 <p>If you’re running Raspbian or some other Linux distro you can make this script into a service using systemd. Start by creating the following file, substituting $NAME for your own script name:</p>
 <pre><code>/lib/systemd/system/$NAME.service</code></pre>
 <p>Edit the script to include the following, changing the path to your own script:</p>
