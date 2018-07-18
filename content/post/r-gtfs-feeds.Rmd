@@ -64,7 +64,7 @@ lines_df <- temp_df %>%
   mutate(route_color = paste0("#", route_color))
 ```
 
-Then do the same thing for individual stops. The reason there's so many joins is because many of the attributes for each stop are stored in the separate dataframes created by gtfsr.
+Then do the same thing for individual stops. The reason there's so many joins is because many of the attributes for each stop are stored in the separate dataframes created by `gtfsr`.
 
 ```{r eval=FALSE}
 stops_df <- temp_df %>%
@@ -139,9 +139,9 @@ trips_df <- trips_df %>%
 
 ### Plotting and Animating
 
-Next, we create the ggplot which will be animated with gganimate. gganimate will draw individual frames (plots) according to a field in your dataframe. It will tween the animation according to the number of frames specified, more frames = smoother animation. 
+Next, we create the ggplot which will be animated with `gganimate`, which will draw individual frames (plots) according to a field in your dataframe. It will tween the animation according to the number of frames specified, more frames = smoother animation. 
 
-There are three geoms in each plot, the static lines, the static stops, and the dynamic, animated trips. 
+There are three geoms in each plot: the static lines, the static stops, and the dynamic, animated trips. 
 
 ```{r eval=FALSE}
 plot <- ggplot() +
@@ -193,7 +193,7 @@ plot <- ggplot() +
     color = "grey60")
 ```
 
-Next, we call animate() to render each individual plot as a png file. The specifications here will make a smooth animation but will take a long time to render. Generating 15,000 frames took about 4 hours on my machine. The individual pngs are saved in /tmp/.
+Next, we call animate() on the plot object to render each individual frame as a .png file. The specifications here will make a smooth animation but will take a long time to render. Generating 15,000 frames took about 4 hours on my machine. The individual pngs are saved in /tmp/.
 
 ```{r eval=FALSE}
 frames <- as.numeric(length(unique(trips_df$arrival_time))) * 3
@@ -214,4 +214,4 @@ docker run --rm -v /tmp/:/tmp jrottenberg/ffmpeg -framerate 50 \
 docker cp {container_id}:/tmp/workdir/plot.mp4 plot.mp4
 ```
 
-Overall, this method works fairly well and should be easy to adapt to other cities. There are a few weird glitches where trains will move very quickly between some stops. This is a side effect of interpolating the time of arrival for points along the tracks. The times are interpolated with linear approximation, but the points are not equidistant, so the time between two points 50 meters apart and 500 meters apart is the same. Nonetheless, the actual time that each train takes to travel between each official stop is accurate.
+Overall, this method works fairly well and should be easy to adapt to other cities. There are a few weird glitches where trains will move very quickly between some stops. This is a side effect of interpolating the time of arrival for points along the tracks. The times are interpolated with linear approximation, but the points are not equidistant, so the time between two points 50 meters apart and 500 meters apart is the same. Nonetheless, the actual time that each train takes to travel between each official stop is accurate, and the animation works fairly well overall.

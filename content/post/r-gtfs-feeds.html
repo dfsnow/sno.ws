@@ -49,7 +49,7 @@ gtfs &lt;- import_gtfs(&quot;gtfs.zip&quot;, local = TRUE)</code></pre>
   summarize() %&gt;% 
   left_join(temp_df, by = &quot;route_id&quot;) %&gt;%
   mutate(route_color = paste0(&quot;#&quot;, route_color))</code></pre>
-<p>Then do the same thing for individual stops. The reason there’s so many joins is because many of the attributes for each stop are stored in the separate dataframes created by gtfsr.</p>
+<p>Then do the same thing for individual stops. The reason there’s so many joins is because many of the attributes for each stop are stored in the separate dataframes created by <code>gtfsr</code>.</p>
 <pre class="r"><code>stops_df &lt;- temp_df %&gt;%
   inner_join(gtfs$trips_df, by = &quot;route_id&quot;) %&gt;%
   left_join(gtfs$stop_times_df, by = &quot;trip_id&quot;) %&gt;%
@@ -114,8 +114,8 @@ trips_df &lt;- temp_df %&gt;%
 </section>
 <section id="plotting-and-animating" class="level3">
 <h3>Plotting and Animating</h3>
-<p>Next, we create the ggplot which will be animated with gganimate. gganimate will draw individual frames (plots) according to a field in your dataframe. It will tween the animation according to the number of frames specified, more frames = smoother animation.</p>
-<p>There are three geoms in each plot, the static lines, the static stops, and the dynamic, animated trips.</p>
+<p>Next, we create the ggplot which will be animated with <code>gganimate</code>, which will draw individual frames (plots) according to a field in your dataframe. It will tween the animation according to the number of frames specified, more frames = smoother animation.</p>
+<p>There are three geoms in each plot: the static lines, the static stops, and the dynamic, animated trips.</p>
 <pre class="r"><code>plot &lt;- ggplot() +
   geom_point(
     data = stops_df,
@@ -163,7 +163,7 @@ trips_df &lt;- temp_df %&gt;%
     hjust = 0,
     size = 5,
     color = &quot;grey60&quot;)</code></pre>
-<p>Next, we call animate() to render each individual plot as a png file. The specifications here will make a smooth animation but will take a long time to render. Generating 15,000 frames took about 4 hours on my machine. The individual pngs are saved in /tmp/.</p>
+<p>Next, we call animate() on the plot object to render each individual frame as a .png file. The specifications here will make a smooth animation but will take a long time to render. Generating 15,000 frames took about 4 hours on my machine. The individual pngs are saved in /tmp/.</p>
 <pre class="r"><code>frames &lt;- as.numeric(length(unique(trips_df$arrival_time))) * 3
 plot_mg &lt;- animate(
   plot, frames, fps = 50, width = 1024, height = 1024)</code></pre>
@@ -176,5 +176,5 @@ docker run --rm -v /tmp/:/tmp jrottenberg/ffmpeg -framerate 50 \
 -pix_fmt yuv420p plot.mp4
 
 docker cp {container_id}:/tmp/workdir/plot.mp4 plot.mp4</code></pre>
-<p>Overall, this method works fairly well and should be easy to adapt to other cities. There are a few weird glitches where trains will move very quickly between some stops. This is a side effect of interpolating the time of arrival for points along the tracks. The times are interpolated with linear approximation, but the points are not equidistant, so the time between two points 50 meters apart and 500 meters apart is the same. Nonetheless, the actual time that each train takes to travel between each official stop is accurate.</p>
+<p>Overall, this method works fairly well and should be easy to adapt to other cities. There are a few weird glitches where trains will move very quickly between some stops. This is a side effect of interpolating the time of arrival for points along the tracks. The times are interpolated with linear approximation, but the points are not equidistant, so the time between two points 50 meters apart and 500 meters apart is the same. Nonetheless, the actual time that each train takes to travel between each official stop is accurate, and the animation works fairly well overall.</p>
 </section>
