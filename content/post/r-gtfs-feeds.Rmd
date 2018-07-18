@@ -7,7 +7,7 @@ categories: ["tutorial"]
 tags: ["R", "spatial"]
 ---
 
-[![chicago-cta](https://dfsnow.me/post/r-gtfs-feeds_files/chicago_final.gif)](https://dfsnow.me/post/r-gtfs-feeds_files/chicago_final.gif)
+[![chicago-cta](https://dfsnow.me/post/r-gtfs-feeds_files/figure-html/chicago_final.gif)](https://dfsnow.me/post/r-gtfs-feeds_files/figure-html/chicago_final.gif)
 
 Up until about 6 months ago, spatial data manipulation in R was kind of a mess. It was slow, fragmented into different packages, and completely outclassed by PostGIS and geopandas. That all seems to have changed with the release of [sf](https://github.com/r-spatial/sf), which uses the simple features access model while providing PostGIS-like spatial manipulation functions and geopandas-like spatial dataframes. In other words, it's awesome.
 
