@@ -9,7 +9,7 @@ tags: ["R", "spatial"]
 
 
 
-<p><a href="https://dfsnow.me/post/r-grts-feeds_files/chicago_final.gif"><img src="https://dfsnow.me/post/r-grts-feeds_files/chicago_final.gif" alt="chicago-cta" /></a></p>
+<p><a href="https://dfsnow.me/post/r-gtfs-feeds_files/chicago_final.gif"><img src="https://dfsnow.me/post/r-gtfs-feeds_files/chicago_final.gif" alt="chicago-cta" /></a></p>
 <p>Up until about 6 months ago, spatial data manipulation in R was kind of a mess. It was slow, fragmented into different packages, and completely outclassed by PostGIS and geopandas. That all seems to have changed with the release of <a href="https://github.com/r-spatial/sf">sf</a>, which uses the simple features access model while providing PostGIS-like spatial manipulation functions and geopandas-like spatial dataframes. In other words, it’s awesome.</p>
 <p>I wanted a project to test out sf and the newly-released version of <a href="https://github.com/thomasp85/gganimate">gganimate</a>. I use a lot of transit and driving data for work, so I figured it might be fun to try to visualize a GTFS feed. A GTFS feed contains all the scheduling data for a city’s transit system, as well as stop locations, the shape of each train or bus line, and a bunch of other stuff. The goal is to make an animation which emulates the style of the game Mini Metro, with distinct, brightly colored train lines and little trains running on them. The challenge is to do it using <em>only</em> R, no PostGIS or Python allowed.</p>
 <section id="setup" class="level3">
