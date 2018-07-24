@@ -20,7 +20,7 @@ pygmentsCodefences = false
 defaultContentLanguage = "en"
 
 [params.info]
-description = "Making R Do Things It Shouldn't"
+description = "hot_take: snake_case_is_best_case"
 title404 = "Nothing's here!"
 
 [params.assets]
