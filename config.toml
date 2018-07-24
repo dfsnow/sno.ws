@@ -20,7 +20,7 @@ pygmentsCodefences = false
 defaultContentLanguage = "en"
 
 [params.info]
-description = "Doing Dumb Things With Data"
+description = "Making R Do Things It Shouldn't"
 title404 = "Nothing's here!"
 
 [params.assets]
