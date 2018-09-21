@@ -121,6 +121,11 @@ trips_df <- temp_df %>%
 Next we merge the track points with the trips dataframe, ordering the points for each trip by the distance traveled for each car (which is available in both datasets). The cars move according to their scheduled arrival time at each stop, however there's no scheduled times for the newly interspersed points. As such, we have to interpolate the arrival times for all the points between each stop. This can be done fairly easily with the `imputeTS` package.
 
 ```{r eval=FALSE}
+temp_df_2 <- trips_df %>%
+  group_by(trip_id, shape_id) %>%
+  summarize() %>%
+  left_join(shape_df, by = "shape_id")
+
 trips_df <- trips_df %>%
   bind_rows(temp_df_2) %>%
   group_by(trip_id) %>%
