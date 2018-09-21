@@ -1,4 +1,4 @@
-baseURL = "http://dfsnow.me"
+baseURL = "https://dfsnow.me"
 title = "Dan Snow"
 # for smart copyright line, leave this blank and check [params.copyright]
 copyright = ""
