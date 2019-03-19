@@ -2,6 +2,7 @@ baseURL = "https://dfsnow.me"
 title = "Dan Snow"
 # for smart copyright line, leave this blank and check [params.copyright]
 copyright = ""
+ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 
 theme = "minimo"
 
@@ -32,7 +33,7 @@ gopher = "" # used in 404 template ( Generator: https://gopherize.me )
 [params.copyright]
 prefix = ""
 holder = "Daniel Snow"
-startYear = "2018"
+startYear = "2019"
 suffix = ""
 
 [params.settings]
@@ -44,6 +45,16 @@ recentPostsLength = 4
 hideSocialMenu = false
 showReadingTime = true
 noTermCloudShuffle = true
+hideMainMenu = false
+accentColor = "#5519d6"
+
+
+[params.sidebar]
+enable = false
+
+[params.widgets]
+homepage = ["recent_posts"]
+footer = ["social_menu"]
 
 [params.seo]
 # Title Separator: - – — · • * ⋆ | ~ « » < >

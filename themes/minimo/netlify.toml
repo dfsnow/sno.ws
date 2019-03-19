@@ -1,9 +1,15 @@
 [build]
 publish = "exampleSite/public"
-command = "hugo --source=exampleSite --theme=../.. --baseURL=https://minimo.netlify.com"
+
+[context.production]
+command = "ln -s ${PWD} ../minimo && hugo --source=exampleSite --baseURL=${URL}"
+
+[context.branch-deploy]
+command = "ln -s ${PWD} ../minimo && hugo --source=exampleSite --baseURL=${DEPLOY_PRIME_URL}"
+
+[context.deploy-preview]
+command = "ln -s ${PWD} ../minimo && hugo --source=exampleSite --baseURL=${DEPLOY_PRIME_URL}"
 
 [build.environment]
-HUGO_VERSION = "0.28"
-
-[context.dev]
-command = "hugo --source=exampleSite --theme=../.. --baseURL=https://dev--minimo.netlify.com"
+HUGO_THEMESDIR = "../.."
+HUGO_VERSION = "0.45"

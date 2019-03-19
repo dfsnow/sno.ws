@@ -1,21 +1,19 @@
 {{ partial "header" . }}
 
-<main id='main' class='main'>
-  {{ if .Content }}
-  <article class='entry'>
-    {{ partial "entry/content" . }}
-  </article>
-  {{ end }}
+{{ if .Content }}
+<div class='entry'>
+  {{ partial "entry/cover" . }}
+  {{ partial "entry/content" . }}
+</div>
+{{ end }}
 
-  <div class='list-container'>
-    <ul class='list'>
-      {{ range (.Paginate (where .Data.Pages "Section" "==" "post")).Pages }}
-        {{ .Render "li" }}
-      {{ end }}
-    </ul>
-
-    {{ partial "nav/pagination" . }}
+{{- $homepageWidgets := .Site.Params.widgets.homepage -}}
+{{- if $homepageWidgets -}}
+<div class='home-widgets'>
+  <div class='container sep-before'>
+    {{- partial "extras/widget_area" ( dict "Widgets" $homepageWidgets "Scope" . ) -}}
   </div>
-</main>
+</div>
+{{- end -}}
 
 {{ partial "footer" . }}

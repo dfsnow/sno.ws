@@ -1,10 +1,10 @@
 <link rel='icon' href='{{ ( or .Site.Params.assets.favicon "favicon.ico" ) | relURL }}'>
 <link rel='stylesheet' href='{{ print "/assets/css/" .Site.Data.assets.main.css | relURL  }}'>
-<link rel='stylesheet' href='{{"/assets/css/dracula.css" | relURL}}'>
-
 
 {{- range .Site.Params.assets.customCSS -}}
   <link rel='stylesheet' href='{{ . | relURL }}'>
 {{- end -}}
+
+{{- partial "head/css" . -}}
 
 {{- partial "head/analytics" . -}}
