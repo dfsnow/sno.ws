@@ -11,8 +11,9 @@ tags: ["text", "trump", "R"]
 
 <p>This R markdown document generates a density plot of Donald Trump’s tweets over time. It uses data collected from the Trump Twitter Archive GitHub. The code automatically adapts the plot to the number of years specified, back until 2011, which is when Trump started tweeting.</p>
 <p>This chunk loads the necessary libraries. We’re going to use ggplot2 for the plotting, KernSmooth and MASS for density calculation, and viridis for color.</p>
-<pre class="r"><code>library(tidyverse)
-library(lubridate)
+<pre class="r"><code>library(tidyverse)</code></pre>
+<pre><code>## Warning: package &#39;stringr&#39; was built under R version 3.5.2</code></pre>
+<pre class="r"><code>library(lubridate)
 library(jsonlite)
 library(scales)
 library(viridis)
