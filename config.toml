@@ -15,7 +15,8 @@ preserveTaxonomyNames = true
 enableRobotsTXT = true # generate robots.txt
 
 # Syntax Highlighting ( https://gohugo.io/content-management/syntax-highlighting/ )
-pygmentsCodefences = false
+pygmentsCodefences = true
+pygmentsStyle = "tango"
 
 # Missing translations will default to this content language
 defaultContentLanguage = "en"
