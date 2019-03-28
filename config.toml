@@ -42,7 +42,7 @@ suffix = ""
 dateFormat = "2006, Jan 02"
 listDateFormat = "2006, Jan 02"
 hideEntryNavigation = true # boolean / array of sections
-recentPostsLength = 4
+recentPostsLength = 5
 hideSocialMenu = false
 showReadingTime = true
 noTermCloudShuffle = true
@@ -92,6 +92,11 @@ url = "https://lab.dfsnow.me:8080"
 name = "Grafana"
 identifier = "grafana"
 url = "https://lab.dfsnow.me:3000"
+
+[[menu.main]]
+name = "Dotfiles"
+identifier = "dotfiles"
+url = "https://github.com/dfsnow/dotfiles"
 
 [blackfriday]
 hrefTargetBlank = true
