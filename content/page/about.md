@@ -6,4 +6,8 @@ weight: -210
 slug: about
 ---
 
-I'm a graduate student, research assistant, and teaching assistant at the University of Chicago Harris School of Public Policy. My research focuses on healthcare and spatial accessibility. I also work as a data analyst and project manager at a nonprofit organization on Chicago's north side. I like R, Python, data visualization, maps and rock climbing. All opinions are my own. 
+I'm a recent graduate of the [University of Chicago Harris School of Public Policy](https://harris.uchicago.edu/) and a former Fellow at the [UChicago Center for Spatial Data Science](https://spatial.uchicago.edu/directories/full/former-team-members). While at Harris, I was the TA or instructor for numerous UChicago classes and workshops related to coding, R, and data science. Prior to Harris, I worked as a data analyst, project manager, and sysadmin in the nonprofit sector.
+
+My past research focused on the supply of physicians and [spatial access to healthcare](https://saxon.harris.uchicago.edu/~jsaxon/raam.pdf), and I spoke at the Spatial Data Science Conference about [methods for quantifying access to primary care](https://carto.com/blog/spatial-data-science-healthcare-access-model/). My current research is focused on hospital pricing, social media community formation, and [classifying hate speech using NLP and machine learning](https://github.com/dfsnow/rbans).
+
+My favorite R packages are ggplot2, lubridate, sf, and tidycensus. I do most of my work in a terminal using tmux and vim (check out my [dotfiles](https://github.com/dfsnow/dotfiles)). I'm also an avid homelabber. Off the web, you can find me biking, building computers, baking, or rock climbing. 
