@@ -73,25 +73,25 @@ platforms = ["email","github","facebook","twitter","instagram","codepen","linked
 [permalinks]
 page = "/:slug/"
 
-[[menu.main]]
-name = "Jupyter"
-identifier = "jupyterhub"
-url = "https://lab.dfsnow.me:8000"
+#[[menu.main]]
+#name = "Jupyter"
+#identifier = "jupyterhub"
+#url = "https://lab.dfsnow.me:8000"
 
-[[menu.main]]
-name = "RStudio"
-identifier = "rstudio"
-url = "https://lab.dfsnow.me"
+#[[menu.main]]
+#name = "RStudio"
+#identifier = "rstudio"
+#url = "https://lab.dfsnow.me"
 
-[[menu.main]]
-name = "Data"
-identifier = "data"
-url = "https://lab.dfsnow.me:8080"
+#[[menu.main]]
+#name = "Data"
+#identifier = "data"
+#url = "https://lab.dfsnow.me:8080"
 
-[[menu.main]]
-name = "Grafana"
-identifier = "grafana"
-url = "https://lab.dfsnow.me:3000"
+#[[menu.main]]
+#name = "Grafana"
+#identifier = "grafana"
+#url = "https://lab.dfsnow.me:3000"
 
 [[menu.main]]
 name = "Dotfiles"
