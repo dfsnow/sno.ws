@@ -34,7 +34,7 @@ gopher = "" # used in 404 template ( Generator: https://gopherize.me )
 [params.copyright]
 prefix = ""
 holder = "Daniel Snow"
-startYear = "2019"
+startYear = "2020"
 suffix = ""
 
 [params.settings]
@@ -62,8 +62,7 @@ footer = ["social_menu"]
 titleSeparator = "|"
 
 [params.social]
-email = "dfsnow@uchicago.edu"
-twitter = "snowdfs"
+email = "snow.dfs@gmail.com"
 github = "dfsnow"
 linkedin = "dfsnow"
 
