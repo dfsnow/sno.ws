@@ -1,4 +1,6 @@
-# Ratings
++++
+title = "Ratings"
++++
 
 ♥ indicates a book I'd wholeheartedly recommend to anyone. For posts, it just means the post is one of my favorites.
 
