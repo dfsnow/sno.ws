@@ -14,21 +14,18 @@ pygmentsUseClasses = true
   [[menu.main]]
     identifier = "writing"
     name = "writing"
-    title = "writing"
     url = "/"
     weight = 10
 
   [[menu.main]]
     identifier = "reading"
     name = "reading"
-    title = "reading"
     url = "/reading/"
     weight = 20
 
   [[menu.main]]
     identifier = "about"
     name = "about"
-    title = "about"
     url = "/about/"
     weight = 40
 
