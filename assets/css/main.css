@@ -200,6 +200,7 @@ main#content pre code {
 
 /* adjustment when very small */
 @media screen and (max-width: 640px) {
+
     main#content .post-list a {
         white-space: normal;
         text-decoration: underline;
@@ -215,12 +216,9 @@ main#content pre code {
         grid-template-columns: 1fr;
     }
 
-    main#content div#writing time {
-        padding-bottom: 20px;
-    }
-
-    main#content .book-rating {
-	text-align: left;
+    main#content .rec {
+        padding-left: 0;
 	padding-bottom: 20px;
+        text-decoration: none!important;
     }
 }
