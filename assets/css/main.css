@@ -1,0 +1,226 @@
+html {
+    font-size: 61.5%;
+}
+
+body {
+    font-size: 16px;
+    font-size: 1.6rem;
+    font-family: 'Helvetica Neue', 'Arial', sans-serif;
+    color: #111;
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0 16px;
+    line-height: 1.6;
+}
+
+/* sidebar styles */
+header#navbar {
+    margin-top: 20px;
+}
+
+header#navbar hr {
+    position: relative;
+    border: none;
+    height: 1px;
+    width: 200vw;
+    color: #000;
+    background-color: #000;
+    margin: 20px -30vw;
+}
+
+header#navbar a:hover {
+    text-decoration: underline;
+}
+
+header#navbar h2 {
+    font-size: 1.8rem;
+    margin: 0 0 0.25em 0;
+}
+
+header#navbar nav ul {
+    list-style: none;
+    font-size: 1.05em;
+    text-transform: capitalize;
+    margin: 0 0 0.75em 0;
+    padding: 0;
+}
+
+header#navbar nav ul li a {
+    color: #111;
+    text-decoration: none;
+}
+
+/* main post styles */
+main#content a {
+    color: #111;
+    text-decoration: none;
+}
+
+main#content a:hover {
+    text-decoration: underline;
+}
+
+main#content h1,
+main#content h2,
+main#content h3,
+main#content h4,
+main#content h5,
+main#content h6 {
+    margin: 16px 0;
+    line-height: 1.15;
+}
+
+main#content h3 {
+    font-size: 1.9rem;
+}
+
+main#content h1 + p,
+main#content h2 + p,
+main#content h3 + p,
+main#content h4 + p,
+main#content h5 + p,
+main#content h6 + p {
+    margin-top: 16px;
+}
+
+main#content p {
+    color: #394548;
+    margin: 16px 0;
+}
+
+main#content hr {
+    height: 1px;
+    border: 0;
+    color-background: #d8d8d8;
+}
+
+/* list styles */
+main#content .post-list {
+    display: grid;
+    grid-column-gap: 5px;
+    grid-row-gap: 5px;
+}
+
+main#content .post-list a {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+main#content .post-list time {
+    white-space: pre
+}
+
+main#content div#writing {
+    grid-template-columns: 1fr min-content 70px;
+}
+
+main#content div#reading {
+    grid-template-columns: 1fr 0.75fr min-content 70px;
+}
+
+main#content .rec {
+    padding-left: 5px;
+}
+
+/* single post header style */
+main#content header#post-header h1 {
+    display: block;
+    margin-bottom: 2px;
+    font-size: 2.9rem;
+    line-height: 1.15;
+}
+
+main#content header#post-header time {
+    display: block;
+    font-size: 0.95em;
+    color: #767676;
+}
+
+/* image and figure stuff */
+main#content img {
+    max-width: 100%;
+}
+
+main#content figure {
+    margin: 16px 0;
+}
+
+main#content figure img {
+    display: block;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+main#content figure figcaption {
+    font-size: 0.92em;
+    font-style: italic;
+    line-height: 22px;
+    text-align: center;
+    margin-top: 6px;
+    padding: 0 10px;
+}
+
+main#content figure figcaption h4 {
+    font-style: normal;
+    display: inline;
+    margin: 0;
+}
+
+main#content figure figcaption p {
+    display: inline;
+    margin: 0;
+    padding-left: 8px;
+}
+
+/* code related stuff */
+main#content code,
+main#content pre {
+    font-family: 'monaco', monospace;
+}
+
+main#content code {
+    font-size: 0.96em;
+    padding: 0 5px;
+}
+
+main#content pre {
+    display: block;
+    overflow-x: auto;
+    font-size: 1.4rem;
+    white-space: pre;
+    margin: 20px 0;
+    padding: 1.5rem 1.5rem;
+    line-height: 1.4;
+}
+
+main#content pre code {
+    padding: 0;
+}
+
+/* adjustment when very small */
+@media screen and (max-width: 640px) {
+    main#content .post-list a {
+        white-space: normal;
+        text-decoration: underline;
+    }
+
+    main#content div#writing {
+        grid-row-gap: 0;
+        grid-template-columns: 1fr;
+    }
+
+    main#content div#reading {
+        grid-row-gap: 0;
+        grid-template-columns: 1fr;
+    }
+
+    main#content div#writing time {
+        padding-bottom: 20px;
+    }
+
+    main#content .book-rating {
+	text-align: left;
+	padding-bottom: 20px;
+    }
+}

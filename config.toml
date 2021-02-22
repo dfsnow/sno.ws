@@ -1,0 +1,41 @@
+baseURL = "https://dfsnow.me"
+title = "Dan Snow"
+languageCode = "en-US"
+enableInlineShortcodes = true
+pygmentsCodeFences = true
+pygmentsUseClasses = true
+
+[params]
+  description = "Dan Snow"
+  highlight = true
+
+[menu]
+  [[menu.main]]
+    identifier = "writing"
+    name = "writing"
+    title = "writing"
+    url = "/"
+    weight = 10
+
+  [[menu.main]]
+    identifier = "reading"
+    name = "reading"
+    title = "reading"
+    url = "/reading/"
+    weight = 20
+
+  [[menu.main]]
+    identifier = "about"
+    name = "about"
+    title = "about"
+    url = "/about/"
+    weight = 40
+
+[permalinks]
+  writing = "/:section/:year/:month/:day/:title/"
+  reading = "/:section/:year/:month/:day/:title/"
+  photos = "/:section/:year/:month/:day/:title/"
+
+[markup.goldmark.renderer]
+  # Allow HTML in Markdown
+  unsafe = true
