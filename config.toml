@@ -1,6 +1,7 @@
 baseURL = "https://dfsnow.me"
 title = "Dan Snow"
 languageCode = "en-US"
+disableKinds = ["taxonomy", "category", "term"]
 enableInlineShortcodes = true
 pygmentsCodeFences = true
 pygmentsUseClasses = true
