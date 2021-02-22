@@ -194,11 +194,11 @@ main#content code {
 main#content pre {
     display: block;
     overflow-x: auto;
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     white-space: pre;
     margin: 20px 0;
-    padding: 1.5rem 1.5rem;
-    line-height: 1.4;
+    padding: 20px 30px;
+    line-height: 1.5;
 }
 
 main#content pre code {
