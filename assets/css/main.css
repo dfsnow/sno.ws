@@ -19,13 +19,12 @@ header#navbar {
 }
 
 header#navbar hr {
-    position: relative;
     border: none;
     height: 1px;
-    width: 200vw;
+    width: 100vw;
     color: #000;
     background-color: #000;
-    margin: 20px -30vw;
+    margin: 20px calc(-0.5 * (100vw - 100%));
 }
 
 header#navbar a:hover {
