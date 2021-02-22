@@ -3,6 +3,7 @@ title = "The Color of Law"
 author = "Richard Rothstein"
 date = "2020-02-07"
 rating = "7"
+recommended = "false"
 +++
 
 The Color of Law argues that the historical housing segregation of Black Americans was de jure, rather than de facto (as most Americans believe). It cites examples of laws, contracts, and policies from across the county which were designed to prevent integration and force Black people into ghettos. It ultimately concludes that because the state bears direct (de jure) responsibility for segregation, it also has a responsibility to correct segregation's ongoing negative effects.

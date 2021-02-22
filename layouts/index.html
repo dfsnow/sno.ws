@@ -7,7 +7,7 @@
                 <div><a href="{{ .Permalink }}">{{ .Title }}</a></div>
             {{ end }}
             <time>{{ .Date.Format "2006-01-02" }}</time>
-            {{ if eq .Params.rec "true"}}
+            {{ if eq .Params.recommended "true"}}
                 <a href="/ratings" class="rec">♥</a>
             {{ else }}
                 <a class="rec"></a>
