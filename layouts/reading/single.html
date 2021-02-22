@@ -6,7 +6,7 @@
             <time>{{ .Date.Format "January 2, 2006" }}</time>
         {{- end -}}
         {{- if isset .Params "rating" -}}
-            <a href="/ratings"><h3>{{ .Params.rating }} / 10</h3></a>
+            <a href="/ratings" id="post-rating"><h3>{{ .Params.rating }} / 10</h3></a>
         {{- end -}}
     </header>
     {{- .Content -}}

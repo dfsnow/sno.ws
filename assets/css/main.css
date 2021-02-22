@@ -52,11 +52,6 @@ header#navbar nav ul li a {
 /* main post styles */
 main#content a {
     color: #111;
-    text-decoration: none;
-}
-
-main#content a:hover {
-    text-decoration: underline;
 }
 
 main#content h1,
@@ -101,9 +96,14 @@ main#content .post-list {
 }
 
 main#content .post-list a {
+    text-decoration: none;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+main#content .post-list a:hover {
+    text-decoration: underline;
 }
 
 main#content .post-list time {
@@ -134,6 +134,14 @@ main#content header#post-header time {
     display: block;
     font-size: 0.95em;
     color: #767676;
+}
+
+main#content header#post-header a#post-rating {
+    text-decoration: none;
+}
+
+main#content header#post-header a#post-rating:hover {
+    text-decoration: underline;
 }
 
 /* image and figure stuff */
