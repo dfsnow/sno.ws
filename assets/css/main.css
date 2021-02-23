@@ -1,9 +1,9 @@
 html {
     font-size: 61.5%;
+    overflow-x: hidden;
 }
 
 body {
-    font-size: 16px;
     font-size: 1.6rem;
     font-family: 'Helvetica Neue', 'Arial', sans-serif;
     color: #111;
@@ -13,40 +13,40 @@ body {
     line-height: 1.6;
 }
 
-/* sidebar styles */
 header#navbar {
-    margin-top: 20px;
+    position: sticky;
+    top: 0;
+    padding-top: 20px;
+    background-color: #fff;
 }
 
-header#navbar hr {
-    border: none;
-    height: 1px;
-    width: 100vw;
-    color: #000;
-    background-color: #000;
-    margin: 20px calc(-0.5 * (100vw - 100%));
+header#navbar div#navbar-content {
+    display: grid;
+    grid-column-gap: 5px;
+    grid-row-gap: 5px;
+    grid-template-columns: 0.3fr 1fr min-content 70px;
+}
+
+header#navbar nav ul {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    font-size: 1.05em;
+    text-transform: capitalize;
+    margin: 0;
+    padding: 0;
+}
+
+header#navbar div#links {
+    display: flex;
+}
+
+header#navbar div#links a {
+    padding: 0 0 0 5px;
 }
 
 header#navbar a:hover {
     text-decoration: underline;
-}
-
-header#navbar h2 {
-    font-size: 1.8rem;
-    margin: 0 0 0.25em 0;
-}
-
-header#navbar nav ul {
-    list-style: none;
-    font-size: 1.05em;
-    text-transform: capitalize;
-    margin: 0 0 0.75em 0;
-    padding: 0;
-}
-
-header#navbar nav ul li a {
-    color: #111;
-    text-decoration: none;
 }
 
 /* main post styles */
@@ -124,14 +124,12 @@ main#content .rec {
 
 /* single post header style */
 main#content header#post-header h1 {
-    display: block;
     margin-bottom: 2px;
     font-size: 2.9rem;
     line-height: 1.15;
 }
 
 main#content header#post-header time {
-    display: block;
     font-size: 0.95em;
     color: #767676;
 }
@@ -207,6 +205,24 @@ main#content pre code {
 
 /* adjustment when very small */
 @media screen and (max-width: 640px) {
+
+    header#navbar div#navbar-content {
+	display: block;
+    }
+
+    header#navbar nav ul {
+	display: block;
+	margin: 0.25em 0 0.75em 0;
+        text-decoration: underline;
+    }
+
+    header#navbar div#links {
+        display: block;
+    }
+
+    header#navbar div#links a {
+	padding: 0;
+    }
 
     main#content .post-list a {
         white-space: normal;
