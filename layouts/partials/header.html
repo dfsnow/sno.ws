@@ -5,7 +5,7 @@
             <ul>
                 {{ range .Site.Menus.main.ByWeight -}}
                 <li>
-                    {{ .Pre }}<a style="color:#111;text-decoration:none" href="{{ .URL }}" title="{{ .Title }}">{{- .Name -}}</a>{{ .Post }}
+                    {{ .Pre }}<a href="{{ .URL }}" title="{{ .Title }}">{{- .Name -}}</a>{{ .Post }}
                 </li>
                 {{- end }}
             </ul>

@@ -20,14 +20,14 @@ header#navbar {
     background-color: #fff;
 }
 
-header#navbar div#navbar-content {
+div#navbar-content {
     display: grid;
     grid-column-gap: 5px;
     grid-row-gap: 5px;
     grid-template-columns: 0.3fr 1fr min-content 70px;
 }
 
-header#navbar nav ul {
+div#navbar-content nav ul {
     display: flex;
     justify-content: space-around;
     list-style: none;
@@ -37,16 +37,22 @@ header#navbar nav ul {
     padding: 0;
 }
 
-header#navbar div#links {
+div#navbar-content nav ul li a {
+    color: #111;
+    text-decoration: none;
+}
+
+div#navbar-content nav ul li a:hover {
+    text-decoration: underline;
+}
+
+div#navbar-content div#links {
     display: flex;
 }
 
-header#navbar div#links a {
-    padding: 0 0 0 5px;
-}
 
-header#navbar a:hover {
-    text-decoration: underline;
+div#navbar-content div#links a {
+    padding: 0 0 0 5px;
 }
 
 /* main post styles */
@@ -205,6 +211,10 @@ main#content pre code {
 
 /* adjustment when very small */
 @media screen and (max-width: 640px) {
+
+    header#navbar {
+        position: static;
+    }
 
     header#navbar div#navbar-content {
 	display: block;
