@@ -5,3 +5,14 @@ command = "hugo"
 [context.production.environment]
 HUGO_VERSION = "0.54.0"
 HUGO_ENV = "production"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Content-Security-Policy = "img-src 'self' dfsnow.me www.dfsnow.me sno.ws www.sno.ws cloudfront.net; style-src-attr 'unsafe-inline'; style-src-elem 'self' 'unsafe-inline' dfsnow.me www.dfsnow.me sno.ws www.sno.ws"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Strict-Transport-Security = "max-age=2592000"
+    Permissions-Policy = "geolocation=(), midi=(), sync-xhr=(), microphone=(), camera=(), magnetometer=(), gyroscope=(), fullscreen=(), payment=()"

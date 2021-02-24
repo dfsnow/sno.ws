@@ -1,4 +1,4 @@
-baseURL = "https://dfsnow.me"
+baseURL = "https://sno.ws"
 title = "Dan Snow"
 languageCode = "en-US"
 disableKinds = ["taxonomy", "category", "term"]
@@ -9,6 +9,7 @@ pygmentsUseClasses = true
 [params]
   description = "Dan Snow"
   highlight = true
+  photos_uri = "https://photos.sno.ws"
 
 [menu]
   [[menu.main]]
@@ -22,6 +23,12 @@ pygmentsUseClasses = true
     name = "reading"
     url = "/reading/"
     weight = 20
+
+  [[menu.main]]
+    identifier = "photos"
+    name = "photos"
+    url = "/photos/"
+    weight = 30
 
   [[menu.main]]
     identifier = "about"

@@ -1,0 +1,43 @@
+{{ define "main" }}
+    <div id="photos" class="post-list">
+        {{ range where .Pages "Section" "photos" }}
+	<a href="{{ .Permalink }}">
+       	    <picture>
+		<source
+		    srcset='
+		        {{ .Site.Params.photos_uri }}/{{ .Date.Format "2006-01-02" }}-{{ lower .Title }}-640.webp 640w,
+		        {{ .Site.Params.photos_uri }}/{{ .Date.Format "2006-01-02" }}-{{ lower .Title }}-1280.webp 1280w'
+		    alt="{{ .Title }}"
+		    type="image/webp"
+		>
+		<source
+		    srcset='
+		        {{ .Site.Params.photos_uri }}/{{ .Date.Format "2006-01-02" }}-{{ lower .Title }}-640.jpg 640w,
+		        {{ .Site.Params.photos_uri }}/{{ .Date.Format "2006-01-02" }}-{{ lower .Title }}-1280.jpg 1280w'
+		    alt="{{ .Title }}"
+		    type="image/jpg"
+		>
+		<img
+		    src='{{ .Site.Params.photos_uri }}/{{ .Date.Format "2006-01-02" }}-{{ lower .Title }}-640.jpg'
+		    alt="{{ .Title }}"
+		>
+	    </picture>
+	</a>
+        {{ end }}
+    </div>
+    <style>
+	main#content {
+	    max-width: 100%;
+	}
+
+	main#content .post-list {
+	    grid-column-gap: 10px;
+	    grid-row-gap: 10px;
+	}
+
+	div#photos {
+	    display: grid;
+	    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	}
+    </style>
+{{ end }}

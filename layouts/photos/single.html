@@ -1,0 +1,21 @@
+{{ define "main" }}
+<article>
+    {{- .Content -}}
+    <header id="post-header" style="max-width:640px;margin:auto;">
+        <h1>{{ .Title }}</h1>
+        {{- if isset .Params "date" -}}
+            <time>{{ .Date.Format "January 2, 2006" }}</time>
+        {{- end -}}
+    </header>
+</article>
+<style>
+    main#content {
+        max-width: 100%;
+    }
+    main#content article img {
+        max-height: calc(100vh - 160px);
+        display: block;
+        margin: auto;
+    }
+</style>
+{{ end }}

@@ -7,7 +7,6 @@ body {
     font-size: 1.6rem;
     font-family: 'Helvetica Neue', 'Arial', sans-serif;
     color: #111;
-    max-width: 640px;
     margin: 0 auto;
     padding: 0 16px;
     line-height: 1.6;
@@ -18,6 +17,7 @@ header#navbar {
     top: 0;
     padding-top: 20px;
     background-color: #fff;
+    z-index: 998;
 }
 
 div#navbar-content {
@@ -25,6 +25,9 @@ div#navbar-content {
     grid-column-gap: 5px;
     grid-row-gap: 5px;
     grid-template-columns: 0.3fr 1fr min-content 70px;
+    max-width: 640px;
+    margin: auto;
+    z-index: 999;
 }
 
 div#navbar-content nav ul {
@@ -56,6 +59,13 @@ div#navbar-content div#links a {
 }
 
 /* main post styles */
+main#content {
+    position: relative;
+    max-width: 640px;
+    margin: auto;
+    padding-bottom: 20px;
+}
+
 main#content a {
     color: #111;
 }

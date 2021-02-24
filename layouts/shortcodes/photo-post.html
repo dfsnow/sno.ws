@@ -1,0 +1,20 @@
+<picture>
+    <source
+        srcset='
+            {{ .Site.Params.photos_uri }}/{{ .Page.Date.Format "2006-01-02" }}-{{ lower .Page.Title }}-640.webp 640w,
+            {{ .Site.Params.photos_uri }}/{{ .Page.Date.Format "2006-01-02" }}-{{ lower .Page.Title }}-1280.webp 1280w'
+        alt="{{ .Page.Title }}"
+        type="image/webp"
+    >
+    <source
+        srcset='
+            {{ .Site.Params.photos_uri }}/{{ .Page.Date.Format "2006-01-02" }}-{{ lower .Page.Title }}-640.jpg 640w,
+            {{ .Site.Params.photos_uri }}/{{ .Page.Date.Format "2006-01-02" }}-{{ lower .Page.Title }}-1280.jpg 1280w'
+        alt="{{ .Page.Title }}"
+        type="image/jpg"
+    >
+    <img
+        src='{{ .Site.Params.photos_uri }}/{{ .Page.Date.Format "2006-01-02" }}-{{ lower .Page.Title }}-640.jpg'
+        alt="{{ .Page.Title }}"
+    >
+</picture>
