@@ -37,7 +37,7 @@ exports.handler = async (event, context, callback) => {
     }
 
     // Resize image and upload each version
-    for (let res of [128, 640, 1280]) {
+    for (let res of [640, 1280]) {
         const filenameOrgExt = `${dstKey}-${res}${srcKeyExt}`;
         const filenameWebpExt = `${dstKey}-${res}.webp`;
         console.log(`Now generating ${res}`)
