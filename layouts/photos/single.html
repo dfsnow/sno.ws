@@ -1,19 +1,32 @@
 {{ define "main" }}
 <article>
-    {{- .Content -}}
+    {{ $srcBase := .Site.Params.photos_uri }}
+    {{ $srcFile := index (findRE "^([^.]+)" .Params.src 1) 0 }}
+    {{ $srcExt := index (findRE "\\.[^.]*$|$" .Params.src 1) 0 }}
+    {{ $srcType := replaceRE ".jpg" "jpeg" $srcExt }}
+    <a href="{{ $srcBase }}/original/{{ $srcFile }}{{ $srcExt }}">
+        <picture>
+            <source srcset="{{ $srcBase }}/{{ $srcFile }}-640.webp 640w, {{ $srcBase }}/{{ $srcFile }}-1280.webp 1280w" alt="{{ .Title }}" type="image/webp">
+            <source srcset="{{ $srcBase }}/{{ $srcFile }}-640{{ $srcExt }} 640w, {{ $srcBase }}/{{ $srcFile }}-1280{{ $srcExt }} 1280w" alt="{{ .Title }}" type="image/{{ $srcType }}">
+            <img src="{{ $srcBase }}/{{ $srcFile }}-640{{ $srcExt }}" alt="{{ .Title }}">
+        </picture>
+    </a>
     <header id="post-header" style="max-width:640px;margin:auto;">
         <h1>{{ .Title }}</h1>
         {{- if isset .Params "date" -}}
             <time>{{ .Date.Format "January 2, 2006" }}</time>
         {{- end -}}
     </header>
+    <div style="max-width:640px;margin:auto;">
+        {{- .Content -}}
+    </div>
 </article>
 <style>
     main#content {
         max-width: 100%;
     }
     main#content article img {
-        max-height: calc(100vh - 160px);
+        max-height: calc(100vh - 180px);
         display: block;
         margin: auto;
     }
