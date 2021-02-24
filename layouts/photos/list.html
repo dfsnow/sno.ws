@@ -5,14 +5,14 @@
 	{{ $srcFile := index (findRE "^([^.]+)" .Params.src 1) 0 }}
 	{{ $srcExt := index (findRE "\\.[^.]*$|$" .Params.src 1) 0 }}
 	{{ $srcType := replaceRE ".jpg" "jpeg" $srcExt }}
-	<div id="photo-frame">
-	<a href="{{ .Permalink }}">
-	    <picture style="max-width:100%;height:auto;">
-		<source srcset="{{ $srcBase }}/{{ $srcFile }}-640.webp 640w" alt="{{ .Title }}" type="image/webp">
-		<source srcset="{{ $srcBase }}/{{ $srcFile }}-640{{ $srcExt }} 640w" alt="{{ .Title }}" type="image/{{ $srcType }}">
-		<img src="{{ $srcBase }}/{{ $srcFile }}-640{{ $srcType }}" alt="{{ .Title }}">
-	    </picture>
-	</a>
+	<div class="photo-frame">
+	    <a href="{{ .Permalink }}">
+		<picture style="max-width:100%;height:auto;">
+		    <source srcset="{{ $srcBase }}/{{ $srcFile }}-640.webp 640w" alt="{{ .Title }}" type="image/webp">
+		    <source srcset="{{ $srcBase }}/{{ $srcFile }}-640{{ $srcExt }} 640w" alt="{{ .Title }}" type="image/{{ $srcType }}">
+		    <img src="{{ $srcBase }}/{{ $srcFile }}-640{{ $srcType }}" alt="{{ .Title }}">
+		</picture>
+	    </a>
 	</div>
     {{ end }}
 </div>
@@ -31,7 +31,7 @@
 	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     }
 
-    div#photo-frame {
+    div .photo-frame {
 	display: flex;
 	align-items:center;
 	object-fit: scale-down;
