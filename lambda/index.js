@@ -43,8 +43,8 @@ exports.handler = async (event, context, callback) => {
         console.log(`Now generating ${res}`)
 
         try {
-            var bufferOrg = await sharp(origimage.Body).resize(res).toBuffer();
-            var bufferWebp = await sharp(origimage.Body).resize(res).webp().toBuffer();
+            var bufferOrg = await sharp(origimage.Body).rotate().resize(res).toBuffer();
+            var bufferWebp = await sharp(origimage.Body).rotate().resize(res).webp().toBuffer();
 
         } catch (error) {
             console.log(error);
