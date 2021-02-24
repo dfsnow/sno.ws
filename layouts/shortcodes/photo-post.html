@@ -1,20 +1,16 @@
-<picture>
-    <source
-        srcset='
-        {{ .Site.Params.photos_uri }}/{{ .Page.Date.Format "2006-01-02" }}-{{ replace ( lower .Page.Title ) " " "-"}}-640.webp 640w,
-            {{ .Site.Params.photos_uri }}/{{ .Page.Date.Format "2006-01-02" }}-{{ replace ( lower .Page.Title ) " " "-" }}-1280.webp 1280w'
-        alt="{{ .Page.Title }}"
-        type="image/webp"
-    >
-    <source
-        srcset='
-            {{ .Site.Params.photos_uri }}/{{ .Page.Date.Format "2006-01-02" }}-{{ replace ( lower .Page.Title ) " " "-" }}-640.jpg 640w,
-            {{ .Site.Params.photos_uri }}/{{ .Page.Date.Format "2006-01-02" }}-{{ replace ( lower .Page.Title ) " " "-" }}-1280.jpg 1280w'
-        alt="{{ .Page.Title }}"
-        type="image/jpg"
-    >
-    <img
-        src='{{ .Site.Params.photos_uri }}/{{ .Page.Date.Format "2006-01-02" }}-{{ replace ( lower .Page.Title ) " " "-" }}-640.jpg'
-        alt="{{ .Page.Title }}"
-    >
-</picture>
+{{ $srcBase := .Site.Params.photos_uri }}
+{{ $srcFile := index (findRE "^([^.]+)" .Page.Params.src 1) 0 }}
+{{ $srcExt := index (findRE "\\.[^.]*$|$" .Page.Params.src 1) 0 }}
+{{ $srcType := replaceRE ".jpg" "jpeg" $srcExt }}
+
+<a href="{{ $srcBase }}/original/{{ $srcFile }}{{ $srcExt }}">
+    <picture>
+        <source srcset="{{ $srcBase }}/{{ $srcFile }}-640.webp 640w, {{ $srcBase }}/{{ $srcFile }}-1280.webp 1280w"
+            alt="{{ .Page.Title }}"
+            type="image/webp">
+        <source srcset="{{ $srcBase }}/{{ $srcFile }}-640{{ $srcExt }} 640w, {{ $srcBase }}/{{ $srcFile }}-1280{{ $srcExt }}1280w"
+            alt="{{ .Page.Title }}"
+            type="image/{{ $srcType }}">
+        <img src="{{ $srcBase }}/{{ $srcFile }}-1280{{ $srcExt }}" alt="{{ .Page.Title }}">
+    </picture>
+</a>

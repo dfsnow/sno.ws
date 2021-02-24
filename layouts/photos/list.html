@@ -1,41 +1,40 @@
 {{ define "main" }}
-    <div id="photos" class="post-list">
-        {{ range where .Pages "Section" "photos" }}
-	<div style="display:flex;align-items:center;object-fit:scale-down;">
+<div id="photos" class="post-list">
+    {{ range where .Pages "Section" "photos" }}
+	{{ $srcBase := .Site.Params.photos_uri }}
+	{{ $srcFile := index (findRE "^([^.]+)" .Params.src 1) 0 }}
+	{{ $srcExt := index (findRE "\\.[^.]*$|$" .Params.src 1) 0 }}
+	{{ $srcType := replaceRE ".jpg" "jpeg" $srcExt }}
+	<div id="photo-frame">
 	<a href="{{ .Permalink }}">
-       	    <picture style="max-width:100%;height:auto;">
-		<source
-		    srcset='{{ .Site.Params.photos_uri }}/{{ .Date.Format "2006-01-02" }}-{{ replace ( lower .Title ) " " "-"}}-640.webp 640w'
-		    alt="{{ .Title }}"
-		    type="image/webp"
-		>
-		<source
-		    srcset='{{ .Site.Params.photos_uri }}/{{ .Date.Format "2006-01-02" }}-{{ replace ( lower .Title ) " " "-" }}-640.jpg 640w'
-		    alt="{{ .Title }}"
-		    type="image/jpg"
-		>
-		<img
-		    src='{{ .Site.Params.photos_uri }}/{{ .Date.Format "2006-01-02" }}-{{ replace ( lower .Title ) " " "-" }}-640.jpg'
-		    alt="{{ .Title }}"
-		>
+	    <picture style="max-width:100%;height:auto;">
+		<source srcset="{{ $srcBase }}/{{ $srcFile }}-640.webp 640w" alt="{{ .Title }}" type="image/webp">
+		<source srcset="{{ $srcBase }}/{{ $srcFile }}-640{{ $srcExt }} 640w" alt="{{ .Title }}" type="image/{{ $srcType }}">
+		<img src="{{ $srcBase }}/{{ $srcFile }}-640{{ $srcType }}" alt="{{ .Title }}">
 	    </picture>
 	</a>
 	</div>
-        {{ end }}
-    </div>
-    <style>
-	main#content {
-	    max-width: 100%;
-	}
+    {{ end }}
+</div>
+<style>
+    main#content {
+	max-width: 100%;
+    }
 
-	main#content .post-list {
-	    grid-column-gap: 10px;
-	    grid-row-gap: 10px;
-	}
+    main#content .post-list {
+	grid-column-gap: 10px;
+	grid-row-gap: 10px;
+    }
 
-	div#photos {
-	    display: grid;
-	    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-	}
-    </style>
+    div#photos {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+
+    div#photo-frame {
+	display: flex;
+	align-items:center;
+	object-fit: scale-down;
+    }
+</style>
 {{ end }}

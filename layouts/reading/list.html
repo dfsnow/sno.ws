@@ -1,14 +1,14 @@
 {{ define "main" }}
-    <div id="reading" class="post-list">
-        {{ range where .Pages "Section" "reading" }}
-            <a href="{{ .Permalink }}">{{ .Title }}</a>
-            <div>{{ .Params.author }}</div>
-            <time>{{ .Date.Format "2006-01-02" }}</time>
-            {{ if eq .Params.recommended "true" }}
-                <a href="/ratings" class="rec">♥</a>
-            {{ else }}
-                <a class="rec"></a>
-            {{ end }}
+<div id="reading" class="post-list">
+    {{ range where .Pages "Section" "reading" }}
+        <a href="{{ .Permalink }}">{{ .Title }}</a>
+        <div>{{ .Params.author }}</div>
+        <time>{{ .Date.Format "2006-01-02" }}</time>
+        {{ if eq .Params.recommended "true" }}
+            <a href="/ratings" class="rec">♥</a>
+        {{ else }}
+            <a href="/ratings" class="rec"></a>
         {{ end }}
-    </div>
+    {{ end }}
+</div>
 {{ end }}
