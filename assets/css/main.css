@@ -161,6 +161,7 @@ main#content header#post-header a#post-rating:hover {
 /* image and figure stuff */
 main#content img {
     max-width: 100%;
+    height: auto;
 }
 
 main#content figure {

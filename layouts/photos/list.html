@@ -1,19 +1,16 @@
 {{ define "main" }}
     <div id="photos" class="post-list">
         {{ range where .Pages "Section" "photos" }}
+	<div style="display:flex;align-items:center;object-fit:scale-down;">
 	<a href="{{ .Permalink }}">
-       	    <picture>
+       	    <picture style="max-width:100%;height:auto;">
 		<source
-		    srcset='
-		    {{ .Site.Params.photos_uri }}/{{ .Date.Format "2006-01-02" }}-{{ replace ( lower .Title ) " " "-"}}-640.webp 640w,
-		        {{ .Site.Params.photos_uri }}/{{ .Date.Format "2006-01-02" }}-{{ replace ( lower .Title ) " " "-" }}-1280.webp 1280w'
+		    srcset='{{ .Site.Params.photos_uri }}/{{ .Date.Format "2006-01-02" }}-{{ replace ( lower .Title ) " " "-"}}-640.webp 640w'
 		    alt="{{ .Title }}"
 		    type="image/webp"
 		>
 		<source
-		    srcset='
-		        {{ .Site.Params.photos_uri }}/{{ .Date.Format "2006-01-02" }}-{{ replace ( lower .Title ) " " "-" }}-640.jpg 640w,
-		        {{ .Site.Params.photos_uri }}/{{ .Date.Format "2006-01-02" }}-{{ replace ( lower .Title ) " " "-" }}-1280.jpg 1280w'
+		    srcset='{{ .Site.Params.photos_uri }}/{{ .Date.Format "2006-01-02" }}-{{ replace ( lower .Title ) " " "-" }}-640.jpg 640w'
 		    alt="{{ .Title }}"
 		    type="image/jpg"
 		>
@@ -23,6 +20,7 @@
 		>
 	    </picture>
 	</a>
+	</div>
         {{ end }}
     </div>
     <style>
