@@ -10,7 +10,7 @@
 		<picture style="max-width:100%;height:auto;">
 		    <source srcset="{{ $srcBase }}/{{ $srcFile }}-640.webp 640w" alt="{{ .Title }}" type="image/webp">
 		    <source srcset="{{ $srcBase }}/{{ $srcFile }}-640{{ $srcExt }} 640w" alt="{{ .Title }}" type="image/{{ $srcType }}">
-		    <img src="{{ $srcBase }}/{{ $srcFile }}-640{{ $srcExt }}" alt="{{ .Title }}" width="100%" height="auto">
+		    <img src="{{ $srcBase }}/{{ $srcFile }}-640{{ $srcExt }}" alt="{{ .Title }}">
 		</picture>
 	    </a>
 	</div>
