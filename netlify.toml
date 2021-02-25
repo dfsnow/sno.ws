@@ -28,26 +28,32 @@ HUGO_ENV = "production"
     Strict-Transport-Security = "max-age=2592000"
     Permissions-Policy = "geolocation=(), midi=(), sync-xhr=(), microphone=(), camera=(), magnetometer=(), gyroscope=(), fullscreen=(), payment=()"
 
+[[headers]]
   for = "/*.css"
   [headers.values]
     cache-control = "public, max-age=31536000, immutable"
 
+[[headers]]
   for = "/*.jpg"
   [headers.values]
     cache-control = "public, max-age=31536000, immutable"
 
+[[headers]]
   for = "/*.webp"
   [headers.values]
     cache-control = "public, max-age=31536000, immutable"
 
+[[headers]]
   for = "/*.png"
   [headers.values]
     cache-control = "public, max-age=31536000, immutable"
 
+[[headers]]
   for = "/*.gif"
   [headers.values]
     cache-control = "public, max-age=31536000, immutable"
 
+[[headers]]
   for = "/*.ico"
   [headers.values]
     cache-control = "public, max-age=31536000, immutable"
