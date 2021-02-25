@@ -16,3 +16,38 @@ HUGO_ENV = "production"
     Referrer-Policy = "strict-origin-when-cross-origin"
     Strict-Transport-Security = "max-age=2592000"
     Permissions-Policy = "geolocation=(), midi=(), sync-xhr=(), microphone=(), camera=(), magnetometer=(), gyroscope=(), fullscreen=(), payment=()"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Content-Security-Policy = "img-src 'self' dfsnow.me www.dfsnow.me sno.ws www.sno.ws photos.sno.ws content.sno.ws; style-src-attr 'unsafe-inline'; style-src-elem 'self' 'unsafe-inline' dfsnow.me www.dfsnow.me sno.ws www.sno.ws"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Strict-Transport-Security = "max-age=2592000"
+    Permissions-Policy = "geolocation=(), midi=(), sync-xhr=(), microphone=(), camera=(), magnetometer=(), gyroscope=(), fullscreen=(), payment=()"
+
+  for = "/*.css"
+  [headers.values]
+    cache-control = "public, max-age=31536000, immutable"
+
+  for = "/*.jpg"
+  [headers.values]
+    cache-control = "public, max-age=31536000, immutable"
+
+  for = "/*.webp"
+  [headers.values]
+    cache-control = "public, max-age=31536000, immutable"
+
+  for = "/*.png"
+  [headers.values]
+    cache-control = "public, max-age=31536000, immutable"
+
+  for = "/*.gif"
+  [headers.values]
+    cache-control = "public, max-age=31536000, immutable"
+
+  for = "/*.ico"
+  [headers.values]
+    cache-control = "public, max-age=31536000, immutable"
