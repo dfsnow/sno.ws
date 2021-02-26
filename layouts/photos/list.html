@@ -38,10 +38,15 @@
 
     div#photos .photo-frame {
 	display: flex;
-	flex-grow: calc(640 * 250/1060);
-	max-width: 640px;
+	flex-grow: 2;
 	align-items: center;
 	margin: 0;
+    }
+
+    @media screen and (min-width: 1124px) {
+	div#photos .photo-frame:last-of-type {
+	    max-width: 800px;
+	}
     }
 </style>
 {{ end }}

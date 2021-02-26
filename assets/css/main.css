@@ -20,10 +20,17 @@ header#navbar {
     z-index: 998;
 }
 
+header#navbar hr {
+    border: none;
+    height: 1px;
+    color: #000;
+    background-color: #000;
+    margin: 18px calc(-0.5 * (100vw -100%));
+}
+
 div#navbar-content {
     display: grid;
     grid-column-gap: 5px;
-    grid-row-gap: 5px;
     grid-template-columns: 0.3fr 1fr min-content 70px;
     max-width: 640px;
     margin: auto;
@@ -53,14 +60,13 @@ div#navbar-content div#links {
     display: flex;
 }
 
-
 div#navbar-content div#links a {
     padding: 0 0 0 5px;
 }
 
+
 /* main post styles */
 main#content {
-    position: relative;
     max-width: 640px;
     margin: auto;
     padding-bottom: 20px;
@@ -107,8 +113,7 @@ main#content hr {
 /* list styles */
 main#content .post-list {
     display: grid;
-    grid-column-gap: 5px;
-    grid-row-gap: 5px;
+    grid-gap: 5px;
 }
 
 main#content .post-list a {
