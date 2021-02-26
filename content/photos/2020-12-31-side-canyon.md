@@ -3,6 +3,8 @@ title = "Side Canyon"
 date = "2020-12-31"
 recommended = "false"
 src = "2020-12-31-side-canyon.jpg"
+width = "4032"
+height = "3024"
 +++
 
 This is in Orderville Canyon, a side canyon branching off [the Narrows](https://www.nps.gov/zion/planyourvisit/thenarrows.htm) in Zion National Park.

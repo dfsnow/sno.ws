@@ -1,16 +1,24 @@
 {{ define "main" }}
 <div id="photos" class="post-list">
     {{ range where .Pages "Section" "photos" }}
-	{{ $srcBase := .Site.Params.photos_uri }}
-	{{ $srcFile := index (findRE "^([^.]+)" .Params.src 1) 0 }}
+
+	<!-- Get image base path and type -->
+	{{ $srcBase := .Site.Params.photosURL }}
+	{{ $srcFileFull := print $srcBase "/" (index (findRE "^([^.]+)" .Params.src 1) 0) }}
 	{{ $srcExt := index (findRE "\\.[^.]*$|$" .Params.src 1) 0 }}
 	{{ $srcType := replaceRE ".jpg" "jpeg" $srcExt }}
-	<figure class="photo-frame">
+
+	<!-- Get explicit width and height to include in img tag -->
+	{{ $srcWidth := .Params.width }}
+	{{ $srcHeight := .Params.height }}
+	{{ $srcCalcWidth := print "calc(" $srcWidth "px * 400/" $srcHeight ")" | safeCSS }}
+
+	<figure class="photo-frame" style="width:{{ $srcCalcWidth }};">
 	    <a href="{{ .Permalink }}">
-		<picture style="max-width:100%;height:auto;">
-		    <source srcset="{{ $srcBase }}/{{ $srcFile }}-640.webp 640w" alt="{{ .Title }}" type="image/webp">
-		    <source srcset="{{ $srcBase }}/{{ $srcFile }}-640{{ $srcExt }} 640w" alt="{{ .Title }}" type="image/{{ $srcType }}">
-		    <img src="{{ $srcBase }}/{{ $srcFile }}-640{{ $srcExt }}" alt="{{ .Title }}">
+		<picture>
+		    <source srcset="{{ $srcFileFull }}-640.webp 640w" alt="{{ .Title }}" type="image/webp">
+		    <source srcset="{{ $srcFileFull }}-640{{ $srcExt }} 640w" alt="{{ .Title }}" type="image/{{ $srcType }}">
+		    <img src="{{ $srcFileFull }}-640{{ $srcExt }}" alt="{{ .Title }}" width="{{ $srcWidth }}" height="{{ $srcHeight }}">
 		</picture>
 	    </a>
 	</figure>
@@ -21,20 +29,18 @@
 	max-width: 100%;
     }
 
-    main#content .post-list {
+    main#content div#photos {
+	display: flex;
+	flex-wrap: wrap;
 	grid-column-gap: 10px;
 	grid-row-gap: 10px;
     }
 
-    div#photos {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    }
-
     div#photos .photo-frame {
 	display: flex;
-	align-items:center;
-	object-fit: scale-down;
+	flex-grow: calc(640 * 250/1060);
+	max-width: 640px;
+	align-items: center;
 	margin: 0;
     }
 </style>

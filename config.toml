@@ -9,7 +9,7 @@ pygmentsUseClasses = true
 [params]
   description = "Dan Snow"
   highlight = true
-  photos_uri = "https://photos.sno.ws"
+  photosURL = "https://photos.sno.ws"
 
 [menu]
   [[menu.main]]

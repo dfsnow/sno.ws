@@ -1,15 +1,23 @@
 {{ define "main" }}
 <article>
-    {{ $srcBase := .Site.Params.photos_uri }}
+
+    <!-- Get image base path and type -->
+    {{ $srcBase := .Site.Params.photosURL }}
     {{ $srcFile := index (findRE "^([^.]+)" .Params.src 1) 0 }}
+    {{ $srcFileFull := print $srcBase "/" (index (findRE "^([^.]+)" .Params.src 1) 0) }}
     {{ $srcExt := index (findRE "\\.[^.]*$|$" .Params.src 1) 0 }}
     {{ $srcType := replaceRE ".jpg" "jpeg" $srcExt }}
-    <figure class="photo-frame">
+
+    <!-- Get explicit width and height to include in img tag -->
+    {{ $srcWidth := .Params.width }}
+    {{ $srcHeight := .Params.height }}
+
+    <figure class="photo-frame" style="height:calc(100vh - 180px);">
         <a href="{{ $srcBase }}/original/{{ $srcFile }}{{ $srcExt }}">
             <picture>
-                <source srcset="{{ $srcBase }}/{{ $srcFile }}-640.webp 640w, {{ $srcBase }}/{{ $srcFile }}-1280.webp 1280w" alt="{{ .Title }}" type="image/webp">
-                <source srcset="{{ $srcBase }}/{{ $srcFile }}-640{{ $srcExt }} 640w, {{ $srcBase }}/{{ $srcFile }}-1280{{ $srcExt }} 1280w" alt="{{ .Title }}" type="image/{{ $srcType }}">
-                <img src="{{ $srcBase }}/{{ $srcFile }}-640{{ $srcExt }}" alt="{{ .Title }}">
+                <source srcset="{{ $srcFileFull }}-640.webp 640w, {{ $srcFileFull }}-1280.webp 1280w" alt="{{ .Title }}" type="image/webp">
+                <source srcset="{{ $srcFileFull }}-640{{ $srcExt }} 640w, {{ $srcFileFull }}-1280{{ $srcExt }} 1280w" alt="{{ .Title }}" type="image/{{ $srcType }}">
+                <img src="{{ $srcFileFull }}-640{{ $srcExt }}" alt="{{ .Title }}" width="{{ $srcWidth }}" height="{{ $srcHeight }}">
             </picture>
         </a>
     </figure>
@@ -27,9 +35,10 @@
     main#content {
         max-width: 100%;
     }
+
     main#content article img {
-        max-height: calc(100vh - 180px);
-        display: block;
+        object-fit: contain;
+        max-height: 100%;
         margin: auto;
     }
 </style>
