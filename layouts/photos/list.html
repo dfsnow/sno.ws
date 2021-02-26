@@ -18,7 +18,7 @@
 		<picture>
 		    <source srcset="{{ $srcFileFull }}-640.webp 640w" alt="{{ .Title }}" type="image/webp">
 		    <source srcset="{{ $srcFileFull }}-640{{ $srcExt }} 640w" alt="{{ .Title }}" type="image/{{ $srcType }}">
-		    <img src="{{ $srcFileFull }}-640{{ $srcExt }}" alt="{{ .Title }}" width="{{ $srcWidth }}" height="{{ $srcHeight }}">
+		    <img src="{{ $srcFileFull }}-640{{ $srcExt }}" alt="{{ .Title }}" width="{{ $srcWidth }}" height="{{ $srcHeight }}" loading="lazy">
 		</picture>
 	    </a>
 	</figure>
