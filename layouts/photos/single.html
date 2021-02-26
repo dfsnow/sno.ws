@@ -12,7 +12,7 @@
     {{ $srcWidth := .Params.width }}
     {{ $srcHeight := .Params.height }}
 
-    <figure class="photo-frame" style="height:calc(100vh - 180px);">
+    <figure class="photo-frame">
         <a href="{{ $srcBase }}/original/{{ $srcFile }}{{ $srcExt }}">
             <picture>
                 <source srcset="{{ $srcFileFull }}-640.webp 640w, {{ $srcFileFull }}-1280.webp 1280w" alt="{{ .Title }}" type="image/webp">
@@ -36,10 +36,14 @@
         max-width: 100%;
     }
 
+    main#content .photo-frame {
+        display: flex;
+        max-height: calc(100vh - 180px);
+    }
+
     main#content article img {
         object-fit: contain;
         max-height: 100%;
-        margin: auto;
     }
 </style>
 {{ end }}
