@@ -5,7 +5,7 @@
 	{{ $srcFile := index (findRE "^([^.]+)" .Params.src 1) 0 }}
 	{{ $srcExt := index (findRE "\\.[^.]*$|$" .Params.src 1) 0 }}
 	{{ $srcType := replaceRE ".jpg" "jpeg" $srcExt }}
-	<div class="photo-frame">
+	<figure class="photo-frame">
 	    <a href="{{ .Permalink }}">
 		<picture style="max-width:100%;height:auto;">
 		    <source srcset="{{ $srcBase }}/{{ $srcFile }}-640.webp 640w" alt="{{ .Title }}" type="image/webp">
@@ -13,7 +13,7 @@
 		    <img src="{{ $srcBase }}/{{ $srcFile }}-640{{ $srcExt }}" alt="{{ .Title }}">
 		</picture>
 	    </a>
-	</div>
+	</figure>
     {{ end }}
 </div>
 <style>
@@ -31,7 +31,7 @@
 	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     }
 
-    div .photo-frame {
+    div#photos .photo-frame {
 	display: flex;
 	align-items:center;
 	object-fit: scale-down;

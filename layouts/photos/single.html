@@ -4,13 +4,15 @@
     {{ $srcFile := index (findRE "^([^.]+)" .Params.src 1) 0 }}
     {{ $srcExt := index (findRE "\\.[^.]*$|$" .Params.src 1) 0 }}
     {{ $srcType := replaceRE ".jpg" "jpeg" $srcExt }}
-    <a href="{{ $srcBase }}/original/{{ $srcFile }}{{ $srcExt }}">
-        <picture>
-            <source srcset="{{ $srcBase }}/{{ $srcFile }}-640.webp 640w, {{ $srcBase }}/{{ $srcFile }}-1280.webp 1280w" alt="{{ .Title }}" type="image/webp">
-            <source srcset="{{ $srcBase }}/{{ $srcFile }}-640{{ $srcExt }} 640w, {{ $srcBase }}/{{ $srcFile }}-1280{{ $srcExt }} 1280w" alt="{{ .Title }}" type="image/{{ $srcType }}">
-            <img src="{{ $srcBase }}/{{ $srcFile }}-640{{ $srcExt }}" alt="{{ .Title }}">
-        </picture>
-    </a>
+    <figure class="photo-frame">
+        <a href="{{ $srcBase }}/original/{{ $srcFile }}{{ $srcExt }}">
+            <picture>
+                <source srcset="{{ $srcBase }}/{{ $srcFile }}-640.webp 640w, {{ $srcBase }}/{{ $srcFile }}-1280.webp 1280w" alt="{{ .Title }}" type="image/webp">
+                <source srcset="{{ $srcBase }}/{{ $srcFile }}-640{{ $srcExt }} 640w, {{ $srcBase }}/{{ $srcFile }}-1280{{ $srcExt }} 1280w" alt="{{ .Title }}" type="image/{{ $srcType }}">
+                <img src="{{ $srcBase }}/{{ $srcFile }}-640{{ $srcExt }}" alt="{{ .Title }}">
+            </picture>
+        </a>
+    </figure>
     <header id="post-header" style="max-width:640px;margin:auto;">
         <h1>{{ .Title }}</h1>
         {{- if isset .Params "date" -}}
