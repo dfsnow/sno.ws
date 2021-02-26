@@ -8,7 +8,7 @@
         {{ end }}
         <time>{{ .Date.Format "2006-01-02" }}</time>
         {{ if eq .Params.recommended "true"}}
-            <a href="/ratings" class="rec">♥&#xFE0E;</a>
+            <a href="/ratings" class="rec">♥</a>
         {{ else }}
             <div class="rec"></div>
         {{ end }}
