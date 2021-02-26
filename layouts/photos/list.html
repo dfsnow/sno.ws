@@ -39,13 +39,13 @@
     main#content div#photos {
 	display: flex;
 	flex-wrap: wrap;
-	grid-gap: 10px;
     }
 
     div#photos .photo-frame {
 	display: flex;
 	flex-grow: 2;
 	margin: 0;
+	padding: 5px;
     }
 
     div#photos .photo-frame figcaption {
@@ -61,6 +61,12 @@
     @media screen and (min-width: 1124px) {
 	div#photos .photo-frame:last-of-type {
 	    max-width: 800px;
+	}
+    }
+
+    @media screen and (max-width: 640px) {
+	div#photos .photo-frame {
+	    padding: 5px 0;
 	}
     }
 </style>
