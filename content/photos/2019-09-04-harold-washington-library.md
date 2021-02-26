@@ -11,4 +11,4 @@ I came here a lot when I was job-hunting after grad school. It really forces you
 
 * Extremely cold in the winter due to all the glass
 * Completely devoid of outlets, so you can't dawdle with a laptop forever
-* Usually extremely sparse (as pictured), so you're the center of attention of anyone entering the room
+* Usually extremely sparse (as pictured), so you're the center of attention of anyone who enters the room
