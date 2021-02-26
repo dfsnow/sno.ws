@@ -21,7 +21,7 @@
             </picture>
         </a>
     </figure>
-    <header id="post-header" style="max-width:640px;margin:auto;">
+    <header class="post-header" style="max-width:640px;margin:auto;">
         <h1>{{ .Title }}</h1>
         {{- if isset .Params "date" -}}
             <time>{{ .Date.Format "January 2, 2006" }}</time>

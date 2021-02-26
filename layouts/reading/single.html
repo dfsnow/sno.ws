@@ -1,12 +1,12 @@
 {{ define "main" }}
 <article>
-    <header id="post-header">
+    <header class="post-header">
         <h1>{{ .Title }}</h1>
         {{- if isset .Params "date" -}}
             <time>{{ .Date.Format "January 2, 2006" }}</time>
         {{- end -}}
         {{- if isset .Params "rating" -}}
-            <a href="/ratings" id="post-rating"><h3>{{ .Params.rating }} / 10</h3></a>
+            <a href="/ratings" class="post-rating"><h3>{{ .Params.rating }} / 10</h3></a>
         {{- end -}}
     </header>
     {{- .Content -}}

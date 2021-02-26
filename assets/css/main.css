@@ -20,17 +20,9 @@ header#navbar {
     z-index: 998;
 }
 
-header#navbar hr {
-    border: none;
-    height: 1px;
-    color: #000;
-    background-color: #000;
-    margin: 18px calc(-0.5 * (100vw -100%));
-}
-
 div#navbar-content {
     display: grid;
-    grid-column-gap: 5px;
+    grid-gap: 5px;
     grid-template-columns: 0.3fr 1fr min-content 70px;
     max-width: 640px;
     margin: auto;
@@ -58,12 +50,9 @@ div#navbar-content nav ul li a:hover {
 
 div#navbar-content div#links {
     display: flex;
+    grid-gap: 5px;
+    height: 18px;
 }
-
-div#navbar-content div#links a {
-    padding: 0 0 0 5px;
-}
-
 
 /* main post styles */
 main#content {
@@ -86,10 +75,6 @@ main#content h6 {
     line-height: 1.15;
 }
 
-main#content h3 {
-    font-size: 1.9rem;
-}
-
 main#content h1 + p,
 main#content h2 + p,
 main#content h3 + p,
@@ -100,14 +85,14 @@ main#content h6 + p {
 }
 
 main#content p {
-    color: #394548;
     margin: 16px 0;
 }
 
 main#content hr {
+    border: none;
     height: 1px;
-    border: 0;
-    color-background: #d8d8d8;
+    color-background: #000;
+    color: #000;
 }
 
 /* list styles */
@@ -116,19 +101,25 @@ main#content .post-list {
     grid-gap: 5px;
 }
 
-main#content .post-list a {
+main#content .post-list a,
+main#content .post-header .post-rating {
     text-decoration: none;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
-main#content .post-list a:hover {
+main#content .post-list a:hover,
+main#content .post-header .post-rating:hover {
     text-decoration: underline;
 }
 
 main#content .post-list time {
-    white-space: pre
+    white-space: pre;
+}
+
+main#content .post-list .rec {
+    padding-left: 5px;
 }
 
 main#content div#writing {
@@ -139,28 +130,16 @@ main#content div#reading {
     grid-template-columns: 1fr 0.75fr min-content 70px;
 }
 
-main#content .rec {
-    padding-left: 5px;
-}
-
 /* single post header style */
-main#content header#post-header h1 {
+main#content .post-header h1 {
     margin-bottom: 2px;
     font-size: 2.9rem;
     line-height: 1.15;
 }
 
-main#content header#post-header time {
+main#content .post-header time {
     font-size: 0.95em;
     color: #767676;
-}
-
-main#content header#post-header a#post-rating {
-    text-decoration: none;
-}
-
-main#content header#post-header a#post-rating:hover {
-    text-decoration: underline;
 }
 
 /* image and figure stuff */
@@ -186,18 +165,6 @@ main#content figure figcaption {
     text-align: center;
     margin-top: 6px;
     padding: 0 10px;
-}
-
-main#content figure figcaption h4 {
-    font-style: normal;
-    display: inline;
-    margin: 0;
-}
-
-main#content figure figcaption p {
-    display: inline;
-    margin: 0;
-    padding-left: 8px;
 }
 
 /* code related stuff */
@@ -242,32 +209,20 @@ main#content pre code {
         text-decoration: underline;
     }
 
-    header#navbar div#links {
-        display: block;
-    }
-
-    header#navbar div#links a {
-	padding: 0;
-    }
-
     main#content .post-list a {
         white-space: normal;
         text-decoration: underline;
     }
 
-    main#content div#writing {
-        grid-row-gap: 0;
-        grid-template-columns: 1fr;
-    }
-
-    main#content div#reading {
-        grid-row-gap: 0;
-        grid-template-columns: 1fr;
-    }
-
-    main#content .rec {
+    main#content .post-list .rec {
         padding-left: 0;
 	padding-bottom: 20px;
-        text-decoration: none!important;
+        text-decoration: none;
+    }
+
+    main#content div#writing,
+    main#content div#reading {
+        grid-gap: 0;
+        grid-template-columns: 1fr;
     }
 }
