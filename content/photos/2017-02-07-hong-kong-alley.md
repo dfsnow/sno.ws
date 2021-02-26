@@ -1,7 +1,7 @@
 +++
 title = "Hong Kong Alley"
 date = "2017-02-07"
-recommended = "false"
+recommended = "true"
 src = "2017-02-07-hong-kong-alley.jpg"
 width = "4032"
 height = "3024"

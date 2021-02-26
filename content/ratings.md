@@ -2,7 +2,7 @@
 title = "Ratings"
 +++
 
-♥ indicates a book I'd wholeheartedly recommend to anyone. For posts, it just means the post is one of my favorites.
+♥ indicates a book I'd wholeheartedly recommend to anyone. For posts and photos, it just indicates one of my favorites.
 
 Also, I made a rating scale for books. It's a 10-point ordinal scale, where 10 is the best and 0 is the worst. It's mostly just to help me remember what I've enjoyed and to give me a consistent, clear scale to reference.
 

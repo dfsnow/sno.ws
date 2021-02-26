@@ -21,6 +21,9 @@
 		    <img src="{{ $srcFileFull }}-640{{ $srcExt }}" alt="{{ .Title }}" width="{{ $srcWidth }}" height="{{ $srcHeight }}" loading="lazy">
 		</picture>
 	    </a>
+	    {{ if eq .Params.recommended "true" }}
+		<figcaption><a href="/ratings" class="rec">♥</a></figcaption>
+	    {{ end }}
 	</figure>
     {{ end }}
 </div>
@@ -39,8 +42,18 @@
     div#photos .photo-frame {
 	display: flex;
 	flex-grow: 2;
-	align-items: center;
 	margin: 0;
+    }
+
+    div#photos .photo-frame figcaption {
+	font-size: 3rem;
+	margin-top: 1rem;
+	margin-left: calc(-1 * (3rem + 8px));
+    }
+
+    div#photos .photo-frame figcaption a {
+	color: #fff;
+	padding: 0;
     }
 
     @media screen and (min-width: 1124px) {

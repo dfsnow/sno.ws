@@ -1,7 +1,7 @@
 +++
 title = "From Uptown Lake Path"
 date = "2020-09-07"
-recommended = "false"
+recommended = "true"
 src = "2020-09-07-from-uptown-lake-path.jpg"
 width = "3024"
 height = "4032"
