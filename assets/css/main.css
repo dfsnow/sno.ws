@@ -36,7 +36,7 @@ div#navbar-content nav ul {
     font-size: 1.05em;
     text-transform: capitalize;
     margin: 0;
-    padding: 0;
+    padding: 0 10px 0 0;
 }
 
 div#navbar-content nav ul li a {
