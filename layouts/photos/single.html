@@ -1,19 +1,7 @@
 {{ define "style" }}
-<style>
-    main#content {
-      max-width: 100%;
-    }
-
-    main#content .photo-frame {
-      display: flex;
-      max-height: calc(100vh - 180px);
-    }
-
-    main#content article img {
-      object-fit: contain;
-      max-height: 100%;
-    }
-</style>
+    {{ with resources.Get "css/photos-single.css" | toCSS | minify }}
+	<style>{{ .Content | safeCSS }}</style>
+    {{ end }}
 {{ end }}
 
 {{ define "main" }}
