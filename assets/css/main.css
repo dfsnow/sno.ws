@@ -54,7 +54,7 @@ div#navbar-content div#links {
 }
 
 div#navbar-content div#links a {
-    padding-left: 5px;
+    padding-left: 6px;
 }
 
 /* main post styles */
@@ -213,7 +213,7 @@ main#content pre code {
     }
 
     div#navbar-content div#links a {
-        padding: 0 5px 0 0;
+        padding: 0 6px 0 0;
     }
 
     main#content .post-list a {
