@@ -8,19 +8,19 @@
   Permissions-Policy: geolocation=(), midi=(), sync-xhr=(), microphone=(), camera=(), magnetometer=(), gyroscope=(), fullscreen=(), payment=()
 
 /assets/*
-  cache-control: public, max-age=31536000, immutable
+  Cache-Control: public, max-age=31536000, immutable
 
 /*.ico
-  cache-control: public, max-age=31536000, immutable
+  Cache-Control: public, max-age=31536000, immutable
 /*.jpg
-  cache-control: public, max-age=31536000, immutable
+  Cache-Control: public, max-age=31536000, immutable
 /*.jpeg
-  cache-control: public, max-age=31536000, immutable
+  Cache-Control: public, max-age=31536000, immutable
 /*.webp
-  cache-control: public, max-age=31536000, immutable
+  Cache-Control: public, max-age=31536000, immutable
 /*.png
-  cache-control: public, max-age=31536000, immutable
+  Cache-Control: public, max-age=31536000, immutable
 /*.gif
-  cache-control: public, max-age=31536000, immutable
+  Cache-Control: public, max-age=31536000, immutable
 /*.svg
-  cache-control: public, max-age=31536000, immutable
+  Cache-Control: public, max-age=31536000, immutable
