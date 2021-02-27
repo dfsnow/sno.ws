@@ -1,71 +1,26 @@
 html {
-    font-size: 61.5%;
-    overflow-x: hidden;
+  font-size: 61.5%;
+  overflow-x: hidden;
 }
 
 body {
-    font-size: 1.6rem;
-    font-family: 'Helvetica Neue', 'Arial', sans-serif;
-    color: #111;
-    margin: 0 auto;
-    padding: 0 16px;
-    line-height: 1.6;
-}
-
-header#navbar {
-    position: sticky;
-    top: 0;
-    padding-top: 20px;
-    background-color: #fff;
-    z-index: 998;
-}
-
-div#navbar-content {
-    display: grid;
-    grid-gap: 5px;
-    grid-template-columns: 0.3fr 1fr min-content 70px;
-    max-width: 640px;
-    margin: auto;
-    z-index: 999;
-}
-
-div#navbar-content nav ul {
-    display: flex;
-    justify-content: space-around;
-    list-style: none;
-    font-size: 1.05em;
-    text-transform: capitalize;
-    margin: 0;
-    padding: 0 10px 0 0;
-}
-
-div#navbar-content nav ul li a {
-    color: #111;
-    text-decoration: none;
-}
-
-div#navbar-content nav ul li a:hover {
-    text-decoration: underline;
-}
-
-div#navbar-content div#links {
-    display: flex;
-    height: 18px;
-}
-
-div#navbar-content div#links a {
-    padding-left: 6px;
+  font-size: 1.6rem;
+  font-family: 'Helvetica Neue', 'Arial', sans-serif;
+  color: #111;
+  margin: 0 auto;
+  padding: 0 16px;
+  line-height: 1.6;
 }
 
 /* main post styles */
 main#content {
-    max-width: 640px;
-    margin: auto;
-    padding-bottom: 20px;
+  max-width: 640px;
+  margin: auto;
+  padding-bottom: 20px;
 }
 
 main#content a {
-    color: #111;
+  color: #111;
 }
 
 main#content h1,
@@ -74,8 +29,12 @@ main#content h3,
 main#content h4,
 main#content h5,
 main#content h6 {
-    margin: 16px 0;
-    line-height: 1.15;
+  margin: 16px 0;
+  line-height: 1.15;
+}
+
+main#content p {
+  margin: 16px 0;
 }
 
 main#content h1 + p,
@@ -84,152 +43,191 @@ main#content h3 + p,
 main#content h4 + p,
 main#content h5 + p,
 main#content h6 + p {
-    margin-top: 16px;
-}
-
-main#content p {
-    margin: 16px 0;
+  margin-top: 16px;
 }
 
 main#content hr {
-    border: none;
-    height: 1px;
-    color-background: #000;
-    color: #000;
+  border: none;
+  height: 1px;
+  color: #000;
 }
 
 /* list styles */
 main#content .post-list {
-    display: grid;
-    grid-gap: 5px;
+  display: grid;
+  grid-gap: 5px;
 }
 
 main#content .post-list a,
 main#content .post-header .post-rating {
-    text-decoration: none;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+  text-decoration: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 main#content .post-list a:hover,
 main#content .post-header .post-rating:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 main#content .post-list time {
-    white-space: pre;
+  white-space: pre;
 }
 
 main#content .post-list .rec {
-    padding-left: 5px;
+  padding-left: 5px;
 }
 
 main#content div#writing {
-    grid-template-columns: 1fr min-content 70px;
+  grid-template-columns: 1fr min-content 70px;
 }
 
 main#content div#reading {
-    grid-template-columns: 1fr 0.75fr min-content 70px;
+  grid-template-columns: 1fr 0.75fr min-content 70px;
 }
 
 /* single post header style */
 main#content .post-header h1 {
-    margin-bottom: 2px;
-    font-size: 2.9rem;
-    line-height: 1.15;
+  margin-bottom: 2px;
+  font-size: 2.9rem;
+  line-height: 1.15;
 }
 
 main#content .post-header time {
-    font-size: 0.95em;
-    color: #767676;
+  font-size: 0.95em;
+  color: #767676;
 }
 
 /* image and figure stuff */
 main#content img {
-    max-width: 100%;
-    height: auto;
+  max-width: 100%;
+  height: auto;
 }
 
 main#content figure {
-    margin: 16px 0;
+  margin: 16px 0;
 }
 
 main#content figure img {
-    display: block;
-    max-width: 100%;
-    margin: 0 auto;
+  display: block;
+  max-width: 100%;
+  margin: 0 auto;
 }
 
 main#content figure figcaption {
-    font-size: 0.92em;
-    font-style: italic;
-    line-height: 22px;
-    text-align: center;
-    margin-top: 6px;
-    padding: 0 10px;
+  font-size: 0.92em;
+  font-style: italic;
+  line-height: 22px;
+  text-align: center;
+  margin-top: 6px;
+  padding: 0 10px;
 }
 
 /* code related stuff */
 main#content code,
 main#content pre {
-    font-family: 'monaco', monospace;
+  font-family: 'monaco', monospace;
 }
 
 main#content code {
-    font-size: 0.96em;
-    padding: 0 5px;
+  font-size: 0.96em;
+  padding: 0 5px;
 }
 
 main#content pre {
-    display: block;
-    overflow-x: auto;
-    font-size: 1.5rem;
-    white-space: pre;
-    margin: 20px 0;
-    padding: 20px 30px;
-    line-height: 1.5;
+  display: block;
+  overflow-x: auto;
+  font-size: 1.5rem;
+  white-space: pre;
+  margin: 20px 0;
+  padding: 20px 30px;
+  line-height: 1.5;
 }
 
 main#content pre code {
-    padding: 0;
+  padding: 0;
+}
+
+header#navbar {
+  position: sticky;
+  top: 0;
+  padding-top: 20px;
+  background-color: #fff;
+  z-index: 998;
+}
+
+div#navbar-content {
+  display: grid;
+  grid-gap: 5px;
+  grid-template-columns: 0.3fr 1fr min-content 70px;
+  max-width: 640px;
+  margin: auto;
+  z-index: 999;
+}
+
+div#navbar-content nav ul {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  font-size: 1.05em;
+  text-transform: capitalize;
+  margin: 0;
+  padding: 0 10px 0 0;
+}
+
+div#navbar-content div#ext-links {
+  display: flex;
+  height: 18px;
+}
+
+div#navbar-content div#ext-links a {
+  padding-left: 6px;
+}
+
+div#navbar-content nav#int-links ul li a {
+  color: #111;
+  text-decoration: none;
+}
+
+div#navbar-content nav#int-links ul li a:hover {
+  text-decoration: underline;
 }
 
 /* adjustment when very small */
 @media screen and (max-width: 640px) {
+  main#content .post-list a {
+    white-space: normal;
+    text-decoration: underline;
+  }
 
-    header#navbar {
-        position: static;
-    }
+  main#content .post-list .rec {
+    padding-left: 0;
+    padding-bottom: 20px;
+    text-decoration: none;
+  }
 
-    header#navbar div#navbar-content {
-	display: block;
-    }
+  main#content div#writing,
+  main#content div#reading {
+    grid-gap: 0;
+    grid-template-columns: 1fr;
+  }
 
-    header#navbar nav ul {
-	display: block;
-	margin: 0.25em 0 0.75em 0;
-        text-decoration: underline;
-    }
+  header#navbar {
+    position: static;
+  }
 
-    div#navbar-content div#links a {
-        padding: 0 6px 0 0;
-    }
+  header#navbar div#navbar-content {
+    display: block;
+  }
 
-    main#content .post-list a {
-        white-space: normal;
-        text-decoration: underline;
-    }
+  header#navbar nav#int-links ul {
+    display: block;
+    margin: 0.25em 0 0.75em 0;
+    text-decoration: underline;
+  }
 
-    main#content .post-list .rec {
-        padding-left: 0;
-	padding-bottom: 20px;
-        text-decoration: none;
-    }
-
-    main#content div#writing,
-    main#content div#reading {
-        grid-gap: 0;
-        grid-template-columns: 1fr;
-    }
+  div#navbar-content div#ext-links a {
+    padding: 0 6px 0 0;
+  }
 }
