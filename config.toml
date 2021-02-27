@@ -7,7 +7,7 @@ pygmentsCodeFences = true
 pygmentsUseClasses = true
 
 [params]
-  description = "Dan Snow"
+  description = "The blog, photos, and book reviews of Dan Snow"
   highlight = true
   photosURL = "https://photos.sno.ws"
 
