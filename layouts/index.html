@@ -2,7 +2,7 @@
 <div id="writing" class="post-list">
     {{ range where .Pages "Section" "writing" }}
         {{ if isset .Params "link" }}
-            <div><a href="{{ .Params.link }}" target="_blank">{{ .Title }} ⧉</a></div>
+            <div><a href="{{ .Params.link }}">{{ .Title }} ⧉</a></div>
         {{ else }}
             <div><a href="{{ .Permalink }}">{{ .Title }}</a></div>
         {{ end }}
