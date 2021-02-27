@@ -6,7 +6,7 @@
 
 {{ define "main" }}
 <div id="photos" class="post-list">
-    {{ range where .Pages "Section" "photos" }}
+    {{ range where $.Site.RegularPages "Section" "photos" }}
 
 	<!-- Get image base path and type -->
 	{{ $srcBase := .Site.Params.photosURL }}

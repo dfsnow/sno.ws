@@ -1,6 +1,6 @@
 {{ define "main" }}
 <div id="writing" class="post-list">
-    {{ range where .Pages "Section" "writing" }}
+    {{ range where $.Site.RegularPages "Section" "writing" }}
         {{ if isset .Params "link" }}
             <div><a href="{{ .Params.link }}">{{ .Title }} ⧉</a></div>
         {{ else }}
