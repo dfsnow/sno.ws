@@ -43,4 +43,8 @@ div#photos .photo-frame figcaption svg:hover {
   div#photos .photo-frame {
     padding: 0.5rem 0;
   }
+
+  div#photos .photo-frame:first-of-type {
+    padding-top: 0;
+  }
 }

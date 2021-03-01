@@ -4,7 +4,8 @@ main#content {
 
 main#content .photo-frame {
   display: flex;
-  max-height: calc(100vh - 190px);
+  max-height: calc(100vh - 180px);
+  margin-top: 0;
 }
 
 main#content article img {
