@@ -11,13 +11,13 @@ div#photos .photo-frame {
   display: flex;
   flex-grow: 2;
   margin: 0;
-  padding: 5px;
+  padding: 0.5rem;
 }
 
 div#photos .photo-frame figcaption {
-  font-size: 3rem;
-  margin-top: 1rem;
+  margin-top: 10px;
   margin-left: -44px;
+  padding: 0 10px;
 }
 
 div#photos .photo-frame figcaption a {
@@ -26,6 +26,7 @@ div#photos .photo-frame figcaption a {
 
 div#photos .photo-frame figcaption svg {
   fill: #fff;
+  white-space: normal;
 }
 
 div#photos .photo-frame figcaption svg:hover {
@@ -38,8 +39,8 @@ div#photos .photo-frame figcaption svg:hover {
   }
 }
 
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 50rem) {
   div#photos .photo-frame {
-    padding: 5px 0;
+    padding: 0.5rem 0;
   }
 }
