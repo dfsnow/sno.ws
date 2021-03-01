@@ -24,6 +24,14 @@ div#photos .photo-frame figcaption a {
   padding: 0;
 }
 
+div#photos .photo-frame figcaption svg {
+  fill: #fff;
+}
+
+div#photos .photo-frame figcaption svg:hover {
+  fill: red;
+}
+
 @media screen and (min-width: 1124px) {
   div#photos .photo-frame:last-of-type {
     max-width: 800px;
