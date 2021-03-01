@@ -22,23 +22,23 @@ Also, I made a rating scale for books. It's a 10-point ordinal scale, where 10 i
 <table>
   <tr>
     <td class="rating">10  =</td>
-    <td>Flawless. Masterwork that actually permanently changed my point of view on something. Genre/canon defining or introduces entirely new ideas.</td>
+    <td>Flawless. A masterwork that actually permanently changed my point of view on something. Defines a genre/canon or introduces entirely new ideas.</td>
   </tr>
   <tr>
     <td class="rating">9  =</td>
-    <td>Amazing. A favorite book that defines a genre. Leaves me thinking or emotional for days. The type of book I pulled an all-nighter to read. Highlight of the genre.</td>
+    <td>Amazing. A favorite book that's a highlight of the genre. Left me thinking or emotional for days. The type of book I pulled an all-nighter to read.</td>
   </tr>
   <tr>
     <td class="rating">8  =</td>
-    <td>Great. Extremely fun or moving to read. Made me think. Writing/style/world on point. Couldn't put it down. Memorable.</td>
+    <td>Great. Extremely fun or moving to read. Made me think. Writing/style/world was on point. Couldn't put it down. Memorable.</td>
   </tr>
   <tr>
     <td class="rating">7  =</td>
-    <td>Good. Enjoyed reading it even if imperfect. Time well-spent.</td>
+    <td>Good. Enjoyed reading it even if it didn't stir my emotions or make me think too hard. Time well-spent.</td>
   </tr>
   <tr>
     <td class="rating">6  =</td>
-    <td>Okay. Some reedeming qualities and no regrets about reading it. There's a good book in here somewhere.</td>
+    <td>Okay. There were some good bits even if they were hard to find. No regrets about reading it.</td>
   </tr>
   <tr>
     <td class="rating">5  =</td>
@@ -46,15 +46,15 @@ Also, I made a rating scale for books. It's a 10-point ordinal scale, where 10 i
   </tr>
   <tr>
     <td class="rating">4  =</td>
-    <td>Bad. Minor regret that I wasted time reading it. Any good ideas buried by the bad.</td>
+    <td>Bad. Minor regret that I wasted time reading it. Any good ideas are buried by the bad.</td>
   </tr>
   <tr>
     <td class="rating">3  =</td>
-    <td>Awful. I finished but it was a complete slog.</td>
+    <td>Awful. I finished but it was a complete slog. No new ideas here.</td>
   </tr>
   <tr>
     <td class="rating">2  =</td>
-    <td>Painful. Big regrets and/or actively mad. Poorly executed, unoriginal garbage or trying way too hard.</td>
+    <td>Painful. Big regrets about the time I wasted. Poorly executed, unoriginal, or trying way too hard.</td>
   </tr>
   <tr>
     <td class="rating">1  =</td>
@@ -62,6 +62,6 @@ Also, I made a rating scale for books. It's a 10-point ordinal scale, where 10 i
   </tr>
   <tr>
     <td class="rating">0  =</td>
-    <td>No. Only worth burning. Didn't finish and never will. I will remember this book forever for how bad it was.</td>
+    <td>No. Didn't finish and never will. I will remember this book forever for how bad it was.</td>
   </tr>
 </table>
