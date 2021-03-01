@@ -54,7 +54,7 @@ main#content hr {
 /* list styles */
 main#content .post-list {
   display: grid;
-  grid-gap: 0.5rem;
+  gap: 0.5rem;
 }
 
 main#content .post-list div {
@@ -160,7 +160,7 @@ header#navbar {
 
 div#navbar-content {
   display: grid;
-  grid-gap: 0.3em;
+  gap: 0.3em;
   grid-template-columns: 0.4fr 1.4fr 0.4fr 0.1fr;
   max-width: 64rem;
   margin: auto;
@@ -220,7 +220,7 @@ div#navbar-content nav#int-links ul li a:hover {
 
   main#content div#writing,
   main#content div#reading {
-    grid-gap: 0;
+    gap: 0;
     grid-template-columns: 1fr;
   }
 
