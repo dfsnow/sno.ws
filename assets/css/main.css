@@ -8,7 +8,6 @@ body {
   font-family: 'Helvetica Neue', 'Arial', sans-serif;
   color: #111;
   margin: 0 auto;
-  padding: 0 2rem;
   line-height: 1.6;
 }
 
@@ -16,7 +15,7 @@ body {
 main#content {
   max-width: 64rem;
   margin: auto;
-  padding-bottom: 2rem;
+  padding: 2rem;
 }
 
 main#content a {
@@ -155,7 +154,6 @@ main#content pre code {
 header#navbar {
   position: sticky;
   top: 0;
-  padding-top: 2rem;
   background-color: #fff;
   z-index: 998;
 }
@@ -167,6 +165,7 @@ div#navbar-content {
   max-width: 64rem;
   margin: auto;
   z-index: 999;
+  padding: 2.1rem 2rem 1.6rem 2rem;
 }
 
 div#navbar-content nav ul {
@@ -181,11 +180,7 @@ div#navbar-content nav ul {
 
 div#navbar-content div#ext-links {
   display: flex;
-  height: 1.8rem;
-}
-
-div#navbar-content div#ext-links a {
-  padding-left: 0.6rem;
+  height: 1.4em;
 }
 
 div#navbar-content div#ext-links svg {
@@ -193,6 +188,7 @@ div#navbar-content div#ext-links svg {
   stroke: #fff;
   width: 1.4em;
   height: 1.4em;
+  padding-left: 0.6rem;
 }
 
 div#navbar-content div#ext-links svg:hover {
@@ -242,7 +238,11 @@ div#navbar-content nav#int-links ul li a:hover {
     text-decoration: underline;
   }
 
-  div#navbar-content div#ext-links a {
+  div#navbar-content div#ext-links {
+    padding: 0.4em 0;
+  }
+
+  div#navbar-content div#ext-links svg {
     padding: 0 0.4em 0 0;
   }
 }
