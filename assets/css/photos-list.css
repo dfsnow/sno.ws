@@ -5,13 +5,13 @@ main#content {
 main#content div#photos {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
 }
 
 div#photos .photo-frame {
   display: flex;
   flex-grow: 2;
   margin: 0;
+  padding: 0.5rem;
 }
 
 div#photos .photo-frame figcaption {
@@ -36,11 +36,12 @@ div#photos .photo-frame figcaption svg:hover {
 @media screen and (min-width: 1124px) {
   div#photos .photo-frame:last-of-type {
     max-width: 800px;
+    padding-bottom: 0;
   }
 }
 
-@supports not (gap: 1rem) {
+@media screen and (max-width: 50rem) {
   div#photos .photo-frame {
-    padding: 0.5rem;
+    padding: 0.5rem 0;
   }
 }
