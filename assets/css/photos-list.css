@@ -22,11 +22,11 @@ div#photos .photo-frame figcaption {
 
 div#photos .photo-frame figcaption a {
   padding: 0;
+  white-space: normal;
 }
 
 div#photos .photo-frame figcaption svg {
   fill: #fff;
-  white-space: normal;
 }
 
 div#photos .photo-frame figcaption svg:hover {
@@ -36,7 +36,6 @@ div#photos .photo-frame figcaption svg:hover {
 @media screen and (min-width: 1124px) {
   div#photos .photo-frame:last-of-type {
     max-width: 800px;
-    padding-bottom: 0;
   }
 }
 
