@@ -185,6 +185,16 @@ div#navbar-content div#ext-links a {
   padding-left: 6px;
 }
 
+div#navbar-content div#ext-links svg {
+  fill: #fff;
+  stroke: #fff;
+}
+
+div#navbar-content div#ext-links svg:hover {
+  fill: #ccc;
+  stroke: #ccc;
+}
+
 div#navbar-content nav#int-links ul li a {
   color: #111;
   text-decoration: none;
