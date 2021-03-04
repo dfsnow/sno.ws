@@ -10,6 +10,7 @@ pygmentsUseClasses = true
   description = "The blog, photos, and book reviews of Dan Snow"
   highlight = true
   photosURL = "https://photos.sno.ws"
+  contentURL = "https://content.sno.ws"
 
 [menu]
   [[menu.main]]
