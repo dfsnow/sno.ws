@@ -1,8 +1,0 @@
-{{ if .IsNamedParams }}
-    {{ $srcBase := .Site.Params.contentURL }}
-    <picture>
-	<source srcset="{{ $srcBase }}{{.Get "src" }}.webp" alt="{{.Get "alt" }}" title="{{.Get "alt" }}" type="image/webp">
-	<source srcset="{{ $srcBase }}{{.Get "src" }}.png" alt="{{.Get "alt" }}" title="{{.Get "alt" }}" type="image/png"> 
-	<img src="{{ $srcBase }}{{.Get "src" }}.png" alt="{{.Get "alt" }}">
-    </picture>
-{{ end }}

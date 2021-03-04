@@ -1,0 +1,10 @@
+{{ if .IsNamedParams }}
+    {{ $src := .Get "src" }}
+    {{ $srcFileFull := index (findRE "^([^.]+)" $src 1) 0 }}
+    {{ $srcExt := index (findRE "\\.[^.]*$|$" $src 1) 0 }}
+    {{ $srcType := replaceRE ".jpg" "jpeg" $srcExt | replaceRE "\\." "" }}
+    <picture>
+	<source srcset="{{ $srcFileFull }}{{ $srcExt }}" alt="{{ .Get "alt" }}" title="{{ .Get "alt" }}" type="image/{{ $srcType }}"> 
+	<img src="{{ $srcFileFull }}{{ $srcExt }}" alt="{{ .Get "alt" }}" width="{{ .Get "width" }}" height="{{ .Get "height" }}">
+    </picture>
+{{ end }}

@@ -12,7 +12,7 @@
 	{{ $srcBase := .Site.Params.photosURL }}
 	{{ $srcFileFull := print $srcBase "/" (index (findRE "^([^.]+)" .Params.src 1) 0) }}
 	{{ $srcExt := index (findRE "\\.[^.]*$|$" .Params.src 1) 0 }}
-	{{ $srcType := replaceRE ".jpg" "jpeg" $srcExt }}
+	{{ $srcType := replaceRE ".jpg" "jpeg" $srcExt | replaceRE "\\." "" }}
 
 	<!-- Get explicit width and height to include in img tag -->
 	{{ $srcWidth := .Params.width }}
