@@ -5,4 +5,3 @@ command = "hugo"
 [context.production.environment]
 HUGO_VERSION = "0.81.0"
 HUGO_ENV = "production"
-GIT_LFS_ENABLED = true
