@@ -10,133 +10,65 @@ body {
   line-height: 1.6;
 }
 
-/* main post styles */
-main#content {
+a {
+  color: #111;
+}
+
+.link-nowrap-nodec {
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.link-nowrap-nodec:hover {
+  text-decoration: underline;
+}
+
+.content {
   max-width: 64rem;
   margin: auto;
   padding: 2rem;
 }
 
-main#content a {
-  color: #111;
-}
-
-main#content h1,
-main#content h2,
-main#content h3,
-main#content h4,
-main#content h5,
-main#content h6 {
+.content h1,
+.content h2,
+.content h3,
+.content h4,
+.content h5,
+.content h6 {
   margin: 0.9em 0;
   line-height: 1.15;
 }
 
-main#content p {
+.content p {
   margin: 0.9em 0;
 }
 
-main#content h1 + p,
-main#content h2 + p,
-main#content h3 + p,
-main#content h4 + p,
-main#content h5 + p,
-main#content h6 + p {
+.content h1 + p,
+.content h2 + p,
+.content h3 + p,
+.content h4 + p,
+.content h5 + p,
+.content h6 + p {
   margin-top: 0.9em;
 }
 
-main#content hr {
+.content hr {
   border: none;
   height: 1px;
   color: #000;
 }
 
-/* list styles */
-main#content .post-list {
-  display: grid;
-  gap: 0.5rem;
-}
-
-main#content .post-list div {
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-main#content .post-list a,
-main#content .post-header .post-rating {
-  text-decoration: none;
-  white-space: nowrap;
-}
-
-main#content .post-list a:hover,
-main#content .post-header .post-rating:hover {
-  text-decoration: underline;
-}
-
-main#content .post-list time {
-  white-space: pre;
-}
-
-main#content .post-list .rec {
-  padding-left: 0.3em;
-}
-
-main#content div#writing {
-  grid-template-columns: 2fr 0.2fr 0.1fr;
-}
-
-main#content div#reading {
-  grid-template-columns: 1.1fr 0.9fr 0.2fr 0.1fr;
-}
-
-/* single post header style */
-main#content .post-header h1 {
-  margin: 0.1em 0;
-  font-size: 2.9rem;
-  line-height: 1.15;
-}
-
-main#content .post-header time {
-  font-size: 0.95em;
-  color: #767676;
-}
-
-/* image and figure stuff */
-main#content img {
-  max-width: 100%;
-  height: auto;
-}
-
-main#content figure {
-  margin: 1.6rem 0;
-}
-
-main#content figure img {
-  display: block;
-  max-width: 100%;
-  margin: 0 auto;
-}
-
-main#content figure figcaption {
-  font-size: 0.92em;
-  font-style: italic;
-  line-height: 2.2rem;
-  text-align: center;
-  margin-top: 0.6rem;
-  padding: 0 1rem;
-}
-
-/* code related stuff */
-main#content code,
-main#content pre {
+.content code,
+.content pre {
   font-family: 'monaco', monospace;
 }
 
-main#content code {
+.content code {
   font-size: 0.96em;
   padding: 0 0.3em;
 }
 
-main#content pre {
+.content pre {
   display: block;
   overflow-x: auto;
   font-size: 1.5rem;
@@ -146,18 +78,79 @@ main#content pre {
   line-height: 1.5;
 }
 
-main#content pre code {
+.content pre code {
   padding: 0;
 }
 
-header#navbar {
+.content img {
+  max-width: 100%;
+  height: auto;
+}
+
+.content figure {
+  margin: 1.6rem 0;
+}
+
+.content figure img {
+  display: block;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.content figure figcaption {
+  font-size: 0.92em;
+  font-style: italic;
+  line-height: 2.2rem;
+  text-align: center;
+  margin-top: 0.6rem;
+  padding: 0 1rem;
+}
+
+.post-list {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.post-list > .post-list-info {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.post-list > .post-list-date {
+  white-space: pre;
+}
+
+.post-list > .post-list-rec {
+  padding-left: 0.3em;
+}
+
+.content > div#writing {
+  grid-template-columns: 2fr 0.2fr 0.1fr;
+}
+
+.content > div#reading {
+  grid-template-columns: 1.1fr 0.9fr 0.2fr 0.1fr;
+}
+
+.post-header > .post-title {
+  margin: 0.1em 0;
+  font-size: 2.9rem;
+  line-height: 1.15;
+}
+
+.post-header > .post-date {
+  font-size: 0.95em;
+  color: #767676;
+}
+
+.navbar {
   position: sticky;
   top: 0;
   background-color: #fff;
   z-index: 998;
 }
 
-div#navbar-content {
+.navbar-content {
   display: grid;
   gap: 0.3em;
   grid-template-columns: 0.4fr 1.4fr 0.4fr 0.1fr;
@@ -167,7 +160,7 @@ div#navbar-content {
   padding: 2.1rem 2rem 1.6rem 2rem;
 }
 
-div#navbar-content nav ul {
+.navbar-content > .navbar-internal-links {
   display: flex;
   justify-content: space-around;
   list-style: none;
@@ -177,12 +170,12 @@ div#navbar-content nav ul {
   padding: 0 0.5rem 0 0;
 }
 
-div#navbar-content div#ext-links {
+.navbar-content > .navbar-external-links {
   display: flex;
   height: 1.4em;
 }
 
-div#navbar-content div#ext-links svg {
+.navbar-content > .navbar-external-links svg {
   fill: #fff;
   stroke: #fff;
   width: 1.4em;
@@ -190,58 +183,56 @@ div#navbar-content div#ext-links svg {
   padding-left: 0.6rem;
 }
 
-div#navbar-content div#ext-links svg:hover {
+.navbar-content > .navbar-external-links svg:hover {
   fill: #ccc;
   stroke: #ccc;
 }
 
-div#navbar-content nav#int-links ul li a {
-  color: #111;
-  text-decoration: none;
-}
-
-div#navbar-content nav#int-links ul li a:hover {
-  text-decoration: underline;
+.navbar-separator {
+  border-top: 1px solid #000;
+  color: #000;
+  background-color: #000;
+  margin: 0;
 }
 
 /* adjustment when very small */
 @media screen and (max-width: 50rem) {
-  main#content .post-list a {
+  .post-list > .post-list-info a {
     white-space: normal;
     text-decoration: underline;
   }
 
-  main#content .post-list .rec {
+  .post-list > .post-list-rec {
     padding-left: 0;
     padding-bottom: 2rem;
     text-decoration: none;
   }
 
-  main#content div#writing,
-  main#content div#reading {
+  .content div#writing,
+  .content div#reading {
     gap: 0;
     grid-template-columns: 1fr;
   }
 
-  header#navbar {
+  .navbar {
     position: static;
   }
 
-  header#navbar div#navbar-content {
+  .navbar-content {
     display: block;
   }
 
-  header#navbar nav#int-links ul {
+  .navbar-content > .navbar-internal-links {
     display: block;
     margin: 0.25em 0 0.75em 0;
     text-decoration: underline;
   }
 
-  div#navbar-content div#ext-links {
+  .navbar-content > .navbar-external-links {
     padding: 0.4em 0;
   }
 
-  div#navbar-content div#ext-links svg {
+  .navbar-content > .navbar-external-links svg {
     padding: 0 0.4em 0 0;
   }
 }

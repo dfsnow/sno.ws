@@ -18,19 +18,19 @@
     {{ $srcWidth := .Params.width }}
     {{ $srcHeight := .Params.height }}
 
-    <figure class="photo-frame">
+    <figure class="post-feature-frame">
         <a href="{{ $srcBase }}/original/{{ $srcFile }}{{ $srcExt }}">
             <picture>
                 <source srcset="{{ $srcFileFull }}-640.webp 640w, {{ $srcFileFull }}-1280.webp 1280w" alt="{{ .Title }}" type="image/webp">
                 <source srcset="{{ $srcFileFull }}-640{{ $srcExt }} 640w, {{ $srcFileFull }}-1280{{ $srcExt }} 1280w" alt="{{ .Title }}" type="image/{{ $srcType }}">
-                <img src="{{ $srcFileFull }}-640{{ $srcExt }}" alt="{{ .Title }}" width="{{ $srcWidth }}" height="{{ $srcHeight }}">
+                <img src="{{ $srcFileFull }}-640{{ $srcExt }}" alt="{{ .Title }}" width="{{ $srcWidth }}" height="{{ $srcHeight }}" class="post-feature-photo">
             </picture>
         </a>
     </figure>
     <header class="post-header" style="max-width:640px;margin:auto;">
-        <h1>{{ .Title }}</h1>
+        <h1 class="post-title">{{ .Title }}</h1>
         {{- if isset .Params "date" -}}
-            <time>{{ .Date.Format "January 2, 2006" }}</time>
+            <time class="post-date">{{ .Date.Format "January 2, 2006" }}</time>
         {{- end -}}
     </header>
     <div style="max-width:640px;margin:auto;">

@@ -1,14 +1,14 @@
-main#content {
+.content {
   max-width: 100%;
 }
 
-main#content .photo-frame {
+.content .post-feature-frame {
   display: flex;
   max-height: calc(100vh - 18rem);
   margin-top: 0.5rem;
 }
 
-main#content article img {
+.post-feature-photo {
   object-fit: contain;
   max-height: 100%;
 }

@@ -1,46 +1,46 @@
-main#content {
+.content {
   max-width: 100%;
 }
 
-main#content div#photos {
+.post-list-photos {
   display: flex;
   flex-wrap: wrap;
 }
 
-div#photos .photo-frame {
+.post-list-photos > .photo-frame {
   display: flex;
   flex-grow: 2;
   margin: 0;
   padding: 0.5rem;
 }
 
-div#photos .photo-frame figcaption {
+.photo-frame > .photo-rec {
   margin-top: 10px;
   margin-left: -44px;
   padding: 0 10px;
 }
 
-div#photos .photo-frame figcaption a {
+.photo-frame > .photo-rec a {
   padding: 0;
   white-space: normal;
 }
 
-div#photos .photo-frame figcaption svg {
+.photo-frame > .photo-rec svg {
   fill: #fff;
 }
 
-div#photos .photo-frame figcaption svg:hover {
+.photo-frame > .photo-rec svg:hover {
   fill: red;
 }
 
 @media screen and (min-width: 1124px) {
-  div#photos .photo-frame:last-of-type {
+  .post-list-photos > .photo-frame:last-of-type {
     max-width: 800px;
   }
 }
 
 @media screen and (max-width: 50rem) {
-  div#photos .photo-frame {
+  .post-list-photos > .photo-frame {
     padding: 0.5rem 0;
   }
 }
