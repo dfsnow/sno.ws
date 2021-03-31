@@ -27,4 +27,4 @@ But my biggest disappointment with Ghosts is that it completely ignores the inst
 
 Ewing undoubtedly didn't have access to the internal debates happening at CPS or the Mayor's office. And she states in the appendix that she, "strive[d] to tell *a* story, rather than *the* story." But I wish she'd somehow managed to reveal a little bit of the [insane dysfunction and poor management](https://www.chicagotribune.com/news/breaking/ct-barbara-byrd-bennett-prison-release-20200506-mxnfrofhavbabkqb75gi3abdpy-story.html) required to reach such an astonishingly bad policy decision with little to no community input.
 
-That said, I still enjoyed the book. It's a potent reminder that policy should be driven by more than just what can be easily measured.
+That said, I still enjoyed the book. It's essential context for the increasingly hot debate around [equity in education](https://www.theatlantic.com/magazine/archive/2021/04/private-schools-are-indefensible/618078/), and a potent reminder that policy should be driven by more than just what can be easily measured.
