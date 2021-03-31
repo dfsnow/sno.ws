@@ -23,7 +23,7 @@ And later:
 
 However, Ghosts in the Schoolyard isn't without flaws. Its narrative is sometimes disjointed, hopping through time and space. It occasionally feels feels overly academic and inaccessible, such as when it uses critical discourse analysis in chapter three.
 
-But my biggest disappointment with Ghosts is that it completely ignores the institutional dynamics of CPS. Ewing acts as an outside observer. She purposefully looks only at the *outcome* of the school closing policy rather than the decision-making that led to it.
+But my biggest disappointment with Ghosts is that it completely ignores the institutional dynamics of CPS. Ewing acts as an outside observer. She purposefully looks [only at the *outcome*](https://en.wikipedia.org/wiki/Disparate_impact) of the school closing policy rather than the decision-making that led to it.
 
 Ewing undoubtedly didn't have access to the internal debates happening at CPS or the Mayor's office. And she states in the appendix that she, "strive[d] to tell *a* story, rather than *the* story." But I wish she'd somehow managed to reveal a little bit of the [insane dysfunction and poor management](https://www.chicagotribune.com/news/breaking/ct-barbara-byrd-bennett-prison-release-20200506-mxnfrofhavbabkqb75gi3abdpy-story.html) required to reach such an astonishingly bad policy decision with little to no community input.
 
