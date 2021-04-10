@@ -14,8 +14,8 @@ I've also been playing around with [GTFS feeds](https://gtfs.org/), which are a 
 
 I wanted to see if I could take a GTFS feed and turn it into an animated map in the style of Mini Metro (I love its aesthetic). Turns out it's actually pretty easy.
 
-{{< video_loop src="/2021-03-02-chicago-gtfs" >}}
-{{< video_loop src="/2021-03-02-dc-gtfs" >}}
+{{< video_loop src="/2021-03-03-chicago-gtfs" >}}
+{{< video_loop src="/2021-03-03-dc-gtfs" >}}
 
 These maps are made using [R](https://cloud.r-project.org/) and [ggplot2](https://ggplot2.tidyverse.org/). Each frame of animation is a separate plot combined using [ffmpeg](https://ffmpeg.org/). There are probably better/faster ways to animate besides rendering each frame, but this way is easy and flexible. 
 
@@ -33,7 +33,7 @@ First, we need to download a GTFS feed and convert it into a format useable in R
 2. A spatial data frame of track shapes (`route_shapes`)
 3. A data frame of the point location of all trains at any time within the specified window (`final_df`)
 
-{{< picture_int src="/drawings/2021-03-02-gtfs-data-types.svg" alt="Primary data sets for animation" width="1277" height="634">}}
+{{< picture_embed src="/2021-03-03-gtfs-data-types.svg" alt="Primary data sets for animation" width="1277" height="634">}}
 
 The first two data sets are contained in the feed, but the third data set is not. In order to create it, we need locations and arrival times for not only stops, but also the *points between stops*. GTFS feeds don't contain that information, but they do contain data we can use to figure it out, mainly:
 
@@ -41,11 +41,11 @@ The first two data sets are contained in the feed, but the third data set is not
 2. Each train's scheduled arrival time for a given stop (`stops_df`)
 3. The shape of the track between stops, which we can convert to waypoints for the train to follow. These waypoint don't have arrival times (`waypoints_df`)
 
-{{< picture_int src="/drawings/2021-03-02-gtfs-interp-data.svg" alt="Combining stops and waypoints" width="1800" height="1057">}}
+{{< picture_embed src="/2021-03-03-gtfs-interp-data.svg" alt="Combining stops and waypoints" width="1800" height="1057">}}
 
 Combining these two data sets gives us the position and arrival time of stops *and* the position (but not time) of waypoints between stops. We can then use [Stineman interpolation](https://pages.uoregon.edu/dgavin/software/stineman.pdf) to fill in the missing times.
 
-{{< picture_int src="/drawings/2021-03-02-gtfs-final-data.svg" alt="Interpolating missing times" width="1584" height="949">}}
+{{< picture_embed src="/2021-03-03-gtfs-final-data.svg" alt="Interpolating missing times" width="1584" height="949">}}
 
 The final data set (`final_df`) is what creates the actual animation. It contains a list of geographic points and corresponding arrival times for each train.
 
