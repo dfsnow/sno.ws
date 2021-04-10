@@ -176,11 +176,11 @@ a {
 }
 
 .navbar-external-links > .navbar-external-link {
-  padding-left: 0.6rem;
+  padding: 0.2rem 0 0 0.6rem;
 }
 
 .navbar-external-links > .navbar-external-link:first-of-type {
-  padding: 0;
+  padding: 0.2rem 0 0 0;
 }
 
 .navbar-external-links > .navbar-external-link svg {
