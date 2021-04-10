@@ -153,7 +153,7 @@ a {
 .navbar-content {
   display: grid;
   gap: 0.3em;
-  grid-template-columns: 0.4fr 1.4fr 0.4fr 0.1fr;
+  grid-template-columns: 0.3fr 1.5fr 0.4fr 0.1fr;
   max-width: 64rem;
   margin: auto;
   z-index: 999;
@@ -162,12 +162,12 @@ a {
 
 .navbar-content > .navbar-internal-links {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
+  align-items: center;
   list-style: none;
-  font-size: 1em;
   text-transform: capitalize;
   margin: 0;
-  padding: 0 0.5rem 0 0;
+  padding: 0;
 }
 
 .navbar-content > .navbar-external-links {
@@ -175,15 +175,21 @@ a {
   height: 1.4em;
 }
 
-.navbar-content > .navbar-external-links svg {
-  fill: #fff;
-  stroke: #fff;
-  width: 1.4em;
-  height: 1.4em;
+.navbar-external-links > .navbar-external-link {
   padding-left: 0.6rem;
 }
 
-.navbar-content > .navbar-external-links svg:hover {
+.navbar-external-links > .navbar-external-link:first-of-type {
+  padding: 0;
+}
+
+.navbar-external-links > .navbar-external-link svg {
+  fill: #fff;
+  stroke: #fff;
+  height: 1.4em;
+}
+
+.navbar-external-links > .navbar-external-link svg:hover {
   fill: #ccc;
   stroke: #ccc;
 }
@@ -230,9 +236,5 @@ a {
 
   .navbar-content > .navbar-external-links {
     padding: 0.4em 0;
-  }
-
-  .navbar-content > .navbar-external-links svg {
-    padding: 0 0.4em 0 0;
   }
 }
