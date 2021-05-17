@@ -2,7 +2,7 @@
 title = "A Prayer for the City"
 author = "Buzz Bissinger"
 date = "2021-04-23"
-rating = "8"
+rating = "7"
 recommended = "false"
 +++
 
