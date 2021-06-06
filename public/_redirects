@@ -1,2 +1,15 @@
-/home      /  301!
-/writing   /  301!
+# General redirects to home
+/home                      /  301!
+/writing                   /  301!
+
+# General shortlinks for other websites
+/gh                        https://github.com/dfsnow
+/gl                        https://gitlab.com/dfsnow
+/li                        https://linkedin.com/in/dfsnow/
+
+# Redirects to posts/articles. Most recent is on bottom
+/rural-docs                https://dfsnow.github.io/ama_viz/exploratory_plots.html 
+/med-students              https://dfsnow.github.io/ama_viz_interactive/
+/hello-world               /writing/2021/02/27/hello-again-world/
+/transit-maps              /writing/2021/03/03/creating-moving-transit-maps-with-r-and-gtfs-feeds/
+/local-gov                 /writing/2021/05/24/lessons-learned-in-local-government/
