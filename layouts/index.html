@@ -3,7 +3,7 @@
     {{ range where $.Site.RegularPages "Section" "writing" }}
         <div class="post-list-info">
             {{ if isset .Params "link" }}
-                <a href="{{ .Params.link }}" class="link-nowrap-nodec" target="_blank">
+                <a href="{{ .Params.link }}" class="link-nowrap-nodec" target="_blank" rel="noopener">
                     {{ .Title }}
                     <svg aria-label="External link" role="img" viewBox="0 0 32 32" width="1.5rem" height="1.5rem" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3">
                         <title>External link</title>
