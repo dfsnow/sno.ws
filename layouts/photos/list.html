@@ -22,6 +22,7 @@
 	<figure class="photo-frame" style="width:{{ $srcCalcWidth }};">
 	    <a href="{{ .Permalink }}">
 		<picture>
+		    <source srcset="{{ $srcFileFull }}-640.avif 640w" alt="{{ .Title }}" type="image/avif">
 		    <source srcset="{{ $srcFileFull }}-640.webp 640w" alt="{{ .Title }}" type="image/webp">
 		    <source srcset="{{ $srcFileFull }}-640{{ $srcExt }} 640w" alt="{{ .Title }}" type="image/{{ $srcType }}">
 		    <img src="{{ $srcFileFull }}-640{{ $srcExt }}" alt="{{ .Title }}" width="{{ $srcWidth }}" height="{{ $srcHeight }}" loading="lazy">

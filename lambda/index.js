@@ -40,11 +40,13 @@ exports.handler = async (event, context, callback) => {
     for (let res of [640, 1280]) {
         const filenameOrgExt = `${dstKey}-${res}${srcKeyExt}`;
         const filenameWebpExt = `${dstKey}-${res}.webp`;
+        const filenameAvifExt = `${dstKey}-${res}.avif`;
         console.log(`Now generating ${res}`)
 
         try {
             var bufferOrg = await sharp(origimage.Body).rotate().resize(res).toBuffer();
             var bufferWebp = await sharp(origimage.Body).rotate().resize(res).webp().toBuffer();
+            var bufferAvif = await sharp(origimage.Body).rotate().resize(res).avif().toBuffer();
 
         } catch (error) {
             console.log(error);
@@ -64,9 +66,16 @@ exports.handler = async (event, context, callback) => {
                 Body: bufferWebp,
                 ContentType: "image"
             };
+            const destParamsAvif= {
+                Bucket: dstBucket,
+                Key: filenameAvifExt,
+                Body: bufferAvif,
+                ContentType: "image"
+            };
 
             const putResultOrg = await s3.putObject(destParamsOrg).promise();
             const putResultWebp = await s3.putObject(destParamsWebp).promise();
+            const putResultAvif = await s3.putObject(destParamsAvif).promise();
 
         } catch (error) {
             console.log(error);
