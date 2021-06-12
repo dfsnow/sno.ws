@@ -4,6 +4,7 @@
 
 .content .post-feature-frame {
   display: flex;
+  justify-content: center;
   max-height: calc(100vh - 18rem);
   margin-top: 0.5rem;
 }
