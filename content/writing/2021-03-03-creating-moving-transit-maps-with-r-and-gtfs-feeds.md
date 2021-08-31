@@ -1,6 +1,7 @@
 +++
 title = "Creating moving transit maps with R and GTFS feeds"
 date = "2021-03-03"
+shorturl = "transit-maps"
 recommended = "true"
 +++
 
