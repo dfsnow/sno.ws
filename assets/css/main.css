@@ -53,8 +53,9 @@ a {
 }
 
 .content hr {
-  border: none;
-  height: 1px;
+  border-top: 1px solid #000;
+  border-bottom: 0;
+  background-color: #000;
   color: #000;
 }
 
@@ -201,6 +202,14 @@ a {
   margin: 0;
 }
 
+/* support for Edge */
+@supports (-ms-ime-align: auto) {
+  .navbar-content > .navbar-internal-links {
+    justify-content: space-around;
+    margin: 0 1.4rem 0 1.4rem;
+  }
+}
+
 /* adjustment when very small */
 @media screen and (max-width: 50rem) {
   .post-list > .post-list-info a {
@@ -238,3 +247,4 @@ a {
     padding: 0.4em 0;
   }
 }
+
