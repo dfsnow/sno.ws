@@ -1,6 +1,7 @@
 +++
 title = "Favorite digital things"
 date = "2021-08-30"
+shorturl = "digital-things"
 recommended = "false"
 +++
 
@@ -34,58 +35,69 @@ Favorite things I use every day
 
 ### Web
 
+- [Bitwarden](https://bitwarden.com/) - Open-source password manager. Nice CLI integration
 - [Chrome](https://www.google.com/chrome/) - Still the fastest browser with the best dev tools
 - [Todoist](https://todoist.com/) - ♥ To-do list I've used for over a decade, my favorite app
-- [Bitwarden](https://bitwarden.com/) - Open-source password manager, nice CLI integration
 - [YNAB](https://www.youneedabudget.com/) - Straightfoward budgeting with bank integration
 
 ### Mac
 
-- Transmit
-- IINA
-- Alfred
-- Self-control
+- [Alfred](https://www.alfredapp.com/) - Customizable spotlight with great plugins
+- [IINA](https://github.com/iina/iina) - Great mac alternative to VLC
+- [SelfControl](https://selfcontrolapp.com/) - Edit /etc/hosts to block distracting sites
+- [Transmit](https://panic.com/transmit/) - Fast file transfers with an awesome UI
 
 ### Windows
 
-- Windows Terminal (WSL 2)
-- VS Code
+- [VS Code](https://code.visualstudio.com/) - IDE when neovim or RStudio don't cut it
+- [Windows Terminal + WSL 2](https://docs.microsoft.com/en-us/windows/wsl/install-win10) - ♥ Linux virtualization on Windows that just works
 
 ### Chrome extensions
 
-- ♥ uBlock Origin
-- Earth View
-- Bitwarden
-- Toolkit for YNAB
+- [uBlock Origin](https://github.com/gorhill/uBlock) - The best wide-spectrum blocker around. Use it to block all JS
+- [Earth View](https://chrome.google.com/webstore/detail/earth-view-from-google-ea/bhloflhklmhfpedakmangadcdofhnnoh) - Pretty satellite pictures for your new tab page
+- [Toolkit for YNAB](https://github.com/toolkit-for-ynab/toolkit-for-ynab) - QoL and reporting improvements for YNAB
 
 ### Data 
 
-- sqlite
-- postgres
-- PostGIS
-- QGIS
-- Arrow/Parquet
-- ZFS
+- [LightGBM](https://github.com/microsoft/LightGBM) - Incredible tree-based ML framework. Better than xgboost
+- [Parquet](https://parquet.apache.org/) - Fast, space-efficient columnar storage format
+- [Postgres](https://www.postgresql.org/) - My preferred RDBMS for any project with structured data
+- [PostGIS](https://postgis.net/) - Spatial data extension for Postgres
+- [RStudio](https://www.rstudio.com/) - IDE specifically for R (and some Python)
+- [SQLite](https://www.sqlite.org/) - 
+- [ZFS](https://zfsonlinux.org/) - Filesystem for storage pooling and management
 
 ### CLI tools
 
+- datamash
+- ffmpeg
+- fzf ♥
 - hugo
 - jq
-- ♥ fzf
+- neovim ♥ 
+- pbzip2
 - ripgrep
-- ♥ neovim
-- datamash
+- sharp
 - stow
 - tmux
-- pbzip2
-- sharp
-- ffmpeg
 
 ### R packages
 
-<!-- mini script to move hearts to list item bullet if supported -->
+- dplyr
+- lubridate
+- data.table
+- ggplot2
+- tidycensus
+- tidytransit
+- purrr
+- renv
+- sf
+- lightgbm
+
+<!-- mini script to move hearts to list item bullet if JS supported -->
 <script>
-    document.querySelector("article").classList.add('js-enabled')
+    document.querySelector('article').classList.add('js-enabled')
     var lis = document.querySelectorAll('article.js-enabled ul li')
         oldHTML = 'innerHTML',
         newHTML = '';
@@ -102,6 +114,7 @@ Favorite things I use every day
 <style>
     .js-enabled ul li.with-heart::marker {
       content: '♥  ';  
+      color: darkred;
     }
 </style>
 
