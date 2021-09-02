@@ -26,11 +26,11 @@
 }
 
 .photo-frame > .photo-rec svg {
-  fill: #fff;
+  fill: red;
 }
 
 .photo-frame > .photo-rec svg:hover {
-  fill: red;
+  fill: darkred;
 }
 
 @media screen and (min-width: 1124px) {

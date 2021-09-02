@@ -24,7 +24,12 @@ a {
 }
 
 .link-fave-heart {
+  text-decoration: none;
   color: red;
+}
+
+.link-fave-heart:hover {
+  color: darkred;
 }
 
 .content {
@@ -194,8 +199,8 @@ a {
 }
 
 .navbar-external-links > .navbar-external-link svg:hover {
-  fill: #ccc;
-  stroke: #ccc;
+  fill: #333;
+  stroke: #333;
 }
 
 .navbar-separator {

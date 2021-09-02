@@ -19,7 +19,7 @@
         <time class="post-list-date">{{ .Date.Format "2006-01-02" }}</time>
         <div class="post-list-rec">
             {{ if eq .Params.recommended "true"}}
-                <a href="/ratings" class="link-nowrap-nodec link-fave-heart" title="Personal favorite">
+                <a href="/ratings" class="link-fave-heart" title="Personal favorite">
                     ♥
                 </a>
             {{ end }}
