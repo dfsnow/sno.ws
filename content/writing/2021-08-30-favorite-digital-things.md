@@ -5,7 +5,19 @@ shorturl = "digital-things"
 recommended = "false"
 +++
 
+In the spirit of digital minimalism, I've cleaned out my bookmarks and compiled them into this big list. This list includes only digital things; no physical stuff, no media. The purpose of this list is three-fold:
+
+1. Make cool things discoverable for others
+2. Serve as a personal bookmark page for things I like
+3. Force me to be intentional about the things I use and read
+
+This list is constantly updated. When I find a cool new thing, I'll add it. When I lose interest in something, I'll remove it. As usual, ♥ indicates an absolute favorite.
+
+---
+
 ## Blogs
+
+These are the blogs I read regularly. They've influenced my thinking and formed who I am today. I try to check each one around once per month.
 
 #### Art
 
@@ -51,6 +63,8 @@ recommended = "false"
 
 ## Posts and articles
 
+These posts have inspired or influenced me in some way. They're things I reread and share with others. I tend to like concise posts (lists) or posts that graphically explain something complicated.
+
 #### Chicago
 
 - [Portrait of Chicago: Uptown](https://chicagoflaneur.com/2020/04/24/portrait-of-chicago-uptown/) - History of Uptown. A little dated, but still well-done
@@ -67,8 +81,6 @@ recommended = "false"
 - [The Illustrated Guide to a Ph.D.](https://matt.might.net/articles/phd-school-in-pictures/) - Visual perspective on what a Ph.D. really means
 - [Stop Learning](https://www.nashvail.me/blog/stop-learning/) - You know enough, start doing things
 - [Work Hard](https://terrytao.wordpress.com/career-advice/work-hard/) - After a certain level, there are no shortcuts for effort
-
-
 
 #### Coding and tech
 
@@ -119,9 +131,9 @@ recommended = "false"
 
 ## Software
 
-- lean toward fast, self-contained, does one thing well
-- Final list after about 10 years of dev
-- Not exhaustive, but pretty close
+These are the things I use every day. It's a list whittled down over about 5 years. It's not exhaustive, but it's pretty close; I still use other stuff like Google Docs and Drive.
+
+I have a strong preference for software that is fast, outwardly simple, and that does one thing extremely well.
 
 #### Android
 
@@ -138,7 +150,7 @@ recommended = "false"
 
 - [Bitwarden](https://bitwarden.com/) - Open-source password manager. Great CLI integration
 - [Chrome](https://www.google.com/chrome/) - Browser with good devtools ¯\\\_(ツ)\_/¯
-- [Todoist](https://todoist.com/) - ♥ To-do list I've used for over a decade. My favorite app
+- [Todoist](https://todoist.com/) - ♥ To-do list I've used for over a decade. Great design and team
 - [YNAB](https://www.youneedabudget.com/) - Straightforward budgeting with bank integration
 
 #### Mac
@@ -215,4 +227,4 @@ recommended = "false"
     }
 </style>
 
-_Last updated 2021-08-30_
+_Last updated 2021-09-04_
