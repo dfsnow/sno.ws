@@ -10,25 +10,57 @@ recommended = "false"
 
 ## Blogs
 
-- https://macwright.com/
-- https://jvns.ca/
-- https://cassidoo.co/
-- https://jeremymaluf.com/things/
-- https://www.joelsimon.net/
-- https://beaugunderson.com/
-- https://juliasilge.com/
-- https://josh.works/
-- https://www.mattkeeter.com/projects/
-- http://danluu.com/
-- https://rebeccawilliams.us/
-- https://blog.cleverelephant.ca/
-- https://www.akshayagrawal.com/
-- https://tjukanov.org/
+### Art
 
+- [Joel Simon](https://www.joelsimon.net/) - Beautiful [generative art](https://www.joelsimon.net/corals.html) mixed with code
+- [Matt Keeter](https://www.mattkeeter.com/projects/) - Weird [shaders](https://www.mattkeeter.com/projects/futureproof/), [raytracers](https://www.mattkeeter.com/projects/rayray/), and [games](https://www.mattkeeter.com/projects/pont/)
+- [Tyler Kim](https://tyler.kim/) - Random thoughts and some [really pretty photos](https://photos.tyler.kim/)
+
+### General
+
+- [Francesco Di Lorenzo](https://francescodilorenzo.com/) - Bite-sized posts on life and programming
+- [Jamie Saxon](https://saxon.cdac.uchicago.edu/) - Measuring civic resources and [their use](https://jamessaxon.github.io/urban/measurement/electronics/2021/03/22/making-an-olm-meter.html). Former mentor
+- [Jeremy Maluf](https://jeremymaluf.com/) - [Onebag packing list](https://jeremymaluf.com/onebag/) and [other neat lists](https://jeremymaluf.com/things/). Inspired this post
+- [Kyle E. Mitchell](https://writing.kemitchell.com/) - Interesting posts and takes on law ∪ technology
+- [Paul Graham](http://www.paulgraham.com/articles.html) - Some classic essays on [tech](http://www.paulgraham.com/ds.html) and [life](http://www.paulgraham.com/talk.html)
+- [Terence Eden](https://shkspr.mobi/blog/) - Life advice, book reviews, and technology. Running for decades
+- [Tom MacWright](https://macwright.com/) - ♥ Spatial data, development, miscellany. Inspired this blog
+
+### Coding and tech
+
+- [Beau Gunderson](https://beaugunderson.com/) - Prolific developer, neat live-updating site
+- [Cassidy Williams](https://cassidoo.co/) - Huge inspiration, amazing dev/streamer. Excellent [newsletter](https://cassidoo.co/newsletter/)
+- [Dan Luu](http://danluu.com/) - ♥ Classic engineering blog. Mostly on [measuring](https://danluu.com/input-lag/) [interesting](https://danluu.com/cli-complexity/) [things](https://danluu.com/android-updates/)
+- [Dan McKinley](https://mcfunley.com/) - Tech talker and creator of many [influential](http://boringtechnology.club/) [slide](https://causalinference.club/) [decks](http://frequentdeploys.club/)
+- [Fabrice Bellard](https://bellard.org/) - Open-source hero and creator of ffmpeg. Enough said
+- [Intuitive Explanations](https://intuitiveexplanations.com/) - Wonderful math explainers for [calculus](https://intuitiveexplanations.com/math/calculus-intuitive-explanations) and [linear algebra](https://intuitiveexplanations.com/math/linear-algebra-summary-sheet)
+- [Josh Thompson](https://josh.works/blog) - Everything from [urban parking](https://josh.works/parking-in-golden) to [finding a remote job](https://josh.works/remote-job-resources)
+- [Julia Evans](https://jvns.ca/) - ♥ [Zines](https://wizardzines.com/), [life advice](https://jvns.ca/blog/2016/09/19/getting-things-done/), and [technical posts](https://jvns.ca/blog/2016/06/30/why-do-we-use-the-linux-kernels-tcp-stack/). Incredible human
+- [Julia Silge](https://juliasilge.com/) - Tidymodels champion. Neat posts on R and [predicting home prices](https://juliasilge.com/blog/austin-housing/)
+- [The Pragmatic Engineer](https://blog.pragmaticengineer.com/) - Huge collection of useful [career](https://blog.pragmaticengineer.com/advice-to-myself-when-starting-as-a-software-developer/) and [programming advice](https://blog.pragmaticengineer.com/readable-code/)
+- [Tom Ryder](https://blog.sanctum.geek.nz/) - Sys admin stuff and all things Unix, shell, and terminal
+
+### Spatial
+
+- [Katie Jolly](https://www.katiejolly.io/blog/) - Maps and geography tips for R
+- [Paul Ramsey](https://blog.cleverelephant.ca/) - Weird, weedsy [posts on PostGIS performance](https://blog.cleverelephant.ca/2021/05/indexes-and-queries.html)
+- [Topi Tjukanov](https://tjukanov.org/) - Utterly useless (but beautiful) [map visualizations](https://tjukanov.org/accessibility-fireworks)
 
 ---
 
 ## Posts
+
+### Chicago
+
+### Life
+
+### Coding and tech
+
+### Math
+
+### Other
+
+
 
 ---
 
@@ -47,7 +79,7 @@ recommended = "false"
 - [Down Dog](https://www.downdogapp.com/) - Procedurally-generated at-home yoga and HIIT
 - [Niagara Launcher](https://play.google.com/store/apps/details?id=bitpit.launcher&hl=en_US&gl=US) - ♥ Minimalist, fast, well-designed launcher
 - [StreetComplete](https://github.com/streetcomplete/StreetComplete) - Easy-to-use, open-source OpenStreetMap data editor
-- [YouTube (Vanced)](https://vancedapp.com/) - YouTube client without ads and annoyances
+- [YouTube Vanced](https://vancedapp.com/) - YouTube client without ads and annoyances
 
 ### Web
 
@@ -126,7 +158,7 @@ recommended = "false"
 <style>
     .js-enabled ul li.with-heart::marker {
       content: '♥  ';  
-      color: darkred;
+      color: red;
     }
 </style>
 
