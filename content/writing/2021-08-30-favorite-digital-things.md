@@ -11,7 +11,7 @@ In the spirit of digital minimalism, I've cleaned out my bookmarks and compiled 
 2. Serve as a personal bookmark page for things I like
 3. Force me to be intentional about the things I use and read
 
-This list is constantly updated. When I find a cool new thing, I'll add it. When I lose interest in something, I'll remove it. As usual, <span>♥</span> indicates an absolute favorite.
+This list is constantly updated. When I find a cool new thing, I'll add it. When I lose interest in something, I'll remove it. As usual, <span class="heart">♥</span> indicates an absolute favorite.
 
 ---
 
@@ -218,7 +218,7 @@ I have a strong preference for software that is fast, outwardly simple, and that
             newHTML = a[oldHTML].replace('♥', '');
             a[oldHTML] = newHTML;
         } else if (a[oldHTML].includes('♥')) {
-            newHTML = a[oldHTML].replace('♥', '<span>♥</span>');
+            newHTML = a[oldHTML].replace('♥', '<span class="heart">♥</span>');
             a[oldHTML] = newHTML;
         }
     });
@@ -228,10 +228,12 @@ I have a strong preference for software that is fast, outwardly simple, and that
     .js-enabled ul li.with-heart::marker {
       content: '♥  ';  
       color: red;
+      font-family: Segoe UI Symbol;
     }
 
-    .js-enabled span {
+    .js-enabled span.heart {
       color: red;
+      font-family: Segoe UI Symbol;
     }
 </style>
 

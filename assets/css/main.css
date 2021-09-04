@@ -26,6 +26,7 @@ a {
 .link-fave-heart {
   text-decoration: none;
   color: red;
+  font-family: Segoe UI Symbol;
 }
 
 .link-fave-heart:hover {
