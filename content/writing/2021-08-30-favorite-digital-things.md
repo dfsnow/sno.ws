@@ -207,7 +207,7 @@ I have a strong preference for software that is fast, outwardly simple, and that
 <!-- mini script to move hearts to list item bullet if JS supported -->
 <script>
     document.querySelector('article').classList.add('js-enabled')
-    document.querySelector('article span').classList.add('js-enabled')
+    document.querySelector('article span.heart').classList.add('js-enabled')
     var lis = document.querySelectorAll('article.js-enabled ul li')
         oldHTML = 'innerHTML',
         newHTML = '';
@@ -228,12 +228,10 @@ I have a strong preference for software that is fast, outwardly simple, and that
     .js-enabled ul li.with-heart::marker {
       content: '♥  ';  
       color: red;
-      font-family: Segoe UI Symbol;
     }
 
     .js-enabled span.heart {
       color: red;
-      font-family: Segoe UI Symbol;
     }
 </style>
 
