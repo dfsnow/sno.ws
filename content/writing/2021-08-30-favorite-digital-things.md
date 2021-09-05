@@ -101,6 +101,7 @@ These posts have inspired or influenced me in some way. They're things I reread 
 #### Data
 
 - [Building a Data Team at a Mid-Stage Startup](https://erikbern.com/2021/07/07/the-data-team-a-short-story.html) - The DS experience, a short story
+- [CLI Tools Can Be 235x Faster Than Your Hadoop Cluster](https://adamdrake.com/command-line-tools-can-be-235x-faster-than-your-hadoop-cluster.html) - `awk` > `hadoop`
 - [Data Science Is Different Now](https://veekaybee.github.io/2019/02/13/data-science-is-different/) - DS has a supply bubble and schools aren't helping
 - [Engineers Shouldn't Write ETL](https://multithreaded.stitchfix.com/blog/2016/03/16/engineers-shouldnt-write-etl/) - They should write tools and platforms
 - [Good Data Scientist, Bad Data Scientist](https://ianwhitestone.work/good-ds-bad-ds/) - ♥ What makes a great DS anyways?
