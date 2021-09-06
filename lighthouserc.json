@@ -1,7 +1,13 @@
 {
   "ci": {
     "assert": {
-      "preset": "lighthouse:no-pwa"
+      "preset": "lighthouse:no-pwa",
+      "assertions": {
+        "tap-targets": "off",
+        "max-potential-fid": "off",
+        "render-blocking-resources": "off",
+        "uses-http2": "off"
+      }
     },
     "collect": {
       "staticDistDir": "./public"
