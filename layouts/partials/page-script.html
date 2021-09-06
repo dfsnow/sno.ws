@@ -4,5 +4,5 @@
         {{ $resources = $resources | append (resources.Get . ) -}}
     {{ end }}
     {{ $js := $resources | resources.Concat "js/page-script.js" | minify }}
-    <script defer="defer" type="application/javascript" src="{{ $js.RelPermalink | safeHTML }}"></script>
+    <script defer="defer" type="application/javascript" src="{{ $js.RelPermalink }}"></script>
 {{ end }}

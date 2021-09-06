@@ -4,5 +4,5 @@
         {{ $resources = $resources | append (resources.Get . ) -}}
     {{ end }}
     {{ $css := $resources | resources.Concat "css/page-style.css" | minify }}
-    <link rel="stylesheet" href="{{ $css.RelPermalink | safeHTML }}">
+    <link rel="stylesheet" href="{{ $css.RelPermalink }}">
 {{ end }}
