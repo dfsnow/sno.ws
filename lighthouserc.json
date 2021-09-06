@@ -1,6 +1,6 @@
 {
   "ci": {
-    "url": ["http://localhost/", "http://localhost/reading/", "http://localhost/photos/"],
+    "urls": ["http://localhost/", "http://localhost/reading/", "http://localhost/photos/"],
     "assert": {
       "preset": "lighthouse:no-pwa",
       "assertions": {
