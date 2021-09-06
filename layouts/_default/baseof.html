@@ -2,7 +2,10 @@
 <html lang="en">
     <head>
         {{- partial "head.html" . -}}
-        {{- block "style" . }}{{- end }}
+        {{- partial "page-style.html" . -}}
+        {{- partial "page-script.html" . -}}
+        {{- block "additional-style" . }}{{- end }}
+        {{- block "additional-script" . }}{{- end }}
     </head>
     <body>
         {{- partial "header.html" . -}}

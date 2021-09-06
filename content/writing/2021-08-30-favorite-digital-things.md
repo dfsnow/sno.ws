@@ -3,6 +3,8 @@ title = "Favorite digital things"
 date = "2021-08-30"
 shorturl = "digital-things"
 recommended = "false"
+styles = [ "css/heart-markers.css" ]
+scripts = [ "js/heart-markers.js" ]
 +++
 
 In the spirit of digital minimalism, I've cleaned out my bookmarks and compiled them into this big list. This list only includes digital things; no physical stuff, no media. The purpose of this list is three-fold:
@@ -206,36 +208,5 @@ I have a strong preference for software that is fast, outwardly simple, and that
 - [sf](https://r-spatial.github.io/sf/) - Geospatial manipulation, maps, and geometry features
 - [tidycensus](https://walker-data.com/tidycensus/) - Useful interface for the Census API
 - [tidytransit](https://github.com/r-transit/tidytransit) - GTFS feed reader. Make [trains go brrr](https://sno.ws/transit-maps)
-
-<!-- mini script to move hearts to list item bullet if JS supported -->
-<script>
-    document.querySelector('article').classList.add('js-enabled')
-    document.querySelector('article span.heart').classList.add('js-enabled')
-    var lis = document.querySelectorAll('article.js-enabled ul li')
-        oldHTML = 'innerHTML',
-        newHTML = '';
-
-    [].forEach.call(lis, function (a) {
-        if (a[oldHTML].includes('♥') & CSS.supports('selector(::marker)')) { 
-            a.className = 'with-heart';
-            newHTML = a[oldHTML].replace('♥', '');
-            a[oldHTML] = newHTML;
-        } else if (a[oldHTML].includes('♥')) {
-            newHTML = a[oldHTML].replace('♥', '<span class="heart">♥</span>');
-            a[oldHTML] = newHTML;
-        }
-    });
-</script>
-
-<style>
-    .js-enabled ul li.with-heart::marker {
-      content: '♥  ';  
-      color: red;
-    }
-
-    .js-enabled span.heart {
-      color: red;
-    }
-</style>
 
 _Last updated 2021-09-05_

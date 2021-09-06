@@ -1,4 +1,4 @@
-{{ define "style" }}
+{{ define "additional-style" }}
     {{ with resources.Get "css/photos-list.css" | toCSS | minify }}
 	<style>{{ .Content | safeCSS }}</style>
     {{ end }}

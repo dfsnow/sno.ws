@@ -1,0 +1,8 @@
+{{ if isset .Params "scripts" }}
+    {{ $resources := slice -}}
+    {{ range .Page.Params.scripts }}
+        {{ $resources = $resources | append (resources.Get . ) -}}
+    {{ end }}
+    {{ $js := $resources | resources.Concat "js/page-script.js" | minify }}
+    <script defer="defer" type="application/javascript" src="{{ $js.RelPermalink | safeHTML }}"></script>
+{{ end }}
