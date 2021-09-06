@@ -2,7 +2,7 @@
 title = "Ratings"
 +++
 
-For most things on the site, <span style="color:red">♥</span> indicates a personal favorite. For books specifically, it indicates something I would wholeheartedly recommend to anyone.
+For most things on the site, <span style="color:red">♥</span> indicates a personal favorite. For books specifically, it indicates something I wholeheartedly recommend to anyone.
 
 Also, I made a rating scale for books. It's a 10-point ordinal scale, where 10 is the best and 0 is the worst. It's mostly just to help me remember what I've enjoyed and to give me a consistent, clear scale to reference.
 
