@@ -7,29 +7,30 @@
 {{- $pages = $pctx.Pages -}}
 {{- end -}}
 {{- printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>{{ if eq  .Title  .Site.Title }}{{ .Site.Title }}{{ else }}{{ with .Title }}{{.}} on {{ end }}{{ .Site.Title }}{{ end }}</title>
-    <description>{{ .Site.Params.description }}</description>
-    <link>{{ .Permalink }}</link>
-    <lastBuildDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</lastBuildDate>
-    {{- with .OutputFormats.Get "RSS" -}}
-    {{ printf "<atom:link href=%q rel=\"self\" type=%q />" .Permalink .MediaType | safeHTML }}
-    {{- end -}}
-    {{ range where $pages ".Params.date" "!=" nil }}
-    <item>
-      <title>{{ .Title }}</title>
-      <link>{{ .Permalink }}</link>
-      <pubDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</pubDate>
-      {{ with .Site.Author.email }}<author>{{.}}{{ with $.Site.Author.name }} ({{.}}){{end}}</author>{{end}}
-      <guid>{{ .Permalink }}</guid>
-      <description>
-          {{ if and (isset .Params "src") (not (eq .Params.src "")) }}
-          {{ printf "<![CDATA[<img src=\"%s/original/%s\" width=\"%s\" height=\"%s\"/>]]>" .Site.Params.photosURL .Params.src .Params.width .Params.height }}
-          {{ end }}
-          {{ .Content | html }}
-      </description>
-    </item>
-    {{ end }}
-  </channel>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:media="http://search.yahoo.com/mrss/">
+    <channel>
+        <title>{{ .Site.Title }}</title>
+        <description>{{ .Site.Params.description }}</description>
+        <link>{{ .Permalink }}</link>
+        <lastBuildDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</lastBuildDate>
+        {{- with .OutputFormats.Get "RSS" -}}
+            {{ printf "<atom:link href=%q rel=\"self\" type=%q />" .Permalink .MediaType | safeHTML }}
+        {{- end -}}
+        {{ range where $pages ".Params.date" "!=" nil }}
+            <item>
+                <title>{{ .Title }}</title>
+                <link>{{ .Permalink }}</link>
+                <pubDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</pubDate>
+                {{ with .Site.Author.email }}
+                    <author>{{.}}{{ with $.Site.Author.name }} ({{.}}){{end}}</author>
+                {{end}}
+                <guid>{{ .Permalink }}</guid>
+                {{ if and (isset .Params "src") (not (eq .Params.src "")) }}
+                    <media:content type="image/jpeg" medium="image" width="{{ .Params.width }}" height="{{ .Params.height }}"
+                    url="{{ .Site.Params.photosURL | safeHTML }}/original/{{ .Params.src | safeHTML }}" />
+                {{ end }}
+                <description>{{ .Content | htmlUnescape }}</description>
+            </item>
+        {{ end }}
+    </channel>
 </rss>
