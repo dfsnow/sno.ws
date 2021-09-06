@@ -2,6 +2,7 @@
   X-Frame-Options: DENY
   X-XSS-Protection: 1; mode=block
   X-Content-Type-Options: nosniff
+  Cache-Control: public, max-age=600
   Content-Security-Policy: img-src 'self' dfsnow.me www.dfsnow.me sno.ws www.sno.ws photos.sno.ws content.sno.ws; style-src-attr 'unsafe-inline'; style-src-elem 'self' 'unsafe-inline' dfsnow.me www.dfsnow.me sno.ws www.sno.ws
   Referrer-Policy: strict-origin-when-cross-origin
   Strict-Transport-Security: max-age=2592000
