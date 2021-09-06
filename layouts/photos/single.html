@@ -1,6 +1,6 @@
-{{ define "style" }}
-    {{ with resources.Get "css/photos-single.css" | toCSS | minify }}
-	<style>{{ .Content | safeCSS }}</style>
+{{ define "additional-style" }}
+    {{ with resources.Get "css/photos-single.css" | minify }}
+	<link rel="stylesheet" href="{{ .RelPermalink }}">
     {{ end }}
 {{ end }}
 
