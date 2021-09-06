@@ -1,7 +1,7 @@
 name: Lighthouse CI
 on: [push]
 jobs:
-  lighthouseci:
+  lighthouse-ci:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout site
