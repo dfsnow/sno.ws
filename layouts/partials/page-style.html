@@ -1,8 +1,9 @@
 {{ if isset .Params "styles" }}
     {{ $resources := slice -}}
-    {{ range .Page.Params.styles }}
+    {{ range .Params.styles }}
         {{ $resources = $resources | append (resources.Get . ) -}}
     {{ end }}
-    {{ $css := $resources | resources.Concat "css/page-style.css" | minify }}
+    {{ $path := printf "css/%s%s" .File.BaseFileName "-page-style.css" }}
+    {{ $css := $resources | resources.Concat $path | minify }}
     <link rel="stylesheet" href="{{ $css.RelPermalink }}">
 {{ end }}
