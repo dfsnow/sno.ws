@@ -21,13 +21,13 @@ This list is constantly updated. When I find a cool new thing, I'll add it. When
 
 These are the blogs I read regularly. They've influenced my thinking and formed who I am today. I try to check each one around once per month.
 
-#### Art
+### Art
 
 - [Joel Simon](https://www.joelsimon.net/) - Beautiful [generative art](https://www.joelsimon.net/corals.html) mixed with code
 - [Matt Keeter](https://www.mattkeeter.com/projects/) - Weird [shaders](https://www.mattkeeter.com/projects/futureproof/), [raytracers](https://www.mattkeeter.com/projects/rayray/), and [games](https://www.mattkeeter.com/projects/pont/)
 - [Tyler Kim](https://tyler.kim/) - Random thoughts and some [really pretty photos](https://photos.tyler.kim/)
 
-#### General
+### General
 
 - [Evening Sends](https://eveningsends.com/) - Rock climbing writing, essays, and opinions
 - [Francesco Di Lorenzo](https://francescodilorenzo.com/) - ♥ Bite-sized posts on life and programming
@@ -40,7 +40,7 @@ These are the blogs I read regularly. They've influenced my thinking and formed 
 - [Terry Tao](https://terrytao.wordpress.com/career-advice/) - Time and career advice from the world's best mathematician
 - [Tom MacWright](https://macwright.com/) - ♥ Spatial data, development, miscellany. Inspired this blog
 
-#### Coding and tech
+### Coding and tech
 
 - [Beau Gunderson](https://beaugunderson.com/) - Prolific developer, neat live-updating site
 - [Cassidy Williams](https://cassidoo.co/) - Huge inspiration, amazing dev/streamer. Excellent [newsletter](https://cassidoo.co/newsletter/)
@@ -56,7 +56,7 @@ These are the blogs I read regularly. They've influenced my thinking and formed 
 - [The Pragmatic Engineer](https://blog.pragmaticengineer.com/) - Huge collection of useful [career](https://blog.pragmaticengineer.com/advice-to-myself-when-starting-as-a-software-developer/) and [programming advice](https://blog.pragmaticengineer.com/readable-code/)
 - [Tom Ryder](https://blog.sanctum.geek.nz/) - Sys admin stuff and all things Unix, shell, and terminal
 
-#### Spatial
+### Spatial
 
 - [Katie Jolly](https://www.katiejolly.io/blog/) - Maps and geography tips for R
 - [Paul Ramsey](https://blog.cleverelephant.ca/) - Weird, weedsy [posts on PostGIS performance](https://blog.cleverelephant.ca/2021/05/indexes-and-queries.html)
@@ -68,13 +68,13 @@ These are the blogs I read regularly. They've influenced my thinking and formed 
 
 These posts have inspired or influenced me in some way. They're things I reread and share with others. I tend to like concise posts (lists) or posts that graphically explain something complicated.
 
-#### Chicago
+### Chicago
 
 - [Portrait of Chicago: Uptown](https://chicagoflaneur.com/2020/04/24/portrait-of-chicago-uptown/) - History of Uptown. A little dated, but still well-done
 - [Scenes from Chicago's Ewing Annex Hotel](https://newrepublic.com/article/161808/ewing-annex-hotel-housing-crisis-chicago) - Stories from one the last [SROs](https://en.wikipedia.org/wiki/Single_room_occupancy)
 - [UChicago's Secret Places](https://uchicagossecretplaces.wordpress.com/) - Cool photos and [urbex](https://en.wikipedia.org/wiki/Urban_exploration) on the UChicago campus
 
-#### Life
+### Life
 
 - [100 Tips for a Better Life](https://www.lesswrong.com/posts/7hFeMWC6Y5eaSixbD/100-tips-for-a-better-life) - ♥ Things I wish I'd known at 20
 - [Don't End the Week With Nothing](https://training.kalzumeus.com/newsletters/archive/do-not-end-the-week-with-nothing) - Make things you can show
@@ -85,7 +85,7 @@ These posts have inspired or influenced me in some way. They're things I reread 
 - [Stop Learning](https://www.nashvail.me/blog/stop-learning/) - You know enough, start doing things
 - [Work Hard](https://terrytao.wordpress.com/career-advice/work-hard/) - After a certain level, there are no shortcuts for effort
 
-#### Coding and tech
+### Coding and tech
 
 - [Choose Boring Technology](https://mcfunley.com/choose-boring-technology) - Stop reinventing ssh and grasping for shiny things
 - [Drunk Post: Things I've learned as a Sr Engineer](https://old.reddit.com/r/ExperiencedDevs/comments/nmodyl/drunk_post_things_ive_learned_as_a_sr_engineer/) - Strong opinions, mostly true
@@ -101,7 +101,7 @@ These posts have inspired or influenced me in some way. They're things I reread 
 - [The Website Obesity Crisis](https://idlewords.com/talks/website_obesity.htm) - ♥ Why does reddit load 15 MB on every page
 - [What I've Learned in 45 Years in the Software Industry](https://www.bti360.com/what-ive-learned-in-45-years-in-the-software-industry/) - People > technology
 
-#### Data
+### Data
 
 - [Building a Data Team at a Mid-Stage Startup](https://erikbern.com/2021/07/07/the-data-team-a-short-story.html) - The DS experience, a short story
 - [CLI Tools Can Be 235x Faster Than Your Hadoop Cluster](https://adamdrake.com/command-line-tools-can-be-235x-faster-than-your-hadoop-cluster.html) - `awk` > `hadoop`
@@ -110,20 +110,20 @@ These posts have inspired or influenced me in some way. They're things I reread 
 - [Good Data Scientist, Bad Data Scientist](https://ianwhitestone.work/good-ds-bad-ds/) - ♥ What makes a great DS anyways?
 - [The Modern Data Stack](https://blog.getdbt.com/future-of-the-modern-data-stack/) - Where things are and where they're going
 
-#### Visualization
+### Visualization
 
 - [Building Your Color Palette](https://www.refactoringui.com/previews/building-your-color-palette) - Systemic approach for picking colors for UIs
 - [Cell Tower Distribution](https://alpercinar.com/open-cell-id/) - Beautiful post on cell tower data viz
 - [Compressing and Enhancing Hand-Written Notes](https://mzucker.github.io/2016/09/20/noteshrink.html) - Shrink those scans 
 - [Ditherpunk](https://surma.dev/things/ditherpunk/) - ♥ Monochrome image dithering and how it works
 
-#### Math
+### Math
 
 - [The Bitter Lesson](http://www.incompleteideas.net/IncIdeas/BitterLesson.html) - Computation power and general methods > complex methods
 - [The Most Important Statistical Ideas of the Past 50 Years](http://www.stat.columbia.edu/~gelman/research/unpublished/stat50.pdf) - Stats summary
 - [The Unreasonable Effectiveness of Mathematics](https://www.maths.ed.ac.uk/~v1ranick/papers/wigner.pdf) - Plus [Hamming's response](https://ned.ipac.caltech.edu/level5/March02/Hamming/Hamming.html)
 
-#### Other
+### Other
 
 - [The American Abyss](https://www.nytimes.com/2021/01/09/magazine/trump-coup.html) - Long political essay on Jan. 6th and how we got there
 - [How to Gain More From Your Reading](https://psyche.co/guides/how-to-gain-more-from-reading-by-taking-it-all-in-more-slowly) - Tips for attentive, intentional reading
@@ -139,7 +139,7 @@ These are the things I use every day. It's a list whittled down over about 5 yea
 
 I have a strong preference for software that is fast, outwardly simple, and that does one thing extremely well.
 
-#### Android
+### Android
 
 - [AdGuard](https://adguard.com/en/adguard-android/overview.html) - System-wide adblocking via DNS 
 - [Authy](https://authy.com/) - MFA with a nice UI and built-in backups
@@ -150,32 +150,32 @@ I have a strong preference for software that is fast, outwardly simple, and that
 - [StreetComplete](https://github.com/streetcomplete/StreetComplete) - Easy-to-use, open-source OpenStreetMap data editor
 - [YouTube Vanced](https://vancedapp.com/) - YouTube client without ads and annoyances
 
-#### Web
+### Web
 
 - [Bitwarden](https://bitwarden.com/) - Open-source password manager. Great CLI integration
 - [Chrome](https://www.google.com/chrome/) - Browser with good devtools ¯\\\_(ツ)\_/¯
 - [Todoist](https://todoist.com/) - ♥ To-do list I've used for over a decade. Great design and team
 - [YNAB](https://www.youneedabudget.com/) - Straightforward budgeting with bank integration
 
-#### Mac
+### Mac
 
 - [Alfred](https://www.alfredapp.com/) - Customizable Spotlight alternative with great plugins
 - [IINA](https://github.com/iina/iina) - Minimal Mac-only alternative to VLC
 - [SelfControl](https://selfcontrolapp.com/) - Uncircumventable distracting site blocker
 - [Transmit](https://panic.com/transmit/) - Fast, versatile file transfer utility
 
-#### Windows
+### Windows
 
 - [VS Code](https://code.visualstudio.com/) - Big IDE for when neovim or RStudio don't cut it
 - [Windows Terminal + WSL 2](https://docs.microsoft.com/en-us/windows/wsl/install-win10) - ♥ Linux virtualization on Windows that just works
 
-#### Chrome extensions
+### Chrome extensions
 
 - [uBlock Origin](https://github.com/gorhill/uBlock) - Best wide-spectrum blocker. Fast, lightweight, can block all JS
 - [Earth View](https://chrome.google.com/webstore/detail/earth-view-from-google-ea/bhloflhklmhfpedakmangadcdofhnnoh) - Pretty satellite pictures for your new tab page
 - [Toolkit for YNAB](https://github.com/toolkit-for-ynab/toolkit-for-ynab) - QoL and reporting improvements for YNAB
 
-#### Other 
+### Other 
 
 - [Fira Code](https://github.com/tonsky/FiraCode) - Monospaced font with ligatures. Works in nearly every editor 
 - [LightGBM](https://github.com/microsoft/LightGBM) - Incredible tree-based ML framework. Better than xgboost
@@ -186,7 +186,7 @@ I have a strong preference for software that is fast, outwardly simple, and that
 - [Wireguard](https://www.wireguard.com/) - Miracle VPN. Crazy fast and easy-to-use
 - [ZFS](https://zfsonlinux.org/) - Filesystem for storage pooling and management
 
-#### CLI tools
+### CLI tools
 
 - [datamash](https://www.gnu.org/software/datamash/) - Sort, group by, summarize, transpose, etc. in the command line 
 - [ffmpeg](https://ffmpeg.org/) - Multimedia toolkit for just about everything
@@ -198,7 +198,7 @@ I have a strong preference for software that is fast, outwardly simple, and that
 - [tmux](https://github.com/tmux/tmux) - Terminal multiplexer + keep remote terminal sessions alive 
 - [zstd](https://github.com/facebook/zstd) - Compression algorithm of choice. Replaced bzip2 as a favorite
 
-#### R packages
+### R packages
 
 - [data.table](https://github.com/Rdatatable/data.table) - ♥ Impossible data manipulation magic. Faster than everything else 
 - [dplyr](https://dplyr.tidyverse.org/) - Clear, intuitive data munging that plays well with other libraries
