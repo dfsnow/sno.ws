@@ -13,3 +13,8 @@
   object-fit: contain;
   max-height: 100%;
 }
+
+.content article {
+  max-width: 640px;
+  margin: auto;
+}

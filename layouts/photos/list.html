@@ -1,7 +1,7 @@
 {{ define "additional-style" }}
-    {{ with resources.Get "css/photos-list.css" | minify }}
-	<link rel="stylesheet" href="{{ .RelPermalink }}">
-    {{ end }}
+{{ with resources.Get "css/photos-list.css" | minify }}
+    <link rel="stylesheet" href="{{ .RelPermalink }}">
+{{ end }}
 {{ end }}
 
 {{ define "main" }}

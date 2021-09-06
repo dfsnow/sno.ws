@@ -1,41 +1,39 @@
 {{ define "additional-style" }}
-    {{ with resources.Get "css/photos-single.css" | minify }}
-	<link rel="stylesheet" href="{{ .RelPermalink }}">
-    {{ end }}
+{{ with resources.Get "css/photos-single.css" | minify }}
+    <link rel="stylesheet" href="{{ .RelPermalink }}">
+{{ end }}
 {{ end }}
 
 {{ define "main" }}
+<!-- Get image base path and type -->
+{{ $srcBase := .Site.Params.photosURL }}
+{{ $srcFile := index (findRE "^([^.]+)" .Params.src 1) 0 }}
+{{ $srcFileFull := print $srcBase "/" (index (findRE "^([^.]+)" .Params.src 1) 0) }}
+{{ $srcExt := index (findRE "\\.[^.]*$|$" .Params.src 1) 0 }}
+{{ $srcType := replaceRE ".jpg" "jpeg" $srcExt }}
+
+<!-- Get explicit width and height to include in img tag -->
+{{ $srcWidth := .Params.width }}
+{{ $srcHeight := .Params.height }}
+
+<figure class="post-feature-frame">
+    <a href="{{ $srcBase }}/original/{{ $srcFile }}{{ $srcExt }}">
+        <picture>
+            <source srcset="{{ $srcFileFull }}-640.avif 640w, {{ $srcFileFull }}-1280.avif 1280w" alt="{{ .Title }}" type="image/avif">
+            <source srcset="{{ $srcFileFull }}-640.webp 640w, {{ $srcFileFull }}-1280.webp 1280w" alt="{{ .Title }}" type="image/webp">
+            <source srcset="{{ $srcFileFull }}-640{{ $srcExt }} 640w, {{ $srcFileFull }}-1280{{ $srcExt }} 1280w" alt="{{ .Title }}" type="image/{{ $srcType }}">
+            <img src="{{ $srcFileFull }}-640{{ $srcExt }}" alt="{{ .Title }}" width="{{ $srcWidth }}" height="{{ $srcHeight }}" class="post-feature-photo">
+        </picture>
+    </a>
+</figure>
+
 <article>
-
-    <!-- Get image base path and type -->
-    {{ $srcBase := .Site.Params.photosURL }}
-    {{ $srcFile := index (findRE "^([^.]+)" .Params.src 1) 0 }}
-    {{ $srcFileFull := print $srcBase "/" (index (findRE "^([^.]+)" .Params.src 1) 0) }}
-    {{ $srcExt := index (findRE "\\.[^.]*$|$" .Params.src 1) 0 }}
-    {{ $srcType := replaceRE ".jpg" "jpeg" $srcExt }}
-
-    <!-- Get explicit width and height to include in img tag -->
-    {{ $srcWidth := .Params.width }}
-    {{ $srcHeight := .Params.height }}
-
-    <figure class="post-feature-frame">
-        <a href="{{ $srcBase }}/original/{{ $srcFile }}{{ $srcExt }}">
-            <picture>
-                <source srcset="{{ $srcFileFull }}-640.avif 640w, {{ $srcFileFull }}-1280.avif 1280w" alt="{{ .Title }}" type="image/avif">
-                <source srcset="{{ $srcFileFull }}-640.webp 640w, {{ $srcFileFull }}-1280.webp 1280w" alt="{{ .Title }}" type="image/webp">
-                <source srcset="{{ $srcFileFull }}-640{{ $srcExt }} 640w, {{ $srcFileFull }}-1280{{ $srcExt }} 1280w" alt="{{ .Title }}" type="image/{{ $srcType }}">
-                <img src="{{ $srcFileFull }}-640{{ $srcExt }}" alt="{{ .Title }}" width="{{ $srcWidth }}" height="{{ $srcHeight }}" class="post-feature-photo">
-            </picture>
-        </a>
-    </figure>
-    <header class="post-header" style="max-width:640px;margin:auto;">
+    <header class="post-header">
         <h1 class="post-title">{{ .Title }}</h1>
         {{- if isset .Params "date" -}}
             <time class="post-meta">{{ .Date.Format "January 2, 2006" }}</time>
         {{- end -}}
     </header>
-    <div style="max-width:640px;margin:auto;">
-        {{- .Content -}}
-    </div>
+    {{- .Content -}}
 </article>
 {{ end }}
