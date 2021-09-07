@@ -35,7 +35,7 @@ a {
 .content {
   max-width: 64rem;
   margin: auto;
-  padding: 2rem;
+  padding: 2rem 3rem;
 }
 
 .content h1,
@@ -113,7 +113,7 @@ a {
 .post-list {
   display: grid;
   row-gap: 0.5rem;
-  margin-right: -2rem;
+  margin-right: -3rem;
 }
 
 .post-list > .post-list-info {
@@ -127,15 +127,15 @@ a {
 }
 
 .post-list > .post-list-rec {
-  padding-left: 1rem;
+  text-align: center;
 }
 
 .content > div#writing {
-  grid-template-columns: 2fr 0.2fr 2rem;
+  grid-template-columns: 2fr 0.2fr 3rem;
 }
 
 .content > div#reading {
-  grid-template-columns: 1.1fr 0.9fr 0.2fr 2rem;
+  grid-template-columns: 1.1fr 0.9fr 0.2fr 3rem;
 }
 
 .post-header > .post-title {
@@ -162,7 +162,7 @@ a {
   max-width: 64rem;
   margin: auto;
   z-index: 999;
-  padding: 2.1rem 2rem 1.6rem 2rem;
+  padding: 2.1rem 3rem 1.6rem 3rem;
 }
 
 .navbar-content > .navbar-internal-links {
@@ -222,16 +222,18 @@ a {
   }
 
   .post-list > .post-list-rec {
-    padding-left: 0;
+    text-align: left;
     padding-bottom: 2rem;
-    text-decoration: none;
+  }
+
+  .content {
+    padding: 2rem 2rem;
   }
 
   .content div#writing,
   .content div#reading {
     gap: 0;
     grid-template-columns: 1fr;
-    margin-right: auto;
   }
 
   .navbar {
@@ -240,6 +242,7 @@ a {
 
   .navbar-content {
     display: block;
+    padding: 2.1rem 2rem 1.6rem 2rem;
   }
 
   .navbar-content > .navbar-internal-links {
