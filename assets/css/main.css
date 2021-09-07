@@ -119,6 +119,7 @@ a {
 .post-list {
   display: grid;
   gap: 0.5rem;
+  margin-right: -3rem;
 }
 
 .post-list > .post-list-info {
@@ -135,11 +136,11 @@ a {
 }
 
 .content > div#writing {
-  grid-template-columns: 2fr 0.2fr 0.1fr;
+  grid-template-columns: 2fr 0.2fr 3rem;
 }
 
 .content > div#reading {
-  grid-template-columns: 1.1fr 0.9fr 0.2fr 0.1fr;
+  grid-template-columns: 1.1fr 0.9fr 0.2fr 3rem;
 }
 
 .post-header > .post-title {
@@ -162,8 +163,8 @@ a {
 
 .navbar-content {
   display: grid;
-  gap: 0.3em;
-  grid-template-columns: 0.3fr 1.5fr 0.4fr 0.1fr;
+  gap: 0.5rem;
+  grid-template-columns: 0.3fr 1.5fr 0.4fr;
   max-width: 64rem;
   margin: auto;
   z-index: 999;
@@ -236,6 +237,7 @@ a {
   .content div#reading {
     gap: 0;
     grid-template-columns: 1fr;
+    margin-right: auto;
   }
 
   .navbar {
