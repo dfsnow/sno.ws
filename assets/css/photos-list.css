@@ -7,6 +7,10 @@
   flex-wrap: wrap;
 }
 
+.post-list-photos img {
+  display: block;
+}
+
 .post-list-photos > .photo-frame {
   display: flex;
   flex-grow: 2;
