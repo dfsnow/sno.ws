@@ -9,6 +9,7 @@
 }
 
 .content img {
+  align-self: flex-start;
   max-width: calc(100% + 4rem);
   margin: 0 -2rem;
 }
