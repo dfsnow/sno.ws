@@ -8,7 +8,7 @@
 /li                        https://linkedin.com/in/dfsnow/
 
 # Redirects to posts/articles. Most recent is on bottom
-/rural-docs                https://dfsnow.github.io/ama_viz/exploratory_plots.html 
+/rural-docs                /writing/2019/04/10/visualizing-americas-rural-physician-shortage/ 
 /med-students              https://dfsnow.github.io/ama_viz_interactive/
 /hello-world               /writing/2021/02/27/hello-again-world/
 /transit-maps              /writing/2021/03/03/creating-moving-transit-maps-with-r-and-gtfs-feeds/

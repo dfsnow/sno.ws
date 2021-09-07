@@ -1,0 +1,22 @@
+.content {
+  max-width: 100%;
+}
+
+.content picture { 
+  display: flex;
+  max-width: calc(64rem + 24rem);
+  margin: 3rem auto;
+}
+
+.content img {
+  max-width: calc(100% + 4rem);
+  margin: 0 -2rem;
+}
+
+.content p,
+.content h2,
+.content header {
+  max-width: 64rem;
+  margin-left: auto;
+  margin-right: auto;
+}
