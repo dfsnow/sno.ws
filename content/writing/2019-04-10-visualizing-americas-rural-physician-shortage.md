@@ -8,6 +8,10 @@ styles = [ "css/2019-04-10-visualizing-americas-rural-physician-shortage.css" ]
 
 _Note: This is adapted from an essay I wrote as a research assistant during graduate school. You can see the [original essay here](https://dfsnow.github.io/ama_viz/exploratory_plots.html)._
 
+<div style="max-width:60rem;display:flex;margin:-3rem auto;">
+    {{< picture-embed src="/2019-04-10-colorbar.png" alt="Post color palette" width="1696" height="44">}}
+</div>
+
 Rural America is facing a massive and growing shortage of physicians. For the past few decades, doctors have flocked to cities seeking better career opportunities, higher pay, and urban amenities. As a result, only 10% of physicians now live in rural areas, compared to 20% of the overall U.S. population. This maldistribution has potentially disastrous consequences: studies have shown that having physical access to a doctor is an important determinant of health. For many rural Americans, getting this access requires a long drive and a potentially longer wait, resulting in potential health consequences such as a higher likelihood of infant mortality, obesity, and disability. The shortage and its effects are likely to get worse in the coming decades, as an increasing percentage of physicians choose to practice in urban areas.
 
 In response to this crisis, policymakers have implemented two primary measures designed to stem the flow of physicians moving to urban areas. First, the Department of Health and Human Services and others have created wage incentives for doctors practicing in shortage areas. These incentives are designed to attract new doctors to rural areas by offering them a slight wage premium, and to keep rural doctors rural by offsetting their opportunity costs. Second, many medical schools have opened rural branch campuses or programs, ostensibly designed to accustom students to rural life and erode their preference for urban areas.
