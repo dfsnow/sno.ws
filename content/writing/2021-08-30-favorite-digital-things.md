@@ -179,6 +179,7 @@ I have a strong preference for software that is fast, outwardly simple, and that
 
 - [Fira Code](https://github.com/tonsky/FiraCode) - Monospaced font with ligatures. Works in nearly every editor 
 - [LightGBM](https://github.com/microsoft/LightGBM) - Incredible tree-based ML framework. Better than xgboost
+- [Obsidian](https://obsidian.md/) - ♥ Markdown-based personal [KB](https://en.wikipedia.org/wiki/Knowledge_base). Plays well with [wiki.vim](https://github.com/lervag/wiki.vim)
 - [Parquet](https://parquet.apache.org/) - Fast, space-efficient columnar storage format
 - [Postgres](https://www.postgresql.org/) - Preferred RDBMS for any project with structured data
 - [PostGIS](https://postgis.net/) - Spatial data extension for Postgres
@@ -196,6 +197,7 @@ I have a strong preference for software that is fast, outwardly simple, and that
 - [ripgrep](https://github.com/BurntSushi/ripgrep) - ♥ `grep` but better. Search every file in a directory in milliseconds
 - [stow](https://www.gnu.org/software/stow/manual/stow.html) - Symlink, config, and dotfiles management
 - [tmux](https://github.com/tmux/tmux) - Terminal multiplexer + keep remote terminal sessions alive 
+- [z](https://github.com/rupa/z) - Tiny bash utility that lets you jump between commonly-used directories
 - [zstd](https://github.com/facebook/zstd) - Compression algorithm of choice. Replaced bzip2 as a favorite
 
 ### R packages
@@ -209,4 +211,4 @@ I have a strong preference for software that is fast, outwardly simple, and that
 - [tidycensus](https://walker-data.com/tidycensus/) - Useful interface for the Census API
 - [tidytransit](https://github.com/r-transit/tidytransit) - GTFS feed reader. Make [trains go brrr](https://sno.ws/transit-maps)
 
-_Last updated 2021-09-05_
+_Last updated 2021-09-07_
