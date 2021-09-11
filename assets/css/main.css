@@ -1,17 +1,16 @@
 html {
-  font-size: 61.5%;
+  font-size: 62.5%;
 }
 
 body {
   font-size: 1.6rem;
   font-family: 'Helvetica Neue', 'Arial', sans-serif;
-  color: #111;
   margin: 0 auto;
   line-height: 1.6;
 }
 
 a {
-  color: #111;
+  color: #000;
 }
 
 .link-nowrap-nodec {
@@ -216,6 +215,14 @@ a {
 
 /* adjustment when very small */
 @media screen and (max-width: 50rem) {
+  .post-list {
+    margin-right: inherit;
+  }
+
+  .post-list > .post-list-info {
+    margin-right: inherit;
+  }
+
   .post-list > .post-list-info a {
     white-space: normal;
     text-decoration: underline;
