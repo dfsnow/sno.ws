@@ -190,6 +190,8 @@ a {
 .navbar-external-links > .navbar-external-link svg {
   fill: #949494;
   stroke: #949494;
+  width: 1.4em;
+  height: 1.4em;
 }
 
 .navbar-external-links > .navbar-external-link svg:hover {
@@ -261,6 +263,12 @@ a {
   .navbar-content > .navbar-external-links {
     justify-content: flex-start;
     padding: 0.4em 0;
+    height: 1.6em;
+  }
+
+  .navbar-content > .navbar-external-links svg {
+    height: 1.6em;
+    width: 1.6em;
   }
 }
 
