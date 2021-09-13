@@ -24,6 +24,7 @@ These are the blogs I read regularly. They've influenced my thinking and formed 
 ### Art
 
 - [Joel Simon](https://www.joelsimon.net/) - Beautiful [generative art](https://www.joelsimon.net/corals.html) mixed with code
+- [Lingdong Huang](https://lingdong.works/) - Procedurally generated [fish](https://fishdraw.glitch.me/), [landscape paintings](https://shan-shui-inf.lingdong.works/), and [flowers](https://nonflowers.lingdong.works/)
 - [Matt Keeter](https://www.mattkeeter.com/projects/) - Weird [shaders](https://www.mattkeeter.com/projects/futureproof/), [raytracers](https://www.mattkeeter.com/projects/rayray/), and [games](https://www.mattkeeter.com/projects/pont/)
 - [Tyler Kim](https://tyler.kim/) - Random thoughts and some [really pretty photos](https://photos.tyler.kim/)
 
@@ -211,4 +212,4 @@ I have a strong preference for software that is fast, outwardly simple, and that
 - [tidycensus](https://walker-data.com/tidycensus/) - Useful interface for the Census API
 - [tidytransit](https://github.com/r-transit/tidytransit) - GTFS feed reader. Make [trains go brrr](https://sno.ws/transit-maps)
 
-_Last updated 2021-09-07_
+_Last updated 2021-09-13_
