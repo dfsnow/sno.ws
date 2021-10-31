@@ -79,12 +79,17 @@ a {
 
 .content pre {
   display: block;
-  overflow-x: auto;
   font-size: 1.5rem;
   white-space: pre;
   margin: 1.5em 0;
-  padding: 1.5em 2.5em;
-  line-height: 1.5;
+  padding: 1.5em 2em;
+  line-height: 1.6em;
+  overflow-x: auto;
+  word-break: break-all;
+  word-wrap: break-word;
+  background-color: #fafafa;
+  border: 1px solid #dbdbdb;
+  border-radius: 2px;
 }
 
 .content pre code {
