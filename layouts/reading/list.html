@@ -3,7 +3,7 @@
     {{ range where $.Site.RegularPages "Section" "reading" }}
         {{ if gt (len .Content) 0 }}
             <div class="post-list-info">
-                <a href="{{ .Permalink }}" class="link-nowrap-nodec">
+                <a href="{{ .Permalink }}" class="link-nowrap">
                     {{ .Title }}
                 </a>
             </div>

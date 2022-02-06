@@ -13,19 +13,13 @@ a {
   color: #000;
 }
 
-.link-nowrap-nodec {
-  text-decoration: none;
+.link-nowrap {
   white-space: nowrap;
-}
-
-.link-nowrap-nodec:hover {
-  text-decoration: underline;
 }
 
 .link-fave-heart {
   text-decoration: none;
   color: red;
-  margin-right: 0.5rem;
 }
 
 .link-fave-heart:hover {
@@ -118,7 +112,7 @@ a {
 .post-list {
   display: grid;
   row-gap: 0.5rem;
-  margin-right: -5rem;
+  margin-right: -3rem;
 }
 
 .post-list > .post-list-info {
@@ -132,16 +126,15 @@ a {
 }
 
 .post-list > .post-list-misc {
-  text-align: left;
-  margin-left: 1rem;
+  text-align: center;
 }
 
 .content > div#writing {
-  grid-template-columns: 2fr 0.2fr 5rem;
+  grid-template-columns: 2fr 0.2fr 3rem;
 }
 
 .content > div#reading {
-  grid-template-columns: 1.2fr 0.75fr 0.25fr 5rem;
+  grid-template-columns: 1.2fr 0.75fr 0.25fr 3rem;
 }
 
 .post-header > .post-title {
@@ -237,7 +230,6 @@ a {
 
   .post-list > .post-list-misc {
     text-align: left;
-    margin-left: 0;
     padding-bottom: 2rem;
   }
 
