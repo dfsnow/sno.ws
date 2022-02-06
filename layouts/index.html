@@ -5,10 +5,6 @@
             {{ if isset .Params "link" }}
                 <a href="{{ .Params.link }}" class="link-nowrap-nodec" target="_blank" rel="noopener">
                     {{ .Title }}
-                    <svg aria-label="External link" role="img" viewBox="0 0 32 32" width="1.5rem" height="1.5rem" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3">
-                        <title>External link</title>
-                        <path d="M14 9 L3 9 3 29 23 29 23 18 M18 4 L28 4 28 14 M28 4 L14 18"/>
-                    </svg>
                 </a>
             {{ else }}
                 <a href="{{ .Permalink }}" class="link-nowrap-nodec">
@@ -17,11 +13,17 @@
             {{ end }}
         </div>
         <time class="post-list-date">{{ .Date.Format "2006-01-02" }}</time>
-        <div class="post-list-rec">
+        <div class="post-list-misc">
             {{ if eq .Params.recommended "true"}}
                 <a href="/ratings" class="link-fave-heart" title="Personal favorite">
                     ♥
                 </a>
+            {{ end }}
+            {{ if isset .Params "link" }}
+                <svg aria-label="External link" role="img" viewBox="0 0 32 32" width="1.5rem" height="1.5rem" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3">
+                    <title>External link</title>
+                    <path d="M14 9 L3 9 3 29 23 29 23 18 M18 4 L28 4 28 14 M28 4 L14 18"/>
+                </svg>
             {{ end }}
         </div>
     {{ end }}

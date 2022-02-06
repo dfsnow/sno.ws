@@ -25,6 +25,7 @@ a {
 .link-fave-heart {
   text-decoration: none;
   color: red;
+  margin-right: 0.5rem;
 }
 
 .link-fave-heart:hover {
@@ -117,7 +118,7 @@ a {
 .post-list {
   display: grid;
   row-gap: 0.5rem;
-  margin-right: -3rem;
+  margin-right: -5rem;
 }
 
 .post-list > .post-list-info {
@@ -130,16 +131,17 @@ a {
   white-space: pre;
 }
 
-.post-list > .post-list-rec {
-  text-align: center;
+.post-list > .post-list-misc {
+  text-align: left;
+  margin-left: 1rem;
 }
 
 .content > div#writing {
-  grid-template-columns: 2fr 0.2fr 3rem;
+  grid-template-columns: 2fr 0.2fr 5rem;
 }
 
 .content > div#reading {
-  grid-template-columns: 1.2fr 0.75fr 0.25fr 3rem;
+  grid-template-columns: 1.2fr 0.75fr 0.25fr 5rem;
 }
 
 .post-header > .post-title {
@@ -233,8 +235,9 @@ a {
     text-decoration: underline;
   }
 
-  .post-list > .post-list-rec {
+  .post-list > .post-list-misc {
     text-align: left;
+    margin-left: 0;
     padding-bottom: 2rem;
   }
 

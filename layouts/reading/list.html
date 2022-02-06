@@ -1,16 +1,20 @@
 {{ define "main" }}
 <div id="reading" class="post-list">
     {{ range where $.Site.RegularPages "Section" "reading" }}
-        <div class="post-list-info">
-            <a href="{{ .Permalink }}" class="link-nowrap-nodec">
-                {{ .Title }}
-            </a>
-        </div>
+        {{ if gt (len .Content) 0 }}
+            <div class="post-list-info">
+                <a href="{{ .Permalink }}" class="link-nowrap-nodec">
+                    {{ .Title }}
+                </a>
+            </div>
+        {{ else }}
+            <div class="post-list-info">{{ .Title }}</div>
+        {{ end }}
         <div class="post-list-info">
             {{ .Params.author }}
         </div>
         <time class="post-list-date">{{ .Date.Format "2006-01-02" }}</time>
-        <div class="post-list-rec">
+        <div class="post-list-misc">
             {{ if eq .Params.recommended "true"}}
                 <a href="/ratings" class="link-fave-heart" title="Recommended book">
                     ♥
