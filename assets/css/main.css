@@ -194,14 +194,12 @@ a {
 
 .navbar-external-links > .navbar-external-link svg {
   fill: #949494;
-  stroke: #949494;
   width: 1.4em;
   height: 1.4em;
 }
 
 .navbar-external-links > .navbar-external-link svg:hover {
   fill: #333;
-  stroke: #333;
 }
 
 .navbar-separator {
