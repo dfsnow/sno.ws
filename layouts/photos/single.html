@@ -22,7 +22,7 @@
             <source srcset="{{ $srcFileFull }}-640.avif 640w, {{ $srcFileFull }}-1280.avif 1280w" alt="{{ .Title }}" type="image/avif">
             <source srcset="{{ $srcFileFull }}-640.webp 640w, {{ $srcFileFull }}-1280.webp 1280w" alt="{{ .Title }}" type="image/webp">
             <source srcset="{{ $srcFileFull }}-640{{ $srcExt }} 640w, {{ $srcFileFull }}-1280{{ $srcExt }} 1280w" alt="{{ .Title }}" type="image/{{ $srcType }}">
-            <img src="{{ $srcFileFull }}-640{{ $srcExt }}" alt="{{ .Title }}" width="{{ $srcWidth }}" height="{{ $srcHeight }}" class="post-feature-photo">
+            <img src="{{ $srcFileFull }}-640{{ $srcExt }}" alt="{{ .Title }}" width="{{ $srcWidth }}" height="{{ $srcHeight }}" class="post-feature-photo" style="max-width:100%;height:auto;">
         </picture>
     </a>
 </figure>
