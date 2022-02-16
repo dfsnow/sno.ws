@@ -16,6 +16,7 @@
   flex-grow: 2;
   margin: 0;
   padding: 0.5rem;
+  max-width: 640px;
 }
 
 .photo-frame > .photo-rec {
@@ -35,12 +36,6 @@
 
 .photo-frame > .photo-rec svg:hover {
   fill: darkred;
-}
-
-@media screen and (min-width: 1124px) {
-  .post-list-photos > .photo-frame:last-of-type {
-    max-width: 800px;
-  }
 }
 
 @media screen and (max-width: 50rem) {
