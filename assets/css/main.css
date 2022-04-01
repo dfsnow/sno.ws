@@ -13,8 +13,13 @@ a {
   color: #000;
 }
 
-.link-nowrap {
+.link-nowrap-nodec {
+  text-decoration: none;
   white-space: nowrap;
+}
+
+.link-nowrap-nodec:hover {
+  text-decoration: underline;
 }
 
 .link-fave-heart {
