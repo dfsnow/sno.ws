@@ -25,7 +25,7 @@
 		    <source srcset="{{ $srcFileFull }}-640.avif 640w" alt="{{ .Title }}" type="image/avif">
 		    <source srcset="{{ $srcFileFull }}-640.webp 640w" alt="{{ .Title }}" type="image/webp">
 		    <source srcset="{{ $srcFileFull }}-640{{ $srcExt }} 640w" alt="{{ .Title }}" type="image/{{ $srcType }}">
-		    <img src="{{ $srcFileFull }}-640{{ $srcExt }}" alt="{{ .Title }}" width="{{ $srcWidth }}" height="{{ $srcHeight }}" style="max-width:100%;height:auto;" loading="lazy">
+		    <img src="{{ $srcFileFull }}-640{{ $srcExt }}" alt="{{ .Title }}" width="{{ $srcWidth }}" height="{{ $srcHeight }}" style="max-width:100%;height:auto;" loading="eager">
 		</picture>
 	    </a>
 	    {{ if eq .Params.recommended "true" }}
