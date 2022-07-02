@@ -22,5 +22,4 @@
     {{ $resources = $resources | append (resources.Get "css/syntax.css") -}}
 {{ end -}}
 {{ $css := $resources | resources.Concat "css/style.css" | minify }}
-{{ printf `<link rel="stylesheet" href="%s" media="print" onload="this.media='all'">` $css.RelPermalink | safeHTML }}
-{{ printf `<noscript/><link rel="stylesheet" href="%s"></noscript>` $css.RelPermalink | safeHTML }}
+<style>{{ $css.Content | safeCSS }}</style>
