@@ -1,35 +1,35 @@
-const AWS = require('aws-sdk');
-const util = require('util');
-const sharp = require('sharp');
-const path = require('path');
+const AWS = require("aws-sdk");
+const util = require("util");
+const sharp = require("sharp");
+const path = require("path");
 const s3 = new AWS.S3();
 
 exports.handler = async (event, context, callback) => {
 
-    // Read options from the event parameter.
+    // Read options from the event parameter
     console.log("Reading options from event:\n", util.inspect(event, {depth: 5}));
     const srcBucket = event.Records[0].s3.bucket.name;
 
-    // Object key may have spaces or unicode non-ASCII characters.
+    // Object key may have spaces or unicode non-ASCII characters
     const srcKey    = decodeURIComponent(event.Records[0].s3.object.key.replace(/\+/g, " "));
     const srcKeyExt = path.extname(srcKey).toLowerCase();
-    const dstBucket = srcBucket;
-    const dstKey = path.basename(srcKey, srcKeyExt);
+    const dstBucket = process.env.DEST_BUCKET;
+    const dstKey    = path.basename(srcKey, srcKeyExt);
 
     // Check that the image type is supported
     if (srcKeyExt != ".jpg" && srcKeyExt != ".png" && srcKeyExt != ".gif") {
-        console.log(`Unsupported image type: ${srcKeyExt}`);
+        console.log("Unsupported image type: " + srcKeyExt);
         return;
     }
 
-    // Download the original image from the S3 source bucket.
+    // Download the original image from the S3 source bucket
     try {
         const params = {
             Bucket: srcBucket,
             Key: srcKey
         };
         var origimage = await s3.getObject(params).promise();
-        console.log('got image');
+        console.log("Got file: " + srcBucket + '/' + srcKey);
 
     } catch (error) {
         console.log(error);
@@ -41,7 +41,7 @@ exports.handler = async (event, context, callback) => {
         const filenameOrgExt = `${dstKey}-${res}${srcKeyExt}`;
         const filenameWebpExt = `${dstKey}-${res}.webp`;
         const filenameAvifExt = `${dstKey}-${res}.avif`;
-        console.log(`Now generating ${res}`)
+        console.log("Now generating: " + res)
 
         try {
             var bufferOrg = await sharp(origimage.Body).rotate().resize(res).toBuffer();
@@ -66,7 +66,7 @@ exports.handler = async (event, context, callback) => {
                 Body: bufferWebp,
                 ContentType: "image"
             };
-            const destParamsAvif= {
+            const destParamsAvif = {
                 Bucket: dstBucket,
                 Key: filenameAvifExt,
                 Body: bufferAvif,
@@ -82,5 +82,24 @@ exports.handler = async (event, context, callback) => {
             return;
         }
     };
-    console.log('Successfully resized ' + srcBucket + '/' + srcKey);
+    console.log("Successfully resized " + srcBucket + "/" + srcKey);
+
+    // Strip original image of EXIF data and rotate
+    try {
+        var buffer = await sharp(origimage.Body).rotate().toBuffer();
+        const key = `original/${dstKey}${srcKeyExt}`;
+        const destParams = {
+            Bucket: dstBucket,
+            Key: key,
+            Body: buffer,
+            ContentType: "image"
+        };
+
+        const putResult = await s3.putObject(destParams).promise();
+
+    } catch (error) {
+        console.log(error);
+        return;
+    }
+    console.log("Successfully stripped " + srcBucket + "/" + srcKey);
 };
