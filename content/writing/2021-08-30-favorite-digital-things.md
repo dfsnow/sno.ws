@@ -118,6 +118,7 @@ These posts have inspired or influenced me in some way. They're things I reread 
 - [Cell Tower Distribution](https://alpercinar.com/open-cell-id/) - Beautiful post on cell tower data viz
 - [Compressing and Enhancing Hand-Written Notes](https://mzucker.github.io/2016/09/20/noteshrink.html) - Shrink those scans 
 - [Ditherpunk](https://surma.dev/things/ditherpunk/) - ♥ Monochrome image dithering and how it works
+- [Mechanical Watch](https://ciechanow.ski/mechanical-watch/) - ♥ One of the most technically and visually impressive treatments of a complex topic I've ever seen
 
 ### Math
 
@@ -212,4 +213,4 @@ I have a strong preference for software that is fast, outwardly simple, and that
 - [tidycensus](https://walker-data.com/tidycensus/) - Useful interface for the Census API
 - [tidytransit](https://github.com/r-transit/tidytransit) - GTFS feed reader. Make [trains go brrr](https://sno.ws/transit-maps)
 
-_Last updated 2022-07-16_
+_Last updated 2022-07-17_
