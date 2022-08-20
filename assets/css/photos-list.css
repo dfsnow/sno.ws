@@ -35,7 +35,7 @@
 }
 
 .photo-frame > .photo-rec svg:hover {
-  fill: darkred;
+  fill: #ff9999;
 }
 
 @media screen and (max-width: 50rem) {

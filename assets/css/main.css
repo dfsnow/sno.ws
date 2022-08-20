@@ -47,10 +47,10 @@ a {
 }
 
 .content hr {
-  border-top: 1px solid #000;
+  border-top: 1px solid #949494;
   border-bottom: 0;
-  background-color: #000;
-  color: #000;
+  background-color: #949494;
+  color: #949494;
 }
 
 .content code,
@@ -185,10 +185,10 @@ a {
 }
 
 .navbar-separator {
-  border-top: 1px solid #000;
+  border-top: 1px solid #949494;
   border-bottom: 0;
-  color: #000;
-  background-color: #000;
+  color: #949494;
+  background-color: #949494;
   margin: 0;
 }
 
@@ -249,5 +249,41 @@ a {
   .navbar-content > .navbar-external-links svg {
     height: 1.6em;
     width: 1.6em;
+  }
+}
+
+@media (prefers-color-scheme:dark) {
+  body {
+    background-color: #000;
+    color: #ddd;
+  }
+
+  a {
+    color: #ddd;
+  }
+
+  .link-fave-heart:hover {
+    color: #ff9999;
+  }
+
+  .content code,
+  .content pre {
+    background-color: #333;
+  }
+
+  .content pre {
+    border: 1px solid #666;
+  }
+
+  .post-header > .post-meta {
+    color: #aaa;
+  }
+
+  .navbar {
+    background-color: #000;
+  }
+
+  .navbar-external-links > .navbar-external-link svg:hover {
+    fill: #ddd;
   }
 }
