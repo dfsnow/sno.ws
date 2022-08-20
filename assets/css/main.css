@@ -6,7 +6,7 @@ body {
   font-size: 1.6rem;
   font-family: 'Helvetica Neue', 'Arial', sans-serif;
   margin: 0 auto;
-  line-height: 1.6;
+  line-height: 1.5;
 }
 
 a {
@@ -34,7 +34,7 @@ a {
 .content {
   max-width: 64rem;
   margin: auto;
-  padding: 2rem 3rem;
+  padding: 2rem;
 }
 
 .content h1,
@@ -43,21 +43,7 @@ a {
 .content h4,
 .content h5,
 .content h6 {
-  margin: 0.9em 0;
-  line-height: 1.15;
-}
-
-.content p {
-  margin: 0.9em 0;
-}
-
-.content h1 + p,
-.content h2 + p,
-.content h3 + p,
-.content h4 + p,
-.content h5 + p,
-.content h6 + p {
-  margin-top: 0.9em;
+  line-height: 1.125;
 }
 
 .content hr {
@@ -69,31 +55,27 @@ a {
 
 .content code,
 .content pre {
-  font-family: 'monaco', monospace;
+  font-family: 'Monaco', monospace;
+  background-color: #f8f8f8;
 }
 
 .content code {
-  font-size: 0.96em;
-  padding: 0 0.3em;
+  font-size: 1.5rem;
+  padding: 0 0.4rem;
 }
 
 .content pre {
   display: block;
-  font-size: 1.5rem;
+  font-size: .875em;
   white-space: pre;
   margin: 1.5em 0;
   padding: 1.5em 2em;
-  line-height: 1.6em;
+  line-height: 1.5;
   overflow-x: auto;
   word-break: break-all;
   word-wrap: break-word;
-  background-color: #fafafa;
-  border: 1px solid #dbdbdb;
-  border-radius: 2px;
-}
-
-.content pre code {
-  padding: 0;
+  border: 1px solid #e4e4e4;
+  border-radius: 3px;
 }
 
 .content img {
@@ -106,9 +88,9 @@ a {
 }
 
 .content figure figcaption {
-  font-size: 0.92em;
+  font-size: 1.4rem;
   font-style: italic;
-  line-height: 2.2rem;
+  line-height: 1.5;
   text-align: center;
   margin-top: 0.6rem;
   padding: 0 1rem;
@@ -143,13 +125,13 @@ a {
 }
 
 .post-header > .post-title {
-  margin: 0.1em 0;
-  font-size: 2.9rem;
+  margin: 0 0 0.3rem 0;
+  font-size: 3rem;
   line-height: 1.15;
 }
 
 .post-header > .post-meta {
-  font-size: 0.95em;
+  font-size: 1.5rem;
   color: #767676;
 }
 
@@ -166,7 +148,7 @@ a {
   max-width: 64rem;
   margin: auto;
   z-index: 999;
-  padding: 2.1rem 3rem 1.6rem 3rem;
+  padding: 2.2rem 3rem 1.6rem 3rem;
 }
 
 .navbar-content > .navbar-internal-links {
@@ -181,7 +163,7 @@ a {
 
 .navbar-content > .navbar-external-links {
   display: flex;
-  height: 1.4em;
+  height: 2.8rem;
 }
 
 .navbar-external-links > .navbar-external-link {
@@ -238,10 +220,6 @@ a {
     padding-bottom: 2rem;
   }
 
-  .content {
-    padding: 2rem 2rem;
-  }
-
   .content div#writing,
   .content div#reading {
     gap: 0;
@@ -254,19 +232,18 @@ a {
 
   .navbar-content {
     display: block;
-    padding: 2.1rem 2rem 1.6rem 2rem;
+    padding-bottom: 2.4rem;
   }
 
   .navbar-content > .navbar-internal-links {
     display: block;
-    margin: 0.25em 0 0.75em 0;
+    margin: 0.4rem 0 1.6rem 0;
     text-decoration: underline;
   }
 
   .navbar-content > .navbar-external-links {
     justify-content: flex-start;
-    padding: 0.4em 0;
-    height: 1.6em;
+    height: 2.7rem;
   }
 
   .navbar-content > .navbar-external-links svg {
@@ -274,4 +251,3 @@ a {
     width: 1.6em;
   }
 }
-
