@@ -1,6 +1,10 @@
 <header class="navbar">
     <nav class="navbar-content">
-        <h1 style="font-size:1.85rem;margin:0;white-space:pre;">{{ .Site.Title }}</h1>
+        <div class="navbar-external-links">
+            <h1 class="navbar-title">
+                {{ .Site.Title }}
+            </h1>
+        </div>
         <ul class="navbar-internal-links">
             {{ range .Site.Menus.main.ByWeight -}}
             <li>
