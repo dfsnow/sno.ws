@@ -26,3 +26,5 @@
   Cache-Control: public, max-age=2592000, immutable
 /*.svg
   Cache-Control: public, max-age=2592000, immutable
+/manifest.json
+  Cache-Control: public, max-age=2592000, immutable
