@@ -99,7 +99,7 @@ a {
 .post-list {
   display: grid;
   row-gap: 0.5rem;
-  margin-right: -3rem;
+  margin-right: -2rem;
 }
 
 .post-list > .post-list-info {
@@ -148,7 +148,7 @@ a {
   max-width: 64rem;
   margin: auto;
   z-index: 999;
-  padding: 2.2rem 3rem 1.6rem 3rem;
+  padding: 2.2rem 2rem 1.6rem 2rem;
 }
 
 .navbar-content > .navbar-internal-links {
