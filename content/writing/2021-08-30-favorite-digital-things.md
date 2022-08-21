@@ -138,7 +138,7 @@ These posts have inspired or influenced me in some way. They're things I reread 
 
 ## Software
 
-These are the things I use every day. It's a list whittled down over about 5 years. It's not exhaustive, but it's pretty close; I still use other stuff like Google Docs and Drive.
+These are the things I use every day. It's a list whittled down over about 5 years. It's not exhaustive, but it's pretty close; I still use other stuff like Word and Teams 💀.
 
 I have a strong preference for software that is fast, outwardly simple, and that does one thing extremely well.
 
@@ -155,7 +155,6 @@ I have a strong preference for software that is fast, outwardly simple, and that
 ### Web
 
 - [Bitwarden](https://bitwarden.com/) - Open-source password manager. Great CLI integration
-- [Chrome](https://www.google.com/chrome/) - Browser with good devtools ¯\\\_(ツ)\_/¯
 - [Todoist](https://todoist.com/) - ♥ To-do list I've used for over a decade. Great design and team
 - [YNAB](https://www.youneedabudget.com/) - Straightforward budgeting with bank integration
 
@@ -164,6 +163,7 @@ I have a strong preference for software that is fast, outwardly simple, and that
 - [Alfred](https://www.alfredapp.com/) - Customizable Spotlight alternative with great plugins
 - [IINA](https://github.com/iina/iina) - Minimal Mac-only alternative to VLC
 - [SelfControl](https://selfcontrolapp.com/) - Uncircumventable distracting site blocker
+- [Swish](https://highlyopinionated.co/swish/) - ♥ Control windows with super intuitive gestures 
 - [Transmit](https://panic.com/transmit/) - Fast, versatile file transfer utility
 
 ### Windows
@@ -171,27 +171,20 @@ I have a strong preference for software that is fast, outwardly simple, and that
 - [VS Code](https://code.visualstudio.com/) - Big IDE for when neovim or RStudio don't cut it
 - [Windows Terminal + WSL 2](https://docs.microsoft.com/en-us/windows/wsl/install-win10) - ♥ Linux virtualization on Windows that just works
 
-### Chrome extensions
-
-- [uBlock Origin](https://github.com/gorhill/uBlock) - Best wide-spectrum blocker. Fast, lightweight, can block all JS
-- [Earth View](https://chrome.google.com/webstore/detail/earth-view-from-google-ea/bhloflhklmhfpedakmangadcdofhnnoh) - Pretty satellite pictures for your new tab page
-- [Toolkit for YNAB](https://github.com/toolkit-for-ynab/toolkit-for-ynab) - QoL and reporting improvements for YNAB
-
 ### Other 
 
 - [Fira Code](https://github.com/tonsky/FiraCode) - Monospaced font with ligatures. Works in nearly every editor 
-- [Obsidian](https://obsidian.md/) - ♥ Markdown-based personal [KB](https://en.wikipedia.org/wiki/Knowledge_base). Plays well with [wiki.vim](https://github.com/lervag/wiki.vim)
 - [Parquet](https://parquet.apache.org/) - Fast, space-efficient columnar storage format
 - [Postgres](https://www.postgresql.org/) - Preferred RDBMS for any big project with structured data
 - [PostGIS](https://postgis.net/) - Spatial data extension for Postgres
 - [RStudio](https://www.rstudio.com/) - Great IDE specifically for R (and now some Python)
 - [SQLite](https://www.sqlite.org/index.html) - The go-to DB engine for any small project that requires SQL
+- [wiki.vim](https://github.com/lervag/wiki.vim) - ♥ Vim-based KB similar to Obsidian
 - [WireGuard](https://www.wireguard.com/) - Miracle VPN. Crazy fast and easy-to-use
 - [ZFS](https://zfsonlinux.org/) - Filesystem for storage pooling and management
 
 ### CLI tools
 
-- [datamash](https://www.gnu.org/software/datamash/) - Sort, group by, summarize, transpose, etc. in the command line 
 - [ffmpeg](https://ffmpeg.org/) - Multimedia toolkit for just about everything
 - [fzf](https://github.com/junegunn/fzf) - ♥ Blazingly fast fuzzy finding. Why `cd` when you can `Alt-C`?
 - [hugo](https://gohugo.io/) - Simple, self-contained static site builder. Used to make this site
@@ -208,9 +201,10 @@ I have a strong preference for software that is fast, outwardly simple, and that
 - [dplyr](https://dplyr.tidyverse.org/) - Clear, intuitive data munging that plays well with other Tidyverse libraries
 - [lubridate](https://lubridate.tidyverse.org/) - Intuitive, consistent date-time handling. Save yourself from footguns
 - [ggplot2](https://ggplot2.tidyverse.org/) - _The_ plotting lib for R. Blows matplotlib (and many others) out of the water
+- [r5r](https://github.com/ipeaGIT/r5r) - Robust, realistic transportation routing using [Conveyal's R5 engine](https://github.com/conveyal/r5)
 - [renv](https://rstudio.github.io/renv/) - Wonderful environment/package manager for R (finally)
 - [sf](https://r-spatial.github.io/sf/) - Geospatial manipulation, maps, and geometry features
 - [tidycensus](https://walker-data.com/tidycensus/) - Useful interface for the Census API
 - [tidytransit](https://github.com/r-transit/tidytransit) - GTFS feed reader. Make [trains go brrr](https://sno.ws/transit-maps)
 
-_Last updated 2022-07-17_
+_Last updated 2022-08-21_
