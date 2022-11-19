@@ -24,16 +24,16 @@ These are the blogs I read regularly. They've influenced my thinking and formed 
 ### Art
 
 - [Joel Simon](https://www.joelsimon.net/) - Beautiful [generative art](https://www.joelsimon.net/corals.html) mixed with code
-- [Larsen Husby](https://larsenhusby.com/2D) - Love me me [some maps](https://larsenhusby.com/City-Rivers-River-Cities)
+- [Larsen Husby](https://larsenhusby.com/2D) - Love me [some maps](https://larsenhusby.com/City-Rivers-River-Cities)
 - [Lingdong Huang](https://lingdong.works/) - Procedurally generated [fish](https://fishdraw.glitch.me/), [landscape paintings](https://shan-shui-inf.lingdong.works/), and [flowers](https://nonflowers.lingdong.works/)
 - [Matt Keeter](https://www.mattkeeter.com/projects/) - Weird [shaders](https://www.mattkeeter.com/projects/futureproof/), [raytracers](https://www.mattkeeter.com/projects/rayray/), and [games](https://www.mattkeeter.com/projects/pont/)
 
 ### General
 
 - [Evening Sends](https://eveningsends.com/) - Rock climbing writing, essays, and opinions
-- [Francesco Di Lorenzo](https://francescodilorenzo.com/) - ♥ Bite-sized posts on life and programming
+- [Francesco Di Lorenzo](https://francescodilorenzo.com/) - Bite-sized posts on life and programming
 - [Jamie Saxon](https://jamessaxon.github.io/) - Measuring civic resources and [their use](https://jamessaxon.github.io/urban/measurement/electronics/2021/03/22/making-an-olm-meter.html). Former mentor
-- [Jeremy Maluf](https://jeremymaluf.com/) - Lists for [onebag packing ](https://jeremymaluf.com/onebag/) and [other stuff](https://jeremymaluf.com/things/). Inspired this post
+- [Jeremy Maluf](https://jeremymaluf.com/) - ♥ Lists for [onebag packing](https://jeremymaluf.com/onebag/) and [other stuff](https://jeremymaluf.com/walking/). Inspired this post
 - [Kyle E. Mitchell](https://writing.kemitchell.com/) - Interesting posts and takes on law ∪ technology
 - [Paul Graham](http://www.paulgraham.com/articles.html) - Classic essays on [tech](http://www.paulgraham.com/ds.html), [life](http://www.paulgraham.com/talk.html), and [startups](http://www.paulgraham.com/start.html)
 - [Of Dollars And Data](https://ofdollarsanddata.com/) - Data analysis ∪ personal finance
@@ -44,6 +44,7 @@ These are the blogs I read regularly. They've influenced my thinking and formed 
 ### Coding and tech
 
 - [Beau Gunderson](https://beaugunderson.com/) - Prolific developer, neat live-updating site
+- [Bradley Taunt](https://bt.ht) - ♥ Small websites and minimal UX
 - [Cassidy Williams](https://cassidoo.co/) - Huge inspiration, amazing dev/streamer. Excellent [newsletter](https://cassidoo.co/newsletter/)
 - [Dan Luu](http://danluu.com/) - ♥ Classic engineering blog. Mostly on [measuring](https://danluu.com/input-lag/) [interesting](https://danluu.com/cli-complexity/) [things](https://danluu.com/android-updates/)
 - [Dan McKinley](https://mcfunley.com/) - Tech talker and creator of many [influential](http://boringtechnology.club/) [slide](https://causalinference.club/) [decks](http://frequentdeploys.club/)
@@ -93,6 +94,7 @@ These posts have inspired or influenced me in some way. They're things I reread 
 - [Drunk Post: Things I've learned as a Sr Engineer](https://old.reddit.com/r/ExperiencedDevs/comments/nmodyl/drunk_post_things_ive_learned_as_a_sr_engineer/) - Strong opinions, mostly true
 - [FAANG Interview Advice](https://www.zainrizvi.io/blog/the-interviewing-advice-no-one-shares/) - Good general interview advice, not just for FAANG
 - [Fast Software, the Best Software](https://craigmod.com/essays/fast_software/) - Speed > lots of features
+- [I Wish My Web Server Were in the Corner of My Room](https://interconnected.org/home/2022/10/10/servers) - Mix virtual and physical
 - [The Infrastructure of a One-Man SaaS](https://anthonynsimon.com/blog/one-man-saas-architecture/) - Load balancing and AWS and K8s
 - [Kaminsky DNS Vulnerability](http://www.unixwiz.net/techtips/iguide-kaminsky-dns-vuln.html) - ♥ The most engaging thing ever written on DNS
 - [The Rise of User-Hostile Software](https://den.dev/blog/user-hostile-software/) - Software now is better for devs, worse for users
@@ -149,8 +151,7 @@ I have a strong preference for software that is fast, outwardly simple, and that
 - [Citymapper](https://citymapper.com/?lang=en) - Public transit maps and routing
 - [Down Dog](https://www.downdogapp.com/) - Procedurally-generated at-home yoga and HIIT
 - [Niagara Launcher](https://play.google.com/store/apps/details?id=bitpit.launcher&hl=en_US&gl=US) - ♥ Minimalist, fast, well-designed launcher
-- [StreetComplete](https://github.com/streetcomplete/StreetComplete) - Easy-to-use, open-source OpenStreetMap data editor
-- [WireGuard](https://play.google.com/store/apps/details?id=com.wireguard.android&hl=en_US&gl=US) - Replaced AdGuard. VPN to Pi-hole server or [Mullvad](https://mullvad.net/en/)
+- [Loop Habit Tracker](https://loophabits.org) - Minimal, yet feature-rich and flexible habit tracker
 
 ### Web
 
@@ -162,7 +163,7 @@ I have a strong preference for software that is fast, outwardly simple, and that
 
 - [Alfred](https://www.alfredapp.com/) - Customizable Spotlight alternative with great plugins
 - [IINA](https://github.com/iina/iina) - Minimal Mac-only alternative to VLC
-- [SelfControl](https://selfcontrolapp.com/) - Uncircumventable distracting site blocker
+- [Pandan](https://apps.apple.com/us/app/pandan/id1569600264) - Notifies you how long you've been using your computer
 - [Swish](https://highlyopinionated.co/swish/) - ♥ Control windows with super intuitive gestures 
 - [Transmit](https://panic.com/transmit/) - Fast, versatile file transfer utility
 
@@ -179,8 +180,7 @@ I have a strong preference for software that is fast, outwardly simple, and that
 - [PostGIS](https://postgis.net/) - Spatial data extension for Postgres
 - [RStudio](https://www.rstudio.com/) - Great IDE specifically for R (and now some Python)
 - [SQLite](https://www.sqlite.org/index.html) - The go-to DB engine for any small project that requires SQL
-- [wiki.vim](https://github.com/lervag/wiki.vim) - ♥ Vim-based KB similar to Obsidian
-- [WireGuard](https://www.wireguard.com/) - Miracle VPN. Crazy fast and easy-to-use
+- [WireGuard](https://www.wireguard.com/) - ♥ Miracle VPN. Crazy fast and easy-to-use
 - [ZFS](https://zfsonlinux.org/) - Filesystem for storage pooling and management
 
 ### CLI tools
@@ -207,4 +207,4 @@ I have a strong preference for software that is fast, outwardly simple, and that
 - [tidycensus](https://walker-data.com/tidycensus/) - Useful interface for the Census API
 - [tidytransit](https://github.com/r-transit/tidytransit) - GTFS feed reader. Make [trains go brrr](https://sno.ws/transit-maps)
 
-_Last updated 2022-08-21_
+_Last updated 2022-11-18_
