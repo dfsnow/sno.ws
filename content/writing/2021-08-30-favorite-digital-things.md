@@ -54,6 +54,7 @@ These are the blogs I read regularly. They've influenced my thinking and formed 
 - [Josh Thompson](https://josh.works/blog) - Everything from [urban parking](https://josh.works/parking-in-golden) to [finding a remote job](https://josh.works/remote-job-resources)
 - [Julia Evans](https://jvns.ca/) - [Zines](https://wizardzines.com/), [life advice](https://jvns.ca/blog/2016/09/19/getting-things-done/), and [technical posts](https://jvns.ca/blog/2016/06/30/why-do-we-use-the-linux-kernels-tcp-stack/). Incredible human
 - [Julia Silge](https://juliasilge.com/) - ♥ Tidymodels champion. Neat posts on R and [predicting home prices](https://juliasilge.com/blog/austin-housing/)
+- [Kate Rose Morley](https://iamkate.com) - Simple games, data viz, and CSS tricks
 - [Nikita Prokopov](https://tonsky.me/) - Creator of [Fira Code](https://github.com/tonsky/FiraCode). Posts on software [performance](https://tonsky.me/blog/performance-first/) and [design](https://tonsky.me/blog/good-times-weak-men/)
 - [The Pragmatic Engineer](https://blog.pragmaticengineer.com/) - Huge collection of useful [career](https://blog.pragmaticengineer.com/advice-to-myself-when-starting-as-a-software-developer/) and [programming advice](https://blog.pragmaticengineer.com/readable-code/)
 - [Tom Ryder](https://blog.sanctum.geek.nz/) - Sys admin stuff and all things Unix, shell, and terminal
@@ -90,6 +91,7 @@ These posts have inspired or influenced me in some way. They're things I reread 
 
 ### Coding and tech
 
+- [All the Best Engineering Advice I Stole From Non-Technical People](https://bellmar.medium.com/all-the-best-engineering-advice-i-stole-from-non-technical-people-eb7f90ca2f5f) - Big wisdom
 - [Choose Boring Technology](https://mcfunley.com/choose-boring-technology) - Stop reinventing ssh and grasping for shiny things
 - [Drunk Post: Things I've learned as a Sr Engineer](https://old.reddit.com/r/ExperiencedDevs/comments/nmodyl/drunk_post_things_ive_learned_as_a_sr_engineer/) - Strong opinions, mostly true
 - [FAANG Interview Advice](https://www.zainrizvi.io/blog/the-interviewing-advice-no-one-shares/) - Good general interview advice, not just for FAANG
@@ -207,4 +209,4 @@ I have a strong preference for software that is fast, outwardly simple, and that
 - [tidycensus](https://walker-data.com/tidycensus/) - Useful interface for the Census API
 - [tidytransit](https://github.com/r-transit/tidytransit) - GTFS feed reader. Make [trains go brrr](https://sno.ws/transit-maps)
 
-_Last updated 2022-11-18_
+_Last updated 2022-11-22_
