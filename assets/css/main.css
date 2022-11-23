@@ -13,6 +13,17 @@ a {
   color: #000;
 }
 
+table {
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+
+table td, table th {
+  border: 1px solid #949494;
+  text-align: center;
+  padding: 10px;
+}
+
 .link-nowrap-nodec {
   text-decoration: none;
   white-space: nowrap;
@@ -189,7 +200,7 @@ a {
 }
 
 .navbar-separator {
-  border-top: 1px solid #949494;
+  border-top: 1.5px solid #949494;
   border-bottom: 0;
   color: #949494;
   background-color: #949494;

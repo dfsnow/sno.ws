@@ -10,14 +10,16 @@ Also, I made a rating scale for books. It's a 10-point ordinal scale, where 10 i
 
 <style type="text/css">
   table .rating {
-    text-align:right;
-    vertical-align:top;
-    font-weight:bold;
-    white-space:pre;
-    padding:10px 6px 0 0;
+    text-align: right;
+    vertical-align: top;
+    font-weight: bold;
+    white-space: pre;
+    padding: 10px 6px 0 0;
   }
   table td {
+    text-align: left;
     padding: 10px 0;
+    border: none;
   }
 </style>
 
