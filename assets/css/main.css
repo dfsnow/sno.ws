@@ -1,5 +1,6 @@
 html {
   font-size: 62.5%;
+  height: 100%;
 }
 
 body {
@@ -7,10 +8,11 @@ body {
   font-family: 'Helvetica Neue', 'Arial', sans-serif;
   margin: 0 auto;
   line-height: 1.5;
+  min-height: 100%;
 }
 
-a {
-  color: #000;
+body, a {
+  color: #454545;
 }
 
 table {
@@ -19,7 +21,7 @@ table {
 }
 
 table td, table th {
-  border: 1px solid #949494;
+  border: 1.5px solid #606060;
   text-align: center;
   padding: 10px;
 }
@@ -58,10 +60,10 @@ table td, table th {
 }
 
 .content hr {
-  border-top: 1px solid #949494;
+  border-top: 1px solid #606060;
   border-bottom: 0;
-  background-color: #949494;
-  color: #949494;
+  background-color: #606060;
+  color: #606060;
 }
 
 .content code,
@@ -196,14 +198,14 @@ table td, table th {
 }
 
 .navbar-external-links > .navbar-external-link svg:hover {
-  fill: #333;
+  fill: #222;
 }
 
 .navbar-separator {
-  border-top: 1.5px solid #949494;
+  border-top: 1.5px solid #606060;
   border-bottom: 0;
-  color: #949494;
-  background-color: #949494;
+  color: #606060;
+  background-color: #606060;
   margin: 0;
 }
 
@@ -274,11 +276,10 @@ table td, table th {
 @media (prefers-color-scheme:dark) {
   body {
     background-color: #000;
-    color: #ddd;
   }
 
-  a {
-    color: #ddd;
+  body, a {
+    color: #d9d9d9;
   }
 
   .link-fave-heart:hover {
@@ -287,11 +288,11 @@ table td, table th {
 
   .content code,
   .content pre {
-    background-color: #333;
+    background-color: #222;
   }
 
   .content pre {
-    border: 1px solid #666;
+    border: 1px solid #606060;
   }
 
   .post-header > .post-meta {
@@ -303,6 +304,6 @@ table td, table th {
   }
 
   .navbar-external-links > .navbar-external-link svg:hover {
-    fill: #ddd;
+    fill: #d9d9d9;
   }
 }
