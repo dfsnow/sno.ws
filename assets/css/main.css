@@ -60,10 +60,11 @@ table td, table th {
 }
 
 .content hr {
-  border-top: 1px solid #606060;
+  border-top: 1.5px solid #606060;
   border-bottom: 0;
   background-color: #606060;
   color: #606060;
+  margin: 2rem 0;
 }
 
 .content code,

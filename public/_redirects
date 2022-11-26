@@ -5,7 +5,6 @@
 # General shortlinks for other websites
 /gh                        https://github.com/dfsnow
 /gl                        https://gitlab.com/dfsnow
-/li                        https://linkedin.com/in/dfsnow/
 
 # Redirects to posts/articles. Most recent is on bottom
 /rural-docs                /writing/2019/04/10/visualizing-americas-rural-physician-shortage/ 
@@ -14,3 +13,5 @@
 /transit-maps              /writing/2021/03/03/creating-moving-transit-maps-with-r-and-gtfs-feeds/
 /local-gov                 /writing/2021/05/24/lessons-learned-in-local-government/
 /digital-things		   /writing/2021/08/30/favorite-digital-things/
+/uses                      /writing/2021/08/30/favorite-digital-things/
+/blogroll                  /writing/2021/08/30/favorite-digital-things/
