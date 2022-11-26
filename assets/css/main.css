@@ -60,10 +60,9 @@ table td, table th {
 }
 
 .content hr {
-  border-top: 1.5px solid #606060;
-  border-bottom: 0;
   background-color: #606060;
-  color: #606060;
+  border: 0;
+  height: 1.5px;
   margin: 2rem 0;
 }
 
@@ -146,14 +145,15 @@ table td, table th {
 
 .post-header > .post-meta {
   font-size: 1.5rem;
-  color: #767676;
+  color: #606060;
 }
 
 .navbar {
-  position: sticky;
   top: 0;
-  background-color: #fff;
   z-index: 998;
+  position: sticky;
+  background-color: #fff;
+  border-bottom: 1.5px solid #606060;
 }
 
 .navbar-content {
@@ -200,14 +200,6 @@ table td, table th {
 
 .navbar-external-links > .navbar-external-link svg:hover {
   fill: #222;
-}
-
-.navbar-separator {
-  border-top: 1.5px solid #606060;
-  border-bottom: 0;
-  color: #606060;
-  background-color: #606060;
-  margin: 0;
 }
 
 /* support for Edge */
@@ -275,7 +267,7 @@ table td, table th {
 }
 
 @media (prefers-color-scheme:dark) {
-  body {
+  body, .navbar {
     background-color: #000;
   }
 
@@ -298,10 +290,6 @@ table td, table th {
 
   .post-header > .post-meta {
     color: #aaa;
-  }
-
-  .navbar {
-    background-color: #000;
   }
 
   .navbar-external-links > .navbar-external-link svg:hover {
