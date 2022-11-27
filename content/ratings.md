@@ -9,21 +9,24 @@ Also, I made a rating scale for books. It's a 10-point ordinal scale, where 10 i
 ---
 
 <style type="text/css">
-  table .rating {
+  .rating-table .rating {
     text-align: right;
     vertical-align: top;
     font-weight: bold;
     white-space: pre;
     padding: 10px 6px 0 0;
   }
-  table td {
+  .rating-table td {
     text-align: left;
     padding: 10px 0;
     border: none;
   }
+  .rating-table tr:first-child td {
+    padding-top: 0;
+  }
 </style>
 
-<table>
+<table class="rating-table">
   <tr>
     <td class="rating">10  =</td>
     <td>Flawless. A masterwork that actually permanently changed my point of view on something. Defines a genre/canon or introduces entirely new ideas.</td>

@@ -28,44 +28,43 @@ table th {
   padding: 10px;
 }
 
-.link-nowrap-nodec {
-  text-decoration: none;
-  white-space: nowrap;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.125;
 }
 
-.link-nowrap-nodec:hover {
-  text-decoration: underline;
+hr {
+  background-color: #606060;
+  border: 0;
+  height: 1.5px;
+  margin: 2rem 0;
 }
 
-.link-fave-heart {
-  text-decoration: none;
-  color: red;
+img {
+  max-width: 100%;
+  height: auto;
 }
 
-.link-fave-heart:hover {
-  color: darkred;
+figure {
+  margin: 1.6rem 0;
+}
+
+figure figcaption {
+  font-size: 1.4rem;
+  font-style: italic;
+  text-align: center;
+  margin-top: 0.6rem;
+  padding: 0 1rem;
 }
 
 .content {
   max-width: 64rem;
   margin: auto;
   padding: 2rem;
-}
-
-.content h1,
-.content h2,
-.content h3,
-.content h4,
-.content h5,
-.content h6 {
-  line-height: 1.125;
-}
-
-.content hr {
-  background-color: #606060;
-  border: 0;
-  height: 1.5px;
-  margin: 2rem 0;
 }
 
 .content code,
@@ -92,21 +91,22 @@ table th {
   border-radius: 3px;
 }
 
-.content img {
-  max-width: 100%;
-  height: auto;
+.link-nowrap-nodec {
+  text-decoration: none;
+  white-space: nowrap;
 }
 
-.content figure {
-  margin: 1.6rem 0;
+.link-nowrap-nodec:hover {
+  text-decoration: underline;
 }
 
-.content figure figcaption {
-  font-size: 1.4rem;
-  font-style: italic;
-  text-align: center;
-  margin-top: 0.6rem;
-  padding: 0 1rem;
+.link-fave-heart {
+  text-decoration: none;
+  color: red;
+}
+
+.link-fave-heart:hover {
+  color: darkred;
 }
 
 .post-list {
@@ -127,14 +127,6 @@ table th {
 
 .post-list > .post-list-misc {
   text-align: center;
-}
-
-.content > div#writing {
-  grid-template-columns: 2fr 0.2fr 3rem;
-}
-
-.content > div#reading {
-  grid-template-columns: 1.2fr 0.75fr 0.25fr 3rem;
 }
 
 .post-header > .post-title {
@@ -202,9 +194,9 @@ table th {
   fill: #222;
 }
 
+blockquote,
 .notice,
-.warning,
-blockquote {
+.warning {
   background-color: #f8f8f8;
   margin: 2rem 0;
   padding: 2rem;
@@ -212,9 +204,9 @@ blockquote {
   border-radius: 3px;
 }
 
+blockquote p,
 .notice p,
-.warning p,
-blockquote p {
+.warning p {
   margin: 0;
 }
 
@@ -242,6 +234,14 @@ blockquote p {
   content: "WARNING";
   background: #FFEEAA;
   width: 8rem;
+}
+
+#writing {
+  grid-template-columns: 2fr 0.2fr 3rem;
+}
+
+#reading {
+  grid-template-columns: 1.2fr 0.75fr 0.25fr 3rem;
 }
 
 /* support for Edge */
@@ -272,12 +272,6 @@ blockquote p {
     padding-bottom: 2rem;
   }
 
-  .content div#writing,
-  .content div#reading {
-    gap: 0;
-    grid-template-columns: 1fr;
-  }
-
   .navbar {
     position: static;
   }
@@ -306,6 +300,12 @@ blockquote p {
   .navbar-external-links > .navbar-external-link:first-of-type {
    padding: 0.2rem 0 0 0;
  }
+
+  #writing,
+  #reading {
+    gap: 0;
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (prefers-color-scheme:dark) {
@@ -323,18 +323,26 @@ blockquote p {
     color: #ff9999;
   }
 
+  .post-header > .post-meta {
+    color: #aaa;
+  }
+
+  .navbar-external-links > .navbar-external-link svg:hover {
+    fill: #d9d9d9;
+  }
+
+  blockquote,
   .content code,
   .content pre,
   .notice,
-  .warning,
-  blockquote {
+  .warning {
     background-color: #222;
   }
 
+  blockquote,
   .content pre,
   .notice,
-  .warning,
-  blockquote {
+  .warning {
     border: 1.5px solid #606060;
   }
 
@@ -351,13 +359,5 @@ blockquote p {
 
   .warning::before {
     color: #FFEEAA;
-  }
-
-  .post-header > .post-meta {
-    color: #aaa;
-  }
-
-  .navbar-external-links > .navbar-external-link svg:hover {
-    fill: #d9d9d9;
   }
 }
