@@ -1,9 +1,11 @@
 <meta charset="utf-8">
+
 {{ if ne .Site.Title .Title -}}
     <title>{{ .Title }} - {{ .Site.Title }}</title>
 {{ else -}}
     <title>{{ .Site.Title }}</title>
 {{ end -}}
+
 {{ with .Site.Params.description -}}
     <meta name="description" content="{{ . }}">
 {{ end }}
@@ -18,10 +20,14 @@
 {{ end -}}
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-{{ $resources := slice -}}
-{{ $resources = $resources | append (resources.Get "css/main.css") -}}
-{{ if .Site.Params.highlight -}}
-    {{ $resources = $resources | append (resources.Get "css/syntax.css") -}}
-{{ end -}}
-{{ $css := $resources | resources.Concat "css/style.css" | minify }}
-<style>{{ $css.Content | safeCSS }}</style>
+
+{{ $main := resources.Get "css/main.css" | minify }}
+{{ $dark := resources.Get "css/syntax-dark.css" | minify }}
+{{ $light := resources.Get "css/syntax-light.css" | minify }}
+<style type="text/css" media="screen">
+    {{ $main.Content | safeCSS }}
+</style>
+<style type="text/css" media="screen">
+    @media (prefers-color-scheme:dark) { {{ $dark.Content | safeCSS }} }
+    @media (prefers-color-scheme:light) { {{ $light.Content | safeCSS }} }
+</style>
