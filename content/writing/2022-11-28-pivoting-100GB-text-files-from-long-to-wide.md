@@ -15,6 +15,8 @@ Recently, I've been working on a project involving travel time matrices. These m
 |    B   |      A      |    10   |
 |    B   |      B      |    0    |
 |    B   |      C      |    21   |
+|    C   |      A      |    13   |
+|    C   |      C      |    0    |
 
 Where **origin** and **destination** are the identifiers of geographic points (usually Census geography centroids) and **minutes** is the travel time between the points.
 
@@ -32,6 +34,7 @@ We can fix all these issues by converting our long format to "wide" format, with
 |--------|----|---|----|
 |    A   |  0 | 9 | 15 |
 |    B   | 10 | 0 | 21 |
+|    C   | 13 | - | 0  |
 
 This format saves space, compresses better, and shows missing origin-destination pairs. It can also be converted into a modern columnar storage format like Parquet for easy column lookups, built-in compression, and handy metadata.
 
