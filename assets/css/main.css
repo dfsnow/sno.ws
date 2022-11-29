@@ -90,6 +90,10 @@ figure figcaption {
   border-radius: 3px;
 }
 
+.content pre code {
+  padding: 0;
+}
+
 .link-nowrap-nodec {
   text-decoration: none;
   white-space: nowrap;
