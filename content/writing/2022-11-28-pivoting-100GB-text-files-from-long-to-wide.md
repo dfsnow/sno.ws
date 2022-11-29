@@ -156,7 +156,7 @@ pv in.csv.bz2 \
   > out.csv.zst
 ```
 
-This approach is nearly 10x faster than the `awk` script. However, there are a couple things than can be improved:
+This approach is nearly 10x faster than the `awk` script. However, there are a couple things to improve:
 
 * Cloning a fresh, unpopulated dictionary (only keys, no values) for each origin seems incredibly wasteful, but I'm not sure how else to clear the dictionary values.
 * All origins and destinations are strings. Making them unsigned integers or similar might be faster.
