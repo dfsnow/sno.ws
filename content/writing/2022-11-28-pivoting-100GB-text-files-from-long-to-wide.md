@@ -179,6 +179,8 @@ This approach uses minimal allocations, is 8x faster than the naive approach, an
 
 It does have one downside: the input file *must* be sorted by origin and destination. If the destinations are not sorted, then the loop will break. The naive approach doesn't have this restriction.
 
+---
+
 ## Results
 
 We can measure the speed of each approach using two test files. Each one is sorted (by origin, then destination) and has its unique destinations extracted to a separate file.
