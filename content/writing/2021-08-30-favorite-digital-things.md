@@ -30,6 +30,7 @@ These are the blogs I read regularly. They've influenced my thinking and formed 
 
 ### General
 
+- [Ana Rodrigues](https://ohhelloana.blog) - Bookmarks, bookmarks everywhere
 - [Evening Sends](https://eveningsends.com/) - Rock climbing writing, essays, and opinions
 - [Francesco Di Lorenzo](https://francescodilorenzo.com/) - Bite-sized posts on life and programming
 - [Jamie Saxon](https://jamessaxon.github.io/) - Measuring civic resources and [their use](https://jamessaxon.github.io/urban/measurement/electronics/2021/03/22/making-an-olm-meter.html). Former mentor
@@ -177,6 +178,7 @@ I have a strong preference for software that is fast, outwardly simple, and that
 ### Other 
 
 - [Fira Code](https://github.com/tonsky/FiraCode) - Monospaced font with ligatures. Works in nearly every editor 
+- [Obsidian](https://obsidian.md) - ♥ Fast notes, free, works everywhere, plain markdown
 - [Parquet](https://parquet.apache.org/) - Fast, space-efficient columnar storage format
 - [Postgres](https://www.postgresql.org/) - Preferred RDBMS for any big project with structured data
 - [PostGIS](https://postgis.net/) - Spatial data extension for Postgres
@@ -209,4 +211,4 @@ I have a strong preference for software that is fast, outwardly simple, and that
 - [tidycensus](https://walker-data.com/tidycensus/) - Useful interface for the Census API
 - [tidytransit](https://github.com/r-transit/tidytransit) - GTFS feed reader. Make [trains go brrr](https://sno.ws/transit-maps)
 
-_Last updated 2022-11-22_
+_Last updated 2022-11-29_
