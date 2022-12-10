@@ -13,7 +13,9 @@ In the spirit of digital minimalism, I've cleaned out my bookmarks and compiled 
 2. Serve as a personal bookmark page for things I like
 3. Force me to be intentional about the things I use and read
 
-This list is constantly updated. When I find a cool new thing, I'll add it. When I lose interest in something, I'll remove it. As usual, <span class="heart">♥</span> indicates an absolute favorite.
+This list is constantly updated. When I find a cool new thing, I'll add it. When I lose interest in something, I'll remove it. The history of this page is tracked [via git](https://github.com/dfsnow/sno.ws/commits/master/content/writing/2021-08-30-favorite-digital-things.md).
+
+As usual, <span class="heart">♥</span> indicates an absolute favorite.
 
 ---
 
@@ -147,42 +149,36 @@ These are the things I use every day. It's a list whittled down over about 5 yea
 
 I have a strong preference for software that is fast, outwardly simple, and that does one thing extremely well.
 
-### Android
+### Mobile 
 
-- [Authy](https://authy.com/) - MFA with a nice UI and built-in backups
-- [Brew Timer](https://play.google.com/store/apps/details?id=com.apptivity.brewtimer&hl=en_US&gl=US) - Coffee brewing timer for V60/Aeropress
-- [Citymapper](https://citymapper.com/?lang=en) - Public transit maps and routing
-- [Down Dog](https://www.downdogapp.com/) - Procedurally-generated at-home yoga and HIIT
-- [Niagara Launcher](https://play.google.com/store/apps/details?id=bitpit.launcher&hl=en_US&gl=US) - ♥ Minimalist, fast, well-designed launcher
-- [Loop Habit Tracker](https://loophabits.org) - Minimal, yet feature-rich and flexible habit tracker
+- `ALL` - [Authy](https://authy.com/) - MFA with a nice UI and built-in backups
+- `ALL` - [Bitwarden](https://bitwarden.com/) - Open-source password manager. Great CLI integration
+- `iOS` - [Brew Timer](https://apps.apple.com/us/app/brew-timer-coffee-recipes/id1082171596) - Coffee brewing timer for V60 and Aeropress
+- `ALL` - [Down Dog](https://www.downdogapp.com/) - Procedurally-generated at-home yoga and HIIT
+- `ADR` - [Loop Habit Tracker](https://loophabits.org) - Minimal, yet feature-rich and flexible habit tracker
+- `ALL` - [Mountain Project](https://www.mountainproject.com) - Find crags and track climbs, works offline
+- `ADR` - [Niagara Launcher](https://play.google.com/store/apps/details?id=bitpit.launcher) - ♥ Minimalist, fast, well-designed launcher
+- `ALL` - [Todoist](https://todoist.com/) - ♥ To-do list I've used for over a decade. Simple design, great UX
+- `ALL` - [YNAB](https://www.youneedabudget.com/) - Straightforward budgeting with bank and brokerage integration
 
-### Web
+### Desktop
 
-- [Bitwarden](https://bitwarden.com/) - Open-source password manager. Great CLI integration
-- [Todoist](https://todoist.com/) - ♥ To-do list I've used for over a decade. Great design and team
-- [YNAB](https://www.youneedabudget.com/) - Straightforward budgeting with bank integration
-
-### Mac
-
-- [Alfred](https://www.alfredapp.com/) - Customizable Spotlight alternative with great plugins
-- [IINA](https://github.com/iina/iina) - Minimal Mac-only alternative to VLC
-- [Pandan](https://apps.apple.com/us/app/pandan/id1569600264) - Notifies you how long you've been using your computer
-- [Swish](https://highlyopinionated.co/swish/) - ♥ Control windows with super intuitive gestures 
-- [Transmit](https://panic.com/transmit/) - Fast, versatile file transfer utility
-
-### Windows
-
-- [VS Code](https://code.visualstudio.com/) - Big IDE for when neovim or RStudio don't cut it
-- [Windows Terminal + WSL 2](https://docs.microsoft.com/en-us/windows/wsl/install-win10) - ♥ Linux virtualization on Windows that just works
+- `MAC` - [Alfred](https://www.alfredapp.com/) - Customizable Spotlight alternative with great plugins
+- `MAC` - [IINA](https://github.com/iina/iina) - Minimal Mac-only alternative to VLC
+- `MAC` - [Pandan](https://apps.apple.com/us/app/pandan/id1569600264) - Notifies you how long you've been using your computer
+- `MAC` - [Swish](https://highlyopinionated.co/swish/) - ♥ Resize and move windows with super intuitive gestures 
+- `ALL` - [Obsidian](https://obsidian.md) - ♥ Fast notes. Free, works everywhere, plain markdown
+- `ALL` - [RStudio](https://www.rstudio.com/) - Great IDE specifically for R (and now some Python)
+- `MAC` - [Transmit](https://panic.com/transmit/) - Fast, versatile file transfer utility
+- `ALL` - [VS Code](https://code.visualstudio.com/) - Big IDE for when neovim or RStudio don't cut it
+- `WIN` - [Terminal + WSL 2](https://docs.microsoft.com/en-us/windows/wsl/install-win10) - ♥ Linux virtualization on Windows that just works
 
 ### Other 
 
 - [Fira Code](https://github.com/tonsky/FiraCode) - Monospaced font with ligatures. Works in nearly every editor 
-- [Obsidian](https://obsidian.md) - ♥ Fast notes, free, works everywhere, plain markdown
 - [Parquet](https://parquet.apache.org/) - Fast, space-efficient columnar storage format
 - [Postgres](https://www.postgresql.org/) - Preferred RDBMS for any big project with structured data
 - [PostGIS](https://postgis.net/) - Spatial data extension for Postgres
-- [RStudio](https://www.rstudio.com/) - Great IDE specifically for R (and now some Python)
 - [SQLite](https://www.sqlite.org/index.html) - The go-to DB engine for any small project that requires SQL
 - [WireGuard](https://www.wireguard.com/) - ♥ Miracle VPN. Crazy fast and easy-to-use
 - [ZFS](https://zfsonlinux.org/) - Filesystem for storage pooling and management
@@ -192,7 +188,7 @@ I have a strong preference for software that is fast, outwardly simple, and that
 - [ffmpeg](https://ffmpeg.org/) - Multimedia toolkit for just about everything
 - [fzf](https://github.com/junegunn/fzf) - ♥ Blazingly fast fuzzy finding. Why `cd` when you can `Alt-C`?
 - [hugo](https://gohugo.io/) - Simple, self-contained static site builder. Used to make this site
-- [neovim](https://github.com/neovim/neovim) - Text editor of choice. Config and plugins also work with vim
+- [neovim](https://github.com/neovim/neovim) - Text editor of choice. [Config](https://github.com/dfsnow/dotfiles) and plugins also work with vim
 - [ripgrep](https://github.com/BurntSushi/ripgrep) - ♥ `grep` but better. Search every file in a directory in milliseconds
 - [stow](https://www.gnu.org/software/stow/manual/stow.html) - Symlink, config, and dotfiles management
 - [tmux](https://github.com/tmux/tmux) - Terminal multiplexer + keep remote terminal sessions alive 
@@ -211,4 +207,4 @@ I have a strong preference for software that is fast, outwardly simple, and that
 - [tidycensus](https://walker-data.com/tidycensus/) - Useful interface for the Census API
 - [tidytransit](https://github.com/r-transit/tidytransit) - GTFS feed reader. Make [trains go brrr](https://sno.ws/transit-maps)
 
-_Last updated 2022-11-29_
+_Last updated 2022-12-10_
