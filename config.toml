@@ -8,6 +8,7 @@ pygmentsUseClasses = true
 
 [params]
   description = "The blog, photos, and book reviews of Dan Snow"
+  author = "Dan Snow"
   highlight = true
   photosURL = "https://photos.sno.ws"
   contentURL = "https://content.sno.ws/posts"

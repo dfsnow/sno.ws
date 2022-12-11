@@ -7,7 +7,7 @@
 {{- $pages = $pctx.Pages -}}
 {{- end -}}
 {{- printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>{{ .Site.Title }}</title>
         <description>{{ .Site.Params.description }}</description>
@@ -17,13 +17,27 @@
         {{- end -}}
         <lastBuildDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</lastBuildDate>
         {{ range where (where $pages ".Params.link" "==" nil) ".Params.date" "!=" nil }}
+            {{ if or (gt (len .Content) 0) (isset .Params "src") }}
             <item>
                 <title>{{ .Title }}</title>
+                <description>
+                    {{ if isset .Params "src" }}
+                        {{ $srcBase := .Site.Params.photosURL }}
+                        {{ $srcExt := index (findRE "\\.[^.]*$|$" .Params.src 1) 0 }}
+                        {{ $srcFileFull := print $srcBase "/" (index (findRE "^([^.]+)" .Params.src 1) 0) }}
+                        {{ printf "%s%s%s%s%s" "<p><img src=" $srcFileFull "-1280" $srcExt "></p>" | html }}
+                        {{ .Content | html}}
+                    {{ end }}
+                    {{ if isset .Params "rating" }}
+                        {{ printf "%s%s%s" "<p><a href=\"/ratings\"><h3>Score: " .Params.rating " / 10</h3></a></p>" | html }}
+                    {{ end }}
+                    {{ .Content | html }}
+                </description>
                 <link>{{ .Permalink }}</link>
                 <pubDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</pubDate>
-                <guid>{{ .Permalink }}</guid>
-                <description>{{ .Content | html }}</description>
+                <guid isPermaLink="true">{{ .Permalink }}</guid>
             </item>
+            {{ end }}
         {{ end }}
     </channel>
 </rss>
