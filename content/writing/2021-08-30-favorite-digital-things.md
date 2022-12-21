@@ -140,6 +140,7 @@ These posts have inspired or influenced me in some way. They're things I reread 
 - [How to Gain More From Your Reading](https://psyche.co/guides/how-to-gain-more-from-reading-by-taking-it-all-in-more-slowly) - Tips for attentive, intentional reading
 - [MMAcevedo](https://qntm.org/mmacevedo) - Horrifying short fiction on the perils of saving a brain's state
 - [The Plague Year](https://www.newyorker.com/magazine/2021/01/04/the-plague-year) - Summary of the institutional failures that made COVID so bad
+- [The Tyranny of Structurelessness](https://www.jofreeman.com/joreen/tyranny.htm) - All groups develop informal structure
 - [Your Climbing Shoes Are Too Tight](https://eveningsends.com/climbing-shoes-tight/) - Treat your feet right, don't size down
 
 ---
@@ -208,4 +209,4 @@ I have a strong preference for software that is fast, outwardly simple, and that
 - [tidycensus](https://walker-data.com/tidycensus/) - Useful interface for the Census API
 - [tidytransit](https://github.com/r-transit/tidytransit) - GTFS feed reader. Make [trains go brrr](https://sno.ws/transit-maps)
 
-_Last updated 2022-12-10_
+_Last updated 2022-12-21_
