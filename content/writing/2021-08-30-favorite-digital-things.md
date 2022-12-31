@@ -156,9 +156,9 @@ I have a strong preference for software that is fast, outwardly simple, and that
 - `ALL` - [Bitwarden](https://bitwarden.com/) - Open-source password manager. Great CLI integration
 - `iOS` - [Brew Timer](https://apps.apple.com/us/app/brew-timer-coffee-recipes/id1082171596) - Coffee brewing timer for V60 and Aeropress
 - `ALL` - [Down Dog](https://www.downdogapp.com/) - Procedurally-generated at-home yoga and HIIT
-- `ADR` - [Loop Habit Tracker](https://loophabits.org) - Minimal, yet feature-rich and flexible habit tracker
+- `AND` - [Loop Habit Tracker](https://loophabits.org) - Minimal, yet feature-rich and flexible habit tracker
 - `ALL` - [Mountain Project](https://www.mountainproject.com) - Find crags and track climbs, works offline
-- `ADR` - [Niagara Launcher](https://play.google.com/store/apps/details?id=bitpit.launcher) - ♥ Minimalist, fast, well-designed launcher
+- `AND` - [Niagara Launcher](https://play.google.com/store/apps/details?id=bitpit.launcher) - ♥ Minimalist, fast, well-designed launcher
 - `iOS` - [Raivo OTP](https://raivo-otp.com) - iCloud-based MFA with the ability to export to an archive file
 - `ALL` - [Todoist](https://todoist.com/) - ♥ To-do list I've used for over a decade. Simple design, great UX
 - `ALL` - [YNAB](https://www.youneedabudget.com/) - Straightforward budgeting with bank and brokerage integration
