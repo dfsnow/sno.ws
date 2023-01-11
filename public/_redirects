@@ -2,9 +2,14 @@
 /home                      /  301!
 /writing                   /  301!
 
-# General shortlinks for other websites
+# Special sections typically found on other blogs
+/uses                      /writing/2021/08/30/favorite-digital-things/
+/blogroll                  /writing/2021/08/30/favorite-digital-things/
+
+# General shortlinks for other websites and projects
 /gh                        https://github.com/dfsnow
 /gl                        https://gitlab.com/dfsnow
+/ptaxsim		   https://gitlab.com/ccao-data-science---modeling/packages/ptaxsim/
 
 # Redirects to posts/articles. Most recent is on bottom
 /rural-docs                /writing/2019/04/10/visualizing-americas-rural-physician-shortage/ 
@@ -14,5 +19,3 @@
 /local-gov                 /writing/2021/05/24/lessons-learned-in-local-government/
 /digital-things		   /writing/2021/08/30/favorite-digital-things/
 /big-pivot		   /writing/2022/11/28/pivoting-100gb-text-files-from-long-to-wide/
-/uses                      /writing/2021/08/30/favorite-digital-things/
-/blogroll                  /writing/2021/08/30/favorite-digital-things/
