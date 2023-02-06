@@ -26,7 +26,6 @@
                         {{ $srcExt := index (findRE "\\.[^.]*$|$" .Params.src 1) 0 }}
                         {{ $srcFileFull := print $srcBase "/" (index (findRE "^([^.]+)" .Params.src 1) 0) }}
                         {{ printf "%s%s%s%s%s" "<p><img src=" $srcFileFull "-1280" $srcExt "></p>" | html }}
-                        {{ .Content | html}}
                     {{ end }}
                     {{ if isset .Params "rating" }}
                         {{ printf "%s%s%s" "<p><a href=\"/ratings\"><h3>Score: " .Params.rating " / 10</h3></a></p>" | html }}
