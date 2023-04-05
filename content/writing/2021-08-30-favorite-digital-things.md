@@ -88,7 +88,7 @@ These posts have inspired or influenced me in some way. They're things I reread 
 - [Doing a Job](https://govleaders.org/rickover.htm) - ♥ The best thing ever written on how to work and lead
 - [Embrace the Grind](https://jacobian.org/2021/apr/7/embrace-the-grind/) - Sometimes you just have to do the boring stuff
 - [How Complex Systems Fail](https://how.complexsystems.fail/) - Short, prescient read on why things break
-- [Leverage Points: Places to Intervene in a System](https://donellameadows.org/archives/leverage-points-places-to-intervene-in-a-system/) - How to make things break 
+- [Leverage Points: Places to Intervene in a System](https://donellameadows.org/archives/leverage-points-places-to-intervene-in-a-system/) - How to make things break
 - [The Illustrated Guide to a Ph.D.](https://matt.might.net/articles/phd-school-in-pictures/) - Visual perspective on what a Ph.D. really means
 - [Stop Learning](https://www.nashvail.me/blog/stop-learning/) - You know enough, start doing things
 - [Work Hard](https://terrytao.wordpress.com/career-advice/work-hard/) - After a certain level, there are no shortcuts for effort
@@ -109,6 +109,7 @@ These posts have inspired or influenced me in some way. They're things I reread 
 - [The Tech Stack of a One-Woman Hardware Company](https://blog.thea.codes/winterblooms-tech-stack/) - Microcontrollers and C
 - [Thoughts After 6 Years](https://chriskiehl.com/article/thoughts-after-6-years) - ♥ Short post on lessons learned. Inspired [my post](https://sno.ws/local-gov)
 - [The Website Obesity Crisis](https://idlewords.com/talks/website_obesity.htm) - ♥ Why does reddit load 15 MB on every page
+- [The World's Smallest Hash Table](https://orlp.net/blog/worlds-smallest-hash-table/) - Optimizing code beyond all reason
 - [What I've Learned in 45 Years in the Software Industry](https://www.bti360.com/what-ive-learned-in-45-years-in-the-software-industry/) - People > technology
 
 ### Data
@@ -124,7 +125,7 @@ These posts have inspired or influenced me in some way. They're things I reread 
 
 - [Building Your Color Palette](https://www.refactoringui.com/previews/building-your-color-palette) - Systemic approach for picking colors for UIs
 - [Cell Tower Distribution](https://alpercinar.com/open-cell-id/) - Beautiful post on cell tower data viz
-- [Compressing and Enhancing Hand-Written Notes](https://mzucker.github.io/2016/09/20/noteshrink.html) - Shrink those scans 
+- [Compressing and Enhancing Hand-Written Notes](https://mzucker.github.io/2016/09/20/noteshrink.html) - Shrink those scans
 - [Ditherpunk](https://surma.dev/things/ditherpunk/) - ♥ Monochrome image dithering and how it works
 - [Mechanical Watch](https://ciechanow.ski/mechanical-watch/) - ♥ One of the most technically and visually impressive treatments of a complex topic I've ever seen
 
@@ -151,7 +152,7 @@ These are the things I use every day. It's a list whittled down over about 5 yea
 
 I have a strong preference for software that is fast, outwardly simple, and that does one thing extremely well.
 
-### Mobile 
+### Mobile
 
 - `ALL` - [Bitwarden](https://bitwarden.com/) - Open-source password manager. Great CLI integration
 - `iOS` - [Brew Timer](https://apps.apple.com/us/app/brew-timer-coffee-recipes/id1082171596) - Coffee brewing timer for V60 and Aeropress
@@ -160,24 +161,27 @@ I have a strong preference for software that is fast, outwardly simple, and that
 - `ALL` - [Mountain Project](https://www.mountainproject.com) - Find crags and track climbs, works offline
 - `AND` - [Niagara Launcher](https://play.google.com/store/apps/details?id=bitpit.launcher) - ♥ Minimalist, fast, well-designed launcher
 - `iOS` - [Raivo OTP](https://raivo-otp.com) - iCloud-based MFA with the ability to export to an archive file
+- `iOS` - [Streaks](https://streaksapp.com) - Good design and integrations. Pay once for multiple platforms
 - `ALL` - [Todoist](https://todoist.com/) - ♥ To-do list I've used for over a decade. Simple design, great UX
 - `ALL` - [YNAB](https://www.youneedabudget.com/) - Straightforward budgeting with bank and brokerage integration
 
 ### Desktop
 
 - `MAC` - [Alfred](https://www.alfredapp.com/) - Customizable Spotlight alternative with great plugins
+- `MAC` - [Focus](https://heyfocus.com) - Block everything distracting then allow timed breaks
 - `MAC` - [IINA](https://github.com/iina/iina) - Minimal Mac-only alternative to VLC
 - `MAC` - [Pandan](https://apps.apple.com/us/app/pandan/id1569600264) - Notifies you how long you've been using your computer
-- `MAC` - [Swish](https://highlyopinionated.co/swish/) - ♥ Resize and move windows with super intuitive gestures 
+- `MAC` - [Swish](https://highlyopinionated.co/swish/) - ♥ Resize and move windows with super intuitive gestures
 - `ALL` - [Obsidian](https://obsidian.md) - ♥ Fast notes. Free, works everywhere, plain markdown
 - `ALL` - [RStudio](https://www.rstudio.com/) - Great IDE specifically for R (and now some Python)
 - `MAC` - [Transmit](https://panic.com/transmit/) - Fast, versatile file transfer utility
 - `ALL` - [VS Code](https://code.visualstudio.com/) - Big IDE for when neovim or RStudio don't cut it
 - `WIN` - [Terminal + WSL 2](https://docs.microsoft.com/en-us/windows/wsl/install-win10) - ♥ Linux virtualization on Windows that just works
 
-### Other 
+### Other
 
-- [Fira Code](https://github.com/tonsky/FiraCode) - Monospaced font with ligatures. Works in nearly every editor 
+- [FreshRSS](https://freshrss.org) - Free, self-hosted RSS feed aggregator. Lightweight, fast, and simple
+- [JetBrains Mono](https://www.jetbrains.com/lp/mono/) - Monospaced font with ligatures. Works in nearly every editor
 - [Parquet](https://parquet.apache.org/) - Fast, space-efficient columnar storage format
 - [Postgres](https://www.postgresql.org/) - Preferred RDBMS for any big project with structured data
 - [PostGIS](https://postgis.net/) - Spatial data extension for Postgres
@@ -193,13 +197,13 @@ I have a strong preference for software that is fast, outwardly simple, and that
 - [neovim](https://github.com/neovim/neovim) - Text editor of choice. [Config](https://github.com/dfsnow/dotfiles) and plugins also work with vim
 - [ripgrep](https://github.com/BurntSushi/ripgrep) - ♥ `grep` but better. Search every file in a directory in milliseconds
 - [stow](https://www.gnu.org/software/stow/manual/stow.html) - Symlink, config, and dotfiles management
-- [tmux](https://github.com/tmux/tmux) - Terminal multiplexer + keep remote terminal sessions alive 
+- [tmux](https://github.com/tmux/tmux) - Terminal multiplexer + keep remote terminal sessions alive
 - [z](https://github.com/rupa/z) - Tiny bash utility that lets you jump between commonly-used directories
 - [zstd](https://github.com/facebook/zstd) - Compression algorithm of choice. Replaced bzip2 as a favorite
 
 ### R packages
 
-- [data.table](https://github.com/Rdatatable/data.table) - ♥ Impossible data manipulation magic. Faster than everything else 
+- [data.table](https://github.com/Rdatatable/data.table) - ♥ Impossible data manipulation magic. Faster than everything else
 - [dplyr](https://dplyr.tidyverse.org/) - Clear, intuitive data munging that plays well with other Tidyverse libraries
 - [lubridate](https://lubridate.tidyverse.org/) - Intuitive, consistent date-time handling. Save yourself from footguns
 - [ggplot2](https://ggplot2.tidyverse.org/) - _The_ plotting lib for R. Blows matplotlib (and many others) out of the water
@@ -209,4 +213,4 @@ I have a strong preference for software that is fast, outwardly simple, and that
 - [tidycensus](https://walker-data.com/tidycensus/) - Useful interface for the Census API
 - [tidytransit](https://github.com/r-transit/tidytransit) - GTFS feed reader. Make [trains go brrr](https://sno.ws/transit-maps)
 
-_Last updated 2022-12-21_
+_Last updated 2023-04-04_
