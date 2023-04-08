@@ -6,7 +6,7 @@ html {
 
 body {
   font-size: 1.6rem;
-  font-family: 'Helvetica Neue', 'Arial', sans-serif;
+  font-family: "Helvetica Neue", "Arial", sans-serif;
   margin: 0 auto;
   line-height: 1.5;
   min-height: 100%;
@@ -70,7 +70,7 @@ figure figcaption {
 
 .content code,
 .content pre {
-  font-family: 'Monaco', monospace;
+  font-family: "Monaco", monospace;
   background-color: #f8f8f8;
 }
 
@@ -230,13 +230,13 @@ blockquote p,
 
 .notice::before {
   content: "NOTE";
-  background: #AACCFF;
+  background: #aaccff;
   width: 5rem;
 }
 
 .warning::before {
   content: "WARNING";
-  background: #FFEEAA;
+  background: #ffeeaa;
   width: 8rem;
 }
 
@@ -302,8 +302,8 @@ blockquote p,
   }
 
   .navbar-external-links > .navbar-external-link:first-of-type {
-   padding: 0.2rem 0 0 0;
- }
+    padding: 0.2rem 0 0 0;
+  }
 
   #writing,
   #reading {
@@ -312,7 +312,7 @@ blockquote p,
   }
 }
 
-@media (prefers-color-scheme:dark) {
+@media (prefers-color-scheme: dark) {
   body,
   .navbar {
     background-color: #000;
@@ -358,10 +358,10 @@ blockquote p,
   }
 
   .notice::before {
-    color: #AACCFF;
+    color: #aaccff;
   }
 
   .warning::before {
-    color: #FFEEAA;
+    color: #ffeeaa;
   }
 }

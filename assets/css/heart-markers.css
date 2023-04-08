@@ -1,5 +1,5 @@
 .js-enabled ul li.with-heart::marker {
-  content: '♥  ';  
+  content: "♥  ";
   color: red;
 }
 
