@@ -31,11 +31,11 @@
 }
 
 .photo-frame > .photo-rec svg {
-  fill: red;
+  fill: var(--heart-color);
 }
 
 .photo-frame > .photo-rec svg:hover {
-  fill: #ff9999;
+  fill: var(--heart-hover);
 }
 
 @media screen and (max-width: 50rem) {

@@ -1,8 +1,8 @@
 .js-enabled ul li.with-heart::marker {
   content: "♥  ";
-  color: red;
+  color: var(--heart-color);
 }
 
 .js-enabled span.heart {
-  color: red;
+  color: var(--heart-color);
 }
