@@ -27,7 +27,9 @@
 <style type="text/css" media="screen">
     {{ $main.Content | safeCSS }}
 </style>
-<style type="text/css" media="screen">
-    @media (prefers-color-scheme:dark) { {{ $dark.Content | safeCSS }} }
-    @media (prefers-color-scheme:light) { {{ $light.Content | safeCSS }} }
-</style>
+{{ if eq .Type "writing" }}
+    <style type="text/css" media="screen">
+        @media (prefers-color-scheme:dark) { {{ $dark.Content | safeCSS }} }
+        @media (prefers-color-scheme:light) { {{ $light.Content | safeCSS }} }
+    </style>
+{{ end }}
