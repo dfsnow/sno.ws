@@ -1,12 +1,12 @@
 +++
-title = "Ratings"
+title = "Hearts and ratings"
 +++
 
-For most things on the site, <span style="color:red">♥</span> indicates a personal favorite. For books specifically, it indicates something I wholeheartedly recommend to anyone.
-
-Also, I made a rating scale for books. It's a 10-point ordinal scale, where 10 is the best and 0 is the worst. It's mostly just to help me remember what I've enjoyed and to give me a consistent, clear scale to reference.
+A heart ( <span style="color:#FF0000">♥</span> ) on this site means something is one of my personal favorites. This is true across all content types.
 
 ---
+
+I also have a rating scale for books. It's a 10-point ordinal scale, where 10 is the best and 0 is the worst. It's mostly just to help me remember what I've enjoyed and to give me a consistent, clear scale to reference.
 
 <style type="text/css">
   .rating-table .rating {
