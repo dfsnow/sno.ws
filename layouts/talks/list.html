@@ -1,0 +1,35 @@
+{{ define "main" }}
+<div id="talks" class="post-list">
+    {{ range where $.Site.RegularPages "Section" "talks" }}
+        {{ if gt (len .Content) 0 }}
+            <div class="post-list-info">
+                <a href="{{ .Permalink }}">
+                    {{ .Title }}
+                </a>
+            </div>
+        {{ else }}
+            <div class="post-list-info">{{ .Title }}</div>
+        {{ end }}
+        <div class="post-list-info" style="text-align:right;">
+            {{- if isset .Params "slides" -}}
+                <a href="{{ .Params.slides }}" title="Slides from talk">Slides</a>
+            {{- end -}}
+            {{- if and (isset .Params "slides") (isset .Params "video") -}}
+                <span> | </span>
+            {{- end -}}
+            {{- if isset .Params "video" -}}
+                <a href="{{ .Params.video }}" title="Video of talk">Video</a>
+            {{- end -}}
+        </div>
+        <div></div>
+        <time class="post-list-date">{{ .Date.Format "2006-01-02" }}</time>
+        <div class="post-list-misc">
+            {{ if eq .Params.recommended "true"}}
+                <a href="/ratings" class="link-fave-heart" title="Recommended book">
+                    ♥
+                </a>
+            {{ end }}
+        </div>
+    {{ end }}
+</div>
+{{ end }}

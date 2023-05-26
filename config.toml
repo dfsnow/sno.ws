@@ -27,16 +27,22 @@ pygmentsUseClasses = true
     weight = 20
 
   [[menu.main]]
+    identifier = "talks"
+    name = "talks"
+    url = "/talks/"
+    weight = 30
+
+  [[menu.main]]
     identifier = "photos"
     name = "photos"
     url = "/photos/"
-    weight = 30
+    weight = 40
 
   [[menu.main]]
     identifier = "about"
     name = "about"
     url = "/about/"
-    weight = 40
+    weight = 50
 
 [permalinks]
   writing = "/:section/:year/:month/:day/:title/"

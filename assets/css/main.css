@@ -277,7 +277,11 @@ blockquote p,
 }
 
 #reading {
-  grid-template-columns: 1.2fr 0.75fr 0.25fr 3rem;
+  grid-template-columns: 1.2fr 0.8fr 0.2fr 3rem;
+}
+
+#talks {
+  grid-template-columns: 1.575fr 0.4fr 0.075fr 0.2fr 3rem;
 }
 
 /* support for Edge */
@@ -330,7 +334,8 @@ blockquote p,
   }
 
   #writing,
-  #reading {
+  #reading,
+  #talks {
     gap: 0;
     grid-template-columns: 1fr;
   }
