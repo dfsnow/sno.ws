@@ -2,7 +2,7 @@
 title = "Hearts and ratings"
 +++
 
-A heart ( <span style="color:#FF0000">♥</span> ) on this site means something is one of my personal favorites. This is true across all content types.
+On this site, a heart ( <span style="color:#FF0000">♥</span> ) identifies one of my personal favorites. This is true across all content types.
 
 ---
 
