@@ -281,7 +281,7 @@ blockquote p,
 }
 
 #talks {
-  grid-template-columns: 1.61fr 0.2fr 0.19fr 0.2fr 3rem;
+  grid-template-columns: 1.6125fr 0.2fr 0.1875fr 0.2fr 3rem;
 }
 
 /* support for Edge */
