@@ -1,5 +1,5 @@
 {{ if .IsNamedParams }}
-    {{ $srcBase := .Site.Params.contentURL }}
+    {{ $srcBase := .Site.Params.videoURL }}
     <video style="width: 100%;" controls>
 	<source src="{{ $srcBase }}{{.Get "src" }}.mp4" type="video/mp4">
 	<source src="{{ $srcBase }}{{.Get "src" }}.webm" type="video/webm">

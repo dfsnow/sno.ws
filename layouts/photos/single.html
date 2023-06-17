@@ -8,7 +8,7 @@
 <!-- Get image base path and type -->
 {{ $srcBase := .Site.Params.photosURL }}
 {{ $srcFile := index (findRE "^([^.]+)" .Params.src 1) 0 }}
-{{ $srcFileFull := print $srcBase "/" (index (findRE "^([^.]+)" .Params.src 1) 0) }}
+{{ $srcFileFull := print $srcBase "/resized/" (index (findRE "^([^.]+)" .Params.src 1) 0) }}
 {{ $srcExt := index (findRE "\\.[^.]*$|$" .Params.src 1) 0 }}
 {{ $srcType := replaceRE ".jpg" "jpeg" $srcExt }}
 

@@ -18,6 +18,8 @@ exports.handler = async (event, context, callback) => {
     );
     const srcKeyExt = path.extname(srcKey).toLowerCase();
     const dstBucket = process.env.DEST_BUCKET;
+    const dstPathResized = process.env.DEST_PATH_RESIZED;
+    const dstPathOriginal = process.env.DEST_PATH_ORIGINAL;
     const dstKey = path.basename(srcKey, srcKeyExt);
 
     // Check that the image type is supported
@@ -41,9 +43,9 @@ exports.handler = async (event, context, callback) => {
 
     // Resize image and upload each version
     for (let res of [640, 1280]) {
-        const filenameOrgExt = `${dstKey}-${res}${srcKeyExt}`;
-        const filenameWebpExt = `${dstKey}-${res}.webp`;
-        const filenameAvifExt = `${dstKey}-${res}.avif`;
+        const filenameOrgExt = `${dstPathResized}/${dstKey}-${res}${srcKeyExt}`;
+        const filenameWebpExt = `${dstPathResized}/${dstKey}-${res}.webp`;
+        const filenameAvifExt = `${dstPathResized}/${dstKey}-${res}.avif`;
         console.log("Now generating: " + res);
 
         try {
@@ -99,7 +101,7 @@ exports.handler = async (event, context, callback) => {
     // Strip original image of EXIF data and rotate
     try {
         var buffer = await sharp(origimage.Body).rotate().toBuffer();
-        const key = `original/${dstKey}${srcKeyExt}`;
+        const key = `${dstPathOriginal}/${dstKey}${srcKeyExt}`;
         const destParams = {
             Bucket: dstBucket,
             Key: key,
