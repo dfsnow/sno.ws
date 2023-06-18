@@ -1,0 +1,6 @@
+project:
+  output-dir: ../content/writing/
+  type: hugo
+
+execute: 
+  cache: true

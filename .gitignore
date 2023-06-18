@@ -1,6 +1,9 @@
-public
-resources
+public/
+resources/
 node_modules/
+/.quarto/
+content/writing/*.html
 *.json
 .hugo_build.lock
 .DS_Store
+.Rproj.user

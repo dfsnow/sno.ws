@@ -1,0 +1,6 @@
+/.quarto/
+markdown_strict/
+*.rdb
+*.rdx
+*.Rdata
+__packages
