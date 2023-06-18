@@ -40,12 +40,15 @@ a:visited {
 }
 
 table {
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+
+table:not(.rating-table) {
   display: block;
   max-width: fit-content;
-  margin: 0 auto;
   overflow-x: auto;
   white-space: nowrap;
-  border-collapse: collapse;
 }
 
 table td,
