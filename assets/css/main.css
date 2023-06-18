@@ -40,8 +40,12 @@ a:visited {
 }
 
 table {
-  border-collapse: collapse;
+  display: block;
+  max-width: fit-content;
   margin: 0 auto;
+  overflow-x: auto;
+  white-space: nowrap;
+  border-collapse: collapse;
 }
 
 table td,
@@ -99,6 +103,10 @@ figure figcaption {
 .content code {
   font-size: 1.5rem;
   padding: 0 0.4rem;
+}
+
+.content p code {
+  background-color: var(--gray-accent-4);
 }
 
 .content pre {
@@ -348,6 +356,7 @@ blockquote p,
     --gray-accent-1: #636363;
     --gray-accent-2: #ababab;
     --gray-accent-3: #1b1b1b;
+    --gray-accent-4: #333333;
     --heart-hover: #FFA07A;
     --link-color: #6aa6d0;
     --visited-link-color: #b28ec6;
