@@ -297,7 +297,7 @@ Oh. It's a full order of magnitude faster than everything else. Looks like `data
 
 ## Conclusion
 
-So that's the test data, but what about the original problem with 500 billion rows? Can the `data.table` solution actually finish running it?
+So, that's the test data, but what about the original problem with 500 billion rows? Can the `data.table` solution actually finish running it?
 
 Yes it can! Though with some caveats:
 
