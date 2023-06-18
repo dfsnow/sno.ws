@@ -94,18 +94,10 @@ figure figcaption {
   padding: 2rem;
 }
 
-.content code,
-.content pre {
-  font-family: "Monaco", monospace;
-  background-color: var(--gray-accent-3);
-}
-
 .content code {
   font-size: 1.5rem;
   padding: 0 0.4rem;
-}
-
-.content p code {
+  font-family: "Monaco", monospace;
   background-color: var(--gray-accent-4);
 }
 
@@ -119,6 +111,12 @@ figure figcaption {
   word-wrap: break-word;
   border: thin solid var(--gray-accent-4);
   border-radius: 3px;
+  font-family: "Monaco", monospace;
+}
+
+.content pre code,
+.content pre {
+  background-color: var(--gray-accent-3);
 }
 
 .content pre code {
@@ -242,10 +240,6 @@ blockquote,
   border: thin solid var(--gray-accent-1);
   background-color: var(--gray-accent-3);
   border-radius: 3px;
-}
-
-.content code {
-  background-color: var(--gray-accent-3);
 }
 
 blockquote p,
