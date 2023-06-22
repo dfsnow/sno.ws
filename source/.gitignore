@@ -4,3 +4,4 @@ markdown_strict/
 *.rdx
 *.Rdata
 __packages
+.Rhistory

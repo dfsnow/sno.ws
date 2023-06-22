@@ -138,13 +138,14 @@ calc_sim_for <- function(x, y, weights) {
 
 microbenchmark(
   "for" = calc_sim_for(x_df[, -1], y_df[, -1], weights),
+  unit = "millisecond",
   times = 5
 )
 ```
 
-    Unit: seconds
-     expr      min       lq     mean   median       uq      max neval
-      for 7.570445 7.583219 7.685079 7.690568 7.761431 7.819734     5
+    Unit: milliseconds
+     expr  min   lq mean median   uq  max neval
+      for 7192 7261 7407   7400 7569 7611     5
 
 ### Apply and matrix ops
 
@@ -167,13 +168,14 @@ calc_sim_apply <- function(x, y, weights) {
 
 microbenchmark(
   "apply" = calc_sim_apply(x_df[, -1], y_df[, -1], weights),
+  unit = "millisecond",
   times = 5
 )
 ```
 
-    Unit: seconds
-      expr      min       lq     mean   median       uq      max neval
-     apply 20.06455 20.07633 20.13313 20.11903 20.14267 20.26308     5
+    Unit: milliseconds
+      expr   min    lq  mean median    uq   max neval
+     apply 15966 16041 16183  16177 16343 16387     5
 
 ### Vector recycling
 
@@ -195,13 +197,14 @@ calc_sim_mat <- function(x, y, weights) {
 
 microbenchmark(
   "mat" = calc_sim_mat(x_df[, -1], y_df[, -1], weights),
+  unit = "millisecond",
   times = 5
 )
 ```
 
-    Unit: seconds
-     expr      min       lq     mean   median       uq      max neval
-      mat 2.162086 2.177219 2.192796 2.189042 2.190707 2.244925     5
+    Unit: milliseconds
+     expr  min   lq mean median   uq  max neval
+      mat 2130 2135 2142   2136 2153 2158     5
 
 ### Pure data.table
 
@@ -274,22 +277,26 @@ calc_sim_dt <- function(x, y, id_col, weights) {
   return(out)
 }
 
+# Use all threads for data.table
+setDTthreads(0)
+
 # Comparing all solutions
 microbenchmark(
   "for" = calc_sim_for(x_df[, -1], y_df[, -1], weights),
   "apply" = calc_sim_apply(x_df[, -1], y_df[, -1], weights),
   "mat" = calc_sim_mat(x_df[, -1], y_df[, -1], weights),
   "dt" = calc_sim_dt(x_df, y_df, "ID", weights),
+  unit = "millisecond",
   times = 5
 )
 ```
 
     Unit: milliseconds
-      expr        min         lq       mean     median         uq        max neval
-       for  7598.0700  7693.7509  7761.3202  7757.2887  7793.9438  7963.5475     5
-     apply 17093.5925 17208.6231 18783.7333 17324.8514 20883.0273 21408.5720     5
-       mat  2134.0086  2156.6004  2206.1656  2159.2913  2199.3194  2381.6085     5
-        dt   226.1586   231.5544   237.1413   238.9263   242.4016   246.6655     5
+      expr   min    lq  mean median    uq   max neval
+       for  7620  7748  7830   7758  7983  8043     5
+     apply 16958 17031 17757  17152 17394 20251     5
+       mat  2150  2169  2177   2178  2184  2203     5
+        dt   134   138   154    142   172   185     5
 
 Oh. It's a full order of magnitude faster than everything else. Looks like `data.table` is our winning solution!
 
@@ -307,3 +314,76 @@ Yes it can! Though with some caveats:
 I wrote some additional code to handle these caveats and ran it on the full data. Given 1.1M rows in X and 450K rows in Y, each with 1,500 columns, the code took `31H 27M 18S` to run on a beefy server (128G RAM, 16 cores of a Xeon Silver 4208 using `data.table`'s built-in parallelism). Still slow, but totally manageable given the nature of the task.
 
 That said, I'm sure this could be done faster using a lower-level language. I did some quick experiments using Rcpp, but I don't think I'm skilled enough to beat the times I got with `data.table`. If anyone does manage to find a faster solution, feel free to email me; I'll gladly buy you a beer.
+
+------------------------------------------------------------------------
+
+## Update (2023-06-21)
+
+I owe someone a beer. [My friend](https://nicktallant.com) pointed out that a simple nested for loop in Python using `numpy` is nearly as fast as the `data.table` solution.
+
+<details>
+<summary>
+Click to view setup code
+</summary>
+
+``` r
+library(reticulate)
+x <- as.matrix(x_df[, -1])
+y <- as.matrix(y_df[, -1])
+```
+
+``` python
+import time
+import numpy as np
+
+# Import objects from R to numpy using reticulate
+x = r.x
+y = r.y
+w = np.array(r.weights)
+
+# Define janky microbenchmark analogue
+def benchmark(func, x, y, w, expr, times):
+    exp_j = max(len(expr), 4) + 1
+    timings = np.empty(times, np.float32)
+    for i in range(times):
+        start = time.perf_counter()
+        func(x, y, w).shape
+        end = time.perf_counter()
+        timings[i] = round((end - start) * 100, 3)
+
+    print("Unit: milliseconds")
+    print("expr".rjust(exp_j, " ") +
+      " min  lq mean median  uq max neval\n", 
+      expr.rjust(exp_j - 1, " ") +
+      str(np.int16(np.min(timings))).rjust(4, " ") +
+      str(np.int16(np.quantile(timings, 0.25))).rjust(4, " ") +
+      str(np.int16(np.mean(timings))).rjust(5, " ") +
+      str(np.int16(np.median(timings))).rjust(7, " ") +
+      str(np.int16(np.quantile(timings, 0.75))).rjust(4, " ") +
+      str(np.int16(np.max(timings))).rjust(4, " ") +
+      str(times).rjust(6, " ")
+    )
+```
+
+</details>
+
+``` python
+def calc_sim_py(x, y, w):
+    output = np.zeros((len(x), len(y)), np.float64)
+    for idx_x, x_row in enumerate(x):
+        for idx_y, y_row in enumerate(y):
+            output[idx_x][idx_y] = np.sum((x_row == y_row) * w)
+    return output
+
+benchmark(calc_sim_py, x, y, w, "py", times = 5)
+```
+
+    Unit: milliseconds
+     expr min  lq mean median  uq max neval
+       py 296 297  300    297 300 309     5
+
+And that compiling the same loop with [`numba`](https://numba.pydata.org)'s `@njit` decorator reduces the time even further, down to around a half the time of `data.table`. Pretty wild!
+
+    Unit: milliseconds
+        expr min  lq mean median  uq max neval
+     py_njit  78  78   85     80  81 110     5
