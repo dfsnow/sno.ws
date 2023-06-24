@@ -145,7 +145,7 @@ microbenchmark(
 
     Unit: milliseconds
      expr  min   lq mean median   uq  max neval
-      for 7192 7261 7407   7400 7569 7611     5
+      for 7478 7493 7553   7515 7612 7664     5
 
 ### Apply and matrix ops
 
@@ -175,7 +175,7 @@ microbenchmark(
 
     Unit: milliseconds
       expr   min    lq  mean median    uq   max neval
-     apply 15966 16041 16183  16177 16343 16387     5
+     apply 16197 16213 16407  16422 16543 16659     5
 
 ### Vector recycling
 
@@ -204,7 +204,7 @@ microbenchmark(
 
     Unit: milliseconds
      expr  min   lq mean median   uq  max neval
-      mat 2130 2135 2142   2136 2153 2158     5
+      mat 2118 2131 2142   2133 2153 2176     5
 
 ### Pure data.table
 
@@ -293,10 +293,10 @@ microbenchmark(
 
     Unit: milliseconds
       expr   min    lq  mean median    uq   max neval
-       for  7620  7748  7830   7758  7983  8043     5
-     apply 16958 17031 17757  17152 17394 20251     5
-       mat  2150  2169  2177   2178  2184  2203     5
-        dt   134   138   154    142   172   185     5
+       for  7547  7651  7802   7856  7887  8067     5
+     apply 17223 20289 20026  20447 20697 21476     5
+       mat  2169  2204  2214   2214  2217  2266     5
+        dt   141   144   168    150   201   206     5
 
 Oh. It's a full order of magnitude faster than everything else. Looks like `data.table` is our winning solution!
 
@@ -380,10 +380,48 @@ benchmark(calc_sim_py, x, y, w, "py", times = 5)
 
     Unit: milliseconds
      expr min  lq mean median  uq max neval
-       py 296 297  300    297 300 309     5
+       py 299 301  302    302 302 305     5
 
 And that compiling the same loop with [`numba`](https://numba.pydata.org)'s `@njit` decorator reduces the time even further, down to around a half the time of `data.table`. Pretty wild!
 
+``` python
+from numba import njit, prange
+
+@njit
+def calc_sim_py_njit(x, y, w):
+    output = np.zeros((len(x), len(y)), dtype=np.float64)
+    for x_idx, x_row in enumerate(x):
+        for y_idx, y_row in enumerate(y):
+            output[x_idx][y_idx] = np.sum((x_row == y_row) * w)
+    return output
+  
+benchmark(calc_sim_py_njit, x, y, w, "py_njit", times = 5)
+```
+
     Unit: milliseconds
         expr min  lq mean median  uq max neval
-     py_njit  78  78   85     80  81 110     5
+     py_njit  80  80   87     80  80 114     5
+
+------------------------------------------------------------------------
+
+## Update (2023-06-23)
+
+I owe two beers. My coworker has further sped up the `numpy` loops using `numba`'s built-in parallelization. So now we've dropped three orders of magnitude from the original R for loop. Can we go even faster?
+
+``` python
+from numba import njit, prange
+
+@njit(parallel=True, fastmath=True)
+def calc_sim_py_par(x, y, w):
+    output = np.zeros((len(x), len(y)), dtype=np.float64)
+    for x_i in prange(len(x)):
+        for y_i in range(len(y)):
+            output[x_i][y_i] = np.sum((x[x_i] == y[y_i]) * w)
+    return output
+  
+benchmark(calc_sim_py_par, x, y, w, "py_par", times = 50)
+```
+
+    Unit: milliseconds
+       expr min  lq mean median  uq max neval
+     py_par   6   7    8      7   8  43    50
