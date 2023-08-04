@@ -21,7 +21,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-{{ $main := resources.Get "css/main.css" | minify }}
+{{ $main := resources.Get "css/main.scss" | toCSS | minify }}
 {{ $dark := resources.Get "css/syntax-dark.css" | minify }}
 {{ $light := resources.Get "css/syntax-light.css" | minify }}
 <style type="text/css" media="screen">
