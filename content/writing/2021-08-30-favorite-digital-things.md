@@ -29,6 +29,7 @@ These are the blogs I read regularly. They've influenced my thinking and formed 
 - [Larsen Husby](https://larsenhusby.com/2D) - Love me [some maps](https://larsenhusby.com/City-Rivers-River-Cities)
 - [Lingdong Huang](https://lingdong.works/) - Procedurally generated [fish](https://fishdraw.glitch.me/), [landscape paintings](https://shan-shui-inf.lingdong.works/), and [flowers](https://nonflowers.lingdong.works/)
 - [Matt Keeter](https://www.mattkeeter.com/projects/) - Weird [shaders](https://www.mattkeeter.com/projects/futureproof/), [raytracers](https://www.mattkeeter.com/projects/rayray/), and [games](https://www.mattkeeter.com/projects/pont/)
+- [Paul Stamatiou](https://paulstamatiou.com) - Photography + hands down the [best travelogues](https://paulstamatiou.com/photos/new-zealand/coromandel-peninsula/) I've ever seen
 
 ### General
 
@@ -39,7 +40,7 @@ These are the blogs I read regularly. They've influenced my thinking and formed 
 - [Jeremy Maluf](https://jeremymaluf.com/) - ♥ Lists for [onebag packing](https://jeremymaluf.com/onebag/) and [other stuff](https://jeremymaluf.com/walking/). Inspired this post
 - [Kyle E. Mitchell](https://writing.kemitchell.com/) - Interesting posts and takes on law ∪ technology
 - [Paul Graham](http://www.paulgraham.com/articles.html) - Classic essays on [tech](http://www.paulgraham.com/ds.html), [life](http://www.paulgraham.com/talk.html), and [startups](http://www.paulgraham.com/start.html)
-- [Of Dollars And Data](https://ofdollarsanddata.com/) - Data analysis ∪ personal finance
+- [Steve Vance](https://www.stevencanplan.com/) - Urban planning, travelogues, and Chicago thoughts
 - [Terence Eden](https://shkspr.mobi/blog/) - Life advice, book reviews, and technology. Running for decades
 - [Terry Tao](https://terrytao.wordpress.com/career-advice/) - Time and career advice from the world's best mathematician
 - [Tom MacWright](https://macwright.com/) - ♥ Spatial data, development, miscellany. Inspired this blog
@@ -57,6 +58,7 @@ These are the blogs I read regularly. They've influenced my thinking and formed 
 - [Julia Evans](https://jvns.ca/) - [Zines](https://wizardzines.com/), [life advice](https://jvns.ca/blog/2016/09/19/getting-things-done/), and [technical posts](https://jvns.ca/blog/2016/06/30/why-do-we-use-the-linux-kernels-tcp-stack/). Incredible human
 - [Julia Silge](https://juliasilge.com/) - Tidymodels champion. Neat posts on R and [predicting home prices](https://juliasilge.com/blog/austin-housing/)
 - [Kate Rose Morley](https://iamkate.com) - Simple games, data viz, and CSS tricks
+- [Marianne Bellotti](https://bellmar.medium.com/) - Computer science ∪ government ∪ management
 - [Nick Babcock](https://nickb.dev/archive/) - Lessons on performance + some viz stuff
 - [Nikita Prokopov](https://tonsky.me/) - Creator of [Fira Code](https://github.com/tonsky/FiraCode). Posts on software [performance](https://tonsky.me/blog/performance-first/) and [design](https://tonsky.me/blog/good-times-weak-men/)
 - [The Pragmatic Engineer](https://blog.pragmaticengineer.com/) - Huge collection of useful [career](https://blog.pragmaticengineer.com/advice-to-myself-when-starting-as-a-software-developer/) and [programming advice](https://blog.pragmaticengineer.com/readable-code/)
@@ -66,6 +68,7 @@ These are the blogs I read regularly. They've influenced my thinking and formed 
 ### Spatial
 
 - [Katie Jolly](https://www.katiejolly.io/blog/) - Maps and geography tips for R
+- [Kyle Walker](https://walker-data.com/blog.html) - Creator of [tidycensus](https://github.com/walkerke/tidycensus), mapper extraordinaire
 - [Paul Ramsey](https://blog.cleverelephant.ca/) - Weird, weedsy [posts on PostGIS performance](https://blog.cleverelephant.ca/2021/05/indexes-and-queries.html)
 - [Topi Tjukanov](https://tjukanov.org/) - Utterly useless (but beautiful) [map visualizations](https://tjukanov.org/accessibility-fireworks)
 
@@ -103,6 +106,7 @@ These posts have inspired or influenced me in some way. They're things I reread 
 - [I Wish My Web Server Were in the Corner of My Room](https://interconnected.org/home/2022/10/10/servers) - Mix virtual and physical
 - [The Infrastructure of a One-Man SaaS](https://anthonynsimon.com/blog/one-man-saas-architecture/) - Load balancing and AWS and K8s
 - [Kaminsky DNS Vulnerability](http://www.unixwiz.net/techtips/iguide-kaminsky-dns-vuln.html) - ♥ The most engaging thing ever written on DNS
+- [The Local Minima of Suckiness](https://vickiboykis.com/2021/08/05/the-local-minima-of-suckiness/) - How I think about teaching and learning coding
 - [The Rise of User-Hostile Software](https://den.dev/blog/user-hostile-software/) - Software now is better for devs, worse for users
 - [Teaching Programming](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1006023) - Extremely helpful tips for teaching a class how to code
 - [The Tech Stack of a One-Man SaaS](https://panelbear.com/blog/tech-stack/) - Tools and frameworks oh my
@@ -141,6 +145,7 @@ These posts have inspired or influenced me in some way. They're things I reread 
 - [How to Gain More From Your Reading](https://psyche.co/guides/how-to-gain-more-from-reading-by-taking-it-all-in-more-slowly) - Tips for attentive, intentional reading
 - [MMAcevedo](https://qntm.org/mmacevedo) - Horrifying short fiction on the perils of saving a brain's state
 - [The Plague Year](https://www.newyorker.com/magazine/2021/01/04/the-plague-year) - Summary of the institutional failures that made COVID so bad
+- [Some Blogging Myths](https://jvns.ca/blog/2023/06/05/some-blogging-myths/) - The most motivating post on blogging I've ever found
 - [The Tyranny of Structurelessness](https://www.jofreeman.com/joreen/tyranny.htm) - All groups develop informal structure
 - [Your Climbing Shoes Are Too Tight](https://eveningsends.com/climbing-shoes-tight/) - Treat your feet right, don't size down
 
@@ -213,4 +218,4 @@ I have a strong preference for software that is fast, outwardly simple, and that
 - [tidycensus](https://walker-data.com/tidycensus/) - Useful interface for the Census API
 - [tidytransit](https://github.com/r-transit/tidytransit) - GTFS feed reader. Make [trains go brrr](https://sno.ws/transit-maps)
 
-_Last updated 2023-04-04_
+_Last updated 2023-08-03_
