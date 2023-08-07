@@ -12,8 +12,7 @@
   --warning-color: #d9c98d;
   --link-color: #2979bc;
   --visited-link-color: #8f5baa;
-  --full-width: 640px;
-  --mobile-width: 540px;
+  --full-width: 600px;
   --add-media-width: 240px;
 }
 
@@ -308,12 +307,7 @@ blockquote p,
 }
 
 /* adjustment when very small */
-@media only screen and (max-width: 768px) {
-
-  .content,
-  .navbar-content {
-    max-width: var(--mobile-width);
-  }
+@media only screen and (max-width: 640px) {
 
   .post-list,
   .post-list > .post-list-info {
