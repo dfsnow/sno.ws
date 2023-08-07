@@ -6,7 +6,12 @@ recommended = "true"
 styles = [ "css/full-width-media.scss" ]
 +++
 
-<style>:root { --add-media-width: 80px }</style>
+<style>
+  :root { --add-media-width: 80px }
+  .content .video-holder {
+    margin: 2rem auto;
+  }
+</style>
 
 <h4>
 <a href="https://gist.github.com/dfsnow/6cef8184ed0dbccadc0cd56a0d22b8be">GitHub gist for source code</a>
