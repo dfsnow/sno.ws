@@ -5,6 +5,9 @@
 .post-list-photos {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
 }
 
 .post-list-photos img {
@@ -38,7 +41,11 @@
   fill: var(--heart-hover);
 }
 
-@media screen and (max-width: 50rem) {
+@media only screen and (max-width: 660px) {
+  .content {
+    padding: 2rem 0;
+  }
+
   .post-list-photos > .photo-frame {
     padding: 0.5rem 0;
   }
