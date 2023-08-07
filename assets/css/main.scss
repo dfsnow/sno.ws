@@ -31,6 +31,7 @@ body {
   line-height: 1.5;
   min-height: 100%;
   overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 a {
@@ -208,9 +209,8 @@ figure figcaption {
 }
 
 .navbar-content .navbar-title {
-  display: flex;
-  align-items: center;
-  font-size: 1.85rem;
+  line-height: 1.5;
+  font-size: 1.8rem;
   margin: 0;
   white-space: nowrap;
 }
@@ -308,7 +308,7 @@ blockquote p,
 }
 
 /* adjustment when very small */
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 720px) {
 
   .post-list,
   .post-list > .post-list-info {
@@ -352,7 +352,7 @@ blockquote p,
 
   .navbar-content > .navbar-external-links {
     justify-content: flex-start;
-    height: 2.7rem;
+    height: 3rem;
   }
 
   .navbar-content > .navbar-external-links svg {

@@ -41,7 +41,7 @@
   fill: var(--heart-hover);
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 720px) {
   .content {
     padding: 2rem 0;
   }
