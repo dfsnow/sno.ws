@@ -12,14 +12,15 @@
 .content picture,
 .content svg {
   display: flex;
+  max-height: 80vh;
   max-width: calc(var(--full-width) + var(--add-media-width));
   margin: 3rem auto;
 }
 
 .content img,
 .content video {
-  align-self: flex-start;
   max-width: calc(100% + 4rem);
+  object-fit: contain;
   margin: 0 -2rem;
 }
 
