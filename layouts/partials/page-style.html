@@ -4,6 +4,6 @@
         {{ $resources = $resources | append (resources.Get . ) -}}
     {{ end }}
     {{ $path := printf "css/%s%s" .File.BaseFileName "-page-style.css" }}
-    {{ $css := $resources | resources.Concat $path | minify }}
+    {{ $css := $resources | resources.Concat $path | toCSS | minify }}
     <style>{{ $css.Content | safeCSS }}</style>
 {{ end }}

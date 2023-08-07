@@ -3,12 +3,12 @@ title = "Visualizing America's rural physician shortage"
 date = "2019-04-10"
 shorturl = "rural-docs"
 recommended = "false"
-styles = [ "css/2019-04-10-visualizing-americas-rural-physician-shortage.css" ]
+styles = [ "css/full-width-media.scss" ]
 +++
 
 _Note: This is adapted from an essay I wrote as a research assistant during graduate school. You can see the [original essay here](https://dfsnow.github.io/ama_viz/exploratory_plots.html)._
 
-<div style="max-width:60rem;display:flex;margin:-3rem auto;">
+<div style="max-width:600px;display:flex;margin:-3rem auto;">
     {{< picture-embed src="/2019-04-10-colorbar.png" alt="Post color palette" width="1696" height="44">}}
 </div>
 

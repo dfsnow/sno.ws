@@ -1,0 +1,33 @@
+.content {
+  max-width: 100%;
+}
+
+.content article * {
+  max-width: var(--full-width);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media only screen and (max-width: 768px) {
+  .content article * {
+    max-width: var(--mobile-width);
+  }
+}
+
+.content picture,
+.content video,
+.content svg {
+  display: flex;
+  max-width: calc(var(--full-width) + var(--add-media-width));
+  margin: 3rem auto;
+}
+
+.content img {
+  align-self: flex-start;
+  max-width: calc(100% + 4rem);
+  margin: 0 -2rem;
+}
+
+.content svg {
+  display: block;
+}

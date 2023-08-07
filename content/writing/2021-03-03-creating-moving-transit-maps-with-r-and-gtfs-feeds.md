@@ -3,7 +3,10 @@ title = "Creating moving transit maps with R and GTFS feeds"
 date = "2021-03-03"
 shorturl = "transit-maps"
 recommended = "true"
+styles = [ "css/full-width-media.scss" ]
 +++
+
+<style>:root { --add-media-width: 80px }</style>
 
 <h4>
 <a href="https://gist.github.com/dfsnow/6cef8184ed0dbccadc0cd56a0d22b8be">GitHub gist for source code</a>
@@ -11,14 +14,15 @@ recommended = "true"
 
 I've been on a bit of a transit kick this month. I read [Human Transit](https://humantransit.org/) (the blog and the book) and have been playing a lot of [Mini Metro](https://dinopoloclub.com/games/mini-metro/).
 
-I've also been playing around with [GTFS feeds](https://gtfs.org/), which are a standardized data format for public transit systems. They provide schedules, stop locations, route shapes, and more. 
+I've also been playing around with [GTFS feeds](https://gtfs.org/), which are a standardized data format for public transit systems. They provide schedules, stop locations, route shapes, and more.
 
 I wanted to see if I could take a GTFS feed and turn it into an animated map in the style of Mini Metro (I love its aesthetic). Turns out it's actually pretty easy.
 
 {{< video-loop src="/2021-03-03-chicago-gtfs" >}}
+
 {{< video-loop src="/2021-03-03-dc-gtfs" >}}
 
-These maps are made using [R](https://cloud.r-project.org/) and [ggplot2](https://ggplot2.tidyverse.org/). Each frame of animation is a separate plot combined using [ffmpeg](https://ffmpeg.org/). There are probably better/faster ways to animate besides rendering each frame, but this way is easy and flexible. 
+These maps are made using [R](https://cloud.r-project.org/) and [ggplot2](https://ggplot2.tidyverse.org/). Each frame of animation is a separate plot combined using [ffmpeg](https://ffmpeg.org/). There are probably better/faster ways to animate besides rendering each frame, but this way is easy and flexible.
 
 ## Walkthrough
 
@@ -84,7 +88,7 @@ Finally, we create a `ggplot2` object and add animation with `gganimate`. There 
 1. `transition_components(time)`, which tells `gganimate` to cycle through the window of time defined in `final_df`
 2. `geom_point()` with a `group = trip_id` aesthetic, which tells `gganimate` to treat each train as a single point that moves along through time
 
-The resulting object is passed to the `animate()` function, which then generates the inidividual frames. `gganimate` will use the `tweenr` package to further interpolate point locations for smoother animations. 
+The resulting object is passed to the `animate()` function, which then generates the inidividual frames. `gganimate` will use the `tweenr` package to further interpolate point locations for smoother animations.
 
 ### Convert to video
 

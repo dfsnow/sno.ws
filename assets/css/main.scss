@@ -12,6 +12,9 @@
   --warning-color: #d9c98d;
   --link-color: #2979bc;
   --visited-link-color: #8f5baa;
+  --full-width: 640px;
+  --mobile-width: 540px;
+  --add-media-width: 240px;
 }
 
 html {
@@ -92,7 +95,7 @@ figure figcaption {
 }
 
 .content {
-  max-width: 64rem;
+  max-width: var(--full-width);
   margin: auto;
   padding: 2rem;
 }
@@ -198,7 +201,7 @@ figure figcaption {
 .navbar-content {
   display: grid;
   grid-template-columns: 0.3fr 1.6fr 0.3fr;
-  max-width: 64rem;
+  max-width: var(--full-width);
   margin: auto;
   z-index: 999;
   padding: 2.2rem 2rem 1.6rem 2rem;
@@ -305,11 +308,11 @@ blockquote p,
 }
 
 /* adjustment when very small */
-@media screen and (max-width: 45rem) {
+@media only screen and (max-width: 768px) {
 
   .content,
   .navbar-content {
-    max-width: 43rem;
+    max-width: var(--mobile-width);
   }
 
   .post-list,
