@@ -18,3 +18,10 @@
   max-width: 64rem;
   margin: auto;
 }
+
+@media only screen and (max-width: 720px) {
+  .content .post-feature-frame {
+    margin-left: -2rem;
+    margin-right: -2rem;
+  }
+}
