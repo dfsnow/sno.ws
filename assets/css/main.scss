@@ -201,7 +201,7 @@ figure figcaption {
 
 .navbar-content {
   display: grid;
-  grid-template-columns: 0.3fr 1.6fr 0.3fr;
+  grid-template-columns: 0.2fr 1.4fr 8.4rem;
   max-width: var(--full-width);
   margin: auto;
   z-index: 999;
@@ -227,11 +227,7 @@ figure figcaption {
 
 .navbar-content > .navbar-external-links {
   display: flex;
-  align-items: center;
-}
-
-.navbar-external-links > .navbar-external-link {
-  padding: 0.2rem 0 0 0.6rem;
+  justify-content: space-between;
 }
 
 .navbar-external-links > .navbar-external-link svg {
@@ -351,7 +347,7 @@ blockquote p,
   }
 
   .navbar-content > .navbar-external-links {
-    justify-content: flex-start;
+    width: 9.2rem;
     height: 3rem;
   }
 
@@ -360,9 +356,9 @@ blockquote p,
     width: 1.6em;
   }
 
-  .navbar-external-links > .navbar-external-link:first-of-type {
-    padding: 0.2rem 0 0 0;
-  }
+  .navbar-content > :nth-child(3n + 1) { grid-column: 1; }
+  .navbar-content > :nth-child(3n + 2) { grid-column: 1 / span 2; }
+  .navbar-content > :nth-child(3n + 3) { grid-column: 2; }
 
   #writing,
   #reading,
