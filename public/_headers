@@ -2,7 +2,7 @@
   X-Frame-Options: DENY
   X-XSS-Protection: 1; mode=block
   X-Content-Type-Options: nosniff
-  Cache-Control: public, max-age=3600
+  Cache-Control: private, max-age=0, must-revalidate
   Content-Security-Policy: img-src 'self' *.sno.ws *.cloudfront.net; style-src-attr 'unsafe-inline'; style-src-elem 'self' 'unsafe-inline';
   Referrer-Policy: strict-origin-when-cross-origin
   Strict-Transport-Security: max-age=15768000
