@@ -4,6 +4,6 @@
         {{ $resources = $resources | append (resources.Get . ) -}}
     {{ end }}
     {{ $path := printf "js/%s%s" .File.BaseFileName "-page-script.js" }}
-    {{ $js := $resources | resources.Concat $path | minify }}
-    <script defer="defer" type="application/javascript" src="{{ $js.RelPermalink }}"></script>
+    {{ $js := $resources | resources.Concat $path | minify | fingerprint }}
+    <script defer="defer" type="application/javascript" src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}"></script>
 {{ end }}

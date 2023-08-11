@@ -20,7 +20,7 @@
 	{{ $srcCalcWidth := print "calc(" $srcWidth "px * 400/" $srcHeight ")" | safeCSS }}
 
 	<figure class="photo-frame" style="width:{{ $srcCalcWidth }};">
-	    <a href="{{ .Permalink }}">
+	    <a href="{{ .RelPermalink }}">
 		<picture>
 		    <source srcset="{{ $srcFileFull }}-640.avif 640w" alt="{{ .Title }}" type="image/avif">
 		    <source srcset="{{ $srcFileFull }}-640.webp 640w" alt="{{ .Title }}" type="image/webp">

@@ -21,12 +21,11 @@
 
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-{{ $main := resources.Get "css/main.scss" | toCSS | minify }}
-{{ $dark := resources.Get "css/syntax-dark.css" | minify }}
-{{ $light := resources.Get "css/syntax-light.css" | minify }}
-<style type="text/css" media="screen">
-    {{ $main.Content | safeCSS }}
-</style>
+{{ $main := resources.Get "css/main.scss" | toCSS | minify | fingerprint }}
+{{ $dark := resources.Get "css/syntax-dark.css" | toCSS | minify | fingerprint }}
+{{ $light := resources.Get "css/syntax-light.css" | toCSS | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $main.RelPermalink }}" integrity="{{ $main.Data.Integrity }}">
+
 {{ if eq .Type "writing" }}
     <style type="text/css" media="screen">
         @media (prefers-color-scheme:dark) { {{ $dark.Content | safeCSS }} }
