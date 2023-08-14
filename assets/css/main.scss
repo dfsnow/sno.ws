@@ -201,7 +201,7 @@ figure figcaption {
 
 .navbar-content {
   display: grid;
-  grid-template-columns: 0.3fr 1.6fr 0.29fr;
+  grid-template-columns: 0.3fr 1.9fr 5.25em;
   max-width: var(--full-width);
   margin: auto;
   z-index: 999;
@@ -292,15 +292,15 @@ blockquote p,
 }
 
 #writing {
-  grid-template-columns: 2fr 0.2fr 30px;
+  grid-template-columns: 2.2fr 5.25em 30px;
 }
 
 #reading {
-  grid-template-columns: 1.2fr 0.8fr 0.2fr 30px;
+  grid-template-columns: 1.35fr 0.85fr 5.25em 30px;
 }
 
 #talks {
-  grid-template-columns: 1.6125fr 0.3875fr 0.2fr 30px;
+  grid-template-columns: 1.75fr 0.45fr 5.25em 30px;
 }
 
 /* support for Edge */
