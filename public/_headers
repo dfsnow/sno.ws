@@ -3,7 +3,7 @@
   X-XSS-Protection: 1; mode=block
   X-Content-Type-Options: nosniff
   Cache-Control: private, max-age=0, must-revalidate
-  Content-Security-Policy: img-src 'self' *.sno.ws *.cloudfront.net; style-src-attr 'unsafe-inline'; style-src-elem 'self' 'unsafe-inline';
+  Content-Security-Policy: media-src 'self' content.sno.ws; img-src 'self' content.sno.ws; style-src-attr 'unsafe-inline'; style-src-elem 'self' 'unsafe-inline'; script-src 'self'; object-src 'none';
   Referrer-Policy: strict-origin-when-cross-origin
   Strict-Transport-Security: max-age=15768000
   Permissions-Policy: geolocation=(), midi=(), sync-xhr=(), microphone=(), camera=(), magnetometer=(), gyroscope=(), fullscreen=(), payment=()
