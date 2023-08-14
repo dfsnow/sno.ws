@@ -1,2 +1,7 @@
+User-agent: GPTBot
+Disallow: /
+
 User-agent: *
-Allow: /
+Disallow: /status
+
+Sitemap: https://sno.ws/sitemap.xml
