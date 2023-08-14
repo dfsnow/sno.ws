@@ -1,7 +1,7 @@
 {
   "ci": {
     "collect": {
-      "url": ["http://localhost/", "http://localhost/reading/", "http://localhost/photos/"],
+      "url": ["http://localhost/", "http://localhost/reading/", "http://localhost/photos/", "http://localhost/talks/"],
       "staticDistDir": "./public"
     },
     "assert": {
@@ -14,7 +14,8 @@
         "uses-rel-preload": "off",
         "uses-rel-preconnect": "off",
         "csp-xss": "off",
-        "lcp-lazy-loaded": "off"
+        "lcp-lazy-loaded": "off",
+        "bf-cache": "off"
       }
     }
   }
