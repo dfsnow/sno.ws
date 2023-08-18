@@ -12,7 +12,7 @@
 
 <link rel="shortcut icon" href="/favicon.ico">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#000000">
 
 {{ with .OutputFormats.Get "rss" -}}
@@ -27,7 +27,7 @@
 <link rel="stylesheet" href="{{ $main.RelPermalink }}" integrity="{{ $main.Data.Integrity }}">
 
 {{ if eq .Type "writing" }}
-    <style type="text/css" media="screen">
+    <style media="screen">
         @media (prefers-color-scheme:dark) { {{ $dark.Content | safeCSS }} }
         @media (prefers-color-scheme:light) { {{ $light.Content | safeCSS }} }
     </style>

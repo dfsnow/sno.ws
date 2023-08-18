@@ -5,5 +5,5 @@
     {{ end }}
     {{ $path := printf "css/%s%s" .File.BaseFileName "-page-style.css" }}
     {{ $css := $resources | resources.Concat $path | toCSS | minify | fingerprint }}
-    <style>{{ $css.Content | safeCSS }}</style>
+    <style media="screen">{{ $css.Content | safeCSS }}</style>
 {{ end }}

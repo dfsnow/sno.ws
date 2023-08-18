@@ -1,0 +1,17 @@
+.rating-table .rating {
+  text-align: right;
+  vertical-align: top;
+  font-weight: bold;
+  white-space: pre;
+  padding: 10px 6px 0 0;
+}
+
+.rating-table td {
+  text-align: left;
+  padding: 10px 0;
+  border: none;
+}
+
+.rating-table tr:first-child td {
+  padding-top: 0;
+}

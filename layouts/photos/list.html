@@ -1,6 +1,6 @@
 {{ define "additional-style" }}
-{{ with resources.Get "css/photos-list.css" | minify }}
-    <style>{{ .Content | safeCSS }}</style>
+{{ with resources.Get "css/photos-list.css" | toCSS | minify | fingerprint}}
+    <style media="screen">{{ .Content | safeCSS }}</style>
 {{ end }}
 {{ end }}
 
@@ -22,10 +22,10 @@
 	<figure class="photo-frame" style="width:{{ $srcCalcWidth }};">
 	    <a href="{{ .RelPermalink }}">
 		<picture>
-		    <source srcset="{{ $srcFileFull }}-640.avif 640w" alt="{{ .Title }}" type="image/avif">
-		    <source srcset="{{ $srcFileFull }}-640.webp 640w" alt="{{ .Title }}" type="image/webp">
-		    <source srcset="{{ $srcFileFull }}-640{{ $srcExt }} 640w" alt="{{ .Title }}" type="image/{{ $srcType }}">
-		    <img src="{{ $srcFileFull }}-640{{ $srcExt }}" alt="{{ .Title }}" width="{{ $srcWidth }}" height="{{ $srcHeight }}" style="max-width:100%;height:auto;" loading="lazy">
+		    <source srcset="{{ $srcFileFull }}-640.avif 640w" sizes="100vw" type="image/avif">
+		    <source srcset="{{ $srcFileFull }}-640.webp 640w" sizes="100vw" type="image/webp">
+		    <source srcset="{{ $srcFileFull }}-640{{ $srcExt }} 640w" sizes="100vw" type="image/{{ $srcType }}">
+		    <img src="{{ $srcFileFull }}-640{{ $srcExt }}" alt="{{ .Title }}" width="{{ $srcWidth }}" height="{{ $srcHeight }}" loading="lazy">
 		</picture>
 	    </a>
 	    {{ if eq .Params.recommended "true" }}
@@ -42,4 +42,3 @@
     {{ end }}
 </div>
 {{ end }}
-

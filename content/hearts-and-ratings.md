@@ -1,5 +1,6 @@
 +++
 title = "Hearts and ratings"
+styles = [ "css/ratings-table.css" ]
 +++
 
 On this site, a heart ( <span style="color:#FF0000">♥</span> ) indicates one of my personal favorites. This is true across all content types.
@@ -7,25 +8,6 @@ On this site, a heart ( <span style="color:#FF0000">♥</span> ) indicates one o
 ---
 
 I also have a rating scale for books. It's a 10-point ordinal scale, where 10 is the best and 0 is the worst. It's mostly just to help me remember what I've enjoyed and to give me a consistent, clear scale to reference.
-
-<style type="text/css">
-  .rating-table .rating {
-    text-align: right;
-    vertical-align: top;
-    font-weight: bold;
-    white-space: pre;
-    padding: 10px 6px 0 0;
-  }
-  .rating-table td {
-    text-align: left;
-    padding: 10px 0;
-    border: none;
-  }
-  .rating-table tr:first-child td {
-    padding-top: 0;
-  }
-</style>
-
 <table class="rating-table">
   <tr>
     <td class="rating">10  =</td>

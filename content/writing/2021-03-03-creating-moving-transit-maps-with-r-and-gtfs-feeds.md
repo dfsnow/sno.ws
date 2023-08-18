@@ -6,7 +6,7 @@ recommended = "true"
 styles = [ "css/full-width-media.scss" ]
 +++
 
-<style>
+<style media="screen">
   :root { --add-media-width: 80px }
   .content .video-holder {
     margin: 2rem auto;
@@ -43,7 +43,7 @@ First, we need to download a GTFS feed and convert it into a format useable in R
 2. A spatial data frame of track shapes (`route_shapes`)
 3. A data frame of the point location of all trains at any time within the specified window (`final_df`)
 
-<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 1277 634" preserveAspectRatio="none" xmlns:v="https://vecta.io/nano">
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 1277 634" preserveAspectRatio="none">
   <style>
     @media (prefers-color-scheme:dark) {
       .bb {fill: #fff}
@@ -64,7 +64,7 @@ The first two data sets are contained in the feed, but the third data set is not
 2. Each train's scheduled arrival time for a given stop (`stops_df`)
 3. The shape of the track between stops, which we can convert to waypoints for the train to follow. These waypoint don't have arrival times (`waypoints_df`)
 
-<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 1800 1057" preserveAspectRatio="none" xmlns:v="https://vecta.io/nano">
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 1800 1057" preserveAspectRatio="none">
   <style>
     @media (prefers-color-scheme:dark) {
       .bb {fill: #fff}
@@ -75,7 +75,7 @@ The first two data sets are contained in the feed, but the third data set is not
 
 Combining these two data sets gives us the position and arrival time of stops *and* the position (but not time) of waypoints between stops. We can then use [Stineman interpolation](https://pages.uoregon.edu/dgavin/software/stineman.pdf) to fill in the missing times.
 
-<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 1584 949" preserveAspectRatio="none" xmlns:v="https://vecta.io/nano">
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 1584 949" preserveAspectRatio="none">
   <style>
     @media (prefers-color-scheme:dark) {
       .bb {fill: #fff}
