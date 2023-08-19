@@ -9,7 +9,7 @@
 # General shortlinks for other websites and projects
 /gh                        https://github.com/dfsnow
 /gl                        https://gitlab.com/dfsnow
-/ptaxsim                   https://gitlab.com/ccao-data-science---modeling/packages/ptaxsim/
+/ptaxsim                   https://github.com/ccao-data/ptaxsim
 
 # Redirects to posts/articles. Most recent is on bottom
 /rural-docs                /writing/2019/04/10/visualizing-americas-rural-physician-shortage/ 
