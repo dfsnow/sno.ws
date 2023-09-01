@@ -12,12 +12,12 @@
 /gl                        https://gitlab.com/dfsnow
 /ptaxsim                   https://github.com/ccao-data/ptaxsim
 
-# Redirects to posts/articles. Most recent is on bottom
-/rural-docs                /writing/2019/04/10/visualizing-americas-rural-physician-shortage/ 
-/med-students              https://dfsnow.github.io/ama_viz_interactive/
-/hello-world               /writing/2021/02/27/hello-again-world/
-/transit-maps              /writing/2021/03/03/creating-moving-transit-maps-with-r-and-gtfs-feeds/
-/local-gov                 /writing/2021/05/24/lessons-learned-in-local-government/
-/digital-things            /writing/2021/08/30/favorite-digital-things/
-/big-pivot                 /writing/2022/11/28/pivoting-100gb-text-files-from-long-to-wide/
+# Redirects to posts/articles. Most recent is on top
 /big-data-table            /writing/2023/06/17/comparing-500-billion-rows-with-data.table/
+/big-pivot                 /writing/2022/11/28/pivoting-100gb-text-files-from-long-to-wide/
+/digital-things            /writing/2021/08/30/favorite-digital-things/
+/local-gov                 /writing/2021/05/24/lessons-learned-in-local-government/
+/transit-maps              /writing/2021/03/03/creating-moving-transit-maps-with-r-and-gtfs-feeds/
+/hello-world               /writing/2021/02/27/hello-again-world/
+/med-students              https://dfsnow.github.io/ama_viz_interactive/
+/rural-docs                /writing/2019/04/10/visualizing-americas-rural-physician-shortage/ 
