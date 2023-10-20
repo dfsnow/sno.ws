@@ -1,4 +1,4 @@
-.js-enabled ul li.no-heart::before {
+.js-enabled ul li::before {
   content: "•";
   position: absolute;
   transform: translate(-0.8em, -0.2em);
@@ -14,14 +14,6 @@
   background: url(/heart-marker.svg);
   background-size: cover;
   font-size: initial;
-}
-
-.js-enabled ul li.no-heart.safari-marker::before {
-  transform: translate(-0.35em, -0.15em);
-}
-
-.js-enabled ul li.with-heart.safari-marker::before {
-  transform: translate(-0.6em, 0.45em);
 }
 
 .js-enabled ul li::marker {
