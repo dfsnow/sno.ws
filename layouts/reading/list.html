@@ -16,9 +16,7 @@
         <time class="post-list-date" datetime='{{ .Date.Format "2006-01-02" }}'>{{ .Date.Format "2006-01-02" }}</time>
         <div class="post-list-misc">
             {{ if eq .Params.recommended "true"}}
-                <a href="/hearts-and-ratings" class="link-fave-heart" title="Recommended book">
-		{{ partial "heart" (dict "title" "Recommended book" "width" "var(--heart-size)" "height" "var(--heart-size)" ) }}
-                </a>
+		{{ partial "heart" (dict "title" "Recommended book" "width" $.Site.Params.heartSize "height" $.Site.Params.heartSize ) }}
             {{ end }}
         </div>
     {{ end }}

@@ -30,9 +30,7 @@
 	    </a>
 	    {{ if eq .Params.recommended "true" }}
 		<figcaption class="photo-rec">
-		    <a href="/hearts-and-ratings" class="link-fave-heart" title="Personal favorite">
 		    {{ partial "heart" (dict "title" "Personal favorite" "width" "24px" "height" "24px" ) }}
-		    </a>
 		</figcaption>
 	    {{ end }}
 	</figure>

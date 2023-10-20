@@ -13,6 +13,7 @@ pygmentsUseClasses = true
   photosURL = "https://content.sno.ws/photos"
   postURL = "https://content.sno.ws/posts"
   videoURL = "https://content.sno.ws/videos"
+  heartSize = "0.75em"
 
 [menu]
   [[menu.main]]
