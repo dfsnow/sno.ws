@@ -1,5 +1,5 @@
 {{ if .IsNamedParams }}
-<svg aria-label='{{ .Get "title" }}' role="img" viewBox="0 0 32 32" width='{{ .Get "width" }}' height='{{ .Get "height" }}' style="fill:var(--heart-color)">
+<svg aria-label='{{ .Get "title" }}' role="img" viewBox="0 0 32 32" style="fill:var(--heart-color);width:var(--heart-size);height:var(--heart-size);">
     <title>{{ .Get "title" }}</title>
     <path d="M4 16c-3-4-2-10 3-12 5-2 8 2 9 4 1-2 5-6 10-4 5 2 5 8 2 12-3 4-12 12-12 12 0 0-9-8-12-12z"/>
 </svg>
