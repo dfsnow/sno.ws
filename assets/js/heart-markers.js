@@ -10,6 +10,8 @@ if (useMarker & !isSafari) {
         if (e.contains(e.querySelector("svg"))) {
             e.classList.add("with-heart");
             e.querySelectorAll('svg').forEach(s => s.remove())
+        } else {
+            e.classList.add("no-heart");
         };
     });
-}
+};
