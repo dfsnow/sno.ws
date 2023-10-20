@@ -1,13 +1,21 @@
-.js-enabled ul li.with-heart::before {
-  content: '';
+.js-enabled ul li::before {
+  content: "•";
   position: absolute;
-  transform: translate(-1.0625em, 0.5em);
+  transform: translate(-0.8em, -0.2em);
+  font-size: 1.3em;
+}
+
+.js-enabled ul li.with-heart::before {
+  content: "";
+  position: absolute;
+  transform: translate(-1.2em, 0.5em);
   width: var(--heart-size);
   height: var(--heart-size);
   background: url(/heart-marker.svg);
   background-size: cover;
+  font-size: initial;
 }
 
-.js-enabled ul li.with-heart::marker {
-  content: '';
+.js-enabled ul li::marker {
+  content: "";
 }
