@@ -2,14 +2,19 @@
 document.querySelector("article").classList.add("js-enabled");
 
 var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
-var useMarker = CSS.supports("selector(::marker)");
 var lis = document.querySelectorAll("article.js-enabled ul li");
 
-if (useMarker & !isSafari) {
-    lis.forEach(function(e) {
-        if (e.contains(e.querySelector("svg"))) {
-            e.classList.add("with-heart");
-            e.querySelectorAll('svg').forEach(s => s.remove())
-        };
-    });
-}
+lis.forEach(function(e) {
+    if (e.contains(e.querySelector("svg"))) {
+        e.classList.add("with-heart");
+        e.querySelectorAll('svg').forEach(s => s.remove())
+        if (isSafari) {
+            e.classList.add("safari-marker");
+        }
+    } else {
+        e.classList.add("no-heart");
+        if (isSafari) {
+            e.classList.add("safari-marker");
+        }
+    };
+});
