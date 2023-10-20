@@ -1,5 +1,5 @@
 .js-enabled ul li.with-heart::marker {
-  content: "♥  ";
+  content: "./heart-marker.svg";
   color: var(--heart-color);
 }
 

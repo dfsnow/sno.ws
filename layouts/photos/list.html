@@ -31,10 +31,7 @@
 	    {{ if eq .Params.recommended "true" }}
 		<figcaption class="photo-rec">
 		    <a href="/hearts-and-ratings" class="link-fave-heart" title="Personal favorite">
-		    <svg aria-label="Personal favorite" role="img" viewBox="0 0 32 32" width="24px" height="24px">
-			<title>Personal favorite</title>
-			<path d="M4 16c-3-4-2-10 3-12 5-2 8 2 9 4 1-2 5-6 10-4 5 2 5 8 2 12-3 4-12 12-12 12 0 0-9-8-12-12z"/>
-		    </svg>
+		    {{ partial "heart" (dict "title" "Personal favorite" "width" "24px" "height" "24px" ) }}
 		    </a>
 		</figcaption>
 	    {{ end }}

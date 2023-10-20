@@ -3,7 +3,7 @@ title = "Hearts and ratings"
 styles = [ "css/ratings-table.css" ]
 +++
 
-On this site, a heart ( <span style="color:#FF0000">♥</span> ) indicates one of my personal favorites. This is true across all content types.
+On this site, a heart ( {{< heart title="Favorite heart" width="1.3rem" height="1.3rem" >}} ) indicates one of my personal favorites. This is true across all content types.
 
 ---
 

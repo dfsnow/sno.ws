@@ -15,7 +15,7 @@ In the spirit of digital minimalism, I've cleaned out my bookmarks and compiled 
 
 This list is constantly updated. When I find a cool new thing, I'll add it. When I lose interest in something, I'll remove it. The history of this page is tracked [via git](https://github.com/dfsnow/sno.ws/commits/master/content/writing/2021-08-30-favorite-digital-things.md).
 
-As usual, <span class="heart">♥</span> indicates an absolute favorite.
+As usual, <span class="heart">{{< heart title="Favorite" width="var(--heart-size)" height="var(--heart-size)" >}}</span> indicates an absolute favorite.
 
 ---
 

@@ -14,6 +14,7 @@
   --visited-link-color: #8f5baa;
   --full-width: 640px;
   --add-media-width: 240px;
+  --heart-size: 0.75em;
 }
 
 html {
@@ -142,10 +143,12 @@ figure figcaption {
 .link-fave-heart {
   text-decoration: none;
   color: var(--heart-color) !important;
+  fill: var(--heart-color) !important;
 }
 
 .link-fave-heart:hover {
   color: var(--heart-hover) !important;
+  fill: var(--heart-hover) !important;
 }
 
 .post-list {
