@@ -13,6 +13,10 @@ styles = [ "css/full-width-media.scss" ]
   }
 </style>
 
+<h4>
+<a href="https://gist.github.com/dfsnow/aad4ec99afb413968c49efb03bdb1ab9">GitHub gist for source code</a>
+</h4>
+
 I run a small [Jellyfin](https://github.com/jellyfin/jellyfin) server at home to watch movies and other media I've collected over the years. Recently, in order to debug some playback/networking issues, I wanted a way to answer the following questions via [Prometheus](https://prometheus.io) and [Grafana](https://grafana.com):
 
 1. What media is Jellyfin currently playing?
@@ -23,7 +27,7 @@ Basically, I wanted to make this graph in Grafana:
 
 {{< video-loop src="/2023-11-24-jellyfin-grafana" >}}
 
-This turned out to be way harder than I thought, but I eventually got it working using the Jellyfin REST API and a Prometheus JSON exporter. This post walks through how to replicate what I did.
+This turned out to be way harder than I thought, but I eventually got it working using the Jellyfin REST API and Prometheus JSON exporter. This post walks through what I did.
 
 ---
 
@@ -75,9 +79,9 @@ This is useful stuff, but not exactly the nicely summarized playback information
 
 The [Jellyfin Playback Reporting Plugin (PRP)](https://github.com/jellyfin/jellyfin-plugin-playbackreporting) aggregates and exposes playback stats via a dashboard on the Jellyfin admin panel. These stats are stored in a SQLite database in the Jellyfin data directory. Querying this database lets you get basically any playback stats you want. All I had to do is figure out a way to query the database remotely.
 
-Fortunately, installing the PRP also adds dedicated API endpoints at `/user_usage_stats/`. The most useful of these is the POST endpoint `/user_usage_stats/submit_custom_query`, which lets you pass any arbitrary SQL query to the underlying SQLite database.
+Fortunately, installing the PRP also adds dedicated API endpoints at `/user_usage_stats/`. The most useful/relevant of these is the POST endpoint `/user_usage_stats/submit_custom_query`, which lets you pass any arbitrary SQL query to the underlying SQLite database.
 
-Here's an updated curl request that hits the new endpoint:
+After lots of trial and error, I was able to update the curl request to hit the new endpoint:
 
 ```bash
 curl -X "POST" \
@@ -104,7 +108,7 @@ curl -X "POST" \
   })'
 ```
 
-And here's what the output looks like:
+Here's what the parsed output looked like:
 
 ```json
 [
@@ -133,7 +137,7 @@ And here's what the output looks like:
 ]
 ```
 
-Note that the query above is just returning a couple arbitrary rows from the `PlaybackActivity` table. A more complicated custom SQLite query can be used to fetch "live" stats. For example, the query below will only return rows for things that are currently playing and will also generate its own timestamp for use in Prometheus.
+Note that the test query above just returned a couple arbitrary rows from the `PlaybackActivity` table. I needed a more complicated SQLite query to fetch "live" stats. I came up with the query below, which only returns rows for things that are currently playing and also includes a timestamp for use in Prometheus.
 
 ```sql
 SELECT
@@ -157,7 +161,7 @@ WHERE DATETIME(DateCreated, "+" || PlayDuration || " seconds") >=
     DATETIME("now", "localtime", "-60 seconds")
 ```
 
-Hitting the `/user_usage_stats/submit_custom_query` endpoint with this query effectively returns all currently playing Jellyfin media, which is exactly what I wanted. All that's left to do now is export the results to Prometheus.
+Hitting the `/user_usage_stats/submit_custom_query` endpoint with this query effectively returns all currently playing Jellyfin media, which is exactly what I needed. The final piece of the puzzle was figuring out how to export the results to Prometheus.
 
 <p class="notice">
 If your Grafana instance is on the same machine as Jellyfin, it might be easier to skip Prometheus entirely. Simply use the <a href="https://grafana.com/grafana/plugins/frser-sqlite-datasource/">Grafana SQLite plugin</a> to add the Playback Reporting Plugin database file as a Grafana datasource directly.
@@ -165,21 +169,21 @@ If your Grafana instance is on the same machine as Jellyfin, it might be easier 
 
 ## Prometheus JSON exporter
 
-We can use the community [json_exporter](https://github.com/prometheus-community/json_exporter) to load the JSON output from the custom query into Prometheus. We basically just need to translate the curl request above into a Prometheus [module](https://prometheus.io/docs/guides/multi-target-exporter/#configuring-modules). Here's one possible example. Note the comments, they're important:
+This part of the project was actually the easiest. I used the community [json_exporter](https://github.com/prometheus-community/json_exporter) to load JSON output from the custom query into Prometheus. I basically just translated the curl request above into a Prometheus [module](https://prometheus.io/docs/guides/multi-target-exporter/#configuring-modules). There are lots of ways to do this, but here's one possible example. Note the comments, they're important:
 
 ```yaml
 modules:
   jellyfin:
     headers:
-      # The Token value here needs to be your API key from the
-      # curl request. I hard-code the value but I'm sure there's
+      # The Token value here needs to be the API key from the
+      # curl request. I hard-coded the value but I'm sure there's
       # a better way
       Authorization: MediaBrowser Token=ADD_TOKEN_HERE
       Content-Type: application/json
       accept: application/json
 
     # This is the query from above, but condensed to a single line
-    # NOTE: The string escaping and lack of newlines here is
+    # NOTE: The string escaping/lack of newlines is
     # required for the exporter to work
     body:
       content: |
@@ -189,10 +193,12 @@ modules:
     - name: jellyfin
       type: object
       help: User playback metrics from Jellyfin
-      # The JSON parsing here is basically identical to the jq
-      # call above, it just uses JSONPath syntax instead
       path: '{ .results[*] }'
+      # Optionally use the SQL-generated timestamp instead of
+      # the Prometheus "query collected at" timestamp
       epochTimestamp: '{ [0] }'
+      # The JSON parsing here is basically identical to the jq
+      # call above, just using JSONPath syntax instead
       labels:
         user_name: '{ [1] }'
         item_type: '{ [2] }'
@@ -204,17 +210,17 @@ modules:
         play_duration: '{ [7] }'
 ```
 
-Finally, add the exporter to your Prometheus config file using relabeling and modules:
+Finally, I added the exporter to my Prometheus config file using the [multi-target exporter pattern](https://prometheus.io/docs/guides/multi-target-exporter/) with relabeling and modules:
 
 ```yaml
 scrape_configs:
   - job_name: json
     metrics_path: /probe
     params:
-      module: [jellyfin] # The module we created above
+      module: [jellyfin] # The module from above
     static_configs:
       - targets:
-        # Your Jellyfin PRP custom query API endpoint
+        # The Jellyfin PRP custom query API endpoint
         - https://jellyfin.example.com/user_usage_stats/submit_custom_query
     relabel_configs:
       - source_labels: [__address__]
@@ -225,8 +231,6 @@ scrape_configs:
         replacement: HOSTNAME:9115 # The exporter's hostname:port
 ```
 
-And that's it! A curl request to `http://$HOSTNAME:9115/probe` will now return any currently playing Jellyfin media, along with the user information and transcoding settings of the player. Note that the endpoint will only return something _when something is playing_, otherwise it will be blank.
+And that's it! A curl request to `http://$HOSTNAME:9115/probe` now returns Prometheus metrics for any currently playing Jellyfin media, along with the user information and transcoding settings of the player. Note that metrics only exist if media _is currently playing_, otherwise the return body will be blank.
 
-## Visualizing in Grafana
-
-Translating the resulting Prometheus metrics into useable Grafana graphs is a bit of a pain. Metrics only
+Translating the resulting metrics into useable Grafana graphs is a project by itself, but it is possible with the extensive use of transformations. I'll save that topic for a future post.
