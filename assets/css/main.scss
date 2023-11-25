@@ -95,6 +95,11 @@ figure figcaption {
   padding: 0 1rem;
 }
 
+ul,
+ol {
+  box-sizing: border-box;
+}
+
 .content {
   max-width: var(--full-width);
   margin: auto;
@@ -260,6 +265,7 @@ blockquote,
   border: thin solid var(--gray-accent-1);
   background-color: var(--gray-accent-3);
   border-radius: 3px;
+  box-sizing: border-box;
 }
 
 blockquote p,
@@ -406,6 +412,10 @@ blockquote p,
     --heart-hover: #FFA07A;
     --link-color: #6aa6d0;
     --visited-link-color: #b28ec6;
+  }
+
+  html {
+    color-scheme: dark;
   }
 
   .notice::before,
