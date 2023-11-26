@@ -13,7 +13,7 @@
 /ptaxsim                   https://github.com/ccao-data/ptaxsim
 
 # Redirects to posts/articles. Most recent is on top
-/jellyfin-stats            /writing/2023/11/25/exporting-jellyfin-stats-to-prometheus-and-grafana/
+/jellyfin-stats            /writing/2023/11/25/exporting-jellyfin-playback-stats-to-prometheus/
 /big-data-table            /writing/2023/06/17/comparing-500-billion-rows-with-data.table/
 /big-pivot                 /writing/2022/11/28/pivoting-100gb-text-files-from-long-to-wide/
 /digital-things            /writing/2021/08/30/favorite-digital-things/

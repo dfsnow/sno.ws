@@ -1,5 +1,5 @@
 +++
-title = "Exporting Jellyfin stats to Prometheus and Grafana"
+title = "Exporting Jellyfin playback stats to Prometheus"
 date = "2023-11-25"
 shorturl = "jellyfin-stats"
 recommended = "false"
