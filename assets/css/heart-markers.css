@@ -8,7 +8,7 @@
 .js-enabled ul li.with-heart::before {
   content: "";
   position: absolute;
-  transform: translate(-1.2em, 0.5em);
+  transform: translate(-1.2em, 0.4375em);
   width: var(--heart-size);
   height: var(--heart-size);
   background: url(/heart-marker.svg);
