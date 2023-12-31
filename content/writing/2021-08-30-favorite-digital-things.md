@@ -7,7 +7,7 @@ styles = [ "css/heart-markers.css" ]
 scripts = [ "js/heart-markers.js" ]
 +++
 
-In the spirit of digital minimalism, I've cleaned out my bookmarks and compiled them into this big list. This list only includes digital things; no physical stuff, no media. The purpose of this list is three-fold:
+This is a list of my favorite digital things, excluding media. It's basically a [blogroll](https://indieweb.org/blogroll), [`/uses`](https://uses.tech) page, and bookmark dump combined into one. It's purpose is three-fold:
 
 1. Make cool things discoverable for others
 2. Serve as a personal bookmark page for things I like
@@ -15,13 +15,13 @@ In the spirit of digital minimalism, I've cleaned out my bookmarks and compiled 
 
 This list is constantly updated. When I find a cool new thing, I'll add it. When I lose interest in something, I'll remove it. The history of this page is tracked [via git](https://github.com/dfsnow/sno.ws/commits/master/content/writing/2021-08-30-favorite-digital-things.md).
 
-As usual, {{< heart title="Favorite" >}} indicates an absolute favorite.
+As usual, {{< heart title="Favorite" >}} indicates an [absolute favorite](/hearts-and-ratings/).
 
 ---
 
 ## Blogs
 
-These are the blogs I read regularly. They've influenced my thinking and formed who I am today. I try to check each one around once per month.
+These are the blogs I read regularly. They've influenced my thinking and helped form who I am today. If they support RSS, I subscribe to them using [FreshRSS](https://freshrss.org) and [NetNewsWire](https://netnewswire.com).
 
 ### Art
 
@@ -90,6 +90,7 @@ These posts have inspired or influenced me in some way. They're things I reread 
 - [Don't End the Week With Nothing](https://training.kalzumeus.com/newsletters/archive/do-not-end-the-week-with-nothing) - Make things you can show
 - [Doing a Job](https://govleaders.org/rickover.htm) - {{< heart title="Favorite" >}} The best thing ever written on how to work and lead
 - [Embrace the Grind](https://jacobian.org/2021/apr/7/embrace-the-grind/) - Sometimes you just have to do the boring stuff
+- [Focus](https://www.jefftk.com/p/focus) - Precisely describes my situation re: maintaining and cultivating focus
 - [How Complex Systems Fail](https://how.complexsystems.fail/) - Short, prescient read on why things break
 - [Leverage Points: Places to Intervene in a System](https://donellameadows.org/archives/leverage-points-places-to-intervene-in-a-system/) - How to make things break
 - [The Illustrated Guide to a Ph.D.](https://matt.might.net/articles/phd-school-in-pictures/) - Visual perspective on what a Ph.D. really means
@@ -148,6 +149,7 @@ These posts have inspired or influenced me in some way. They're things I reread 
 - [Some Blogging Myths](https://jvns.ca/blog/2023/06/05/some-blogging-myths/) - The most motivating post on blogging I've ever found
 - [The Tyranny of Structurelessness](https://www.jofreeman.com/joreen/tyranny.htm) - All groups develop informal structure
 - [Your Climbing Shoes Are Too Tight](https://eveningsends.com/climbing-shoes-tight/) - Treat your feet right, don't size down
+- [Cocktail Party Ideas](https://danluu.com/cocktail-ideas/) - {{< heart title="Favorite" >}}Basically a long-form of this [xkcd](https://xkcd.com/1831/). I think about this post all the time and try to remember to stay humble about the limits of my own knowledge
 
 ---
 
@@ -164,6 +166,7 @@ I have a strong preference for software that is fast, outwardly simple, and that
 - `ALL` - [Down Dog](https://www.downdogapp.com/) - Procedurally-generated at-home yoga and HIIT
 - `AND` - [Loop Habit Tracker](https://loophabits.org) - Minimal, yet feature-rich and flexible habit tracker
 - `ALL` - [Mountain Project](https://www.mountainproject.com) - Find crags and track climbs, works offline
+- `iOS` - [NetNewsWire](https://netnewswire.com) - Tiny, simple, open-source RSS reader. Also on Mac
 - `AND` - [Niagara Launcher](https://play.google.com/store/apps/details?id=bitpit.launcher) - {{< heart title="Favorite" >}} Minimalist, fast, well-designed launcher
 - `iOS` - [Raivo OTP](https://raivo-otp.com) - iCloud-based MFA with the ability to export to an archive file
 - `iOS` - [Streaks](https://streaksapp.com) - Good design and integrations. Pay once for multiple platforms
@@ -173,12 +176,13 @@ I have a strong preference for software that is fast, outwardly simple, and that
 ### Desktop
 
 - `MAC` - [Alfred](https://www.alfredapp.com/) - Customizable Spotlight alternative with great plugins
-- `MAC` - [Focus](https://heyfocus.com) - Block everything distracting then allow timed breaks
 - `MAC` - [IINA](https://github.com/iina/iina) - Minimal Mac-only alternative to VLC
+- `MAC` - [ItsyCal](https://www.mowglii.com/itsycal/) - Simply the best little calendar app. Incredibly well-designed
+- `MAC` - [Little Snitch](https://www.obdev.at/products/littlesnitch/index.html) - Decide how apps talk to the internet. Must-have for any Mac
 - `MAC` - [Pandan](https://apps.apple.com/us/app/pandan/id1569600264) - Notifies you how long you've been using your computer
-- `MAC` - [Swish](https://highlyopinionated.co/swish/) - {{< heart title="Favorite" >}} Resize and move windows with super intuitive gestures
 - `ALL` - [Obsidian](https://obsidian.md) - {{< heart title="Favorite" >}} Fast notes. Free, works everywhere, plain markdown
 - `ALL` - [RStudio](https://www.rstudio.com/) - Great IDE specifically for R (and now some Python)
+- `MAC` - [Swish](https://highlyopinionated.co/swish/) - {{< heart title="Favorite" >}} Resize and move windows with super intuitive gestures
 - `MAC` - [Transmit](https://panic.com/transmit/) - Fast, versatile file transfer utility
 - `ALL` - [VS Code](https://code.visualstudio.com/) - Big IDE for when neovim or RStudio don't cut it
 - `WIN` - [Terminal + WSL 2](https://docs.microsoft.com/en-us/windows/wsl/install-win10) - {{< heart title="Favorite" >}} Linux virtualization on Windows that just works
@@ -218,4 +222,4 @@ I have a strong preference for software that is fast, outwardly simple, and that
 - [tidycensus](https://walker-data.com/tidycensus/) - Useful interface for the Census API
 - [tidytransit](https://github.com/r-transit/tidytransit) - GTFS feed reader. Make [trains go brrr](https://sno.ws/transit-maps)
 
-_Last updated 2023-08-03_
+_Last updated 2023-12-31_
