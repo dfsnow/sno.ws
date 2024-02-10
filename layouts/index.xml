@@ -1,6 +1,6 @@
 {{- $pctx := . -}}
 {{- if .IsHome -}}
-    {{ $pctx = .Site }}
+    {{- $pctx = .Site -}}
 {{- end -}}
 {{- $pages := slice -}}
 {{- if or $.IsHome $.IsSection -}}
@@ -8,43 +8,44 @@
 {{- else -}}
     {{- $pages = $pctx.Pages -}}
 {{- end -}}
-
 {{- printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?><?xml-stylesheet href=\"/index.xsl\" type=\"text/xsl\"?>" | safeHTML }}
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>{{ .Site.Title }}</title>
-        <description>{{ .Site.Params.description }}</description>
-        <link>{{ .Permalink }}</link>
+        <title>{{- .Site.Title -}}</title>
+        <description>{{- .Site.Params.description -}}</description>
+        <link>{{- .Permalink -}}</link>
         {{- with .OutputFormats.Get "RSS" -}}
-            {{ printf "<atom:link href=%q rel=\"self\" type=%q />" .Permalink .MediaType | safeHTML }}
+            {{- printf "<atom:link href=%q rel=\"self\" type=%q />" .Permalink .MediaType | safeHTML -}}
         {{- end -}}
-        <lastBuildDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</lastBuildDate>
-        {{ range where (where $pages ".Params.link" "==" nil) ".Params.date" "!=" nil }}
-            {{ if or (gt (len .Content) 0) (isset .Params "src") }}
+        <lastBuildDate>{{- .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML -}}</lastBuildDate>
+        {{- range where (where $pages ".Params.link" "==" nil) ".Params.date" "!=" nil -}}
+            {{- if or (gt (len .Content) 0) (isset .Params "src") -}}
             <item>
-                <title>{{ .Title }}</title>
+                <title>{{- .Title -}}</title>
                 <description>
-                    {{ if isset .Params "src" }}
-                        {{ $srcBase := .Site.Params.photosURL }}
-                        {{ $srcExt := index (findRE "\\.[^.]*$|$" .Params.src 1) 0 }}
-                        {{ $srcFileFull := print $srcBase "/resized/" (index (findRE "^([^.]+)" .Params.src 1) 0) }}
-                        {{ printf "%s%s%s%s%s" "<p><img src=" $srcFileFull "-1280" $srcExt "></p>" | html }}
-                    {{ end }}
-                    {{ if isset .Params "rating" }}
-                        {{ printf "%s%s%s" "<p><a href=\"/hearts-and-ratings\"><h3>Score: " .Params.rating " / 10</h3></a></p>" | html }}
-                    {{ end }}
-                    {{ .Content | html }}
+                    {{- if isset .Params "src" -}}
+                        {{- $srcBase := .Site.Params.photosURL -}}
+                        {{- $srcExt := index (findRE "\\.[^.]*$|$" .Params.src 1) 0 -}}
+                        {{- $srcFileFull := print $srcBase "/resized/" (index (findRE "^([^.]+)" .Params.src 1) 0) -}}
+                        {{- printf "%s%s%s%s%s" "<p><img src=" $srcFileFull "-1280" $srcExt "></p>" | html -}}
+                    {{- end -}}
+                    {{- if isset .Params "rating" -}}
+                        {{- printf "%s%s%s" "<p><a href=\"/hearts-and-ratings\"><h3>Score: " .Params.rating " / 10</h3></a></p>" | html -}}
+                    {{- end -}}
+                    {{- .Content | html -}}
                 </description>
-                <link>{{ .Permalink }}</link>
+                <link>{{- .Permalink -}}</link>
                 <category domain="recommended">
                     {{- if eq (.Params.recommended | default "false") "true" -}}
                         {{- printf "true" | html -}}
+                    {{- else -}}
+                        {{- printf "false" | html -}}
                     {{- end -}}
                 </category>
-                <pubDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</pubDate>
-                <guid isPermaLink="true">{{ .Permalink }}</guid>
+                <pubDate>{{- .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML -}}</pubDate>
+                <guid isPermaLink="true">{{- .Permalink -}}</guid>
             </item>
-            {{ end }}
-        {{ end }}
+            {{- end -}}
+        {{- end -}}
     </channel>
 </rss>

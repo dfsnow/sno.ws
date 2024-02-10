@@ -8,9 +8,8 @@
 {{- else -}}
     {{- $pages = $pctx.Pages -}}
 {{- end -}}
-
 {{- $main_css := resources.Get "css/main.scss" | toCSS | minify | fingerprint -}}
-{{- printf "<?xml version=\"1.0\" encoding=\"utf-8\"?>" | safeHTML }}
+{{- printf "<?xml version=\"1.0\" encoding=\"utf-8\"?>" | safeHTML -}}
 <xsl:stylesheet version="3.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:atom="http://www.w3.org/2005/Atom">
     <xsl:output method="html" version="1.0" encoding="UTF-8" indent="yes"/>
     <xsl:template match="/">
@@ -19,7 +18,7 @@
             <title>
                 {{ .Site.Title }} | RSS Feed
             </title>
-            <link rel="stylesheet" href="{{ $main_css.Permalink }}"/>
+            <link rel="stylesheet" href="{{- $main_css.Permalink -}}"/>
         </head>
         <body>
             <main class="content">
@@ -31,19 +30,19 @@
                     and/or <a href="https://freshrss.org">FreshRSS</a>.
                 </h4>
                 <div id="writing" class="post-list">
-                {{ range where (where $pages ".Params.link" "==" nil) ".Params.date" "!=" nil }}
-                    {{ if or (gt (len .Content) 0) (isset .Params "src") }}
+                {{- range where (where $pages ".Params.link" "==" nil) ".Params.date" "!=" nil -}}
+                    {{- if or (gt (len .Content) 0) (isset .Params "src") -}}
                         <div class="post-list-info">
-                            <a href="{{ .Permalink }}">{{ .Title }}</a>
+                            <a href="{{- .Permalink -}}">{{- .Title -}}</a>
                         </div>
-                        <time class="post-list-date" datetime='{{ .Date.Format "2006-01-02" }}'>{{ .Date.Format "2006-01-02" }}</time>
+                        <time class="post-list-date" datetime='{{- .Date.Format "2006-01-02" -}}'>{{- .Date.Format "2006-01-02" -}}</time>
                         <div class="post-list-misc">
-                            {{ if eq .Params.recommended "true"}}
-                                {{ partial "heart" (dict "title" "Personal favorite" "width" $.Site.Params.heartSize "height" $.Site.Params.heartSize ) }}
-                            {{ end }}
+                            {{- if eq .Params.recommended "true" -}}
+                                {{- partial "heart" (dict "title" "Personal favorite" "width" $.Site.Params.heartSize "height" $.Site.Params.heartSize ) -}}
+                            {{- end -}}
                         </div>
-                    {{ end }}
-                {{ end }}
+                    {{- end -}}
+                {{- end -}}
                 </div>
             </main>
         </body>
