@@ -1,7 +1,7 @@
 baseURL = "https://sno.ws"
 title = "Dan Snow"
 languageCode = "en-US"
-disableKinds = ["taxonomy", "category", "term"]
+disableKinds = ["taxonomy", "term"]
 enableInlineShortcodes = true
 pygmentsCodeFences = true
 pygmentsUseClasses = true
@@ -54,3 +54,15 @@ pygmentsUseClasses = true
 [markup.goldmark.renderer]
   # Allow HTML in Markdown
   unsafe = true
+
+[outputs]
+  home = ["HTML", "rss", "rssxsl"]
+
+[outputFormats]
+  [outputFormats.rssxsl]
+    baseName = "index"
+    mediaType = "application/xslt+xml"
+
+[mediaTypes]
+  [mediaTypes."application/xslt+xml"]
+    suffixes = ["xsl"]

@@ -174,7 +174,10 @@ ol {
 }
 
 .post-list > .post-list-misc {
+  display: flex;
   text-align: center;
+  justify-content: center;
+  align-items: center;
 }
 
 .post-list > .post-list-links {
@@ -340,6 +343,7 @@ blockquote p,
   .post-list > .post-list-misc {
     padding-left: 1rem;
     justify-self: left;
+    padding-bottom: 1.25em;
   }
 
   .post-list > .post-list-links {

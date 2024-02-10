@@ -1,12 +1,15 @@
 {{- $pctx := . -}}
-{{- if .IsHome -}}{{ $pctx = .Site }}{{- end -}}
+{{- if .IsHome -}}
+    {{ $pctx = .Site }}
+{{- end -}}
 {{- $pages := slice -}}
 {{- if or $.IsHome $.IsSection -}}
-{{- $pages = $pctx.RegularPages -}}
+    {{- $pages = $pctx.RegularPages -}}
 {{- else -}}
-{{- $pages = $pctx.Pages -}}
+    {{- $pages = $pctx.Pages -}}
 {{- end -}}
-{{- printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
+
+{{- printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?><?xml-stylesheet href=\"/index.xsl\" type=\"text/xsl\"?>" | safeHTML }}
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>{{ .Site.Title }}</title>
@@ -33,6 +36,11 @@
                     {{ .Content | html }}
                 </description>
                 <link>{{ .Permalink }}</link>
+                <category domain="recommended">
+                    {{- if eq (.Params.recommended | default "false") "true" -}}
+                        {{- printf "true" | html -}}
+                    {{- end -}}
+                </category>
                 <pubDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</pubDate>
                 <guid isPermaLink="true">{{ .Permalink }}</guid>
             </item>
