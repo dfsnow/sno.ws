@@ -13,9 +13,13 @@ styles = [ "css/full-width-media.scss" ]
   }
 </style>
 
+---
+
 <h4>
 <a href="https://gist.github.com/dfsnow/aad4ec99afb413968c49efb03bdb1ab9">GitHub gist for source code</a>
 </h4>
+
+_Edit: It turns out there's a much simpler way to do this. See the [update](#update-2024-02-23) below._
 
 I run a small [Jellyfin](https://github.com/jellyfin/jellyfin) server at home to watch movies and other media I've collected over the years. Recently, in order to debug some playback/networking issues, I wanted a way to answer the following questions via [Prometheus](https://prometheus.io) and [Grafana](https://grafana.com):
 
@@ -234,3 +238,67 @@ scrape_configs:
 And that's it! A curl request to `http://$HOSTNAME:9115/probe` now returns Prometheus metrics for any currently playing Jellyfin media, along with the user information and transcoding settings of the player. Note that metrics only exist if media _is currently playing_, otherwise the return body will be blank.
 
 Translating the resulting metrics into useable Grafana graphs is a project by itself, but it is possible with the extensive use of transformations. I'll save that topic for a future post.
+
+---
+
+## Update (2024-02-23)
+
+After digging around in the [API docs](https://api.jellyfin.org) for awhile, I realized that using the Playback Reporting Plugin is totally unnecessary. The `Sessions/` endpoint returns everything you need and works more consistently.
+
+The trick is to grab stuff from the `NowPlayingItem` key of each session, which only exists when something is playing. Here's the updated YAML to reflect the new target:
+
+```yaml
+modules:
+  jellyfin:
+    headers:
+      Authorization: MediaBrowser Token=ADD_TOKEN_HERE
+      Content-Type: application/json
+      accept: application/json
+
+    # The body is no longer needed since this is now GET
+
+    # This will return all active sessions regardless of
+    # whether something is playing. You can use a combination
+    # of label and value filters in Grafana to only get actively
+    # playing sessions
+    metrics:
+    - name: jellyfin
+      type: object
+      help: User playback metrics from Jellyfin
+      path: '{ [*] }'
+      labels:
+        user_name: '{ .UserName }'
+        # User PromQL label_join and label_replace to concatenate
+        # these values into a nice item description
+        item_type: '{ .NowPlayingItem.Type }'
+        item_name: '{ .NowPlayingItem.Name }'
+        item_path: '{ .NowPlayingItem.Path }'
+        series_name: '{ .NowPlayingItem.SeriesName }'
+        episode_index: 'e{ .NowPlayingItem.IndexNumber }'
+        season_index: 's{ .NowPlayingItem.ParentIndexNumber }'
+        client_name: '{ .Client }'
+        device_name: '{ .DeviceName }'
+      values:
+        is_paused: '{ .PlayState.IsPaused }'
+```
+
+And the Prometheus config:
+
+```yaml
+scrape_configs:
+  - job_name: json
+    metrics_path: /probe
+    params:
+      module: [jellyfin]
+    static_configs:
+      - targets:
+        # Change the target to point at the sessions endpoint
+        - https://jellyfin.example.com/Sessions
+    relabel_configs:
+      - source_labels: [__address__]
+        target_label: __param_target
+      - source_labels: [__param_target]
+        target_label: instance
+      - target_label: __address__
+        replacement: HOSTNAME:9115
+```
