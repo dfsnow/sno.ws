@@ -20,6 +20,7 @@
 html {
   font-size: 62.5%;
   height: 100%;
+  scroll-padding-top: 7em;
   -webkit-text-size-adjust: 100%;
 }
 
@@ -325,6 +326,10 @@ blockquote p,
 
 /* adjustment when very small */
 @media only screen and (max-width: 720px) {
+
+  html {
+    scroll-padding-top: initial;
+  }
 
   .content {
     padding-top: 1.25em;
