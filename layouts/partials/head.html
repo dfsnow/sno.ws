@@ -6,9 +6,8 @@
     <title>{{ .Site.Title }}</title>
 {{ end -}}
 
-{{ with .Site.Params.description -}}
-    <meta name="description" content="{{ . }}">
-{{ end }}
+<meta name="description" content="{{ .Site.Params.description }}">
+<meta name="author" content="{{ .Site.Params.author }}">
 
 <link rel="shortcut icon" href="/favicon.ico">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
