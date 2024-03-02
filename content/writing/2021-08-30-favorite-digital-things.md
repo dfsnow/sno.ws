@@ -110,7 +110,6 @@ These posts have inspired or influenced me in some way. They're things I reread 
 - [The Local Minima of Suckiness](https://vickiboykis.com/2021/08/05/the-local-minima-of-suckiness/) - How I think about teaching and learning coding
 - [The Rise of User-Hostile Software](https://den.dev/blog/user-hostile-software/) - Software now is better for devs, worse for users
 - [Teaching Programming](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1006023) - Extremely helpful tips for teaching a class how to code
-- [The Tech Stack of a One-Man SaaS](https://panelbear.com/blog/tech-stack/) - Tools and frameworks oh my
 - [The Tech Stack of a One-Woman Hardware Company](https://blog.thea.codes/winterblooms-tech-stack/) - Microcontrollers and C
 - [Thoughts After 6 Years](https://chriskiehl.com/article/thoughts-after-6-years) - {{< heart title="Favorite" >}} Short post on lessons learned. Inspired [my post](https://sno.ws/local-gov)
 - [The Website Obesity Crisis](https://idlewords.com/talks/website_obesity.htm) - {{< heart title="Favorite" >}} Why does reddit load 15 MB on every page
