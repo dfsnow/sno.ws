@@ -97,7 +97,7 @@ These posts have inspired or influenced me in some way. They're things I reread 
 - [Stop Learning](https://www.nashvail.me/blog/stop-learning/) - You know enough, start doing things
 - [Work Hard](https://terrytao.wordpress.com/career-advice/work-hard/) - After a certain level, there are no shortcuts for effort
 
-### Coding and tech
+### Coding and tech {#coding-and-tech-2}
 
 - [All the Best Engineering Advice I Stole From Non-Technical People](https://bellmar.medium.com/all-the-best-engineering-advice-i-stole-from-non-technical-people-eb7f90ca2f5f) - Big wisdom
 - [Choose Boring Technology](https://mcfunley.com/choose-boring-technology) - Stop reinventing ssh and grasping for shiny things
@@ -186,7 +186,7 @@ I have a strong preference for software that is fast, outwardly simple, and that
 - `ALL` - [VS Code](https://code.visualstudio.com/) - Big IDE for when neovim or RStudio don't cut it
 - `WIN` - [Terminal + WSL 2](https://docs.microsoft.com/en-us/windows/wsl/install-win10) - {{< heart title="Favorite" >}} Linux virtualization on Windows that just works
 
-### Other
+### Other {#other-2}
 
 - [FreshRSS](https://freshrss.org) - Free, self-hosted RSS feed aggregator. Lightweight, fast, and simple
 - [JetBrains Mono](https://www.jetbrains.com/lp/mono/) - Monospaced font with ligatures. Works in nearly every editor
