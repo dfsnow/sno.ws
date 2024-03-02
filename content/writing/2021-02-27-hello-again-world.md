@@ -15,6 +15,6 @@ Well, now I finally feel like making some stuff and need a place to put it. So t
 4. An occasional diary and place to keep track of goals, life events, or whatever I'm consuming at the time
 5. A way for me to learn modern web design and best practices
 
-Plus, this site is just a way for me to document my own life. I have awful long-term memory, so I want a way to look back at what I was up to during a given time. 
+Plus, this site is just a way for me to document my own life. I have awful long-term memory, so I want a way to look back at what I was up to during a given time.
 
 I plan to post something roughly every other week. Hopefully I can contribute at least a small bit to the vast pool of knowledge and content that is the modern internet.

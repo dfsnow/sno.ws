@@ -79,7 +79,7 @@ To make the problem slightly more tractable for this post, we will:
 1.  Only use R, though there are probably much faster solutions in compiled languages.
 2.  Generate much smaller test data than the real data so we can benchmark solutions without waiting for days. Here's the data generation in R:
 
-``` r
+```r
 library(data.table)
 library(microbenchmark)
 

@@ -19,4 +19,3 @@ Evidently, [qntm](https://qntm.org) shares my feelings, since most of the short 
 There are a few duds among the rest of the bunch, but all the stories here are extremely readable and nicely thread the line between being campy/overwritten and completely dispassionate. Most have an impressive amount of world-building for their length. A few even play with interesting mediums (chatrooms, Twitter).
 
 Together, they nicely capture the peril of intersecting humanity with technology and provide a healthy dose of skepticism about the promises of our technological future.
-

@@ -158,11 +158,11 @@ pv in.csv.bz2 \
 
 This approach is nearly 10x faster than the `awk` script. However, there are a couple things to improve:
 
-* Cloning a fresh, unpopulated dictionary (only keys, no values) for each origin seems incredibly wasteful, but I'm not sure how else to clear the dictionary values.
-* All origins and destinations are strings. Making them unsigned integers or similar might be faster.
-* Lots of `.to_string()` calls which may be unnecessary.
+- Cloning a fresh, unpopulated dictionary (only keys, no values) for each origin seems incredibly wasteful, but I'm not sure how else to clear the dictionary values.
+- All origins and destinations are strings. Making them unsigned integers or similar might be faster.
+- Lots of `.to_string()` calls which may be unnecessary.
 
-### Rust approach B (improved) 
+### Rust approach B (improved)
 
 Given my relative lack of experience with compiled languages, I figured it might be worthwhile to seek input from various Rust-specific forums. I was a little intimidated at first, but the Rust community turned out to be unreasonably helpful.
 
@@ -242,15 +242,14 @@ The results shown below are from a 2022 MacBook Air M2 with a 1TB SSD. Speed is 
 
 Some thoughts:
 
-* `awk` is blown out of the water by the two Rust solutions, so it's firmly out of the running for this particular task.
-* Rust solution A is nearly as fast as B for smaller files. Considering that it's slightly more robust (doesn't expect sorted destinations), I may use it for matrices smaller than 1GB.
-* Rust solution B is the only real option for super large matrices. As far as I can tell it has `O(n)` time complexity. I tested it on a 121GB Census block matrix and found only a slight decrease in average speed. Super impressive.
+- `awk` is blown out of the water by the two Rust solutions, so it's firmly out of the running for this particular task.
+- Rust solution A is nearly as fast as B for smaller files. Considering that it's slightly more robust (doesn't expect sorted destinations), I may use it for matrices smaller than 1GB.
+- Rust solution B is the only real option for super large matrices. As far as I can tell it has `O(n)` time complexity. I tested it on a 121GB Census block matrix and found only a slight decrease in average speed. Super impressive.
 
 Notably, the compressed wide matrix files are typically 30-50% smaller than their long equivalents, depending on sparsity.
 
 ## Conclusion
 
-So that's it. Our matrices are pivoted and resaved as `.zst` files. They can be loaded into any software that accepts wide matrices or converted to Parquet/ORC (more on that later). 
+So that's it. Our matrices are pivoted and resaved as `.zst` files. They can be loaded into any software that accepts wide matrices or converted to Parquet/ORC (more on that later).
 
 This was a fun, challenging little project and turned into a great opportunity to learn a new language. I'm really happy I chose Rust. It's such a delight to work in, even if I don't yet fully grok it. Feel free to email or comment on the [gist](https://gist.github.com/dfsnow/112621a2d9ea6e19876017fb776cf133) if I've missed any obvious improvements.
-

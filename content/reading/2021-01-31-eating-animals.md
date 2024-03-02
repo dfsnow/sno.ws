@@ -12,11 +12,11 @@ It didn't play a terribly important role in my life. I didn't have any cultural 
 
 When I did eat, I'd wolf down pretty much whatever was put in front of me, regardless of whether it was tasty, healthy, or ethical. This, along with my tendency to eat *a lot*, gained me a reputation as a human garbage disposal among my friends, a title I often reinforced by eating an entire rotisserie chicken for lunch.
 
-Perhaps due to this overall indifference to food, I never did the ethical calculus to justify my choice to eat meat. It wasn't that I'd done the math and decided meat was okay. It was a non-choice, something I just literally never considered, a default. Whenever I *was* forced to consider it, I just sort of shrugged it off. 
+Perhaps due to this overall indifference to food, I never did the ethical calculus to justify my choice to eat meat. It wasn't that I'd done the math and decided meat was okay. It was a non-choice, something I just literally never considered, a default. Whenever I *was* forced to consider it, I just sort of shrugged it off.
 
 I knew (and know) firsthand how meat is made. As part of my work during undergrad, I went to turkey processing plants and confinement sheds. I toured the kill room of a few slaugherhouses. I saw the cruelty involved in factory farming and my response was not to think about it too much.
 
-But Eating Animals forced me to do the ethical math. It forced me to weigh my choice to eat meat against my own principles and ultimately made me realize the two weren't compatible. 
+But Eating Animals forced me to do the ethical math. It forced me to weigh my choice to eat meat against my own principles and ultimately made me realize the two weren't compatible.
 
 That's the power of this book. Not that it exposes factory farming (though that's important), but that it exposes the logical inconsistency of claiming to be ethical while still eating meat. It exposes the hypocrisy of blindly (or willfully) participating in a system that actively undermines the ideals most people (myself included) claim to hold. There's just no current way to ethically consume meat or most animal products.
 

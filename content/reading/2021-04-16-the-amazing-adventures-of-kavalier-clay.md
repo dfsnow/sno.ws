@@ -10,7 +10,7 @@ I sometimes gauge novels by how well I can visualize their scenes. If I have a c
 
 By such measurement, The Amazing Adventures of Kavalier & Clay is a (mostly) great book. It starts off with a bang. I don't care at all about its subject materials (comics, stage magic, WWII), but I was completely drawn in for the first 400ish pages.
 
-The long, florid but careful sentences, clippy dialogue, and historical interludes all combine to give it a real sense of place and time. Certain scenes are so vivid and heavy with entrepreneurial excitement that you can't help but hold your breath in anticipation. 
+The long, florid but careful sentences, clippy dialogue, and historical interludes all combine to give it a real sense of place and time. Certain scenes are so vivid and heavy with entrepreneurial excitement that you can't help but hold your breath in anticipation.
 
 I love the scene when the titular characters and some other boys all hole up in a shithole apartment, desperately working through an entire weekend to finish a proof-of-concept version of their comic book. It just has this intense, ambitious energy that makes you root for the characters, willing them to succeed.
 

@@ -18,7 +18,6 @@ That said, while the content of the book is accurate, relevant, and engaging, th
 
 The whole book is jam-packed with clumsy metaphors and useless descriptions. There are terrible and infuriating end-of-sentence cliffhangers sprinkled throughout the book, which offer you a tantalizing and completely unnecessary clue about what will happen in the next paragraph.
 
-These two things make the narrative sections of the book feel like a pulpy action sequence. The writing comes across as overcompensating and insecure, like it's trying too hard to ensure the readers are engaged. Which is a shame, because the content of this book is riveting and more than enough to stand on its own without the gimmicks. 
+These two things make the narrative sections of the book feel like a pulpy action sequence. The writing comes across as overcompensating and insecure, like it's trying too hard to ensure the readers are engaged. Which is a shame, because the content of this book is riveting and more than enough to stand on its own without the gimmicks.
 
 But overall, if you can get past the unimpressive writing, A Prayer for the City offers an unparalleled look at big city politics, with its all highs and lows, drama, and possibilities.
-
