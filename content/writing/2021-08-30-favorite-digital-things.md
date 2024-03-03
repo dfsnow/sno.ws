@@ -1,7 +1,7 @@
 +++
 title = "Favorite digital things"
 date = "2021-08-30"
-shorturl = "digital-things"
+aliases = [ "/digital-things", "/uses", "/blogroll" ]
 recommended = "false"
 styles = [ "css/heart-markers.css" ]
 scripts = [ "js/heart-markers.js" ]

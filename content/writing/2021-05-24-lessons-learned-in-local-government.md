@@ -1,7 +1,7 @@
 +++
 title = "Lessons learned in local government"
 date = "2021-05-24"
-shorturl = "local-gov"
+aliases = [ "/local-gov" ]
 recommended = "true"
 +++
 

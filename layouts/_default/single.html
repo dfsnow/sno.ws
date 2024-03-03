@@ -5,9 +5,10 @@
         {{- if isset .Params "date" -}}
         <time class="post-meta" datetime='{{ .Date.Format "2006-01-02" }}'>{{ .Date.Format "January 2, 2006" }}</time>
         {{- end -}}
-        {{- if isset .Params "shorturl" -}}
+        {{- if isset .Params "aliases" -}}
+        {{ $shorturl := index (.Params.aliases) 0 | replaceRE "//" "/" }}
         <span class="post-meta"> | </span>
-        <a class="post-meta" href="{{ .Site.BaseURL }}/{{ .Params.shorturl }}">Short URL
+        <a class="post-meta" href="{{ $shorturl }}">Short URL
         </a>
         {{- end -}}
         {{- if isset .Params "rating" -}}

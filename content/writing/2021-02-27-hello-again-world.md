@@ -1,7 +1,7 @@
 +++
 title = "Hello (again) world"
 date = "2021-02-27"
-shorturl = "hello-world"
+aliases = [ "/hello-world" ]
 recommended = "false"
 +++
 

@@ -1,7 +1,7 @@
 +++
 title = "Pivoting 100GB text files from long to wide"
 date = "2022-11-28"
-shorturl = "big-pivot"
+aliases = [ "/big-pivot" ]
 recommended = "false"
 +++
 

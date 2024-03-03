@@ -1,7 +1,8 @@
 ---
 title: "Comparing 500 billion rows with data.table"
 date: "2023-06-17"
-shorturl: "big-data-table"
+aliases:
+  - "big-data-table"
 recommended: "false"
 ---
 
