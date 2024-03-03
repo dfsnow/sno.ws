@@ -190,8 +190,7 @@ modules:
     # NOTE: The string escaping/lack of newlines is
     # required for the exporter to work
     body:
-      content: |
-        {"CustomQueryString": "SELECT unixepoch(DATETIME(DateCreated, \"+\" || PlayDuration || \" seconds\")) AS Timestamp, UserId, ItemType, ItemName, PlaybackMethod, ClientName, DeviceName, PlayDuration, TRUE AS IsActive FROM PlaybackActivity WHERE DATETIME(DateCreated, \"+\" || PlayDuration || \" seconds\") >= DATETIME(\"now\", \"localtime\", \"-60 seconds\")", "ReplaceUserId": true}
+      content: '{"CustomQueryString": "SELECT unixepoch(DATETIME(DateCreated, \"+\" || PlayDuration || \" seconds\")) AS Timestamp, UserId, ItemType, ItemName, PlaybackMethod, ClientName, DeviceName, PlayDuration, TRUE AS IsActive FROM PlaybackActivity WHERE DATETIME(DateCreated, \"+\" || PlayDuration || \" seconds\") >= DATETIME(\"now\", \"localtime\", \"-60 seconds\")", "ReplaceUserId": true}'
 
     metrics:
     - name: jellyfin

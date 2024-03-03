@@ -146,7 +146,7 @@ microbenchmark(
 ```output
 Unit: milliseconds
   expr  min   lq mean median   uq  max neval
-  for 7478 7493 7553   7515 7612 7664     5
+   for 7478 7493 7553   7515 7612 7664     5
 ```
 
 ### Apply and matrix ops
@@ -178,7 +178,7 @@ microbenchmark(
 ```output
 Unit: milliseconds
   expr   min    lq  mean median    uq   max neval
-  apply 16197 16213 16407  16422 16543 16659     5
+ apply 16197 16213 16407  16422 16543 16659     5
 ```
 
 ### Vector recycling
@@ -209,7 +209,7 @@ microbenchmark(
 ```output
 Unit: milliseconds
   expr  min   lq mean median   uq  max neval
-  mat 2118 2131 2142   2133 2153 2176     5
+   mat 2118 2131 2142   2133 2153 2176     5
 ```
 
 ### Pure data.table
@@ -223,15 +223,15 @@ I *really* like R's `data.table` package. These days I find myself reaching for 
 
 ```output
     ID  V IDX
-  1: X1 V1   9
-  2: X2 V1   9
-  3: X1 V2   3
-  4: X2 V2   1
-  5: X1 V3   2
-  6: X2 V3   2
-  7: X1 V4   4
-  8: X2 V4   1
-  9: X1 V5   5
+ 1: X1 V1   9
+ 2: X2 V1   9
+ 3: X1 V2   3
+ 4: X2 V2   1
+ 5: X1 V3   2
+ 6: X2 V3   2
+ 7: X1 V4   4
+ 8: X2 V4   1
+ 9: X1 V5   5
 10: X2 V5   1
 ```
 
@@ -300,9 +300,9 @@ microbenchmark(
 ```output
 Unit: milliseconds
   expr   min    lq  mean median    uq   max neval
-    for  7547  7651  7802   7856  7887  8067     5
-  apply 17223 20289 20026  20447 20697 21476     5
-    mat  2169  2204  2214   2214  2217  2266     5
+   for  7547  7651  7802   7856  7887  8067     5
+ apply 17223 20289 20026  20447 20697 21476     5
+   mat  2169  2204  2214   2214  2217  2266     5
     dt   141   144   168    150   201   206     5
 ```
 
@@ -411,7 +411,7 @@ benchmark(calc_sim_py_njit, x, y, w, "py_njit", times = 5)
 ```output
 Unit: milliseconds
     expr min  lq mean median  uq max neval
-  py_njit  80  80   87     80  80 114     5
+ py_njit  80  80   87     80  80 114     5
 ```
 
 ---
