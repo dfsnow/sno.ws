@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        {{- partial "head.html" . -}}
-        {{- block "additional-style" . }}{{- end }}
-        {{- partial "page-style.html" . -}}
-        {{- partial "page-script.html" . -}}
-    </head>
-    <body>
-        {{- partial "header.html" . -}}
-        <main class="content">
+
+<head>
+    {{- partial "head.html" . -}}
+    {{- block "additional-style" . }}{{- end }}
+    {{- partial "page-style.html" . -}}
+    {{- partial "page-script.html" . -}}
+</head>
+
+<body>
+    {{- partial "header.html" . -}}
+    <main class="content">
         {{- block "main" . }}{{- end }}
-        </main>
-    </body>
+    </main>
+</body>
+
 </html>

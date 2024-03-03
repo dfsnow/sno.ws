@@ -1,33 +1,34 @@
 {{ define "main" }}
 <div id="talks" class="post-list">
     {{ range where $.Site.RegularPages "Section" "talks" }}
-        {{ if gt (len .Content) 0 }}
-            <div class="post-list-info">
-                <a href="{{ .Permalink }}">
-                    {{ .Title }}
-                </a>
-            </div>
-        {{ else }}
-            <div class="post-list-info">{{ .Title }}</div>
+    {{ if gt (len .Content) 0 }}
+    <div class="post-list-info">
+        <a href="{{ .Permalink }}">
+            {{ .Title }}
+        </a>
+    </div>
+    {{ else }}
+    <div class="post-list-info">{{ .Title }}</div>
+    {{ end }}
+    <div class="post-list-links">
+        {{- if isset .Params "slides" -}}
+        <div class="post-list-info">
+            <a href="{{ .Params.slides }}" title="Slides from talk">Slides</a>
+        </div>
+        {{- end -}}
+        {{- if isset .Params "video" -}}
+        <div class="post-list-info">
+            <a href="{{ .Params.video }}" title="Video of talk">Video</a>
+        </div>
+        {{- end -}}
+    </div>
+    <time class="post-list-date" datetime='{{ .Date.Format "2006-01-02" }}'>{{ .Date.Format "2006-01-02" }}</time>
+    <div class="post-list-misc">
+        {{ if eq .Params.recommended "true"}}
+        {{ partial "heart" (dict "title" "Recommended talk" "width" $.Site.Params.heartSize "height"
+        $.Site.Params.heartSize ) }}
         {{ end }}
-        <div class="post-list-links">
-            {{- if isset .Params "slides" -}}
-            <div class="post-list-info">
-                    <a href="{{ .Params.slides }}" title="Slides from talk">Slides</a>
-            </div>
-            {{- end -}}
-            {{- if isset .Params "video" -}}
-            <div class="post-list-info">
-                <a href="{{ .Params.video }}" title="Video of talk">Video</a>
-            </div>
-            {{- end -}}
-        </div>
-        <time class="post-list-date" datetime='{{ .Date.Format "2006-01-02" }}'>{{ .Date.Format "2006-01-02" }}</time>
-        <div class="post-list-misc">
-            {{ if eq .Params.recommended "true"}}
-            {{ partial "heart" (dict "title" "Recommended talk" "width" $.Site.Params.heartSize "height" $.Site.Params.heartSize ) }}
-            {{ end }}
-        </div>
+    </div>
     {{ end }}
 </div>
 {{ end }}

@@ -6,7 +6,7 @@
 
 {{ define "main" }}
 <div class="post-list-photos">
-    {{ range where $.Site.RegularPages "Section" "photos" }}
+	{{ range where $.Site.RegularPages "Section" "photos" }}
 
 	<!-- Get image base path and type -->
 	{{ $srcBase := .Site.Params.photosURL }}
@@ -20,20 +20,21 @@
 	{{ $srcCalcWidth := print "calc(" $srcWidth "px * 400/" $srcHeight ")" | safeCSS }}
 
 	<figure class="photo-frame" style="width:{{ $srcCalcWidth }};">
-	    <a href="{{ .RelPermalink }}">
-		<picture>
-		    <source srcset="{{ $srcFileFull }}-640.avif 640w" sizes="100vw" type="image/avif">
-		    <source srcset="{{ $srcFileFull }}-640.webp 640w" sizes="100vw" type="image/webp">
-		    <source srcset="{{ $srcFileFull }}-640{{ $srcExt }} 640w" sizes="100vw" type="image/{{ $srcType }}">
-		    <img src="{{ $srcFileFull }}-640{{ $srcExt }}" alt="{{ .Title }}" width="{{ $srcWidth }}" height="{{ $srcHeight }}" loading="lazy">
-		</picture>
-	    </a>
-	    {{ if eq .Params.recommended "true" }}
+		<a href="{{ .RelPermalink }}">
+			<picture>
+				<source srcset="{{ $srcFileFull }}-640.avif 640w" sizes="100vw" type="image/avif">
+				<source srcset="{{ $srcFileFull }}-640.webp 640w" sizes="100vw" type="image/webp">
+				<source srcset="{{ $srcFileFull }}-640{{ $srcExt }} 640w" sizes="100vw" type="image/{{ $srcType }}">
+				<img src="{{ $srcFileFull }}-640{{ $srcExt }}" alt="{{ .Title }}" width="{{ $srcWidth }}"
+					height="{{ $srcHeight }}" loading="lazy">
+			</picture>
+		</a>
+		{{ if eq .Params.recommended "true" }}
 		<figcaption class="photo-rec">
-		    {{ partial "heart" (dict "title" "Personal favorite" "width" "24px" "height" "24px" ) }}
+			{{ partial "heart" (dict "title" "Personal favorite" "width" "24px" "height" "24px" ) }}
 		</figcaption>
-	    {{ end }}
+		{{ end }}
 	</figure>
-    {{ end }}
+	{{ end }}
 </div>
 {{ end }}

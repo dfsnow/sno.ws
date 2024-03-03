@@ -31,15 +31,15 @@
                 <div id="writing" class="post-list">
                 {{- range where (where $pages ".Params.link" "==" nil) ".Params.date" "!=" nil -}}
                     {{- if or (gt (len .Content) 0) (isset .Params "src") -}}
-                        <div class="post-list-info">
-                            <a href="{{- .Permalink -}}">{{- .Title -}}</a>
-                        </div>
-                        <time class="post-list-date" datetime='{{- .Date.Format "2006-01-02" -}}'>{{- .Date.Format "2006-01-02" -}}</time>
-                        <div class="post-list-misc">
-                            {{- if eq .Params.recommended "true" -}}
-                                {{- partial "heart" (dict "title" "Personal favorite" "width" $.Site.Params.heartSize "height" $.Site.Params.heartSize ) -}}
-                            {{- end -}}
-                        </div>
+                    <div class="post-list-info">
+                        <a href="{{- .Permalink -}}">{{- .Title -}}</a>
+                    </div>
+                    <time class="post-list-date" datetime='{{- .Date.Format "2006-01-02" -}}'>{{- .Date.Format "2006-01-02" -}}</time>
+                    <div class="post-list-misc">
+                        {{- if eq .Params.recommended "true" -}}
+                        {{- partial "heart" (dict "title" "Personal favorite" "width" $.Site.Params.heartSize "height" $.Site.Params.heartSize ) -}}
+                        {{- end -}}
+                    </div>
                     {{- end -}}
                 {{- end -}}
                 </div>

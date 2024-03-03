@@ -19,10 +19,14 @@
 <figure class="post-feature-frame">
     <a href="{{ $srcBase }}/original/{{ $srcFile }}{{ $srcExt }}">
         <picture>
-            <source srcset="{{ $srcFileFull }}-640.avif 640w, {{ $srcFileFull }}-1280.avif 1280w" sizes="100vw" type="image/avif">
-            <source srcset="{{ $srcFileFull }}-640.webp 640w, {{ $srcFileFull }}-1280.webp 1280w" sizes="100vw" type="image/webp">
-            <source srcset="{{ $srcFileFull }}-640{{ $srcExt }} 640w, {{ $srcFileFull }}-1280{{ $srcExt }} 1280w" sizes="100vw" type="image/{{ $srcType }}">
-            <img src="{{ $srcFileFull }}-640{{ $srcExt }}" alt="{{ .Title }}" width="{{ $srcWidth }}" height="{{ $srcHeight }}" class="post-feature-photo">
+            <source srcset="{{ $srcFileFull }}-640.avif 640w, {{ $srcFileFull }}-1280.avif 1280w" sizes="100vw"
+                type="image/avif">
+            <source srcset="{{ $srcFileFull }}-640.webp 640w, {{ $srcFileFull }}-1280.webp 1280w" sizes="100vw"
+                type="image/webp">
+            <source srcset="{{ $srcFileFull }}-640{{ $srcExt }} 640w, {{ $srcFileFull }}-1280{{ $srcExt }} 1280w"
+                sizes="100vw" type="image/{{ $srcType }}">
+            <img src="{{ $srcFileFull }}-640{{ $srcExt }}" alt="{{ .Title }}" width="{{ $srcWidth }}"
+                height="{{ $srcHeight }}" class="post-feature-photo">
         </picture>
     </a>
 </figure>
@@ -31,7 +35,7 @@
     <header class="post-header">
         <h1 class="post-title">{{ .Title }}</h1>
         {{- if isset .Params "date" -}}
-            <time class="post-meta" datetime='{{ .Date.Format "2006-01-02" }}'>{{ .Date.Format "January 2, 2006" }}</time>
+        <time class="post-meta" datetime='{{ .Date.Format "2006-01-02" }}'>{{ .Date.Format "January 2, 2006" }}</time>
         {{- end -}}
     </header>
     {{- .Content -}}
