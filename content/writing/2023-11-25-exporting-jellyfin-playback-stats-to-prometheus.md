@@ -267,7 +267,7 @@ modules:
       path: '{ [*] }'
       labels:
         user_name: '{ .UserName }'
-        # User PromQL label_join and label_replace to concatenate
+        # Use PromQL label_join and label_replace to concatenate
         # these values into a nice item description
         item_type: '{ .NowPlayingItem.Type }'
         item_name: '{ .NowPlayingItem.Name }'
