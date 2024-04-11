@@ -1,7 +1,31 @@
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: FacebookBot
+Disallow: /
+
+User-agent: GoogleOther
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
 User-agent: GPTBot
 Disallow: /
 
-User-agent: *
-Disallow: /status
+User-agent: omgili
+Disallow: /
+
+User-agent: PerplexityBot
+Disallow: /
 
 Sitemap: https://sno.ws/sitemap.xml
