@@ -147,14 +147,15 @@ These posts have inspired or influenced me in some way. They're things I reread 
 - [The Plague Year](https://www.newyorker.com/magazine/2021/01/04/the-plague-year) - Summary of the institutional failures that made COVID so bad
 - [Some Blogging Myths](https://jvns.ca/blog/2023/06/05/some-blogging-myths/) - The most motivating post on blogging I've ever found
 - [The Tyranny of Structurelessness](https://www.jofreeman.com/joreen/tyranny.htm) - All groups develop informal structure
+- [What I Think About When I Edit](https://evaparish.com/blog/how-i-edit) - {{< heart title="Favorite" >}} Sound and simple writing advice
 - [Your Climbing Shoes Are Too Tight](https://eveningsends.com/climbing-shoes-tight/) - Treat your feet right, don't size down
-- [Cocktail Party Ideas](https://danluu.com/cocktail-ideas/) - {{< heart title="Favorite" >}}Basically a long-form of this [xkcd](https://xkcd.com/1831/). I think about this post all the time and try to remember to stay humble about the limits of my own knowledge
+- [Cocktail Party Ideas](https://danluu.com/cocktail-ideas/) - {{< heart title="Favorite" >}} Basically a long-form of this [xkcd](https://xkcd.com/1831/). I think about this post all the time and try to remember to stay humble about the limits of my own knowledge
 
 ---
 
 ## Software
 
-These are the things I use every day. It's a list whittled down over about 5 years. It's not exhaustive, but it's pretty close; I still use other stuff like Word and Teams 💀.
+These are the things I use every day. It's a list whittled down over about 5 years. It's not exhaustive, but it's pretty close; I still use other stuff like Word and Teams.
 
 I have a strong preference for software that is fast, outwardly simple, and that does one thing extremely well.
 
@@ -221,4 +222,4 @@ I have a strong preference for software that is fast, outwardly simple, and that
 - [tidycensus](https://walker-data.com/tidycensus/) - Useful interface for the Census API
 - [tidytransit](https://github.com/r-transit/tidytransit) - GTFS feed reader. Make [trains go brrr](https://sno.ws/transit-maps)
 
-_Last updated 2023-12-31_
+_Last updated 2024-04-20_
