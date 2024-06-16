@@ -55,6 +55,9 @@ pygmentsUseClasses = true
   # Allow HTML in Markdown
   unsafe = true
 
+[markup.goldmark.extensions]
+  linkify = false
+
 [outputs]
   home = ["HTML", "rss", "rssxsl"]
 
