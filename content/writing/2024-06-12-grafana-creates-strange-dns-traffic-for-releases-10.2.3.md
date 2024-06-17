@@ -5,6 +5,12 @@ aliases = [ "/grafana-dns" ]
 recommended = "false"
 +++
 
+*Edit: This is **resolved** and nothing malicious is happening.
+See [here](https://github.com/grafana/grafana/issues/88951#issuecomment-2172781991)
+for the GitHub issue update. The issue here appears to be the result of Safari
+pre-fetching DNS for Grafana's forums, which are linked on the Grafana
+landing page and do use advertising scripts.*
+
 I use [AdGuard Home](https://adguard.com/en/adguard-home/overview.html)
 for DNS-based ad-blocking and recently noticed some suspicious looking
 traffic getting consistently blocked in my DNS query logs. Lots of outbound
