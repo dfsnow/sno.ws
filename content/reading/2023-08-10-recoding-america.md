@@ -8,7 +8,7 @@ recommended = "false"
 
 Recoding America is an insider's take on why government is so bad at digital technology. Jen Pahlka uses case studies from her own career to [outline the specific forces and incentives](https://www.recodingamerica.us/concepts) that cause government tech projects to under-deliver, falter, and/or fail.
 
-I've witnessed many of the dynamics Pahlka points out [from my own position within local government](/local-gov), and I broadly agree with her critiques. She clearly articulates some concepts I've been thinking about for awhile. My favorites were:
+I've witnessed many of the dynamics Pahlka points out [from my own position within local government]({{< ref "/writing/2021-05-24-lessons-learned-in-local-government.md" >}}), and I broadly agree with her critiques. She clearly articulates some concepts I've been thinking about for awhile. My favorites were:
 
 - **Complexity favors people with power.** Richer folks have the means (lawyers, money, time) to navigate and take advantage of complex policy changes. I've seen this play out in the assessment space; wealthier property owners are more likely to appeal their assessment and/or apply for obscure tax exemptions.
 - **Policy [cruft](https://en.wikipedia.org/wiki/Cruft) is a barrier to implementation.** Every time a well-meaning policymaker adds another requirement or exemption opportunity to a law, the implementation gets that much harder. Keeping policy simple and low-burden makes it more effective. In the Illinois property tax space, a huge amount of cruft exists from legislators creating provisions in state-level law specific to their local community or constituents.

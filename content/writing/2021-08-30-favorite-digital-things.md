@@ -15,7 +15,7 @@ This is a list of my favorite digital things, excluding media. It's basically a 
 
 This list is constantly updated. When I find a cool new thing, I'll add it. When I lose interest in something, I'll remove it. The history of this page is tracked [via git](https://github.com/dfsnow/sno.ws/commits/master/content/writing/2021-08-30-favorite-digital-things.md).
 
-As usual, {{< heart title="Favorite" >}} indicates an [absolute favorite](/hearts-and-ratings/).
+As usual, {{< heart title="Favorite" >}} indicates an [absolute favorite]({{< ref "/hearts-and-ratings.md" >}}).
 
 ---
 
