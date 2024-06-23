@@ -6,7 +6,7 @@
 {{ $srcType := replaceRE ".jpg" "jpeg" $srcExt | replaceRE "\\." "" }}
 <picture>
     <source srcset="{{ $srcBase }}{{ $srcFileFull }}{{ $srcExt }}" type="image/{{ $srcType }}">
-    <img src="{{ $srcBase }}{{ $srcFileFull }}{{ $srcExt }}" alt="{{ .Get " alt" }}" width="{{ .Get " width" }}"
-        height="{{ .Get " height" }}" loading="lazy">
+    <img src="{{ $srcBase }}{{ $srcFileFull }}{{ $srcExt }}" alt='{{ .Get "alt" }}' width='{{ .Get "width" }}'
+        height='{{ .Get "height" }}' loading="lazy">
 </picture>
 {{ end }}
