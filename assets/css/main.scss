@@ -32,7 +32,7 @@ body {
   margin: 0 auto;
   line-height: 1.5;
   min-height: 100%;
-  overflow: scroll hidden;
+  overflow: hidden scroll;
 }
 
 a {
@@ -216,7 +216,7 @@ ol {
   max-width: var(--full-width);
   margin: auto;
   z-index: 999;
-  padding: 1.375em 2rem 1em; 
+  padding: 1.375em 2rem 1em;
 }
 
 .navbar-content .navbar-title {
