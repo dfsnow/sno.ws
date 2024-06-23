@@ -11,7 +11,7 @@
   transform: translate(-1.2em, 0.4375em);
   width: var(--heart-size);
   height: var(--heart-size);
-  background: url(/heart-marker.svg);
+  background: url("/heart-marker.svg");
   background-size: cover;
   font-size: initial;
 }
