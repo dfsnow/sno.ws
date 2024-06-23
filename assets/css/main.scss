@@ -28,12 +28,11 @@ body {
   background-color: var(--bg-color);
   color: var(--text-color);
   font-size: 1.6rem;
-  font-family: "Helvetica Neue", "Arial", sans-serif;
+  font-family: "Helvetica Neue", Arial, sans-serif;
   margin: 0 auto;
   line-height: 1.5;
   min-height: 100%;
-  overflow-y: scroll;
-  overflow-x: hidden;
+  overflow: scroll hidden;
 }
 
 a {
@@ -104,13 +103,13 @@ ol {
 .content {
   max-width: var(--full-width);
   margin: auto;
-  padding: 1em 1.25em 1.25em 1.25em;
+  padding: 1em 1.25em 1.25em;
 }
 
 .content code {
   font-size: 1.5rem;
   padding: 0 0.4rem;
-  font-family: "Monaco", monospace;
+  font-family: Monaco, monospace;
   background-color: var(--gray-accent-4);
 }
 
@@ -124,7 +123,7 @@ ol {
   word-wrap: break-word;
   border: thin solid var(--gray-accent-4);
   border-radius: 3px;
-  font-family: "Monaco", monospace;
+  font-family: Monaco, monospace;
 }
 
 .content pre code,
@@ -189,7 +188,7 @@ ol {
 }
 
 .post-header > .post-title {
-  margin: 0 0 0.3rem 0;
+  margin: 0 0 0.3rem;
   font-size: 3rem;
   line-height: 1.15;
 }
@@ -217,7 +216,7 @@ ol {
   max-width: var(--full-width);
   margin: auto;
   z-index: 999;
-  padding: 1.375em 2rem 1em 2rem;
+  padding: 1.375em 2rem 1em; 
 }
 
 .navbar-content .navbar-title {
@@ -326,7 +325,6 @@ blockquote p,
 
 /* adjustment when very small */
 @media only screen and (max-width: 720px) {
-
   html {
     scroll-padding-top: initial;
   }
@@ -372,7 +370,7 @@ blockquote p,
 
   .navbar-content > .navbar-internal-links {
     display: block;
-    margin: 0.6rem 0 1.6rem 0;
+    margin: 0.6rem 0 1.6rem;
     text-decoration: underline;
     grid-column: 1;
   }
@@ -400,14 +398,18 @@ blockquote p,
     grid-template-columns: max-content 1fr;
   }
 
-  #writing > :nth-child(3n + 1) { grid-column: 1 / span 2; }
-  #writing > :nth-child(3n + 2) { grid-column: 1; }
-  #writing > :nth-child(3n + 3) { grid-column: 2; }
+  #writing {
+    > :nth-child(3n + 1) { grid-column: 1 / span 2; }
+    > :nth-child(3n + 2) { grid-column: 1; }
+    > :nth-child(3n + 3) { grid-column: 2; }
+  }
 
-  #reading, #talks { > :nth-child(4n + 1) { grid-column: 1 / span 2; } }
-  #reading, #talks { > :nth-child(4n + 2) { grid-column: 1 / span 2; } }
-  #reading, #talks { > :nth-child(4n + 3) { grid-column: 1; } }
-  #reading, #talks { > :nth-child(4n + 4) { grid-column: 2; } }
+  #reading, #talks {
+    > :nth-child(4n + 1) { grid-column: 1 / span 2; }
+    > :nth-child(4n + 2) { grid-column: 1 / span 2; }
+    > :nth-child(4n + 3) { grid-column: 1; }
+    > :nth-child(4n + 4) { grid-column: 2; }
+  }
 }
 
 @media (prefers-color-scheme: dark) {

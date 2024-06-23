@@ -1,3 +1,16 @@
 {
-    "doctype-first": false
+    "doctype-first": false,
+    "html-lang-require": true,
+    "attr-lowercase": true,
+    "attr-no-duplication": true,
+    "attr-no-unnecessary-whitespace": true,
+    "attr-unsafe-chars": true,
+    "attr-whitespace": true,
+    "alt-require": true,
+    "tag-pair": true,
+    "tag-close": true,
+    "tagname-lowercase": true,
+    "src-not-empty": true,
+    "spec-char-escape": true,
+    "space-tab-mixed-disabled": true
 }
