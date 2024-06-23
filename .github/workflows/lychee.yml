@@ -20,4 +20,5 @@ jobs:
             --base . --verbose
             --no-progress './content/**/*.md'
             --accept '100..=103,200..=299,403'
+            --exclude 'wireguard.com'
           fail: true
