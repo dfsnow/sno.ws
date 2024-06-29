@@ -4,15 +4,14 @@ repos:
     hooks:
       - id: markdownlint
       - id: markdownlint-fix
-  - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.5.0  # Use the ref you want to point at
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.5.0
     hooks:
-      - id: check-added-large-files
-      - id: check-merge-conflict
-      - id: check-case-conflict
-      - id: check-toml
-      - id: check-yaml
-      - id: mixed-line-ending
+      # Run the linter.
+      - id: ruff
+        args: [--fix]
+      # Run the formatter.
+      - id: ruff-format
   - repo: https://github.com/thibaudcolas/pre-commit-stylelint
     rev: v16.6.0
     hooks:
@@ -38,3 +37,12 @@ repos:
         entry: Cannot commit .Rhistory, .RData, .Rds or .rds.
         language: fail
         files: '\.(Rhistory|RData|Rds|rds)$'
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.5.0  # Use the ref you want to point at
+    hooks:
+      - id: check-added-large-files
+      - id: check-merge-conflict
+      - id: check-case-conflict
+      - id: check-toml
+      - id: check-yaml
+      - id: mixed-line-ending
