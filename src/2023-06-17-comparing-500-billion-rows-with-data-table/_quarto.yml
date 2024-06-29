@@ -1,5 +1,5 @@
 project:
-  output-dir: ../content/writing/
+  output-dir: ../../content/writing/
   type: hugo
 
 execute: 
