@@ -1,4 +1,4 @@
-name: Lighthouse CI
+name: lighthouse-ci
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
   pull_request:
 
 jobs:
-  lighthouse-ci:
+  check-lighthouse-score:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout site
