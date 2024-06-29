@@ -1,4 +1,4 @@
-name: Link Checker
+name: lychee
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
   pull_request:
 
 jobs:
-  link-checker:
+  check-links:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
