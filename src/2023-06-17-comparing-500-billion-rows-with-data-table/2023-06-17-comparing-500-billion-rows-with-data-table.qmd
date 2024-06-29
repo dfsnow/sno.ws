@@ -21,12 +21,12 @@ options(
 
 weights <- 5:1
 x_df <- data.table(tribble(
-  ~ "ID",  ~ "V1", ~ "V2", ~ "V3", ~ "V4", ~ "V5",
+  ~"ID", ~"V1", ~"V2", ~"V3", ~"V4", ~"V5",
   "X1", 9, 3, 2, 4, 5,
   "X2", 9, 1, 2, 1, 1
 ))
 y_df <- data.table(tribble(
-  ~ "ID", ~ "V1", ~ "V2", ~ "V3", ~ "V4", ~ "V5",
+  ~"ID", ~"V1", ~"V2", ~"V3", ~"V4", ~"V5",
   "Y1", 9, 3, 3, 1, 1,
   "Y2", 1, 1, 1, 1, 1,
   "Y3", 9, 9, 7, 9, 8
@@ -159,7 +159,7 @@ The first thing I (or more accurately, my intern) tried was a simple for loop. T
 calc_sim_for <- function(x, y, weights) {
   x_nrow <- nrow(x)
   score <- matrix(0, nrow = x_nrow, ncol = nrow(y))
-  
+
   for (row in seq_len(x_nrow)) {
     i <- 1
     for (col in colnames(y)) {
@@ -168,7 +168,7 @@ calc_sim_for <- function(x, y, weights) {
       i <- i + 1
     }
   }
-  
+
   return(t(score))
 }
 
@@ -194,8 +194,8 @@ calc_sim_apply <- function(x, y, weights) {
     match_matrix <- apply(t_y, MARGIN = 2, "==", m_x[row, ])
     score[row, ] <- weights %*% as.matrix(match_matrix)
   }
-  
-  return(t(score)) 
+
+  return(t(score))
 }
 
 microbenchmark(
@@ -256,7 +256,7 @@ calc_sim_dt <- function(x, y, id_col, weights) {
   y_nrow <- nrow(y)
   id_col_i <- paste0("i.", id_col)
   names(weights) <- colnames(x)[-1]
-  
+
   # Pivot X and Y from wide to long, add keys to the results
   x_m <- data.table::melt(
     data = x,
@@ -272,7 +272,7 @@ calc_sim_dt <- function(x, y, id_col, weights) {
     value.name = "IDX"
   )
   data.table::setkeyv(y_m, cols = c("V", "IDX"), physical = TRUE)
-  
+
   # Join on the pivoted columns, then aggregate to get scores
   out <- y_m[
     x_m,
@@ -285,14 +285,14 @@ calc_sim_dt <- function(x, y, id_col, weights) {
     , .(score = sum(V)),
     keyby = c(id_col_i, id_col)
   ]
-  
+
   # Clean up the results
   data.table::setnames(
     x = out,
     old = c(id_col_i, id_col),
     new = c(paste0(id_col, "_X"), paste0(id_col, "_Y"))
   )
-  
+
   return(out)
 }
 
