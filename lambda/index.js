@@ -1,142 +1,95 @@
 const AWS = require("aws-sdk");
-const util = require("util");
 const sharp = require("sharp");
 const path = require("path");
 const s3 = new AWS.S3();
 
-exports.handler = async (event, context, callback) => {
+exports.handler = async (event) => {
     // Read options from the event parameter
-    console.log(
-        "Reading options from event:\n",
-        util.inspect(event, { depth: 5 })
-    );
     const srcBucket = event.Records[0].s3.bucket.name;
 
     // Object key may have spaces or unicode non-ASCII characters
-    const srcKey = decodeURIComponent(
-        event.Records[0].s3.object.key.replace(/\+/g, " ")
-    );
+    const srcKey = decodeURIComponent(event.Records[0].s3.object.key.replace(/\+/g, " "));
     const srcKeyExt = path.extname(srcKey).toLowerCase();
+
+    const dstKey = path.basename(srcKey, srcKeyExt);
     const dstBucket = process.env.DEST_BUCKET;
     const dstPathResized = process.env.DEST_PATH_RESIZED;
     const dstPathOriginal = process.env.DEST_PATH_ORIGINAL;
-    const dstKey = path.basename(srcKey, srcKeyExt);
+
+    const backupBucket = process.env.BACKUP_BUCKET;
+    const backupPath = process.env.BACKUP_PATH;
 
     // Check that the image type is supported
-    if (srcKeyExt != ".jpg" && srcKeyExt != ".png" && srcKeyExt != ".gif") {
+    if (![".jpg", ".png", ".gif"].includes(srcKeyExt)) {
         console.log("Unsupported image type: " + srcKeyExt);
         return;
     }
 
-    // Download the original image from the S3 source bucket
     try {
+        // Download the original image from the S3 source bucket
         const params = {
             Bucket: srcBucket,
             Key: srcKey
         };
         var origimage = await s3.getObject(params).promise();
         console.log("Got file: " + srcBucket + "/" + srcKey);
-    } catch (error) {
-        console.log(error);
-        return;
-    }
 
-    // Resize image and upload each version
-    for (let res of [640, 1280]) {
-        const filenameOrgExt = `${dstPathResized}/${dstKey}-${res}${srcKeyExt}`;
-        const filenameWebpExt = `${dstPathResized}/${dstKey}-${res}.webp`;
-        const filenameAvifExt = `${dstPathResized}/${dstKey}-${res}.avif`;
-        console.log("Now generating: " + res);
+        const formats = [
+            { ext: srcKeyExt, func: (img) => img.rotate().resize(res) },
+            { ext: '.webp', func: (img) => img.rotate().resize(res).webp() },
+            { ext: '.avif', func: (img) => img.rotate().resize(res).avif() }
+        ];
 
-        try {
-            var bufferOrg = await sharp(origimage.Body)
-                .rotate()
-                .resize(res)
-                .toBuffer();
-            var bufferWebp = await sharp(origimage.Body)
-                .rotate()
-                .resize(res)
-                .webp()
-                .toBuffer();
-            var bufferAvif = await sharp(origimage.Body)
-                .rotate()
-                .resize(res)
-                .avif()
-                .toBuffer();
-        } catch (error) {
-            console.log(error);
-            return;
+        // Resize image and upload each version
+        for (let res of [640, 1280]) {
+            const formats = [
+                { ext: srcKeyExt, func: (img) => img.rotate().resize(res) },
+                { ext: '.webp', func: (img) => img.rotate().resize(res).webp() },
+                { ext: '.avif', func: (img) => img.rotate().resize(res).avif() }
+            ];
+
+            for (let format of formats) {
+                const buffer = await format.func(sharp(origimage.Body)).toBuffer();
+                const destParams = {
+                    Bucket: dstBucket,
+                    Key: `${dstPathResized}/${dstKey}-${res}${format.ext}`,
+                    Body: buffer,
+                    ContentType: "image"
+                };
+                await s3.putObject(destParams).promise();
+                console.log("Generated size/ext: " + res + format.ext);
+            }
         }
 
-        try {
-            const destParamsOrg = {
-                Bucket: dstBucket,
-                Key: filenameOrgExt,
-                Body: bufferOrg,
-                ContentType: "image"
-            };
-            const destParamsWebp = {
-                Bucket: dstBucket,
-                Key: filenameWebpExt,
-                Body: bufferWebp,
-                ContentType: "image"
-            };
-            const destParamsAvif = {
-                Bucket: dstBucket,
-                Key: filenameAvifExt,
-                Body: bufferAvif,
-                ContentType: "image"
-            };
-
-            const putResultOrg = await s3.putObject(destParamsOrg).promise();
-            const putResultWebp = await s3.putObject(destParamsWebp).promise();
-            const putResultAvif = await s3.putObject(destParamsAvif).promise();
-        } catch (error) {
-            console.log(error);
-            return;
-        }
-    }
-    console.log("Successfully resized " + srcBucket + "/" + srcKey);
-
-    // Strip original image of EXIF data and rotate
-    try {
-        var buffer = await sharp(origimage.Body).rotate().toBuffer();
-        const key = `${dstPathOriginal}/${dstKey}${srcKeyExt}`;
+        // Strip original image of EXIF data and rotate
+        const buffer = await sharp(origimage.Body).rotate().toBuffer();
         const destParams = {
             Bucket: dstBucket,
-            Key: key,
+            Key: `${dstPathOriginal}/${dstKey}${srcKeyExt}`,
             Body: buffer,
             ContentType: "image"
         };
+        await s3.putObject(destParams).promise();
+        console.log("Stripped " + srcBucket + "/" + srcKey);
 
-        const putResult = await s3.putObject(destParams).promise();
-    } catch (error) {
-        console.log(error);
-        return;
-    }
-    console.log("Successfully stripped " + srcBucket + "/" + srcKey);
-
-    // Copy the original image to the backup bucket, then delete
-    const backupBucket = process.env.BACKUP_BUCKET;
-    const backupPath = process.env.BACKUP_PATH;
-    try {
+        // Copy the original image to the backup bucket, then delete
         const copyParams = {
             Bucket: backupBucket,
             CopySource: `${srcBucket}/${srcKey}`,
             Key: `${backupPath}/${dstKey}${srcKeyExt}`
         };
         await s3.copyObject(copyParams).promise();
-        console.log("Successfully copied original image to " + backupBucket)
+        console.log("Copied original image to " + backupBucket);
 
-        // Delete the original file from the source bucket
         const deleteParams = {
             Bucket: srcBucket,
             Key: srcKey
         };
         await s3.deleteObject(deleteParams).promise();
-        console.log("Deleted image " + srcBucket + "/" + srcKey)
+        console.log("Deleted image " + srcBucket + "/" + srcKey);
+
     } catch (error) {
         console.log(error);
         return;
     }
-};
+}
