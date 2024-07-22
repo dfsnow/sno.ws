@@ -115,4 +115,28 @@ exports.handler = async (event, context, callback) => {
         return;
     }
     console.log("Successfully stripped " + srcBucket + "/" + srcKey);
+
+    // Copy the original image to the backup bucket, then delete
+    const backupBucket = process.env.BACKUP_BUCKET;
+    const backupPath = process.env.BACKUP_PATH;
+    try {
+        const copyParams = {
+            Bucket: backupBucket,
+            CopySource: `${srcBucket}/${srcKey}`,
+            Key: `${backupPath}/${dstKey}${srcKeyExt}`
+        };
+        await s3.copyObject(copyParams).promise();
+        console.log("Successfully copied original image to " + backupBucket)
+
+        // Delete the original file from the source bucket
+        const deleteParams = {
+            Bucket: srcBucket,
+            Key: srcKey
+        };
+        await s3.deleteObject(deleteParams).promise();
+        console.log("Deleted image " + srcBucket + "/" + srcKey)
+    } catch (error) {
+        console.log(error);
+        return;
+    }
 };
