@@ -92,4 +92,4 @@ exports.handler = async (event) => {
         console.log(error);
         return;
     }
-}
+};
