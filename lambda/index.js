@@ -34,12 +34,6 @@ exports.handler = async (event) => {
         var origimage = await s3.getObject(params).promise();
         console.log("Got file: " + srcBucket + "/" + srcKey);
 
-        const formats = [
-            { ext: srcKeyExt, func: (img) => img.rotate().resize(res) },
-            { ext: '.webp', func: (img) => img.rotate().resize(res).webp() },
-            { ext: '.avif', func: (img) => img.rotate().resize(res).avif() }
-        ];
-
         // Resize image and upload each version
         for (let res of [640, 1280]) {
             const formats = [
