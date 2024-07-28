@@ -1,8 +1,0 @@
-# General redirects to home
-/home                      /  301!
-/writing                   /  301!
-
-# General shortlinks for other websites and projects
-/qr                        https://content.sno.ws/misc/dan-snow.vcf
-/gh                        https://github.com/dfsnow
-/gl                        https://gitlab.com/dfsnow
