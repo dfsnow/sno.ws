@@ -1,4 +1,3 @@
-baseURL = "https://sno.ws"
 title = "Dan Snow"
 languageCode = "en-US"
 disableKinds = ["taxonomy", "term"]
