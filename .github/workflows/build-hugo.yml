@@ -32,7 +32,9 @@ jobs:
         run: hugo
 
       - name: Push to S3
-        run: aws s3 sync ./public ${{ secrets.AWS_S3_PUBLIC_BUCKET }}
+        run: |
+          aws s3 rm ${{ secrets.AWS_S3_PUBLIC_BUCKET }} --recursive
+          aws s3 sync ./public ${{ secrets.AWS_S3_PUBLIC_BUCKET }}
 
       - name: Invalidate CloudFront cache
         run: |
