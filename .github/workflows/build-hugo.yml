@@ -17,6 +17,7 @@ jobs:
       contents: read
     environment:
       name: ${{ github.ref == 'refs/heads/master' && 'public' || 'preview' }}
+      url: ${{ steps.create-env-vars.outputs.url }}
 
     steps:
       - name: Checkout site
@@ -37,19 +38,26 @@ jobs:
           aws-region: us-east-1
           role-to-assume: ${{ secrets.AWS_IAM_ROLE_TO_ASSUME_ARN }}
 
-      - name: Append PR number to target bucket
-        if: ${{ github.ref != 'refs/heads/master' }}
+      - name: Construct environment variables
+        id: create-env-vars
         run: |
-          echo "S3_PREFIX=/pr-${{ github.event.pull_request.number }}/" \
-              >> "$GITHUB_ENV"
+          if [[ "${{ github.ref }}" != "refs/heads/master" ]]; then
+            PR_ID=pr-${{ github.event.pull_request.number }}
+            echo "S3_PREFIX=$PR_ID/" >> "$GITHUB_ENV"
+            echo "url=https://$PR_ID.${{ vars.SITE_URL }}" >> "$GITHUB_OUTPUT"
+          else
+            echo "url=https://${{ vars.SITE_URL }}" >> "$GITHUB_OUTPUT"
+          fi
 
       - name: Push to S3
         run: |
-          aws s3 rm ${{ secrets.AWS_S3_BUCKET }}${{ env.S3_PREFIX }} --recursive
-          aws s3 sync ./public ${{ secrets.AWS_S3_BUCKET }}${{ env.S3_PREFIX }}
+          aws s3 rm \
+            ${{ secrets.AWS_S3_BUCKET }}/${{ env.S3_PREFIX }} --recursive
+          aws s3 sync \
+            ./public ${{ secrets.AWS_S3_BUCKET }}/${{ env.S3_PREFIX }}
 
       - name: Invalidate CloudFront cache
-        if: ${{ github.ref == 'refs/heads/master' }}
+        if: github.ref == 'refs/heads/master' && success()
         run: |
           aws cloudfront create-invalidation \
             --distribution-id ${{ secrets.AWS_CLOUDFRONT_DISTRIBUTION_ID }} \
