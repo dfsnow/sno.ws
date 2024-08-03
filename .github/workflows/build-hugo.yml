@@ -42,7 +42,7 @@ jobs:
         id: create-env-vars
         run: |
           if [[ "${{ github.ref }}" != "refs/heads/master" ]]; then
-            PR_ID=pr-${{ github.event.pull_request.number }}
+            PR_ID=$(echo "${{ github.sha }}" | cut -c1-7)
             echo "S3_PREFIX=$PR_ID/" >> "$GITHUB_ENV"
             echo "url=https://$PR_ID.${{ vars.SITE_URL }}" >> "$GITHUB_OUTPUT"
           else
