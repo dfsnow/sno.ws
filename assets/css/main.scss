@@ -180,13 +180,6 @@ ol {
   align-items: center;
 }
 
-.post-list > .post-list-links {
-  display: flex;
-  margin-left: auto;
-  margin-right: 1.2rem;
-  column-gap: 1.2rem;
-}
-
 .post-header > .post-title {
   margin: 0 0 0.3rem;
   font-size: 3rem;
@@ -312,7 +305,12 @@ blockquote p,
 }
 
 #talks {
-  grid-template-columns: 1.75fr 0.45fr 5.25em 30px;
+  grid-template-columns: 1.75fr 0.4fr 5.25em 30px;
+
+  > .post-list-links {
+    display: grid;
+    grid-template-columns: 1fr 0.95fr;
+  }
 }
 
 /* support for Edge */
@@ -355,10 +353,6 @@ blockquote p,
     column-gap: 0;
   }
 
-  .post-list > .post-list-links div:first-child:not(:empty) {
-    margin-right: 0.8rem;
-  }
-
   .navbar {
     position: static;
   }
@@ -383,32 +377,35 @@ blockquote p,
     display: block;
     width: 1.6em;
     height: 1.6em;
-  }
 
-  .navbar-external-links > .navbar-external-link svg {
-    height: 1.6em;
-    width: 1.6em;
+    svg {
+      width: 1.6em;
+      height: 1.6em;
+    }
   }
 
   #writing,
   #reading,
   #talks {
     gap: 0;
-    grid-auto-flow: dense;
+    grid-auto-flow: row dense;
     grid-template-columns: max-content 1fr;
   }
 
   #writing {
     > :nth-child(3n + 1) { grid-column: 1 / span 2; }
-    > :nth-child(3n + 2) { grid-column: 1; }
-    > :nth-child(3n + 3) { grid-column: 2; }
   }
 
   #reading, #talks {
     > :nth-child(4n + 1) { grid-column: 1 / span 2; }
     > :nth-child(4n + 2) { grid-column: 1 / span 2; }
-    > :nth-child(4n + 3) { grid-column: 1; }
-    > :nth-child(4n + 4) { grid-column: 2; }
+
+    > .post-list-links {
+      > :nth-child(2n + 1):empty { display: none; }
+
+      grid-template-columns: max-content 1fr;
+      column-gap: 0.8rem;
+    }
   }
 }
 
