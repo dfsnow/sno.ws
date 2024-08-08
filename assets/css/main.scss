@@ -20,7 +20,7 @@
 html {
   font-size: 62.5%;
   height: 100%;
-  scroll-padding-top: 7em;
+  scroll-padding-top: 5rem;
   -webkit-text-size-adjust: 100%;
 }
 
@@ -135,6 +135,16 @@ ol {
   padding: 0;
 }
 
+.hover-icon {
+  svg {
+    fill: var(--icon-color);
+  }
+
+  svg:hover {
+    fill: var(--text-color);
+  }
+}
+
 .link-nowrap-nodec {
   color: var(--text-color) !important;
   text-decoration: none;
@@ -240,16 +250,11 @@ ol {
   display: block;
   width: 1.4em;
   height: 1.4em;
-}
 
-.navbar-external-links > .navbar-external-link svg {
-  fill: var(--icon-color);
-  width: 1.4em;
-  height: 1.4em;
-}
-
-.navbar-external-links > .navbar-external-link svg:hover {
-  fill: var(--text-color);
+  > svg {
+    width: 1.4em;
+    height: 1.4em;
+  }
 }
 
 blockquote,
@@ -324,7 +329,7 @@ blockquote p,
 /* adjustment when very small */
 @media only screen and (max-width: 720px) {
   html {
-    scroll-padding-top: initial;
+    scroll-padding-top: 1rem;
   }
 
   .content {
