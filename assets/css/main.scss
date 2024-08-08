@@ -419,7 +419,7 @@ blockquote p,
       > :nth-child(2n + 1):empty { display: none; }
 
       grid-template-columns: max-content 1fr;
-      column-gap: 0.8rem;
+      column-gap: 0.4rem;
     }
   }
 }
