@@ -20,7 +20,7 @@
 html {
   font-size: 62.5%;
   height: 100%;
-  scroll-padding-top: 5rem;
+  scroll-padding-top: 8em;
   -webkit-text-size-adjust: 100%;
 }
 
@@ -172,11 +172,21 @@ ol {
   margin-right: -30px;
 }
 
-.post-list > .post-list-info {
+.post-list .post-list-info {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
   margin-right: 0.5rem;
+
+  // This is a fix for the SVG external link icon
+  // extending the underline text decoration
+  a {
+    text-decoration: none;
+  }
+
+  a span {
+    text-decoration: underline;
+  }
 }
 
 .post-list > .post-list-date {
@@ -329,7 +339,7 @@ blockquote p,
 /* adjustment when very small */
 @media only screen and (max-width: 720px) {
   html {
-    scroll-padding-top: 1rem;
+    scroll-padding-top: 1.5em;
   }
 
   .content {

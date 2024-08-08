@@ -11,12 +11,16 @@
     <div class="post-list-links">
         <div class="post-list-info">
             {{- if isset .Params "slides" -}}
-            <a href="{{ .Params.slides }}" title="Slides from talk">Slides</a>
+            <a href="{{ .Params.slides }}" title="Slides from talk">
+                <span>Slides</span>
+            </a>
             {{- end -}}
         </div>
         <div class="post-list-info">
             {{- if isset .Params "video" -}}
-            <a href="{{ .Params.video }}" title="Video of talk">Video</a>
+            <a href="{{ .Params.video }}" title="Video of talk">
+                <span>Video</span>
+            </a>
             {{- end -}}
         </div>
     </div>

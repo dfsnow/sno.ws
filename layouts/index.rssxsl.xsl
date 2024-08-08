@@ -32,7 +32,9 @@
                 {{- range where (where $pages ".Params.link" "==" nil) ".Params.date" "!=" nil -}}
                     {{- if or (gt (len .Content) 0) (isset .Params "src") -}}
                     <div class="post-list-info">
-                        <a href="{{- .Permalink -}}">{{- .Title -}}</a>
+                        <a href="{{- .Permalink -}}">
+                            <span>{{- .Title -}}</span>
+                        </a>
                     </div>
                     <time class="post-list-date" datetime='{{- .Date.Format "2006-01-02" -}}'>{{- .Date.Format "2006-01-02" -}}</time>
                     <div class="post-list-misc">
