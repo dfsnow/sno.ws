@@ -52,9 +52,7 @@ jobs:
 
       - name: Push to S3
         run: |
-          aws s3 rm \
-            ${{ secrets.AWS_S3_BUCKET }}/${{ env.S3_PREFIX }} --recursive
-          aws s3 sync \
+          aws s3 sync --delete \
             ./public ${{ secrets.AWS_S3_BUCKET }}/${{ env.S3_PREFIX }}
 
       - name: Invalidate CloudFront cache
