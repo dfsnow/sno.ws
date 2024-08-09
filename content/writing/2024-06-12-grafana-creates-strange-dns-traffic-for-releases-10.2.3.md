@@ -1,7 +1,8 @@
 +++
 title = "Grafana creates strange DNS traffic for releases >= 10.2.3"
 date = "2024-06-16"
-aliases = [ "/grafana-dns" ]
+url = "/grafana-dns"
+aliases = [ "/writing/2024/06/16/grafana-creates-strange-dns-traffic-for-releases-10.2.3/" ]
 recommended = "false"
 +++
 

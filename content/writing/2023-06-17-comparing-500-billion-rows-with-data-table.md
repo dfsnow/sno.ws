@@ -1,7 +1,8 @@
 +++
 title = "Comparing 500 billion rows with data.table"
 date = "2023-06-17"
-aliases = [ "/big-data-table" ]
+url = "/big-data-table"
+aliases = [ "writing/2023/06/17/comparing-500-billion-rows-with-data.table/" ]
 recommended = "false"
 +++
 
@@ -123,7 +124,7 @@ The first thing I (or more accurately, my intern) tried was a simple for loop. T
 calc_sim_for <- function(x, y, weights) {
   x_nrow <- nrow(x)
   score <- matrix(0, nrow = x_nrow, ncol = nrow(y))
-  
+
   for (row in seq_len(x_nrow)) {
     i <- 1
     for (col in colnames(y)) {
@@ -132,7 +133,7 @@ calc_sim_for <- function(x, y, weights) {
       i <- i + 1
     }
   }
-  
+
   return(t(score))
 }
 
@@ -164,8 +165,8 @@ calc_sim_apply <- function(x, y, weights) {
     match_matrix <- apply(t_y, MARGIN = 2, "==", m_x[row, ])
     score[row, ] <- weights %*% as.matrix(match_matrix)
   }
-  
-  return(t(score)) 
+
+  return(t(score))
 }
 
 microbenchmark(
@@ -243,7 +244,7 @@ calc_sim_dt <- function(x, y, id_col, weights) {
   y_nrow <- nrow(y)
   id_col_i <- paste0("i.", id_col)
   names(weights) <- colnames(x)[-1]
-  
+
   # Pivot X and Y from wide to long, add keys to the results
   x_m <- data.table::melt(
     data = x,
@@ -259,7 +260,7 @@ calc_sim_dt <- function(x, y, id_col, weights) {
     value.name = "IDX"
   )
   data.table::setkeyv(y_m, cols = c("V", "IDX"), physical = TRUE)
-  
+
   # Join on the pivoted columns, then aggregate to get scores
   out <- y_m[
     x_m,
@@ -272,14 +273,14 @@ calc_sim_dt <- function(x, y, id_col, weights) {
     , .(score = sum(V)),
     keyby = c(id_col_i, id_col)
   ]
-  
+
   # Clean up the results
   data.table::setnames(
     x = out,
     old = c(id_col_i, id_col),
     new = c(paste0(id_col, "_X"), paste0(id_col, "_Y"))
   )
-  
+
   return(out)
 }
 
@@ -361,7 +362,7 @@ def benchmark(func, x, y, w, expr, times):
 
     print("Unit: milliseconds")
     print("expr".rjust(exp_j, " ") +
-      " min  lq mean median  uq max neval\n", 
+      " min  lq mean median  uq max neval\n",
       expr.rjust(exp_j - 1, " ") +
       str(np.int16(np.min(timings))).rjust(4, " ") +
       str(np.int16(np.quantile(timings, 0.25))).rjust(4, " ") +
@@ -404,7 +405,7 @@ def calc_sim_py_njit(x, y, w):
         for y_idx, y_row in enumerate(y):
             output[x_idx][y_idx] = np.sum((x_row == y_row) * w)
     return output
-  
+
 benchmark(calc_sim_py_njit, x, y, w, "py_njit", times = 5)
 ```
 
@@ -430,7 +431,7 @@ def calc_sim_py_par(x, y, w):
         for y_i in range(len(y)):
             output[x_i][y_i] = np.sum((x[x_i] == y[y_i]) * w)
     return output
-  
+
 benchmark(calc_sim_py_par, x, y, w, "py_par", times = 50)
 ```
 

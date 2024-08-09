@@ -1,7 +1,8 @@
 +++
 title = "Lessons learned in local government"
 date = "2021-05-24"
-aliases = [ "/local-gov" ]
+url = "/local-gov"
+aliases = ["/writing/2021/05/24/lessons-learned-in-local-government/"]
 recommended = "true"
 +++
 

@@ -1,7 +1,8 @@
 +++
 title = "Exporting Jellyfin playback stats to Prometheus"
 date = "2023-11-25"
-aliases = [ "/jellyfin-stats" ]
+url = "/jellyfin-stats"
+aliases = [ "/writing/2023/11/25/exporting-jellyfin-playback-stats-to-prometheus/" ]
 recommended = "false"
 styles = [ "css/full-width-media.scss" ]
 +++

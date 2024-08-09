@@ -1,7 +1,8 @@
 +++
 title = "Creating moving transit maps with R and GTFS feeds"
 date = "2021-03-03"
-aliases = [ "/transit-maps" ]
+url = "/transit-maps"
+aliases = [ "/writing/2021/03/03/creating-moving-transit-maps-with-r-and-gtfs-feeds/" ]
 recommended = "true"
 styles = [ "css/full-width-media.scss" ]
 +++

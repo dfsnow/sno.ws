@@ -1,7 +1,8 @@
 +++
 title = "Visualizing America's rural physician shortage"
 date = "2019-04-10"
-aliases = [ "/rural-docs" ]
+url = "/rural-docs"
+aliases = [ "/writing/2019/04/10/visualizing-americas-rural-physician-shortage/" ]
 recommended = "false"
 styles = [ "css/full-width-media.scss" ]
 +++

@@ -5,11 +5,6 @@
         {{- if isset .Params "date" -}}
         <time class="post-meta" datetime='{{ .Date.Format "2006-01-02" }}'>{{ .Date.Format "January 2, 2006" }}</time>
         {{- end -}}
-        {{- if isset .Params "aliases" -}}
-        {{ $shorturl := index (.Params.aliases) 0 | replaceRE "//" "/" }}
-        <span class="post-meta" aria-hidden="true"> | </span>
-        <a class="post-meta" href="{{ $shorturl }}" aria-hidden="true">Short URL</a>
-        {{- end -}}
         {{- if isset .Params "rating" -}}
         <a href="/hearts-and-ratings" class="post-rating">
             <h3>Score: {{ .Params.rating }} / 10</h3>

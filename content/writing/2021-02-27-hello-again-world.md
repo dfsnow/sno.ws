@@ -1,7 +1,8 @@
 +++
 title = "Hello (again) world"
 date = "2021-02-27"
-aliases = [ "/hello-world" ]
+url = "/hello-world"
+aliases = [ "/writing/2021/02/27/hello-again-world/" ]
 recommended = "false"
 +++
 
