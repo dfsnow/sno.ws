@@ -112,7 +112,7 @@ These posts have inspired or influenced me in some way. They're things I reread 
 - [The Rise of User-Hostile Software](https://den.dev/blog/user-hostile-software/) - Software now is better for devs, worse for users
 - [Teaching Programming](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1006023) - Extremely helpful tips for teaching a class how to code
 - [The Tech Stack of a One-Woman Hardware Company](https://blog.thea.codes/winterblooms-tech-stack/) - Microcontrollers and C
-- [Thoughts After 6 Years](https://chriskiehl.com/article/thoughts-after-6-years) - {{< heart title="Favorite" >}} Short post on lessons learned. Inspired [my post](https://sno.ws/local-gov)
+- [Thoughts After 6 Years](https://chriskiehl.com/article/thoughts-after-6-years) - {{< heart title="Favorite" >}} Short post on lessons learned. Inspired [my post]({{< relref "2021-05-24-lessons-learned-in-local-government.md" >}})
 - [The Website Obesity Crisis](https://idlewords.com/talks/website_obesity.htm) - {{< heart title="Favorite" >}} Why does reddit load 15 MB on every page
 - [The World's Smallest Hash Table](https://orlp.net/blog/worlds-smallest-hash-table/) - Optimizing code beyond all reason
 - [What I've Learned in 45 Years in the Software Industry](https://www.bti360.com/what-ive-learned-in-45-years-in-the-software-industry/) - People > technology
@@ -221,6 +221,6 @@ I have a strong preference for software that is fast, outwardly simple, and that
 - [renv](https://rstudio.github.io/renv/) - Wonderful environment/package manager for R (finally)
 - [sf](https://r-spatial.github.io/sf/) - Geospatial manipulation, maps, and geometry features
 - [tidycensus](https://walker-data.com/tidycensus/) - Useful interface for the Census API
-- [tidytransit](https://github.com/r-transit/tidytransit) - GTFS feed reader. Make [trains go brrr](https://sno.ws/transit-maps)
+- [tidytransit](https://github.com/r-transit/tidytransit) - GTFS feed reader. Make [trains go brrr]({{< relref "2021-03-03-creating-moving-transit-maps-with-r-and-gtfs-feeds.md" >}})
 
 _Last updated 2024-04-20_
