@@ -14,8 +14,6 @@ styles = [ "css/full-width-media.scss" ]
   }
 </style>
 
----
-
 <h4>
 <a href="https://gist.github.com/dfsnow/aad4ec99afb413968c49efb03bdb1ab9">GitHub gist for source code</a>
 </h4>
