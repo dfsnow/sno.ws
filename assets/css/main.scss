@@ -37,6 +37,7 @@ body {
 
 a {
   color: var(--link-color);
+  text-underline-offset: 0.2rem;
 }
 
 a:visited {
@@ -230,30 +231,32 @@ ol {
   margin: auto;
   z-index: 999;
   padding: 1.375em 2rem 1em;
+  align-items: baseline;
 }
 
 .navbar-content .navbar-title {
-  line-height: 1.5;
   font-size: 1.9rem;
   margin: 0;
   white-space: nowrap;
+  line-height: 1;
 }
 
 .navbar-content > .navbar-internal-links {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  align-items: center;
   list-style: none;
   text-transform: capitalize;
   margin: 0;
   padding: 0;
+  line-height: 1;
 }
 
 .navbar-content > .navbar-external-links {
   display: flex;
   justify-content: space-between;
   min-width: calc(1.4em * 3 + 1rem);
+  align-self: center;
 }
 
 .navbar-external-links > .navbar-external-link {
@@ -377,11 +380,19 @@ blockquote p,
     grid-template-columns: max-content 1fr;
   }
 
+  .navbar-content > .navbar-title {
+    line-height: 1.5;
+  }
+
   .navbar-content > .navbar-internal-links {
     display: block;
     margin: 0.6rem 0 1.6rem;
-    text-decoration: underline;
+    line-height: 1.5;
     grid-column: 1;
+
+    a {
+      text-decoration: underline;
+    }
   }
 
   .navbar-content > .navbar-external-links {
