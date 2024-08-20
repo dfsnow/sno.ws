@@ -33,6 +33,8 @@ body {
   line-height: 1.5;
   min-height: 100%;
   overflow: hidden scroll;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 a {
