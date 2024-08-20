@@ -20,7 +20,7 @@
 html {
   font-size: 62.5%;
   height: 100%;
-  scroll-padding-top: 8em;
+  scroll-padding-top: 7em;
   -webkit-text-size-adjust: 100%;
 }
 
@@ -37,30 +37,31 @@ body {
 
 a {
   color: var(--link-color);
-  text-underline-offset: 0.2rem;
-}
+  text-underline-offset: 0.15em;
+  text-decoration-thickness: 0.05em;
 
-a:visited {
-  color: var(--visited-link-color);
+  &:visited {
+    color: var(--visited-link-color);
+  }
 }
 
 table {
   border-collapse: collapse;
   margin: 0 auto;
-}
 
-table:not(.rating-table) {
-  display: block;
-  max-width: fit-content;
-  overflow-x: auto;
-  white-space: nowrap;
-}
+  &:not(.rating-table) {
+    display: block;
+    max-width: fit-content;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
 
-table td,
-table th {
-  border: 1.5px solid var(--gray-accent-1);
-  text-align: center;
-  padding: 10px;
+  td,
+  th {
+    border: 1.5px solid var(--gray-accent-1);
+    text-align: center;
+    padding: 10px;
+  }
 }
 
 h1,
@@ -86,14 +87,14 @@ img {
 
 figure {
   margin: 1.6rem 0;
-}
 
-figure figcaption {
-  font-size: 1.4rem;
-  font-style: italic;
-  text-align: center;
-  margin-top: 0.6rem;
-  padding: 0 1rem;
+  figcaption {
+    font-size: 1.4rem;
+    font-style: italic;
+    text-align: center;
+    margin-top: 0.6rem;
+    padding: 0 1rem;
+  }
 }
 
 ul,
@@ -105,35 +106,35 @@ ol {
   max-width: var(--full-width);
   margin: auto;
   padding: 1em 1.25em 1.25em;
-}
 
-.content code {
-  font-size: 1.5rem;
-  padding: 0 0.4rem;
-  font-family: Monaco, monospace;
-  background-color: var(--gray-accent-4);
-}
+  code {
+    font-size: 1.5rem;
+    padding: 0 0.4rem;
+    font-family: Monaco, monospace;
+    background-color: var(--gray-accent-4);
+  }
 
-.content pre {
-  display: block;
-  white-space: pre;
-  margin: 1.25em 0;
-  padding: 1.25em;
-  overflow-x: auto;
-  word-break: break-all;
-  word-wrap: break-word;
-  border: thin solid var(--gray-accent-4);
-  border-radius: 3px;
-  font-family: Monaco, monospace;
-}
+  pre {
+    display: block;
+    white-space: pre;
+    margin: 1.25em 0;
+    padding: 1.25em;
+    overflow-x: auto;
+    word-break: break-all;
+    word-wrap: break-word;
+    border: thin solid var(--gray-accent-4);
+    border-radius: 3px;
+    font-family: Monaco, monospace;
+  }
 
-.content pre code,
-.content pre {
-  background-color: var(--gray-accent-3);
-}
+  pre code,
+  pre {
+    background-color: var(--gray-accent-3);
+  }
 
-.content pre code {
-  padding: 0;
+  pre code {
+    padding: 0;
+  }
 }
 
 .hover-icon {
@@ -150,70 +151,74 @@ ol {
   color: var(--text-color) !important;
   text-decoration: none;
   white-space: nowrap;
-}
 
-.link-nowrap-nodec:hover {
-  text-decoration: underline;
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 .link-fave-heart {
   text-decoration: none;
   color: var(--heart-color) !important;
   fill: var(--heart-color) !important;
-}
 
-.link-fave-heart:hover {
-  color: var(--heart-hover) !important;
-  fill: var(--heart-hover) !important;
+  &:hover {
+    color: var(--heart-hover) !important;
+    fill: var(--heart-hover) !important;
+  }
 }
 
 .post-list {
   display: grid;
   row-gap: 0.5rem;
   margin-right: -30px;
-}
 
-.post-list .post-list-info {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  margin-right: 0.5rem;
+  .post-list-info {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-right: 0.5rem;
 
-  // This is a fix for the SVG external link icon
-  // extending the underline text decoration
-  a {
-    text-decoration: none;
+    // This is a fix for the SVG external link icon
+    // extending the underline text decoration
+    a {
+      text-decoration: none;
+    }
+
+    a span {
+      text-decoration: underline;
+      text-underline-offset: 0.15em;
+      text-decoration-thickness: 0.05em;
+    }
   }
 
-  a span {
-    text-decoration: underline;
+  .post-list-date {
+    white-space: pre;
+  }
+
+  .post-list-misc {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
   }
 }
 
-.post-list > .post-list-date {
-  white-space: pre;
-}
+.post-header {
+  > .post-title {
+    margin: 0 0 0.3rem;
+    font-size: 3rem;
+    line-height: 1.15;
+  }
 
-.post-list > .post-list-misc {
-  display: flex;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-}
+  > .post-meta {
+    font-size: 1.5rem;
+    color: var(--gray-accent-2);
+  }
 
-.post-header > .post-title {
-  margin: 0 0 0.3rem;
-  font-size: 3rem;
-  line-height: 1.15;
-}
-
-.post-header > .post-meta {
-  font-size: 1.5rem;
-  color: var(--gray-accent-2);
-}
-
-.post-header > a.post-meta {
-  color: var(--link-color);
+  > a.post-meta {
+    color: var(--link-color);
+  }
 }
 
 .navbar {
@@ -230,33 +235,34 @@ ol {
   max-width: var(--full-width);
   margin: auto;
   z-index: 999;
-  padding: 1.375em 2rem 1em;
+  padding: 1em 2rem;
   align-items: baseline;
-}
 
-.navbar-content .navbar-title {
-  font-size: 1.9rem;
-  margin: 0;
-  white-space: nowrap;
-  line-height: 1;
-}
+  > .navbar-title {
+    font-size: 1.9rem;
+    margin: 0;
+    padding-top: 0.2em;
+    white-space: nowrap;
+    line-height: 1;
+  }
 
-.navbar-content > .navbar-internal-links {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  list-style: none;
-  text-transform: capitalize;
-  margin: 0;
-  padding: 0;
-  line-height: 1;
-}
+  > .navbar-internal-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    list-style: none;
+    text-transform: capitalize;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+  }
 
-.navbar-content > .navbar-external-links {
-  display: flex;
-  justify-content: space-between;
-  min-width: calc(1.4em * 3 + 1rem);
-  align-self: center;
+  > .navbar-external-links {
+    display: flex;
+    justify-content: space-between;
+    min-width: calc(1.4em * 3 + 1rem);
+    align-self: center;
+  }
 }
 
 .navbar-external-links > .navbar-external-link {
@@ -355,20 +361,22 @@ blockquote p,
     white-space: normal;
   }
 
-  .post-list > .post-list-date {
-    padding-bottom: 1.25em;
-  }
+  .post-list {
+    > .post-list-date {
+      padding-bottom: 1.25em;
+    }
 
-  .post-list > .post-list-misc {
-    padding-left: 1rem;
-    justify-self: left;
-    padding-bottom: 1.25em;
-  }
+    > .post-list-misc {
+      padding-left: 1rem;
+      justify-self: left;
+      padding-bottom: 1.25em;
+    }
 
-  .post-list > .post-list-links {
-    margin: 0;
-    padding-right: 0;
-    column-gap: 0;
+    > .post-list-links {
+      margin: 0;
+      padding-right: 0;
+      column-gap: 0;
+    }
   }
 
   .navbar {
@@ -378,25 +386,24 @@ blockquote p,
   .navbar-content {
     padding-bottom: 1.75em;
     grid-template-columns: max-content 1fr;
-  }
 
-  .navbar-content > .navbar-title {
-    line-height: 1.5;
-  }
-
-  .navbar-content > .navbar-internal-links {
-    display: block;
-    margin: 0.6rem 0 1.6rem;
-    line-height: 1.5;
-    grid-column: 1;
-
-    a {
-      text-decoration: underline;
+    > .navbar-title {
+      padding-top: 0;
+      line-height: 1.5;
     }
-  }
 
-  .navbar-content > .navbar-external-links {
-    grid-column: 1;
+    > .navbar-internal-links {
+      display: block;
+      margin: 0.6rem 0 1.6rem;
+      line-height: 1.5;
+      grid-column: 1;
+
+      a {
+        text-decoration: underline;
+      }
+    }
+
+    > .navbar-external-links { grid-column: 1; }
   }
 
   .navbar-external-links > .navbar-external-link {
