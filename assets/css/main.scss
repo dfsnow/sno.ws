@@ -12,8 +12,8 @@
   --warning-color: #d9c98d;
   --link-color: #2979bc;
   --visited-link-color: #8f5baa;
-  --main-width: 640px;
-  --full-width: 880px;
+  --full-width: 640px;
+  --add-media-width: 240px;
   --heart-size: 0.75em; // also change in config.toml
 }
 
@@ -127,8 +127,7 @@ ol {
 }
 
 .content {
-  display: grid;
-  grid-template-columns: 1fr var(--main-width) 1fr;
+  max-width: var(--full-width);
   margin: auto;
   padding: 1em 1.25em 1.25em;
 
@@ -160,13 +159,6 @@ ol {
   pre code {
     padding: 0;
   }
-}
-
-.toc-sidebar {
-  position: sticky;
-  top: 3rem;
-  right: -12em;
-  height: calc(100vh - 70px);
 }
 
 .hover-icon {
@@ -264,7 +256,7 @@ ol {
 .navbar-content {
   display: grid;
   grid-template-columns: 0.3fr 1.9fr 5.25em;
-  max-width: var(--main-width);
+  max-width: var(--full-width);
   margin: auto;
   z-index: 999;
   padding: 1em 2rem;

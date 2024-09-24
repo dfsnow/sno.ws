@@ -1,5 +1,4 @@
 {{ define "main" }}
-<div class="page-grid-column"></div>
 <div id="reading" class="post-list">
     {{ range where $.Site.RegularPages "Section" "reading" }}
     {{ if gt (len .Content) 0 }}
@@ -23,5 +22,4 @@
     </div>
     {{ end }}
 </div>
-<div class="page-grid-column"></div>
 {{ end }}
