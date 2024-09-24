@@ -1,4 +1,5 @@
 {{ define "main" }}
+<div class="page-grid-column"></div>
 <div id="writing" class="post-list">
     {{ range where $.Site.RegularPages "Section" "writing" }}
     <div class="post-list-info">
@@ -25,4 +26,5 @@
     </div>
     {{ end }}
 </div>
+<div class="page-grid-column"></div>
 {{ end }}
