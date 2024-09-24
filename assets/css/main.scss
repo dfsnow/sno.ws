@@ -73,13 +73,27 @@ h4,
 h5,
 h6 {
   line-height: 1.125;
+}
 
-  .header-link {
+.header-link {
+  text-decoration: none;
+
+  .header-link-icon {
     display: none;
+    padding-left: 0.4em;
   }
 
-  &:focus .header-link, &:hover .header-link, &:active .header-link {
-    display: inline;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: var(--text-color);
+
+    &:hover .header-link-icon, &:focus .header-link-icon, &:active .header-link-icon {
+      display: inline;
+    }
   }
 }
 
