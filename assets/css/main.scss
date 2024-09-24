@@ -73,6 +73,14 @@ h4,
 h5,
 h6 {
   line-height: 1.125;
+
+  .header-link {
+    display: none;
+  }
+
+  &:hover .header-link, &:active .header-link {
+    display: inline;
+  }
 }
 
 hr {
