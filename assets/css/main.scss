@@ -78,7 +78,7 @@ h6 {
     display: none;
   }
 
-  &:hover .header-link, &:active .header-link {
+  &:focus .header-link, &:hover .header-link, &:active .header-link {
     display: inline;
   }
 }
