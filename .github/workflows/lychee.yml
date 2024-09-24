@@ -21,4 +21,5 @@ jobs:
             --no-progress './content/**/*.md'
             --accept '100..=103,200..=299,403'
             --exclude 'wireguard.com'
+            --exclude 'gnu.org'
           fail: true
