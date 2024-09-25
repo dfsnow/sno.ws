@@ -1,17 +1,29 @@
 .content {
-  .video-holder,
-  picture,
-  svg:not(.hover-icon svg) {
-    display: flex;
-    margin: 3rem calc(-1 * var(--add-media-width));
-  }
+  max-width: 100%;
+}
 
-  img,
-  video {
-    object-fit: contain;
-  }
+.content article * {
+  max-width: var(--full-width);
+  margin-left: auto;
+  margin-right: auto;
+}
 
-  svg:not(.hover-icon svg) {
-    display: block;
-  }
+.content .video-holder,
+.content picture,
+.content svg:not(.hover-icon svg) {
+  display: flex;
+  max-height: 90vh;
+  max-width: calc(var(--full-width) + var(--add-media-width));
+  margin: 3rem auto;
+}
+
+.content img,
+.content video {
+  max-width: calc(100% + 4rem);
+  object-fit: contain;
+  margin: 0 -2rem;
+}
+
+.content svg:not(.hover-icon svg) {
+  display: block;
 }

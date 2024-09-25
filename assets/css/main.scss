@@ -12,8 +12,8 @@
   --warning-color: #d9c98d;
   --link-color: #2979bc;
   --visited-link-color: #8f5baa;
-  --main-width: 640px;
-  --add-media-width: 4rem;
+  --full-width: 640px;
+  --add-media-width: 240px;
   --heart-size: 0.75em; // also change in config.toml
 }
 
@@ -127,28 +127,9 @@ ol {
 }
 
 .content {
-  display: flex;
-  flex-flow: row wrap;
-  column-gap: calc(var(--add-media-width));
-  justify-content: center;
+  max-width: var(--full-width);
   margin: auto;
   padding: 1em 1.25em 1.25em;
-
-  &:has(.navtoc) {
-    .navtoc,
-    .flex-spacer {
-      flex: 1 1 calc(((100% - var(--main-width)) / 2) - var(--add-media-width));
-    }
-
-    .navtoc {
-      min-width: 200px;
-    }
-  }
-
-  article {
-    flex: 0 1 var(--main-width);
-    max-width: var(--main-width);
-  }
 
   code {
     font-size: 1.5rem;
@@ -215,7 +196,6 @@ ol {
   display: grid;
   row-gap: 0.5rem;
   margin-right: -30px;
-  flex: 0 0 calc(var(--main-width) + 30px);
 
   .post-list-info {
     overflow: hidden;
@@ -276,7 +256,7 @@ ol {
 .navbar-content {
   display: grid;
   grid-template-columns: 0.3fr 1.9fr 5.25em;
-  max-width: var(--main-width);
+  max-width: var(--full-width);
   margin: auto;
   z-index: 999;
   padding: 1em 2rem;
@@ -389,25 +369,6 @@ blockquote p,
   }
 }
 
-@media only screen and (max-width: 912px) {
-  .content {
-    &:has(.navtoc) {
-      .navtoc,
-      .flex-spacer {
-        display: none;
-      }
-    }
-  }
-}
-
-@media only screen and (max-width: 1160px) {
-  .content {
-    article {
-      padding: 0 var(--add-media-width);
-    }
-  }
-}
-
 /* adjustment when very small */
 @media only screen and (max-width: 720px) {
   html {
@@ -416,10 +377,6 @@ blockquote p,
 
   .content {
     padding-top: 1.25em;
-
-    article {
-      flex-grow: 1;
-    }
   }
 
   .post-list,

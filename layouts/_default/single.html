@@ -1,9 +1,4 @@
 {{ define "main" }}
-{{- if eq .Params.toc true -}}
-<aside class="navtoc">
-    {{ .TableOfContents }}
-</aside>
-{{- end -}}
 <article>
     <header class="post-header">
         <h1 class="post-title">{{ .Title }}</h1>
@@ -18,7 +13,4 @@
     </header>
     {{- partial "header-link.html" .Content -}}
 </article>
-{{- if eq .Params.toc true -}}
-<div class="flex-spacer"></div>
-{{- end -}}
 {{ end }}
