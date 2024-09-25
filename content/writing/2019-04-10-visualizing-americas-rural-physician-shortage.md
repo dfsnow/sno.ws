@@ -5,11 +5,12 @@ url = "/rural-docs"
 aliases = [ "/writing/2019/04/10/visualizing-americas-rural-physician-shortage/" ]
 recommended = "false"
 styles = [ "css/full-width-media.scss" ]
+toc = true
 +++
 
 _Note: This is adapted from an essay I wrote as a research assistant during graduate school. You can see the [original essay here](https://dfsnow.github.io/ama_viz/exploratory_plots.html)._
 
-<div style="max-width:600px;display:flex;margin:-3rem auto;">
+<div style="display:flex;margin:-3rem auto">
     {{< picture-embed src="/2019-04-10-colorbar.png" alt="Post color palette" width="1696" height="44">}}
 </div>
 
