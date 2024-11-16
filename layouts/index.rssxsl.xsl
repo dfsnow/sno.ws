@@ -1,13 +1,4 @@
-{{- $pctx := . -}}
-{{- if .IsHome -}}
-    {{ $pctx = .Site }}
-{{- end -}}
-{{- $pages := slice -}}
-{{- if or $.IsHome $.IsSection -}}
-    {{- $pages = $pctx.RegularPages -}}
-{{- else -}}
-    {{- $pages = $pctx.Pages -}}
-{{- end -}}
+{{- $pages := where .Site.RegularPages "Section" "writing" -}}
 {{- $main_css := resources.Get "css/main.scss" | toCSS | minify | fingerprint -}}
 {{- printf "<?xml version=\"1.0\" encoding=\"utf-8\"?>" | safeHTML -}}
 <xsl:stylesheet version="3.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:atom="http://www.w3.org/2005/Atom">
@@ -21,8 +12,8 @@
         </head>
         <body>
             <main class="content">
-                <h4 style="margin:0.6125em 0;line-height:1.5;">
-                    This is an RSS feed of all major posts. Visit
+                <h4 style="margin:0.25em 0;line-height:1.5;">
+                    This is an RSS feed of all homepage posts. Visit
                     <a href="https://aboutfeeds.com">About Feeds</a>
                     to learn more and get started using an RSS reader.
                     I recommend <a href="https://netnewswire.com">NetNewsWire</a>
