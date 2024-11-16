@@ -48,7 +48,7 @@ These are the blogs I read regularly. They've influenced my thinking and helped 
 
 ### Coding and tech
 
-- [Bradley Taunt](https://bt.ht) - {{< heart title="Favorite" >}} Small websites and minimal UX
+- [Bradley Taunt](https://btxx.org) - {{< heart title="Favorite" >}} Small websites and minimal UX
 - [Cassidy Williams](https://cassidoo.co/) - Huge inspiration, amazing dev/streamer. Excellent [newsletter](https://cassidoo.co/newsletter/)
 - [Dan Luu](http://danluu.com/) - {{< heart title="Favorite" >}} Classic engineering blog. Mostly on [measuring](https://danluu.com/input-lag/) [interesting](https://danluu.com/cli-complexity/) [things](https://danluu.com/android-updates/)
 - [Dan McKinley](https://mcfunley.com/) - Tech talker and creator of many [influential](http://boringtechnology.club/) [slide](https://causalinference.club/) [decks](http://frequentdeploys.club/)
