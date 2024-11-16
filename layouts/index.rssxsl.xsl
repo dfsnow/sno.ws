@@ -11,14 +11,18 @@
             <link rel="stylesheet" href="{{- $main_css.Permalink -}}"/>
         </head>
         <body>
+            <header class="navbar">
+                <nav class="navbar-content" style="grid-template-columns:initial;">
+                    <h4 style="margin:0;line-height:1.5;">
+                        This is an RSS feed of all homepage posts. Visit
+                        <a href="https://aboutfeeds.com">About Feeds</a>
+                        to learn more and get started using an RSS reader.
+                        I recommend <a href="https://netnewswire.com">NetNewsWire</a>
+                        and/or <a href="https://freshrss.org">FreshRSS</a>.
+                    </h4>
+                </nav>
+            </header>
             <main class="content">
-                <h4 style="margin:0.25em 0;line-height:1.5;">
-                    This is an RSS feed of all homepage posts. Visit
-                    <a href="https://aboutfeeds.com">About Feeds</a>
-                    to learn more and get started using an RSS reader.
-                    I recommend <a href="https://netnewswire.com">NetNewsWire</a>
-                    and/or <a href="https://freshrss.org">FreshRSS</a>.
-                </h4>
                 <div id="writing" class="post-list">
                 {{- range where (where $pages ".Params.link" "==" nil) ".Params.date" "!=" nil -}}
                     {{- if or (gt (len .Content) 0) (isset .Params "src") -}}
