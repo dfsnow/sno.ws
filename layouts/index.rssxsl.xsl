@@ -6,7 +6,7 @@
     <xsl:template match="/">
     <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
         <head>
-            <title>{{ .Site.Title }} | RSS Feed</title>
+            <title>{{ .Site.Title }} | RSS feed</title>
             <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
             <link rel="stylesheet" href="{{- $main_css.Permalink -}}"/>
         </head>

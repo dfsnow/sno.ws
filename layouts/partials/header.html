@@ -1,6 +1,8 @@
 <header class="navbar">
     <nav class="navbar-content">
-        <h1 class="navbar-title">{{ .Site.Title }}</h1>
+        <h1 class="navbar-title">
+          <a href="/" class="link-nowrap-nodec">{{ .Site.Title }}</a>
+        </h1>
         <ul class="navbar-internal-links">
             {{ range .Site.Menus.main.ByWeight -}}
             <li>
