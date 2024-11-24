@@ -1,6 +1,6 @@
 +++
 title = "Rhythm of War"
-author = "Brandon Sanderson"
+author = ["Brandon Sanderson"]
 date = "2020-02-18"
 rating = "6"
 recommended = "false"

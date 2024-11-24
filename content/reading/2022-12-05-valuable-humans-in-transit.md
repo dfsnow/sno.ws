@@ -1,6 +1,6 @@
 +++
 title = "Valuable Humans in Transit"
-author = "qntm"
+author = ["qntm"]
 date = "2022-12-04"
 rating = "7"
 recommended = "false"

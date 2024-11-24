@@ -1,6 +1,6 @@
 +++
 title = "The City Is Up for Grabs"
-author = "Gregory Pratt"
+author = ["Gregory Pratt"]
 date = "2024-04-20"
 rating = "6"
 recommended = "false"

@@ -1,6 +1,6 @@
 +++
 title = "The Amazing Adventures of Kavalier & Clay"
-author = "Michael Chabon"
+author = ["Michael Chabon"]
 date = "2021-04-16"
 rating = "8"
 recommended = "false"
