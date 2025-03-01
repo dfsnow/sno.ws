@@ -4,11 +4,11 @@ title = "About"
 
 Hi there! My name is Dan.
 
-I'm the Director of Data Science at the [Cook County Assessor’s Office](https://github.com/ccao-data), where I help estimate the home values used to determine Cook County property taxes. My work at the Assessor's office is part of a broader interest in [institutional reform](https://www.chicagotribune.com/investigations/ct-chicago-tribune-tax-divide-investigation-recap--20200921-7fjt4guj2zexhpauih2tnaccf4-story.html) and pushing local governments to use modern data tools and techniques.
+I'm a researcher and data scientist at [Turquoise Health](https://turquoise.health), where I write about healthcare.
 
-Before now, I was a grad student at the University of Chicago Harris School of Public Policy, where I researched [healthcare]({{< relref "writing/2019-04-10-visualizing-americas-rural-physician-shortage.md" >}}) and [spatial accessibility](https://doi.org/10.1080/24694452.2019.1629870).
+Before Turquoise, I was the Director of Data Science at the [Cook County Assessor’s Office](https://github.com/ccao-data), where I helped estimate the home values used to determine Cook County property taxes. And before that, I was a grad student at the University of Chicago Harris School of Public Policy, where I researched [healthcare]({{< relref "writing/2019-04-10-visualizing-americas-rural-physician-shortage.md" >}}) and [spatial accessibility](https://doi.org/10.1080/24694452.2019.1629870).
 
-In my free time, I like to [read]({{< relref "reading" >}}), rock climb, and hang out with my cat [Mimi]({{< relref "photos/2020-11-30-mimi.md" >}}). I also love R and its amazing community, and briefly taught courses on how to use R for public policy work.
+In my free time, I like to [read]({{< relref "reading" >}}), rock climb, bike, and hang out with my cat [Mimi]({{< relref "photos/2020-11-30-mimi.md" >}}).
 
 ### Colophon
 
