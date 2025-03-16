@@ -263,7 +263,8 @@ modules:
     - name: jellyfin
       type: object
       help: User playback metrics from Jellyfin
-      path: '{ [*] }'
+      # Only look at sessions with the NowPlayingItem key
+      path: '{ [?(@.NowPlayingItem)] }'
       labels:
         user_name: '{ .UserName }'
         # Use PromQL label_join and label_replace to concatenate
@@ -276,6 +277,9 @@ modules:
         season_index: 's{ .NowPlayingItem.ParentIndexNumber }'
         client_name: '{ .Client }'
         device_name: '{ .DeviceName }'
+        # Include the unique session ID in case the above
+        # labels aren't a unique combination
+        session_id: '{ .Id }'
       values:
         is_paused: '{ .PlayState.IsPaused }'
 ```
