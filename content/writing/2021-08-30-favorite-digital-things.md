@@ -169,24 +169,19 @@ I have a strong preference for software that is fast, outwardly simple, and that
 - `ALL` - [Mountain Project](https://www.mountainproject.com) - Find crags and track climbs, works offline
 - `iOS` - [NetNewsWire](https://netnewswire.com) - Tiny, simple, open-source RSS reader. Also on Mac
 - `AND` - [Niagara Launcher](https://play.google.com/store/apps/details?id=bitpit.launcher) - {{< heart title="Favorite" >}} Minimalist, fast, well-designed launcher
-- `iOS` - [Raivo OTP](https://raivo-otp.com) - iCloud-based MFA with the ability to export to an archive file
-- `iOS` - [Streaks](https://streaksapp.com) - Good design and integrations. Pay once for multiple platforms
 - `ALL` - [Todoist](https://todoist.com/) - {{< heart title="Favorite" >}} To-do list I've used for over a decade. Simple design, great UX
+- `iOS` - [WorkOutDoors](http://www.workoutdoors.net/) - Offline maps for Apple Watch. Great for hiking and biking
 - `ALL` - [YNAB](https://www.youneedabudget.com/) - Straightforward budgeting with bank and brokerage integration
 
 ### Desktop
 
-- `MAC` - [Alfred](https://www.alfredapp.com/) - Customizable Spotlight alternative with great plugins
 - `MAC` - [IINA](https://github.com/iina/iina) - Minimal Mac-only alternative to VLC
-- `MAC` - [ItsyCal](https://www.mowglii.com/itsycal/) - Simply the best little calendar app. Incredibly well-designed
 - `MAC` - [Little Snitch](https://www.obdev.at/products/littlesnitch/index.html) - Decide how apps talk to the internet. Must-have for any Mac
-- `MAC` - [Pandan](https://apps.apple.com/us/app/pandan/id1569600264) - Notifies you how long you've been using your computer
 - `ALL` - [Obsidian](https://obsidian.md) - {{< heart title="Favorite" >}} Fast notes. Free, works everywhere, plain markdown
-- `ALL` - [RStudio](https://www.rstudio.com/) - Great IDE specifically for R (and now some Python)
 - `MAC` - [Swish](https://highlyopinionated.co/swish/) - {{< heart title="Favorite" >}} Resize and move windows with super intuitive gestures
 - `MAC` - [Transmit](https://panic.com/transmit/) - Fast, versatile file transfer utility
-- `ALL` - [VS Code](https://code.visualstudio.com/) - Big IDE for when neovim or RStudio don't cut it
-- `WIN` - [Terminal + WSL 2](https://docs.microsoft.com/en-us/windows/wsl/install-win10) - {{< heart title="Favorite" >}} Linux virtualization on Windows that just works
+- `ALL` - [Positron](https://positron.posit.co/) - {{< heart title="Favorite" >}} VS Code fork specifically for data science
+- `WIN` - [Terminal + WSL 2](https://docs.microsoft.com/en-us/windows/wsl/install-win10) - Linux virtualization on Windows that just works
 
 ### Other {#other-2}
 
@@ -208,7 +203,7 @@ I have a strong preference for software that is fast, outwardly simple, and that
 - [ripgrep](https://github.com/BurntSushi/ripgrep) - {{< heart title="Favorite" >}} `grep` but better. Search every file in a directory in milliseconds
 - [stow](https://www.gnu.org/software/stow/manual/stow.html) - Symlink, config, and dotfiles management
 - [tmux](https://github.com/tmux/tmux) - Terminal multiplexer + keep remote terminal sessions alive
-- [z](https://github.com/rupa/z) - Tiny bash utility that lets you jump between commonly-used directories
+- [uv](https://docs.astral.sh/uv/) - {{< heart title="Favorite" >}} Python project management. `pip` but 100x better/faster
 - [zstd](https://github.com/facebook/zstd) - Compression algorithm of choice. Replaced bzip2 as a favorite
 
 ### R packages
@@ -223,4 +218,4 @@ I have a strong preference for software that is fast, outwardly simple, and that
 - [tidycensus](https://walker-data.com/tidycensus/) - Useful interface for the Census API
 - [tidytransit](https://github.com/r-transit/tidytransit) - GTFS feed reader. Make [trains go brrr]({{< relref "2021-03-03-creating-moving-transit-maps-with-r-and-gtfs-feeds.md" >}})
 
-_Last updated 2024-04-20_
+_Last updated 2025-08-15_
