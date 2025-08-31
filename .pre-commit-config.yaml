@@ -1,11 +1,11 @@
 repos:
   - repo: https://github.com/igorshubovych/markdownlint-cli
-    rev: v0.41.0
+    rev: v0.45.0
     hooks:
       - id: markdownlint
       - id: markdownlint-fix
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.5.0
+    rev: v0.12.11
     hooks:
       # Run the linter.
       - id: ruff
@@ -13,7 +13,7 @@ repos:
       # Run the formatter.
       - id: ruff-format
   - repo: https://github.com/thibaudcolas/pre-commit-stylelint
-    rev: v16.6.0
+    rev: v16.23.1
     hooks:
       - id: stylelint
         additional_dependencies:
@@ -21,7 +21,7 @@ repos:
           - stylelint@16.6.0
           - stylelint-config-standard-scss@13.1.0
   - repo: https://github.com/lorenzwalthert/precommit
-    rev: v0.4.2
+    rev: v0.4.3.9014
     hooks:
       - id: style-files
         args: [--style_pkg=styler, --style_fun=tidyverse_style]
@@ -38,7 +38,7 @@ repos:
         language: fail
         files: '\.(Rhistory|RData|Rds|rds)$'
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.5.0  # Use the ref you want to point at
+    rev: v6.0.0  # Use the ref you want to point at
     hooks:
       - id: check-added-large-files
       - id: check-merge-conflict
