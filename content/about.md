@@ -4,7 +4,7 @@ title = "About"
 
 Hi there! My name is Dan.
 
-I'm a researcher and data scientist at [Turquoise Health](https://turquoise.health), where I write about healthcare.
+I'm a researcher and data scientist at [Turquoise Health](https://turquoise.health), where I [write about healthcare](https://pricepoints.health).
 
 Before Turquoise, I was the Director of Data Science at the [Cook County Assessor’s Office](https://github.com/ccao-data), where I helped estimate the home values used to determine Cook County property taxes. And before that, I was a grad student at the University of Chicago Harris School of Public Policy, where I researched [healthcare]({{< relref "writing/2019-04-10-visualizing-americas-rural-physician-shortage.md" >}}) and [spatial accessibility](https://doi.org/10.1080/24694452.2019.1629870).
 
