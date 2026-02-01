@@ -34,8 +34,8 @@
     <figure class="photo-frame" style="flex-grow: {{ printf "%.4f" $aspectRatio }}; flex-basis: {{ printf "%.0f" (mul $aspectRatio 375) }}px;">
         <a href="{{ .RelPermalink }}">
             <picture>
-                <source srcset="{{ $srcBase }}/width=320,metadata=none,onerror=redirect,format=webp/{{ $srcFile }}.webp 320w, {{ $srcBase }}/width=640,metadata=none,onerror=redirect,format=webp/{{ $srcFile }}.webp 640w, {{ $srcBase }}/width=960,metadata=none,onerror=redirect,format=webp/{{ $srcFile }}.webp 960w" sizes="100vw" type="image/webp">
-                <source srcset="{{ $srcBase }}/width=320,metadata=none,onerror=redirect,format=jpeg/{{ $srcFile }}.jpg 320w, {{ $srcBase }}/width=640,metadata=none,onerror=redirect,format=jpeg/{{ $srcFile }}.jpg 640w, {{ $srcBase }}/width=960,metadata=none,onerror=redirect,format=jpeg/{{ $srcFile }}.jpg 960w" sizes="100vw" type="image/jpeg">
+                <source srcset="{{ $srcBase }}/width=320,metadata=none,onerror=redirect,format=webp/{{ $srcFile }}.webp 320w, {{ $srcBase }}/width=640,metadata=none,onerror=redirect,format=webp/{{ $srcFile }}.webp 640w, {{ $srcBase }}/width=960,metadata=none,onerror=redirect,format=webp/{{ $srcFile }}.webp 960w" sizes="(max-width: 720px) 100vw, 50vw" type="image/webp">
+                <source srcset="{{ $srcBase }}/width=320,metadata=none,onerror=redirect,format=jpeg/{{ $srcFile }}.jpg 320w, {{ $srcBase }}/width=640,metadata=none,onerror=redirect,format=jpeg/{{ $srcFile }}.jpg 640w, {{ $srcBase }}/width=960,metadata=none,onerror=redirect,format=jpeg/{{ $srcFile }}.jpg 960w" sizes="(max-width: 720px) 100vw, 50vw" type="image/jpeg">
                 <img src="{{ $srcBase }}/width=640,metadata=none,onerror=redirect/{{ $srcFile }}{{ $srcExt }}" alt="{{ .Title }}" width="{{ $srcWidth }}"
                   height="{{ $srcHeight }}" loading="lazy">
             </picture>

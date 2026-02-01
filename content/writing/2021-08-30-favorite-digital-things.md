@@ -136,7 +136,7 @@ These posts have inspired or influenced me in some way. They're things I reread 
 
 - [The Bitter Lesson](http://www.incompleteideas.net/IncIdeas/BitterLesson.html) - Computation power and general methods > complex methods
 - [The Most Important Statistical Ideas of the Past 50 Years](http://www.stat.columbia.edu/~gelman/research/unpublished/stat50.pdf) - Stats summary
-- [The Unreasonable Effectiveness of Mathematics](https://www.maths.ed.ac.uk/~v1ranick/papers/wigner.pdf) - Plus [Hamming's response](https://ned.ipac.caltech.edu/level5/March02/Hamming/Hamming.html)
+- [The Unreasonable Effectiveness of Mathematics](https://web.njit.edu/~akansu/PAPERS/The%20Unreasonable%20Effectiveness%20of%20Mathematics%20(EP%20Wigner).pdf) - Plus [Hamming's response](https://ned.ipac.caltech.edu/level5/March02/Hamming/Hamming.html)
 
 ### Other
 

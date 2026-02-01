@@ -18,16 +18,6 @@ repos:
           # stylelint itself needs to be here when using additional_dependencies
           - stylelint@16.6.0
           - stylelint-config-standard-scss@13.1.0
-  - repo: https://github.com/lorenzwalthert/precommit
-    rev: v0.4.3.9014
-    hooks:
-      - id: style-files
-        args: [--style_pkg=styler, --style_fun=tidyverse_style]
-        require_serial: true
-      - id: lintr
-      - id: parsable-R
-      - id: no-browser-statement
-      - id: no-debug-statement
   - repo: local
     hooks:
       - id: forbid-to-commit
@@ -36,7 +26,7 @@ repos:
         language: fail
         files: '\.(Rhistory|RData|Rds|rds)$'
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v6.0.0  # Use the ref you want to point at
+    rev: v6.0.0
     hooks:
       - id: check-added-large-files
       - id: check-merge-conflict
