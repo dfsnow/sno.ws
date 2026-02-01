@@ -5,28 +5,23 @@
 {{ end }}
 
 {{ define "main" }}
-<!-- Get image base path and type -->
-{{ $srcBase := .Site.Params.photosURL }}
-{{ $srcFile := index (findRE "^([^.]+)" .Params.src 1) 0 }}
-{{ $srcFileFull := print $srcBase "/resized/" (index (findRE "^([^.]+)" .Params.src 1) 0) }}
-{{ $srcExt := index (findRE "\\.[^.]*$|$" .Params.src 1) 0 }}
-{{ $srcType := replaceRE ".jpg" "jpeg" $srcExt }}
 
 <!-- Get explicit width and height to include in img tag -->
 {{ $srcWidth := .Params.width }}
 {{ $srcHeight := .Params.height }}
 
+<!-- Get image base path and type -->
+{{ $srcBase := .Site.Params.photosURL }}
+{{ $srcFile := index (findRE "^([^.]+)" .Params.src 1) 0 }}
+{{ $srcExt := index (findRE "\\.[^.]*$|$" .Params.src 1) 0 }}
+
 <figure class="post-feature-frame">
-    <a href="{{ $srcBase }}/original/{{ $srcFile }}{{ $srcExt }}">
+    <a href="{{ $srcBase }}/metadata=none,format=jpeg/{{ $srcFile }}{{ $srcExt }}">
         <picture>
-            <source srcset="{{ $srcFileFull }}-640.avif 640w, {{ $srcFileFull }}-1280.avif 1280w" sizes="100vw"
-                type="image/avif">
-            <source srcset="{{ $srcFileFull }}-640.webp 640w, {{ $srcFileFull }}-1280.webp 1280w" sizes="100vw"
-                type="image/webp">
-            <source srcset="{{ $srcFileFull }}-640{{ $srcExt }} 640w, {{ $srcFileFull }}-1280{{ $srcExt }} 1280w"
-                sizes="100vw" type="image/{{ $srcType }}">
-            <img src="{{ $srcFileFull }}-640{{ $srcExt }}" alt="{{ .Title }}" width="{{ $srcWidth }}"
-                height="{{ $srcHeight }}" class="post-feature-photo">
+            <source srcset="{{ $srcBase }}/width=640,metadata=none,format=webp/{{ $srcFile }}.webp 640w, {{ $srcBase }}/width=1280,metadata=none,format=webp/{{ $srcFile }}.webp 1280w" sizes="100vw" type="image/webp">
+            <source srcset="{{ $srcBase }}/width=640,metadata=none,format=jpeg/{{ $srcFile }}.jpg 640w, {{ $srcBase }}/width=1280,metadata=none,format=jpeg/{{ $srcFile }}.jpg 1280w" sizes="100vw" type="image/jpeg">
+            <img src="{{ $srcBase }}/width=640,metadata=none/{{ $srcFile }}{{ $srcExt }}" alt="{{ .Title }}" width="{{ $srcWidth }}"
+              height="{{ $srcHeight }}" loading="lazy">
         </picture>
     </a>
 </figure>
