@@ -26,11 +26,16 @@
       {{ end }}
     {{ end }}
 
-    <figure class="photo-frame">
+    {{ $aspectRatio := 1.5 }}
+    {{ if and (gt $srcWidth 0) (gt $srcHeight 0) }}
+      {{ $aspectRatio = div (mul $srcWidth 1.0) $srcHeight }}
+    {{ end }}
+
+    <figure class="photo-frame" style="flex-grow: {{ printf "%.4f" $aspectRatio }}; flex-basis: {{ printf "%.0f" (mul $aspectRatio 375) }}px;">
         <a href="{{ .RelPermalink }}">
             <picture>
-                <source srcset="{{ $srcBase }}/width=640,metadata=none,format=webp/{{ $srcFile }}.webp 640w" sizes="100vw" type="image/webp">
-                <source srcset="{{ $srcBase }}/width=640,metadata=none,format=jpeg/{{ $srcFile }}.jpg 640w" sizes="100vw" type="image/jpeg">
+                <source srcset="{{ $srcBase }}/width=320,metadata=none,format=webp/{{ $srcFile }}.webp 320w, {{ $srcBase }}/width=640,metadata=none,format=webp/{{ $srcFile }}.webp 640w, {{ $srcBase }}/width=960,metadata=none,format=webp/{{ $srcFile }}.webp 960w" sizes="100vw" type="image/webp">
+                <source srcset="{{ $srcBase }}/width=320,metadata=none,format=jpeg/{{ $srcFile }}.jpg 320w, {{ $srcBase }}/width=640,metadata=none,format=jpeg/{{ $srcFile }}.jpg 640w, {{ $srcBase }}/width=960,metadata=none,format=jpeg/{{ $srcFile }}.jpg 960w" sizes="100vw" type="image/jpeg">
                 <img src="{{ $srcBase }}/width=640,metadata=none/{{ $srcFile }}{{ $srcExt }}" alt="{{ .Title }}" width="{{ $srcWidth }}"
                   height="{{ $srcHeight }}" loading="lazy">
             </picture>
@@ -42,5 +47,6 @@
         {{ end }}
     </figure>
     {{ end }}
+    <div class="photo-spacer"></div>
 </div>
 {{ end }}

@@ -4,27 +4,39 @@
 
 .post-list-photos {
   display: flex;
-  flex-flow: row wrap;
-  align-items: center;
-  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.post-list-photos > .photo-frame {
+  margin: 0;
+  padding: 5px;
+  position: relative;
+}
+
+.photo-frame a {
+  display: block;
+}
+
+.photo-frame picture {
+  display: block;
 }
 
 .post-list-photos img {
   display: block;
+  width: 100%;
+  height: auto;
 }
 
-.post-list-photos > .photo-frame {
-  display: flex;
-  flex-grow: 2;
-  margin: 0;
-  padding: 0.5rem;
-  max-width: 640px;
+.photo-spacer {
+  flex-grow: 999;
 }
 
 .photo-frame > .photo-rec {
-  margin-top: 10px;
-  margin-left: -44px;
-  padding: 0 10px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  margin: 0;
+  padding: 0;
 }
 
 .photo-frame > .photo-rec a {
@@ -46,6 +58,6 @@
   }
 
   .post-list-photos > .photo-frame {
-    padding: 0.5rem 0;
+    padding: 5px 0;
   }
 }

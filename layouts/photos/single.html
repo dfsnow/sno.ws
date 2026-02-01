@@ -27,8 +27,8 @@
 <figure class="post-feature-frame">
     <a href="{{ $srcBase }}/metadata=none,format=jpeg/{{ $srcFile }}{{ $srcExt }}">
         <picture>
-            <source srcset="{{ $srcBase }}/width=640,metadata=none,format=webp/{{ $srcFile }}.webp 640w, {{ $srcBase }}/width=1280,metadata=none,format=webp/{{ $srcFile }}.webp 1280w" sizes="100vw" type="image/webp">
-            <source srcset="{{ $srcBase }}/width=640,metadata=none,format=jpeg/{{ $srcFile }}.jpg 640w, {{ $srcBase }}/width=1280,metadata=none,format=jpeg/{{ $srcFile }}.jpg 1280w" sizes="100vw" type="image/jpeg">
+            <source srcset="{{ $srcBase }}/width=640,metadata=none,format=webp/{{ $srcFile }}.webp 640w, {{ $srcBase }}/width=960,metadata=none,format=webp/{{ $srcFile }}.webp 960w, {{ $srcBase }}/width=1280,metadata=none,format=webp/{{ $srcFile }}.webp 1280w, {{ $srcBase }}/width=1920,metadata=none,format=webp/{{ $srcFile }}.webp 1920w" sizes="100vw" type="image/webp">
+            <source srcset="{{ $srcBase }}/width=640,metadata=none,format=jpeg/{{ $srcFile }}.jpg 640w, {{ $srcBase }}/width=960,metadata=none,format=jpeg/{{ $srcFile }}.jpg 960w, {{ $srcBase }}/width=1280,metadata=none,format=jpeg/{{ $srcFile }}.jpg 1280w, {{ $srcBase }}/width=1920,metadata=none,format=jpeg/{{ $srcFile }}.jpg 1920w" sizes="100vw" type="image/jpeg">
             <img src="{{ $srcBase }}/width=640,metadata=none/{{ $srcFile }}{{ $srcExt }}" alt="{{ .Title }}" width="{{ $srcWidth }}"
                 height="{{ $srcHeight }}" class="post-feature-photo">
         </picture>
