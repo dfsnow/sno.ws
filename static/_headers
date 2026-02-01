@@ -9,29 +9,42 @@
   Permissions-Policy: geolocation=(), midi=(), sync-xhr=(), microphone=(), camera=(), magnetometer=(), gyroscope=(), fullscreen=(), payment=()
 
 /css/*
+  ! Cache-Control
   Cache-Control: public, max-age=2592000
 /js/*
+  ! Cache-Control
   Cache-Control: public, max-age=2592000
 /*.ico
+  ! Cache-Control
   Cache-Control: public, max-age=31536000, immutable
 /*.jpg
+  ! Cache-Control
   Cache-Control: public, max-age=31536000, immutable
 /*.jpeg
+  ! Cache-Control
   Cache-Control: public, max-age=31536000, immutable
 /*.webp
+  ! Cache-Control
   Cache-Control: public, max-age=31536000, immutable
 /*.png
+  ! Cache-Control
   Cache-Control: public, max-age=31536000, immutable
 /*.gif
+  ! Cache-Control
   Cache-Control: public, max-age=31536000, immutable
 /*.svg
+  ! Cache-Control
   Cache-Control: public, max-age=31536000, immutable
 /*.avif
+  ! Cache-Control
   Cache-Control: public, max-age=31536000, immutable
 /*.mp4
+  ! Cache-Control
   Cache-Control: public, max-age=31536000, immutable
 /*.mkv
+  ! Cache-Control
   Cache-Control: public, max-age=31536000, immutable
 /*.vcf
+  ! Cache-Control
   Content-Disposition: attachment
   Cache-Control: public, max-age=31536000, immutable
