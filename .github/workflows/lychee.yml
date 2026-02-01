@@ -17,7 +17,7 @@ jobs:
         uses: lycheeverse/lychee-action@v2
         with:
           args: |
-            --base . --verbose
+            --verbose
             --no-progress './content/**/*.md'
             --accept '100..=103,200..=299,403'
             --exclude 'wireguard.com'
