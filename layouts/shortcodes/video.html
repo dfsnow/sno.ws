@@ -1,7 +1,7 @@
 {{ if .IsNamedParams }}
 {{ $srcBase := .Site.Params.videoURL }}
 <div class="video-holder">
-    <video controls>
+    <video {{ if eq (.Get "loop") "true" }}autoplay loop muted playsinline{{ else }}controls{{ end }}>
         <source src='{{ $srcBase }}{{.Get "src" }}.mp4' type="video/mp4">
         <source src='{{ $srcBase }}{{.Get "src" }}.webm' type="video/webm">
         Your browser does not support the video tag.

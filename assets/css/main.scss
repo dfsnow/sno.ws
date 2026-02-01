@@ -14,7 +14,6 @@
   --visited-link-color: #8f5baa;
   --full-width: 640px;
   --add-media-width: 240px;
-  --heart-size: 0.75em; // also change in config.toml
 }
 
 html {
@@ -358,14 +357,6 @@ blockquote p,
   > .post-list-links {
     display: grid;
     grid-template-columns: 1fr 0.95fr;
-  }
-}
-
-/* support for Edge */
-@supports (-ms-ime-align: auto) {
-  .navbar-content > .navbar-internal-links {
-    justify-content: space-around;
-    margin: 0 1.4rem;
   }
 }
 

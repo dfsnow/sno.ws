@@ -24,9 +24,9 @@ I've also been playing around with [GTFS feeds](https://gtfs.org/), which are a 
 
 I wanted to see if I could take a GTFS feed and turn it into an animated map in the style of Mini Metro (I love its aesthetic). Turns out it's actually pretty easy.
 
-{{< video-loop src="/2021-03-03-chicago-gtfs" >}}
+{{< video src="/2021-03-03-chicago-gtfs" loop="true" >}}
 
-{{< video-loop src="/2021-03-03-dc-gtfs" >}}
+{{< video src="/2021-03-03-dc-gtfs" loop="true" >}}
 
 These maps are made using [R](https://cloud.r-project.org/) and [ggplot2](https://ggplot2.tidyverse.org/). Each frame of animation is a separate plot combined using [ffmpeg](https://ffmpeg.org/). There are probably better/faster ways to animate besides rendering each frame, but this way is easy and flexible.
 

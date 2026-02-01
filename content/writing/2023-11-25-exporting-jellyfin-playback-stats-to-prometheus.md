@@ -28,7 +28,7 @@ I run a small [Jellyfin](https://github.com/jellyfin/jellyfin) server at home to
 
 Basically, I wanted to make this graph in Grafana:
 
-{{< video-loop src="/2023-11-24-jellyfin-grafana" >}}
+{{< video src="/2023-11-24-jellyfin-grafana" loop="true" >}}
 
 This turned out to be way harder than I thought, but I eventually got it working using the Jellyfin REST API and Prometheus JSON exporter. This post walks through what I did.
 
