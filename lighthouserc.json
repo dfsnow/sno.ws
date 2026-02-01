@@ -17,6 +17,7 @@
         "uses-http2": "off",
         "uses-rel-preload": "off",
         "uses-rel-preconnect": "off",
+        "uses-responsive-images": "off",
         "csp-xss": "off",
         "lcp-lazy-loaded": "off",
         "bf-cache": "off"
