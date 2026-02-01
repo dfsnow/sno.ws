@@ -21,7 +21,7 @@
             <source srcset="{{ $srcBase }}/width=640,metadata=none,format=webp/{{ $srcFile }}.webp 640w, {{ $srcBase }}/width=1280,metadata=none,format=webp/{{ $srcFile }}.webp 1280w" sizes="100vw" type="image/webp">
             <source srcset="{{ $srcBase }}/width=640,metadata=none,format=jpeg/{{ $srcFile }}.jpg 640w, {{ $srcBase }}/width=1280,metadata=none,format=jpeg/{{ $srcFile }}.jpg 1280w" sizes="100vw" type="image/jpeg">
             <img src="{{ $srcBase }}/width=640,metadata=none/{{ $srcFile }}{{ $srcExt }}" alt="{{ .Title }}" width="{{ $srcWidth }}"
-              height="{{ $srcHeight }}" loading="lazy">
+                height="{{ $srcHeight }}" class="post-feature-photo">
         </picture>
     </a>
 </figure>
