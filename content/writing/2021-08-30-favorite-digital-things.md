@@ -28,7 +28,6 @@ These are the blogs I read regularly. They've influenced my thinking and helped 
 
 - [Joel Simon](https://www.joelsimon.net/) - Beautiful [generative art](https://www.joelsimon.net/corals.html) mixed with code
 - [Larsen Husby](https://larsenhusby.com/2D) - Love me [some maps](https://larsenhusby.com/City-Rivers-River-Cities)
-- [Lingdong Huang](https://lingdong.works/) - Procedurally generated [fish](https://fishdraw.glitch.me/), [landscape paintings](https://shan-shui-inf.lingdong.works/), and [flowers](https://nonflowers.lingdong.works/)
 - [Matt Keeter](https://www.mattkeeter.com/projects/) - Weird [shaders](https://www.mattkeeter.com/projects/futureproof/), [raytracers](https://www.mattkeeter.com/projects/rayray/), and [games](https://www.mattkeeter.com/projects/pont/)
 - [Paul Stamatiou](https://paulstamatiou.com) - Photography + hands down the [best travelogues](https://paulstamatiou.com/photos/new-zealand/coromandel-peninsula/) I've ever seen
 
@@ -37,7 +36,6 @@ These are the blogs I read regularly. They've influenced my thinking and helped 
 - [Ana Rodrigues](https://ohhelloana.blog) - Bookmarks, bookmarks everywhere
 - [Evening Sends](https://eveningsends.com/) - Rock climbing writing, essays, and opinions
 - [Francesco Di Lorenzo](https://francescodilorenzo.com/) - Bite-sized posts on life and programming
-- [Jamie Saxon](https://jamessaxon.github.io/) - Measuring civic resources and [their use](https://jamessaxon.github.io/urban/measurement/electronics/2021/03/22/making-an-olm-meter.html). Former mentor
 - [Jeremy Maluf](https://jeremymaluf.com/) - {{< heart title="Favorite" >}} Lists for [onebag packing](https://jeremymaluf.com/onebag/) and [other stuff](https://jeremymaluf.com/walking/). Inspired this post
 - [Kyle E. Mitchell](https://writing.kemitchell.com/) - Interesting posts and takes on law ∪ technology
 - [Paul Graham](http://www.paulgraham.com/articles.html) - Classic essays on [tech](http://www.paulgraham.com/ds.html), [life](http://www.paulgraham.com/talk.html), and [startups](http://www.paulgraham.com/start.html)
@@ -218,4 +216,4 @@ I have a strong preference for software that is fast, outwardly simple, and that
 - [tidycensus](https://walker-data.com/tidycensus/) - Useful interface for the Census API
 - [tidytransit](https://github.com/r-transit/tidytransit) - GTFS feed reader. Make [trains go brrr]({{< relref "2021-03-03-creating-moving-transit-maps-with-r-and-gtfs-feeds.md" >}})
 
-_Last updated 2025-08-15_
+_Last updated 2026-02-01_
