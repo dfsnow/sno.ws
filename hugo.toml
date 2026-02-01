@@ -2,7 +2,6 @@ baseURL = "https://sno.ws"
 title = "Dan Snow"
 languageCode = "en-US"
 disableKinds = ["taxonomy", "term"]
-enableInlineShortcodes = true
 pygmentsCodeFences = true
 pygmentsUseClasses = true
 

@@ -3,7 +3,7 @@
     {{ range where $.Site.RegularPages "Section" "talks" }}
     {{ if gt (len .Content) 0 }}
     <div class="post-list-info">
-        <a href="{{ .Permalink }}">{{ .Title }}</a>
+        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
     </div>
     {{ else }}
     <div class="post-list-info">{{ .Title }}</div>
@@ -11,14 +11,14 @@
     <div class="post-list-links">
         <div class="post-list-info">
             {{- if isset .Params "slides" -}}
-            <a href="{{ .Params.slides }}" title="Slides from talk">
+            <a href="{{ .Params.slides }}" title="Slides from talk" target="_blank" rel="noopener">
                 <span>Slides</span>
             </a>
             {{- end -}}
         </div>
         <div class="post-list-info">
             {{- if isset .Params "video" -}}
-            <a href="{{ .Params.video }}" title="Video of talk">
+            <a href="{{ .Params.video }}" title="Video of talk" target="_blank" rel="noopener">
                 <span>Video</span>
             </a>
             {{- end -}}
