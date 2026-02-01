@@ -3,3 +3,4 @@ MD033: false # allow inline html
 MD034: false # allow bare URLs
 MD036: false # allow emphasis as heading
 MD041: false # allow files without first line heading
+MD059: false # allow simple links

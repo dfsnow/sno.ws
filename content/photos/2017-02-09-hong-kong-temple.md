@@ -3,8 +3,6 @@ title = "Hong Kong Temple"
 date = "2017-02-09"
 recommended = "false"
 src = "2017-02-09-hong-kong-temple.jpg"
-width = "4032"
-height = "3024"
 +++
 
 One thing that surprised me about Hong Kong was the amount of greenspace that was visible from otherwise dense urban areas.

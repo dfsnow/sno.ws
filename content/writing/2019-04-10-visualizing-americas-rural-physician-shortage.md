@@ -10,7 +10,7 @@ styles = [ "css/full-width-media.scss" ]
 _Note: This is adapted from an essay I wrote as a research assistant during graduate school. You can see the [original essay here](https://dfsnow.github.io/ama_viz/exploratory_plots.html)._
 
 <div style="max-width:600px;display:flex;margin:-3rem auto;">
-    {{< picture-embed src="/2019-04-10-colorbar.png" alt="Post color palette" width="1696" height="44">}}
+    {{< picture-embed src="/2019-04-10-colorbar.png" alt="Post color palette">}}
 </div>
 
 Rural America is facing a massive and growing shortage of physicians. For the past few decades, doctors have flocked to cities seeking better career opportunities, higher pay, and urban amenities. As a result, only 10% of physicians now live in rural areas, compared to 20% of the overall U.S. population. This maldistribution has potentially disastrous consequences: studies have shown that having physical access to a doctor is an important determinant of health. For many rural Americans, getting this access requires a long drive and a potentially longer wait, resulting in potential health consequences such as a higher likelihood of infant mortality, obesity, and disability. The shortage and its effects are likely to get worse in the coming decades, as an increasing percentage of physicians choose to practice in urban areas.
@@ -29,7 +29,7 @@ Unfortunately, this definition is incomplete. While it’s generally true that r
 
 This distribution indicates that the rural doctor shortage is not driven entirely by rurality, but rather by a combination of rurality and other factors such as educational attainment level. Research shows that educational attainment explains over 40% of the variation in physician supply, while population density (rurality) explains less than 10%. In other words, the rural doctor shortage may be better characterized as a doctor shortage in less-educated areas. Rural areas do have doctor shortages, but they’re largely caused by rural areas being less-educated, rather than by rurality itself. Thus, policymakers have misidentified the cause of the shortage, attributing it to rurality when the truth is likely more nuanced.
 
-{{< picture-embed src="/2019-04-10-doc-population.png" alt="Rural states have a shortage of doctors relative to their population" width="1728" height="1344">}}
+{{< picture-embed src="/2019-04-10-doc-population.png" alt="Rural states have a shortage of doctors relative to their population">}}
 
 The true nature of the doctor shortage can be seen more clearly at the county level. The map below shows an index of the relative level of primary care accessibility for every county in the United States. This index is calculated using a new technique which minimizes the driving time and cost of congestion for each patient. In other words, it allows patients to make a trade-off between distance and crowdedness, with patients moving farther to avoid extremely crowded providers. This method adds to previous literature on spatial accessibility, which is often measured simply as the patient-to-provider ratio of a given space.
 
@@ -41,19 +41,19 @@ Nonetheless, framing the problem as a rural shortage can still be useful. Certai
 
 (For the remainder of the article, “rural” is used as a shorthand for “rural and/or undereducated”.)
 
-{{< picture-embed src="/2019-04-10-pc-access.png" alt="Rural counties have poor access to primary care" width="1728" height="1344">}}
+{{< picture-embed src="/2019-04-10-pc-access.png" alt="Rural counties have poor access to primary care">}}
 
 Age is also an important aspect of the rural doctor shortage story. In the past three decades, more and more young doctors have settled in cities, while very few have moved to rural areas. This sorting is likely driven by homophily (the desire to interact with and live among people like yourself) and existing demographic shifts in American society. Put bluntly, young, educated people like to live around other young, educated people, most of whom live in cities. Doctors follow this same trend.
 
 Unfortunately, these young, urban doctors tend to stay put rather than move to rural areas as they get older. As a result, rural doctors tend to be an average of 18 years older than their urban peers. In the plot below, the bulk of the distribution of rural doctors is around 60 years old. Many of these doctors will retire in the next few decades and will not be replaced, severely exacerbating the existing crisis.
 
-{{< picture-embed src="/2019-04-10-doc-age.png" alt="Rural doctors are scarcer and older" width="1728" height="1344">}}
+{{< picture-embed src="/2019-04-10-doc-age.png" alt="Rural doctors are scarcer and older">}}
 
 The rise in specialist physicians has also contributed to the rural doctor shortage. As more medical students choose high-paying specialties, the proportion of primary care physicians trained each year has decreased, particularly since 2001. The plot below shows this trend.
 
 Specialists are much more likely to practice in urban areas than primary care physicians. Rural areas rarely produce the demand needed to support a specialist. Even if rural demand was sufficient, most rural hospitals do not have the infrastructure, equipment, or funds necessary to support full-time specialists. As a result, specialists are much more likely to live and practice in urban areas.
 
-{{< picture-embed src="/2019-04-10-pc-v-spec.png" alt="More doctors are becoming specialists" width="1728" height="1344">}}
+{{< picture-embed src="/2019-04-10-pc-v-spec.png" alt="More doctors are becoming specialists">}}
 
 ## Doctor preferences and the current policy response
 
@@ -63,7 +63,7 @@ One of the most well-known policies designed to address the rural shortage is in
 
 The plot below shows the median wage of urban and rural doctors over time. Since 2000, the wage gap between urban and rural doctors has expanded dramatically, with rural doctors now making roughly $40K more than their urban counterparts. Yet the rural doctor shortage has only worsened, indicating that such payment policies have mostly subsidized already-rural doctors while inducing few urban doctors to move.
 
-{{< picture-embed src="/2019-04-10-wage.png" alt="Rural doctors make more money than urban doctors" width="1728" height="1152">}}
+{{< picture-embed src="/2019-04-10-wage.png" alt="Rural doctors make more money than urban doctors">}}
 
 By ignoring wage incentives, urban doctors display an overriding hidden preference for urban areas. Previous research (Lombardo et al.) suggests this preference is a combination of doctors’ preferences for urban amenities and their preference for being around other highly educated people. This partially explains the maldistribution visible in the previous maps. Places such as New England have a high level of educational attainment and nice urban amenities, they therefore have a large number of doctors. Places like Mississippi have low average educational attainment and few urban amenities, they therefore have fewer doctors.
 
@@ -71,13 +71,13 @@ Doctors have this preference for urban areas regardless of their birthplace. The
 
 All of the doctor cohorts, regardless of their birthplace rurality, end up practicing in urban/suburban areas. After being mechanically forced to urban areas for school (almost all medical schools are in cities), doctors never return to the same rurality level as their birthplace. This indicates that doctors’ preferences for urban areas may develop as a result of training in those areas. Based on this assumption, some medical schools have developed rural programs intended to give doctors a taste of rural life. However, there is little evidence to indicate that such programs increase rural practice retention.
 
-{{< picture-embed src="/2019-04-10-cohort.png" alt="Doctors move to urban areas regardless of birthplace" width="1728" height="1344">}}
+{{< picture-embed src="/2019-04-10-cohort.png" alt="Doctors move to urban areas regardless of birthplace">}}
 
 Medical schools also play a role in determining where a doctor chooses to practice. The plot below shows the average MCAT score of each medical school compared to the rurality of the average graduate’s practice location. Graduates of medical schools with higher average MCAT scores tend to end up practicing in more urban areas.
 
 The reason for this is two-fold. First, better medical schools tend to be located in large cities. Doctors at these schools likely develop preferences for big city amenities as well as business and social networks that make leaving undesirable. Second, graduates of better medical schools are more likely to be matched with their preferred residency programs, i.e. they are unlikely to be forced to attend less competitive rural programs.
 
-{{< picture-embed src="/2019-04-10-med-school.png" alt="Competitive medical schools send their graduates to urban areas" width="1728" height="1344">}}
+{{< picture-embed src="/2019-04-10-med-school.png" alt="Competitive medical schools send their graduates to urban areas">}}
 
 ## How do we fix the rural doctor shortage?
 
@@ -89,6 +89,6 @@ Instead, two solutions should be implemented. First, medical schools should recr
 
 Second, states should focus on training and licensing more nurse practitioners (NPs). The plot below shows that nurse practitioners already serve as substitutes in states with relatively few doctors. NPs can perform the same basic tasks as a primary care physicians but are cheaper and easier to train and license. Substituting NPs in rural areas could reduce the impact of the rural physician shortage and improve basic health outcomes for rural Americans.
 
-{{< picture-embed src="/2019-04-10-nps.png" alt="Nurses serve as substitutes in states with few doctors" width="1728" height="1536">}}
+{{< picture-embed src="/2019-04-10-nps.png" alt="Nurses serve as substitutes in states with few doctors">}}
 
 The worsening maldistribution of U.S. physicians has potentially devastating health consequences for millions of Americans. States and the medical community should act quickly to implement practical solutions that increase the recruitment of rural medical students and NPs.

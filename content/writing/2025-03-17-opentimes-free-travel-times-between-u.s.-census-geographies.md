@@ -35,7 +35,7 @@ as a table:
 
 And here's that same data on the homepage map:
 
-{{< picture-embed src="/2025-03-16-opentimes.png" alt="Isochrone map of travel times" width="1800" height="1300">}}
+{{< picture-embed src="/2025-03-16-opentimes.png" alt="Isochrone map of travel times">}}
 
 OpenTimes also has some interesting technical stuff going on, most of which
 I haven't seen replicated elsewhere:

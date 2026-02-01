@@ -8,14 +8,23 @@
 <div class="post-list-photos">
     {{ range where $.Site.RegularPages "Section" "photos" }}
 
-    <!-- Get explicit width and height to include in img tag -->
-    {{ $srcWidth := .Params.width }}
-    {{ $srcHeight := .Params.height }}
-
     <!-- Get image base path and type -->
     {{ $srcBase := .Site.Params.photosURL }}
     {{ $srcFile := index (findRE "^([^.]+)" .Params.src 1) 0 }}
     {{ $srcExt := index (findRE "\\.[^.]*$|$" .Params.src 1) 0 }}
+
+    <!-- Fetch remote image to get dimensions -->
+    {{ $imgURL := printf "%s/metadata=none/%s%s" $srcBase $srcFile $srcExt }}
+    {{ $srcWidth := 0 }}
+    {{ $srcHeight := 0 }}
+    {{ with try (resources.GetRemote $imgURL) }}
+      {{ with .Err }}
+        {{ warnf "Failed to fetch %s: %s" $imgURL . }}
+      {{ else with .Value }}
+        {{ $srcWidth = .Width }}
+        {{ $srcHeight = .Height }}
+      {{ end }}
+    {{ end }}
 
     <figure class="photo-frame">
         <a href="{{ .RelPermalink }}">

@@ -3,8 +3,6 @@ title = "From Uptown Lake Path"
 date = "2020-09-07"
 recommended = "true"
 src = "2020-09-07-from-uptown-lake-path.jpg"
-width = "3024"
-height = "4032"
 +++
 
 Call me creepy, but I really like looking at high rises. I love that you can look at one and see a hundred scenes in miniature: people cooking, watching TV, exercising, or working. People just doing mundane, human things.
