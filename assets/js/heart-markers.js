@@ -5,7 +5,7 @@ var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
 var useMarker = CSS.supports("selector(::marker)");
 var lis = document.querySelectorAll("article.js-enabled ul li");
 
-if (useMarker & !isSafari) {
+if (useMarker && !isSafari) {
     lis.forEach(function(e) {
         if (e.contains(e.querySelector("svg"))) {
             e.classList.add("with-heart");
