@@ -34,3 +34,49 @@
     @media (prefers-color-scheme:light) { {{ $light.Content | safeCSS }} }
 </style>
 {{ end }}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "{{ .Site.Title }}",
+  "url": "{{ .Site.BaseURL }}",
+  "description": "{{ .Site.Params.description }}",
+  "author": {
+    "@type": "Person",
+    "name": "{{ .Site.Params.author }}"
+  }
+}
+</script>
+
+{{- if and (eq .Section "writing") (not .IsNode) }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "{{ .Title }}",
+  "datePublished": "{{ .Date.Format "2006-01-02" }}",
+  "url": "{{ .Permalink }}",
+  "author": {
+    "@type": "Person",
+    "name": "{{ .Site.Params.author }}"
+  }
+}
+</script>
+{{- end }}
+
+{{- if eq .Title "About" }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Dan Snow",
+  "url": "{{ .Site.BaseURL }}",
+  "jobTitle": "Researcher and Data Scientist",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Turquoise Health"
+  }
+}
+</script>
+{{- end }}

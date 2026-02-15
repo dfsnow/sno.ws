@@ -1,0 +1,18 @@
+# Dan Snow
+
+> Personal website of Dan Snow, a researcher and data scientist.
+> Contains blog posts about data science, healthcare, local government,
+> and technology, as well as book reviews, photos, and talk slides.
+
+## Sections
+
+- [Writing](https://sno.ws/): Posts about data and technology
+- [Reading](https://sno.ws/reading/): Book reviews and reading log
+- [Photos](https://sno.ws/photos/): Photo gallery
+- [Talks](https://sno.ws/talks/): Conference and meetup talk slides
+- [About](https://sno.ws/about/): Background and bio
+
+## Additional Resources
+
+- [RSS Feed](https://sno.ws/index.xml)
+- [Sitemap](https://sno.ws/sitemap.xml)

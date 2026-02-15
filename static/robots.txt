@@ -1,3 +1,6 @@
+User-agent: *
+Allow: /
+
 User-agent: AdsBot-Google
 User-agent: Amazonbot
 User-agent: FacebookBot
