@@ -7,3 +7,5 @@ content/writing/*.html
 .hugo_build.lock
 .DS_Store
 .Rproj.user
+.terraform/
+*.tfvars
