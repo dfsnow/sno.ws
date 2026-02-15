@@ -1,8 +1,8 @@
 {{ if .IsNamedParams }}
 {{ $srcBase := .Site.Params.postURL }}
 {{ $src := .Get "src" }}
-{{ $srcFileFull := index (findRE "^([^.]+)" $src 1) 0 }}
-{{ $srcExt := index (findRE "\\.[^.]*$|$" $src 1) 0 }}
+{{ $srcExt := path.Ext $src }}
+{{ $srcFileFull := strings.TrimSuffix $srcExt $src }}
 {{ $srcType := replaceRE ".jpg" "jpeg" $srcExt | replaceRE "\\." "" }}
 
 <!-- Fetch remote image to get dimensions -->

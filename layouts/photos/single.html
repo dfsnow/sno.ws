@@ -8,8 +8,8 @@
 
 <!-- Get image base path and type -->
 {{ $srcBase := .Site.Params.photosURL }}
-{{ $srcFile := index (findRE "^([^.]+)" .Params.src 1) 0 }}
-{{ $srcExt := index (findRE "\\.[^.]*$|$" .Params.src 1) 0 }}
+{{ $srcExt := path.Ext .Params.src }}
+{{ $srcFile := strings.TrimSuffix $srcExt .Params.src }}
 
 <!-- Fetch remote image to get dimensions -->
 {{ $imgURL := printf "%s/metadata=none/%s%s" $srcBase $srcFile $srcExt }}
