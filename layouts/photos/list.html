@@ -1,5 +1,5 @@
 {{ define "additional-style" }}
-{{ with resources.Get "css/photos-list.css" | toCSS | minify | fingerprint}}
+{{ with resources.Get "css/photos-list.css" | minify | fingerprint}}
     <style media="screen">{{ .Content | safeCSS }}</style>
 {{ end }}
 {{ end }}
