@@ -4,11 +4,11 @@ title = "About"
 
 Hi there! My name is Dan.
 
-I'm a researcher and data scientist at [Turquoise Health](https://turquoise.health), where I [write about healthcare](https://pricepoints.health).
+I'm a data engineer at [DataSF](https://www.sf.gov/departments--city-administrator--datasf--about), where I help build data infrastructure for the City of San Francisco.
 
-Before Turquoise, I was the Director of Data Science at the [Cook County Assessor’s Office](https://github.com/ccao-data), where I helped estimate the home values used to determine Cook County property taxes. And before that, I was a grad student at the University of Chicago Harris School of Public Policy, where I researched [healthcare]({{< relref "writing/2019-04-10-visualizing-americas-rural-physician-shortage.md" >}}) and [spatial accessibility](https://doi.org/10.1080/24694452.2019.1629870).
+Before DataSF, I was a researcher and data scientist at [Turquoise Health](https://turquoise.health), where I [wrote about healthcare](https://pricepoints.health).
 
-In my free time, I like to [read]({{< relref "reading" >}}), rock climb, bike, and hang out with my cat [Mimi]({{< relref "photos/2020-11-30-mimi.md" >}}).
+In my free time, I like to [read]({{< relref "reading" >}}), rock climb, bike, 3D print, bake, tinker with my homelab, and hang out with my cat [Mimi]({{< relref "photos/2020-11-30-mimi.md" >}}).
 
 ### Colophon
 
