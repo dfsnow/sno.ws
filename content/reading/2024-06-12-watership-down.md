@@ -2,7 +2,7 @@
 title = "Watership Down"
 author = ["Richard Adams"]
 date = "2024-06-12"
-rating = "8"
+rating = "3"
 recommended = "true"
 +++
 

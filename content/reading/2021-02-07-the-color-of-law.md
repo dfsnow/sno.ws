@@ -2,7 +2,7 @@
 title = "The Color of Law"
 author = ["Richard Rothstein"]
 date = "2020-02-07"
-rating = "7"
+rating = "2"
 recommended = "false"
 +++
 

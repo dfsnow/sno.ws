@@ -2,7 +2,7 @@
 title = "The City Is Up for Grabs"
 author = ["Gregory Pratt"]
 date = "2024-04-20"
-rating = "6"
+rating = "1"
 recommended = "false"
 +++
 

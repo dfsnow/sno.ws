@@ -2,7 +2,7 @@
 title = "Ghosts in the Schoolyard"
 author = ["Eve Ewing"]
 date = "2021-03-28"
-rating = "7"
+rating = "1"
 recommended = "false"
 +++
 

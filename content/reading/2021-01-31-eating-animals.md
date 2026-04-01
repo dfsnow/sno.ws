@@ -2,7 +2,7 @@
 title = "Eating Animals"
 author = ["Jonathan Safran Foer"]
 date = "2020-01-31"
-rating = "10"
+rating = "3"
 recommended = "true"
 +++
 
