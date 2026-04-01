@@ -2,7 +2,7 @@ terraform {
   required_providers {
     cloudflare = {
       source  = "cloudflare/cloudflare"
-      version = "~> 4.44.0"
+      version = "~> 5.18.0"
     }
   }
 
@@ -22,4 +22,9 @@ terraform {
     use_path_style              = true
     endpoint                    = "https://${var.cloudflare_account_id}.r2.cloudflarestorage.com"
   }
+}
+
+provider "cloudflare" {
+  api_key   = var.cloudflare_api_key
+  email     = var.cloudflare_email
 }

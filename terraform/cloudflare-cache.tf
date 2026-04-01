@@ -4,18 +4,32 @@ resource "cloudflare_ruleset" "sno-ws-cache" {
   kind    = "zone"
   phase   = "http_request_cache_settings"
 
-  rules {
-    action      = "set_cache_settings"
-    description = "Cache everything"
-    enabled     = true
-    expression  = "true"
+  rules = [
+    {
+      action      = "set_cache_settings"
+      description = "Cache static assets"
+      enabled     = true
+      expression  = "(http.request.uri.path.extension in {\"css\" \"js\"})"
 
-    action_parameters {
-      cache = true
-      edge_ttl {
-        default = 604800
-        mode    = "override_origin"
+      action_parameters = {
+        cache = true
+        edge_ttl = {
+          mode = "respect_origin"
+        }
       }
-    }
-  }
+    },
+    {
+      action      = "set_cache_settings"
+      description = "Cache all served content"
+      enabled     = true
+      expression  = "(http.request.full_uri wildcard r\"https://content.sno.ws/*\")"
+
+      action_parameters = {
+        cache = true
+        edge_ttl = {
+          mode = "respect_origin"
+        }
+      }
+    },
+  ]
 }
