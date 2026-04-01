@@ -30,23 +30,29 @@ These are the blogs I read regularly. They've influenced my thinking and helped 
 - [Larsen Husby](https://larsenhusby.com/2D) - Love me [some maps](https://larsenhusby.com/City-Rivers-River-Cities)
 - [Matt Keeter](https://www.mattkeeter.com/projects/) - Weird [shaders](https://www.mattkeeter.com/projects/futureproof/), [raytracers](https://www.mattkeeter.com/projects/rayray/), and [games](https://www.mattkeeter.com/projects/pont/)
 - [Paul Stamatiou](https://paulstamatiou.com) - Photography + hands down the [best travelogues](https://paulstamatiou.com/photos/new-zealand/coromandel-peninsula/) I've ever seen
+- [Rootkid](https://rootkid.me) - Art + technology. My favorite is the [light that reacts to radio waves](https://www.youtube.com/watch?v=moBCOEiqiPs)
+
+### Chicago
+
+- [Capitol Fax](https://capitolfax.com/) - Is this the longest-running political blog in the United States?
+- [City That Works](https://citythatworks.substack.com/) - Chicago-specific policy takes and analyses
+- [Steve Vance](https://www.stevencanplan.com/) - Urban planning, travelogues, and Chicago thoughts
+
+### San Francisco
+
+- [Jasmine Sun](https://jasmi.news/) - {{< heart title="Favorite" >}} Essays on AI, SF culture, and China
+- [Mission Local](https://missionlocal.org/) - Is a blog? No. But it's on here for a reason
 
 ### General
 
 - [Ana Rodrigues](https://ohhelloana.blog) - Bookmarks, bookmarks everywhere
 - [Evening Sends](https://eveningsends.com/) - Rock climbing writing, essays, and opinions
-- [Francesco Di Lorenzo](https://francescodilorenzo.com/) - Bite-sized posts on life and programming
-- [Jeremy Maluf](https://jeremymaluf.com/) - {{< heart title="Favorite" >}} Lists for [onebag packing](https://jeremymaluf.com/onebag/) and [other stuff](https://jeremymaluf.com/walking/). Inspired this post
-- [Kyle E. Mitchell](https://writing.kemitchell.com/) - Interesting posts and takes on law ∪ technology
-- [Paul Graham](http://www.paulgraham.com/articles.html) - Classic essays on [tech](http://www.paulgraham.com/ds.html), [life](http://www.paulgraham.com/talk.html), and [startups](http://www.paulgraham.com/start.html)
-- [Steve Vance](https://www.stevencanplan.com/) - Urban planning, travelogues, and Chicago thoughts
-- [Terence Eden](https://shkspr.mobi/blog/) - Life advice, book reviews, and technology. Running for decades
-- [Terry Tao](https://terrytao.wordpress.com/career-advice/) - Time and career advice from the world's best mathematician
+- [Jeremy Maluf](https://jeremymaluf.com/) - Lists for [onebag packing](https://jeremymaluf.com/onebag/) and [other stuff](https://jeremymaluf.com/walking/). Inspired this post
 - [Tom MacWright](https://macwright.com/) - {{< heart title="Favorite" >}} Spatial data, development, miscellany. Inspired this blog
 
 ### Coding and tech
 
-- [Bradley Taunt](https://btxx.org) - {{< heart title="Favorite" >}} Small websites and minimal UX
+- [Bradley Taunt](https://btxx.org) - Small websites and minimal UX
 - [Cassidy Williams](https://cassidoo.co/) - Huge inspiration, amazing dev/streamer. Excellent [newsletter](https://cassidoo.co/newsletter/)
 - [Dan Luu](http://danluu.com/) - {{< heart title="Favorite" >}} Classic engineering blog. Mostly on [measuring](https://danluu.com/input-lag/) [interesting](https://danluu.com/cli-complexity/) [things](https://danluu.com/android-updates/)
 - [Dan McKinley](https://mcfunley.com/) - Tech talker and creator of many [influential](http://boringtechnology.club/) [slide](https://causalinference.club/) [decks](http://frequentdeploys.club/)
@@ -58,15 +64,16 @@ These are the blogs I read regularly. They've influenced my thinking and helped 
 - [Julia Silge](https://juliasilge.com/) - Tidymodels champion. Neat posts on R and [predicting home prices](https://juliasilge.com/blog/austin-housing/)
 - [Kate Rose Morley](https://iamkate.com) - Simple games, data viz, and CSS tricks
 - [Marianne Bellotti](https://bellmar.medium.com/) - Computer science ∪ government ∪ management
+- [Matt Webb](https://interconnected.org/) - Thoughts on the future of design, tech, and society
+- [Mitchell Hashimoto](https://mitchellh.com/) - Hashicorp co-founder and [Ghostty](https://ghostty.org/) creator
 - [Nick Babcock](https://nickb.dev/archive/) - Lessons on performance + some viz stuff
 - [Nikita Prokopov](https://tonsky.me/) - Creator of [Fira Code](https://github.com/tonsky/FiraCode). Posts on software [performance](https://tonsky.me/blog/performance-first/) and [design](https://tonsky.me/blog/good-times-weak-men/)
 - [The Pragmatic Engineer](https://blog.pragmaticengineer.com/) - Huge collection of useful [career](https://blog.pragmaticengineer.com/advice-to-myself-when-starting-as-a-software-developer/) and [programming advice](https://blog.pragmaticengineer.com/readable-code/)
-- [Tom Ryder](https://blog.sanctum.geek.nz/) - Sys admin stuff and all things Unix, shell, and terminal
+- [Simon Willison](https://simonwillison.net/) - Made [datasette](https://datasette.io/), writes daily about AI and new tech
 - [Vicki Boykis](https://vickiboykis.com) - {{< heart title="Favorite" >}} Data science, ML, R stuff, books, and essays
 
 ### Spatial
 
-- [Katie Jolly](https://www.katiejolly.io/blog/) - Maps and geography tips for R
 - [Kyle Walker](https://walker-data.com/blog.html) - Creator of [tidycensus](https://github.com/walkerke/tidycensus), mapper extraordinaire
 - [Paul Ramsey](https://blog.cleverelephant.ca/) - Weird, weedsy [posts on PostGIS performance](https://blog.cleverelephant.ca/2021/05/indexes-and-queries.html)
 - [Topi Tjukanov](https://tjukanov.org/) - Utterly useless (but beautiful) [map visualizations](https://tjukanov.org/accessibility-fireworks)
@@ -77,7 +84,7 @@ These are the blogs I read regularly. They've influenced my thinking and helped 
 
 These posts have inspired or influenced me in some way. They're things I reread and share with others. I tend to like concise posts (lists) or posts that graphically explain something complicated.
 
-### Chicago
+### Chicago {chicago-2}
 
 - [Portrait of Chicago: Uptown](https://chicagoflaneur.com/2020/04/24/portrait-of-chicago-uptown/) - History of Uptown. A little dated, but still well-done
 - [Scenes from Chicago's Ewing Annex Hotel](https://newrepublic.com/article/161808/ewing-annex-hotel-housing-crisis-chicago) - Stories from one the last [SROs](https://en.wikipedia.org/wiki/Single_room_occupancy)
@@ -86,6 +93,7 @@ These posts have inspired or influenced me in some way. They're things I reread 
 ### Life
 
 - [100 Tips for a Better Life](https://www.lesswrong.com/posts/7hFeMWC6Y5eaSixbD/100-tips-for-a-better-life) - {{< heart title="Favorite" >}} Things I wish I'd known at 20
+- [21 Facts About Throwing Good Parties](https://www.atvbt.com/21-facts-about-throwing-good-parties/) - Parties are a public service
 - [Don't End the Week With Nothing](https://training.kalzumeus.com/newsletters/archive/do-not-end-the-week-with-nothing) - Make things you can show
 - [Doing a Job](https://govleaders.org/rickover.htm) - {{< heart title="Favorite" >}} The best thing ever written on how to work and lead
 - [Embrace the Grind](https://jacobian.org/2021/apr/7/embrace-the-grind/) - Sometimes you just have to do the boring stuff
@@ -93,7 +101,6 @@ These posts have inspired or influenced me in some way. They're things I reread 
 - [How Complex Systems Fail](https://how.complexsystems.fail/) - Short, prescient read on why things break
 - [Leverage Points: Places to Intervene in a System](https://donellameadows.org/archives/leverage-points-places-to-intervene-in-a-system/) - How to make things break
 - [The Illustrated Guide to a Ph.D.](https://matt.might.net/articles/phd-school-in-pictures/) - Visual perspective on what a Ph.D. really means
-- [Stop Learning](https://www.nashvail.me/blog/stop-learning/) - You know enough, start doing things
 - [Work Hard](https://terrytao.wordpress.com/career-advice/work-hard/) - After a certain level, there are no shortcuts for effort
 
 ### Coding and tech {#coding-and-tech-2}
@@ -107,6 +114,7 @@ These posts have inspired or influenced me in some way. They're things I reread 
 - [The Infrastructure of a One-Man SaaS](https://anthonynsimon.com/blog/one-man-saas-architecture/) - Load balancing and AWS and K8s
 - [Kaminsky DNS Vulnerability](http://www.unixwiz.net/techtips/iguide-kaminsky-dns-vuln.html) - {{< heart title="Favorite" >}} The most engaging thing ever written on DNS
 - [The Local Minima of Suckiness](https://vickiboykis.com/2021/08/05/the-local-minima-of-suckiness/) - How I think about teaching and learning coding
+- [My AI Adoption Journey](https://mitchellh.com/writing/my-ai-adoption-journey) - Basically the same path I'm taking (as of early 2026)
 - [The Rise of User-Hostile Software](https://den.dev/blog/user-hostile-software/) - Software now is better for devs, worse for users
 - [Teaching Programming](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1006023) - Extremely helpful tips for teaching a class how to code
 - [The Tech Stack of a One-Woman Hardware Company](https://blog.thea.codes/winterblooms-tech-stack/) - Microcontrollers and C
@@ -122,12 +130,10 @@ These posts have inspired or influenced me in some way. They're things I reread 
 - [Data Science Is Different Now](https://vickiboykis.com/2019/02/13/data-science-is-different-now/) - DS has a supply bubble and schools aren't helping
 - [Engineers Shouldn't Write ETL](https://multithreaded.stitchfix.com/blog/2016/03/16/engineers-shouldnt-write-etl/) - They should write tools and platforms
 - [Good Data Scientist, Bad Data Scientist](https://ianwhitestone.work/good-ds-bad-ds/) - {{< heart title="Favorite" >}} What makes a great DS anyways?
-- [The Modern Data Stack](https://blog.getdbt.com/future-of-the-modern-data-stack/) - Where things are and where they're going
 
 ### Visualization
 
 - [Building Your Color Palette](https://www.refactoringui.com/previews/building-your-color-palette) - Systemic approach for picking colors for UIs
-- [Cell Tower Distribution](https://alpercinar.com/open-cell-id/) - Beautiful post on cell tower data viz
 - [Compressing and Enhancing Hand-Written Notes](https://mzucker.github.io/2016/09/20/noteshrink.html) - Shrink those scans
 - [Ditherpunk](https://surma.dev/things/ditherpunk/) - {{< heart title="Favorite" >}} Monochrome image dithering and how it works
 - [Mechanical Watch](https://ciechanow.ski/mechanical-watch/) - {{< heart title="Favorite" >}} One of the most technically and visually impressive treatments of a complex topic I've ever seen
@@ -141,12 +147,13 @@ These posts have inspired or influenced me in some way. They're things I reread 
 ### Other
 
 - [The American Abyss](https://www.nytimes.com/2021/01/09/magazine/trump-coup.html) - Long political essay on Jan. 6th and how we got there
-- [How to Gain More From Your Reading](https://psyche.co/guides/how-to-gain-more-from-reading-by-taking-it-all-in-more-slowly) - Tips for attentive, intentional reading
+- [First, Make Me Care](https://gwern.net/blog/2026/make-me-care) - Some advice I got from professional writing workshops
 - [MMAcevedo](https://qntm.org/mmacevedo) - Horrifying short fiction on the perils of saving a brain's state
 - [The Plague Year](https://www.newyorker.com/magazine/2021/01/04/the-plague-year) - Summary of the institutional failures that made COVID so bad
+- [Research as Leisure Activity](https://www.personalcanon.com/p/research-as-leisure-activity) - {{< heart title="Favorite" >}} How I think about [writing articles](https://www.pricepoints.health) and posts
 - [Some Blogging Myths](https://jvns.ca/blog/2023/06/05/some-blogging-myths/) - The most motivating post on blogging I've ever found
-- [The Tyranny of Structurelessness](https://www.jofreeman.com/joreen/tyranny.htm) - All groups develop informal structure
-- [What I Think About When I Edit](https://evaparish.com/blog/how-i-edit) - {{< heart title="Favorite" >}} Sound and simple writing advice
+- [The Tyranny of Structurelessness](https://www.jofreeman.com/joreen/tyranny.htm) - {{< heart title="Favorite" >}} All groups develop informal structure
+- [What I Think About When I Edit](https://evaparish.com/blog/how-i-edit) - Sound and simple writing advice
 - [Your Climbing Shoes Are Too Tight](https://eveningsends.com/climbing-shoes-tight/) - Treat your feet right, don't size down
 - [Cocktail Party Ideas](https://danluu.com/cocktail-ideas/) - {{< heart title="Favorite" >}} Basically a long-form of this [xkcd](https://xkcd.com/1831/). I think about this post all the time and try to remember to stay humble about the limits of my own knowledge
 
@@ -162,11 +169,11 @@ I have a strong preference for software that is fast, outwardly simple, and that
 
 - `ALL` - [Bitwarden](https://bitwarden.com/) - Open-source password manager. Great CLI integration
 - `iOS` - [Brew Timer](https://apps.apple.com/us/app/brew-timer-coffee-recipes/id1082171596) - Coffee brewing timer for V60 and Aeropress
-- `ALL` - [Down Dog](https://www.downdogapp.com/) - Procedurally-generated at-home yoga and HIIT
 - `AND` - [Loop Habit Tracker](https://loophabits.org) - Minimal, yet feature-rich and flexible habit tracker
 - `ALL` - [Mountain Project](https://www.mountainproject.com) - Find crags and track climbs, works offline
-- `iOS` - [NetNewsWire](https://netnewswire.com) - Tiny, simple, open-source RSS reader. Also on Mac
-- `AND` - [Niagara Launcher](https://play.google.com/store/apps/details?id=bitpit.launcher) - {{< heart title="Favorite" >}} Minimalist, fast, well-designed launcher
+- `iOS` - [NetNewsWire](https://netnewswire.com) - {{< heart title="Favorite" >}} Tiny, simple, open-source RSS reader. Also on Mac
+- `AND` - [Niagara Launcher](https://play.google.com/store/apps/details?id=bitpit.launcher) - Minimalist, fast, well-designed launcher
+- `ALL` - [Pocket Casts](https://pocketcasts.com/) - I think I've been using this for like 10 years with no issues
 - `ALL` - [Todoist](https://todoist.com/) - {{< heart title="Favorite" >}} To-do list I've used for over a decade. Simple design, great UX
 - `iOS` - [WorkOutDoors](http://www.workoutdoors.net/) - Offline maps for Apple Watch. Great for hiking and biking
 - `ALL` - [YNAB](https://www.youneedabudget.com/) - Straightforward budgeting with bank and brokerage integration
@@ -174,23 +181,20 @@ I have a strong preference for software that is fast, outwardly simple, and that
 ### Desktop
 
 - `MAC` - [IINA](https://github.com/iina/iina) - Minimal Mac-only alternative to VLC
+- `ALL` - [Ghostty](https://ghostty.org/) - {{< heart title="Favorite" >}} Replaced all other terminals for me. Fast, simple, and just works
 - `MAC` - [Little Snitch](https://www.obdev.at/products/littlesnitch/index.html) - Decide how apps talk to the internet. Must-have for any Mac
-- `ALL` - [Obsidian](https://obsidian.md) - {{< heart title="Favorite" >}} Fast notes. Free, works everywhere, plain markdown
-- `MAC` - [Swish](https://highlyopinionated.co/swish/) - {{< heart title="Favorite" >}} Resize and move windows with super intuitive gestures
-- `MAC` - [Transmit](https://panic.com/transmit/) - Fast, versatile file transfer utility
+- `ALL` - [Obsidian](https://obsidian.md) - Fast notes. Free, works everywhere, plain markdown
 - `ALL` - [Positron](https://positron.posit.co/) - {{< heart title="Favorite" >}} VS Code fork specifically for data science
 - `WIN` - [Terminal + WSL 2](https://docs.microsoft.com/en-us/windows/wsl/install-win10) - Linux virtualization on Windows that just works
 
 ### Other {#other-2}
 
+- [DuckDB](https://duckdb.org/) - {{< heart title="Favorite" >}} Data toolkit for everything. Runs [OpenTimes](https://opentimes.org/)
 - [FreshRSS](https://freshrss.org) - Free, self-hosted RSS feed aggregator. Lightweight, fast, and simple
 - [JetBrains Mono](https://www.jetbrains.com/lp/mono/) - Monospaced font with ligatures. Works in nearly every editor
 - [Parquet](https://parquet.apache.org/) - Fast, space-efficient columnar storage format
-- [Postgres](https://www.postgresql.org/) - Preferred RDBMS for any big project with structured data
-- [PostGIS](https://postgis.net/) - Spatial data extension for Postgres
 - [SQLite](https://www.sqlite.org/index.html) - The go-to DB engine for any small project that requires SQL
 - [WireGuard](https://www.wireguard.com/) - {{< heart title="Favorite" >}} Miracle VPN. Crazy fast and easy-to-use
-- [ZFS](https://zfsonlinux.org/) - Filesystem for storage pooling and management
 
 ### CLI tools
 
@@ -202,18 +206,7 @@ I have a strong preference for software that is fast, outwardly simple, and that
 - [stow](https://www.gnu.org/software/stow/manual/stow.html) - Symlink, config, and dotfiles management
 - [tmux](https://github.com/tmux/tmux) - Terminal multiplexer + keep remote terminal sessions alive
 - [uv](https://docs.astral.sh/uv/) - {{< heart title="Favorite" >}} Python project management. `pip` but 100x better/faster
+- [zoxide](https://github.com/ajeetdsouza/zoxide) - Smart `cd`. I combine it with `fzf` to [jump directories](https://github.com/dfsnow/dotfiles/blob/a749adb9fddb9407867e021b8601d09cad6bb80e/bash/.bashrc#L195-L207)
 - [zstd](https://github.com/facebook/zstd) - Compression algorithm of choice. Replaced bzip2 as a favorite
 
-### R packages
-
-- [data.table](https://github.com/Rdatatable/data.table) - {{< heart title="Favorite" >}} Impossible data manipulation magic. Faster than everything else
-- [dplyr](https://dplyr.tidyverse.org/) - Clear, intuitive data munging that plays well with other Tidyverse libraries
-- [lubridate](https://lubridate.tidyverse.org/) - Intuitive, consistent date-time handling. Save yourself from footguns
-- [ggplot2](https://ggplot2.tidyverse.org/) - _The_ plotting lib for R. Blows matplotlib (and many others) out of the water
-- [r5r](https://github.com/ipeaGIT/r5r) - Robust, realistic transportation routing using [Conveyal's R5 engine](https://github.com/conveyal/r5)
-- [renv](https://rstudio.github.io/renv/) - Wonderful environment/package manager for R (finally)
-- [sf](https://r-spatial.github.io/sf/) - Geospatial manipulation, maps, and geometry features
-- [tidycensus](https://walker-data.com/tidycensus/) - Useful interface for the Census API
-- [tidytransit](https://github.com/r-transit/tidytransit) - GTFS feed reader. Make [trains go brrr]({{< relref "2021-03-03-creating-moving-transit-maps-with-r-and-gtfs-feeds.md" >}})
-
-_Last updated 2026-02-01_
+_Last updated 2026-03-31_
