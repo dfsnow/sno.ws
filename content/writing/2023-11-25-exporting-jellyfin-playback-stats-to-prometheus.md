@@ -166,9 +166,9 @@ WHERE DATETIME(DateCreated, "+" || PlayDuration || " seconds") >=
 
 Hitting the `/user_usage_stats/submit_custom_query` endpoint with this query effectively returns all currently playing Jellyfin media, which is exactly what I needed. The final piece of the puzzle was figuring out how to export the results to Prometheus.
 
-<p class="notice">
-If your Grafana instance is on the same machine as Jellyfin, it might be easier to skip Prometheus entirely. Simply use the <a href="https://grafana.com/grafana/plugins/frser-sqlite-datasource/">Grafana SQLite plugin</a> to add the Playback Reporting Plugin database file as a Grafana datasource directly.
-</p>
+{{< notice >}}
+If your Grafana instance is on the same machine as Jellyfin, it might be easier to skip Prometheus entirely. Simply use the [Grafana SQLite plugin](https://grafana.com/grafana/plugins/frser-sqlite-datasource/) to add the Playback Reporting Plugin database file as a Grafana datasource directly.
+{{< /notice >}}
 
 ## Prometheus JSON exporter
 

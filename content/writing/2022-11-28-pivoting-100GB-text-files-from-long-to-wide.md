@@ -139,9 +139,11 @@ This approach works, but is extremely slow for large matrices (see [results](#re
 
 Given the need for performance, a lower-level language is the obvious next step. Let's try using Rust.
 
-<p class="notice">
-I don't have much experience with compiled languages (most of my work uses Python/R), but I took this as an opportunity to learn something new. I chose Rust because it has great documentation, easy-to-use tooling, and a (seemingly) large community. Also, I was intimidated by the complexity of older languages like C/C++.<br><br>I have to say, I'm incredibly impressed by Rust. I managed to get a working prototype binary in about 2 hours despite <em>almost no experience with compiled languages</em>, mostly thanks to the excellent book, linting, and compiler hints. That said, please forgive any code smell; I'm learning (in public) as I go.
-</p>
+{{< notice >}}
+I don't have much experience with compiled languages (most of my work uses Python/R), but I took this as an opportunity to learn something new. I chose Rust because it has great documentation, easy-to-use tooling, and a (seemingly) large community. Also, I was intimidated by the complexity of older languages like C/C++.
+<br><br>
+I have to say, I'm incredibly impressed by Rust. I managed to get a working prototype binary in about 2 hours despite *almost no experience with compiled languages*, mostly thanks to the excellent book, linting, and compiler hints. That said, please forgive any code smell; I'm learning (in public) as I go.
+{{< /notice >}}
 
 My naive approach does nearly the same thing as the `awk` script. First, it stores the destinations as keys in a dictionary (`BTreeMap` in Rust). Then, it takes lines from stdin, populates the dictionary values, and then prints the values to stdout for each origin. The code is a bit more extensive, so I'll link to GitHub rather than showing it here.
 
