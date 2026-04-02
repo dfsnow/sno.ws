@@ -83,7 +83,7 @@ These are the blogs I read regularly. They've influenced my thinking and helped 
 
 These posts have inspired or influenced me in some way. They're things I reread and share with others. I tend to like concise posts (lists) or posts that graphically explain something complicated.
 
-### Chicago {chicago-2}
+### Chicago {#chicago-2}
 
 - [Portrait of Chicago: Uptown](https://chicagoflaneur.com/2020/04/24/portrait-of-chicago-uptown/) - History of Uptown. A little dated, but still well-done
 - [Scenes from Chicago's Ewing Annex Hotel](https://newrepublic.com/article/161808/ewing-annex-hotel-housing-crisis-chicago) - Stories from one the last [SROs](https://en.wikipedia.org/wiki/Single_room_occupancy)
