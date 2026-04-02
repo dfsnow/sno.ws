@@ -20,7 +20,8 @@
         "uses-responsive-images": "off",
         "csp-xss": "off",
         "lcp-lazy-loaded": "off",
-        "bf-cache": "off"
+        "bf-cache": "off",
+        "target-size": "off"
       }
     }
   }
