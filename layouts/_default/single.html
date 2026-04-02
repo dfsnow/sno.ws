@@ -6,9 +6,16 @@
         <time class="post-meta" datetime='{{ .Date.Format "2006-01-02" }}'>{{ .Date.Format "January 2, 2006" }}</time>
         {{- end -}}
         {{- if isset .Params "rating" -}}
-        <a href="/hearts-and-ratings" class="post-rating">
-            <h3>Score: {{ .Params.rating }} / 10</h3>
-        </a>
+        {{- $labels := dict "3" "Amazing" "2" "Great" "1" "Fine" "0" "Mediocre" "-1" "Bad" "-2" "Awful" "-3" "DNF'd" -}}
+        {{- $pos := add (int .Params.rating) 4 -}}
+        <h3>
+            <a href="/hearts-and-ratings" class="post-rating">
+                {{- range seq 1 7 -}}
+                {{- $label := index $labels (string (sub . 4)) -}}
+                <svg viewBox="0 0 16 16" height="16px" width="16px" xmlns="http://www.w3.org/2000/svg"><title>{{ $label }}</title><circle cx="8" cy="8" r="5"{{ if eq . $pos }} class="active"{{ end }}/></svg>
+                {{- end -}}
+            </a>
+        </h3>
         {{- end -}}
     </header>
     {{- .Content -}}

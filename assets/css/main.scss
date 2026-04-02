@@ -243,6 +243,29 @@ ol {
   > a.post-meta {
     color: var(--link-color);
   }
+
+  // For inline ordinal ratings on books and media
+  > h3 > a.post-rating {
+    display: inline-flex;
+    gap: 0.15em;
+    padding-top: 0.15em;
+    margin-left: -0.1em;
+
+    > svg circle {
+      fill: none;
+      stroke: var(--icon-color);
+      stroke-width: 1px;
+
+      &.active {
+        fill: var(--icon-color);
+      }
+
+      &:hover {
+        fill: var(--text-color);
+        stroke: var(--text-color);
+      }
+    }
+  }
 }
 
 .navbar {

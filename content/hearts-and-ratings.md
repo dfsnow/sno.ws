@@ -19,7 +19,7 @@ I also have a rating scale for books. It's a 7-point ordinal scale, where 3 is t
   </tr>
   <tr>
     <td class="rating">1  =</td>
-    <td>Okay. There were some good bits even if they were hard to find. No regrets about reading it, but probably wouldn't recommend it.</td>
+    <td>Fine. There were some good bits even if they were hard to find. No regrets about reading it, but probably wouldn't recommend it.</td>
   </tr>
   <tr>
     <td class="rating">0  =</td>
