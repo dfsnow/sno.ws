@@ -5,7 +5,6 @@ url = "/digital-things"
 aliases = [ "/writing/2021/08/30/favorite-digital-things/", "/uses", "/blogroll" ]
 recommended = "false"
 styles = [ "css/heart-markers.css" ]
-scripts = [ "js/heart-markers.js" ]
 +++
 
 This is a list of my favorite digital things, excluding media. It's basically a [blogroll](https://indieweb.org/blogroll), [`/uses`](https://uses.tech) page, and bookmark dump combined into one. It's purpose is three-fold:

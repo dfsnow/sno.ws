@@ -1,11 +1,12 @@
-.js-enabled ul li.no-heart::before {
-  content: "•";
-  position: absolute;
-  transform: translate(-0.8em, -0.2em);
-  font-size: 1.3em;
+article ul li:has(> svg) {
+  list-style: none;
 }
 
-.js-enabled ul li.with-heart::before {
+article ul li:has(> svg) > svg {
+  display: none;
+}
+
+article ul li:has(> svg)::before {
   content: "";
   position: absolute;
   transform: translate(-1.2em, 0.4375em);
@@ -13,9 +14,15 @@
   height: var(--heart-size);
   background: url("/heart-marker.svg");
   background-size: cover;
-  font-size: initial;
 }
 
-.js-enabled ul li::marker {
-  content: "";
+article ul li:not(:has(> svg)) {
+  list-style: none;
+}
+
+article ul li:not(:has(> svg))::before {
+  content: "•";
+  position: absolute;
+  transform: translate(-0.8em, -0.2em);
+  font-size: 1.3em;
 }

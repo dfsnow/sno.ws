@@ -8,41 +8,26 @@
 <div class="post-list-photos">
     {{ range where $.Site.RegularPages "Section" "photos" }}
 
-    <!-- Get image base path and type -->
     {{ $srcBase := .Site.Params.photosURL }}
-    {{ $srcExt := path.Ext .Params.src }}
-    {{ $srcFile := strings.TrimSuffix $srcExt .Params.src }}
-
-    <!-- Fetch remote image to get dimensions -->
-    {{ $imgURL := printf "%s/metadata=none/%s%s" $srcBase $srcFile $srcExt }}
-    {{ $srcWidth := 0 }}
-    {{ $srcHeight := 0 }}
-    {{ with try (resources.GetRemote $imgURL) }}
-      {{ with .Err }}
-        {{ warnf "Failed to fetch %s: %s" $imgURL . }}
-      {{ else with .Value }}
-        {{ $srcWidth = .Width }}
-        {{ $srcHeight = .Height }}
-      {{ end }}
-    {{ end }}
+    {{ $img := partial "image-meta" (dict "baseURL" $srcBase "src" .Params.src "transforms" "metadata=none") }}
 
     {{ $aspectRatio := 1.5 }}
-    {{ if and (gt $srcWidth 0) (gt $srcHeight 0) }}
-      {{ $aspectRatio = div (mul $srcWidth 1.0) $srcHeight }}
+    {{ if and (gt $img.width 0) (gt $img.height 0) }}
+      {{ $aspectRatio = div (mul $img.width 1.0) $img.height }}
     {{ end }}
 
     <figure class="photo-frame" style="flex-grow: {{ printf "%.4f" $aspectRatio }}; flex-basis: {{ printf "%.0f" (mul $aspectRatio 375) }}px;">
         <a href="{{ .RelPermalink }}">
             <picture>
-                <source srcset="{{ $srcBase }}/width=320,metadata=none,onerror=redirect,format=webp/{{ $srcFile }}.webp 320w, {{ $srcBase }}/width=640,metadata=none,onerror=redirect,format=webp/{{ $srcFile }}.webp 640w, {{ $srcBase }}/width=960,metadata=none,onerror=redirect,format=webp/{{ $srcFile }}.webp 960w" sizes="(max-width: 720px) 100vw, 480px" type="image/webp">
-                <source srcset="{{ $srcBase }}/width=320,metadata=none,onerror=redirect,format=jpeg/{{ $srcFile }}.jpg 320w, {{ $srcBase }}/width=640,metadata=none,onerror=redirect,format=jpeg/{{ $srcFile }}.jpg 640w, {{ $srcBase }}/width=960,metadata=none,onerror=redirect,format=jpeg/{{ $srcFile }}.jpg 960w" sizes="(max-width: 720px) 100vw, 480px" type="image/jpeg">
-                <img src="{{ $srcBase }}/width=640,metadata=none,onerror=redirect/{{ $srcFile }}{{ $srcExt }}" alt="{{ .Title }}" width="{{ $srcWidth }}"
-                  height="{{ $srcHeight }}" loading="lazy">
+                <source srcset="{{ $srcBase }}/width=320,metadata=none,onerror=redirect,format=webp/{{ $img.file }}.webp 320w, {{ $srcBase }}/width=640,metadata=none,onerror=redirect,format=webp/{{ $img.file }}.webp 640w, {{ $srcBase }}/width=960,metadata=none,onerror=redirect,format=webp/{{ $img.file }}.webp 960w" sizes="(max-width: 720px) 100vw, 480px" type="image/webp">
+                <source srcset="{{ $srcBase }}/width=320,metadata=none,onerror=redirect,format=jpeg/{{ $img.file }}.jpg 320w, {{ $srcBase }}/width=640,metadata=none,onerror=redirect,format=jpeg/{{ $img.file }}.jpg 640w, {{ $srcBase }}/width=960,metadata=none,onerror=redirect,format=jpeg/{{ $img.file }}.jpg 960w" sizes="(max-width: 720px) 100vw, 480px" type="image/jpeg">
+                <img src="{{ $srcBase }}/width=640,metadata=none,onerror=redirect/{{ $img.file }}{{ $img.ext }}" alt="{{ .Title }}" width="{{ $img.width }}"
+                  height="{{ $img.height }}" loading="lazy">
             </picture>
         </a>
         {{ if eq .Params.recommended "true" }}
         <figcaption class="photo-rec">
-            {{ partial "heart" (dict "title" "Personal favorite" "width" "24px" "height" "24px" ) }}
+            {{ partial "heart" (dict "title" "Personal favorite" "width" $.Site.Params.heartSize "height" $.Site.Params.heartSize ) }}
         </figcaption>
         {{ end }}
     </figure>

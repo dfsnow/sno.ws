@@ -1,25 +1,10 @@
 {{ if .IsNamedParams }}
 {{ $srcBase := .Site.Params.postURL }}
-{{ $src := .Get "src" }}
-{{ $srcExt := path.Ext $src }}
-{{ $srcFileFull := strings.TrimSuffix $srcExt $src }}
-{{ $srcType := replaceRE ".jpg" "jpeg" $srcExt | replaceRE "\\." "" }}
-
-<!-- Fetch remote image to get dimensions -->
-{{ $imgURL := printf "%s%s%s" $srcBase $srcFileFull $srcExt }}
-{{ $srcWidth := 0 }}
-{{ $srcHeight := 0 }}
-{{ with try (resources.GetRemote $imgURL) }}
-  {{ with .Err }}
-    {{ warnf "Failed to fetch %s: %s" $imgURL . }}
-  {{ else with .Value }}
-    {{ $srcWidth = .Width }}
-    {{ $srcHeight = .Height }}
-  {{ end }}
-{{ end }}
+{{ $img := partial "image-meta" (dict "baseURL" $srcBase "src" (.Get "src")) }}
+{{ $srcType := replaceRE ".jpg" "jpeg" $img.ext | replaceRE "\\." "" }}
 <picture>
-    <source srcset="{{ $srcBase }}{{ $srcFileFull }}{{ $srcExt }}" type="image/{{ $srcType }}">
-    <img src="{{ $srcBase }}{{ $srcFileFull }}{{ $srcExt }}" alt='{{ .Get "alt" }}' width='{{ $srcWidth }}'
-        height='{{ $srcHeight }}' loading="lazy">
+    <source srcset="{{ $srcBase }}{{ $img.file }}{{ $img.ext }}" type="image/{{ $srcType }}">
+    <img src="{{ $srcBase }}{{ $img.file }}{{ $img.ext }}" alt='{{ .Get "alt" }}' width='{{ $img.width }}'
+        height='{{ $img.height }}' loading="lazy">
 </picture>
 {{ end }}

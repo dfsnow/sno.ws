@@ -83,15 +83,10 @@ h6 {
     padding-left: 0.4em;
   }
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
+  :is(h1, h2, h3, h4, h5, h6) {
     color: var(--text-color);
 
-    &:hover .header-link-icon, &:focus .header-link-icon, &:active .header-link-icon {
+    &:is(:hover, :focus, :active) .header-link-icon {
       display: inline;
     }
   }
@@ -385,7 +380,7 @@ blockquote p,
 }
 
 /* adjustment when very small */
-@media only screen and (max-width: 720px) {
+@media (max-width: 720px) {
   html {
     scroll-padding-top: 1.5em;
   }
@@ -505,11 +500,6 @@ blockquote p,
     border-bottom: 1.5px solid var(--gray-accent-1);
   }
 
-  .notice::before {
-    color: var(--notice-color);
-  }
-
-  .warning::before {
-    color: var(--warning-color);
-  }
+  .notice::before { color: var(--notice-color); }
+  .warning::before { color: var(--warning-color); }
 }

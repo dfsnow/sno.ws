@@ -6,31 +6,16 @@
 
 {{ define "main" }}
 
-<!-- Get image base path and type -->
 {{ $srcBase := .Site.Params.photosURL }}
-{{ $srcExt := path.Ext .Params.src }}
-{{ $srcFile := strings.TrimSuffix $srcExt .Params.src }}
-
-<!-- Fetch remote image to get dimensions -->
-{{ $imgURL := printf "%s/metadata=none/%s%s" $srcBase $srcFile $srcExt }}
-{{ $srcWidth := 0 }}
-{{ $srcHeight := 0 }}
-{{ with try (resources.GetRemote $imgURL) }}
-  {{ with .Err }}
-    {{ warnf "Failed to fetch %s: %s" $imgURL . }}
-  {{ else with .Value }}
-    {{ $srcWidth = .Width }}
-    {{ $srcHeight = .Height }}
-  {{ end }}
-{{ end }}
+{{ $img := partial "image-meta" (dict "baseURL" $srcBase "src" .Params.src "transforms" "metadata=none") }}
 
 <figure class="post-feature-frame">
-    <a href="{{ $srcBase }}/metadata=none,onerror=redirect,format=jpeg/{{ $srcFile }}{{ $srcExt }}">
+    <a href="{{ $srcBase }}/metadata=none,onerror=redirect,format=jpeg/{{ $img.file }}{{ $img.ext }}">
         <picture>
-            <source srcset="{{ $srcBase }}/width=640,metadata=none,onerror=redirect,format=webp/{{ $srcFile }}.webp 640w, {{ $srcBase }}/width=960,metadata=none,onerror=redirect,format=webp/{{ $srcFile }}.webp 960w, {{ $srcBase }}/width=1280,metadata=none,onerror=redirect,format=webp/{{ $srcFile }}.webp 1280w, {{ $srcBase }}/width=1920,metadata=none,onerror=redirect,format=webp/{{ $srcFile }}.webp 1920w" sizes="100vw" type="image/webp">
-            <source srcset="{{ $srcBase }}/width=640,metadata=none,onerror=redirect,format=jpeg/{{ $srcFile }}.jpg 640w, {{ $srcBase }}/width=960,metadata=none,onerror=redirect,format=jpeg/{{ $srcFile }}.jpg 960w, {{ $srcBase }}/width=1280,metadata=none,onerror=redirect,format=jpeg/{{ $srcFile }}.jpg 1280w, {{ $srcBase }}/width=1920,metadata=none,onerror=redirect,format=jpeg/{{ $srcFile }}.jpg 1920w" sizes="100vw" type="image/jpeg">
-            <img src="{{ $srcBase }}/width=640,metadata=none,onerror=redirect/{{ $srcFile }}{{ $srcExt }}" alt="{{ .Title }}" width="{{ $srcWidth }}"
-                height="{{ $srcHeight }}" class="post-feature-photo">
+            <source srcset="{{ $srcBase }}/width=640,metadata=none,onerror=redirect,format=webp/{{ $img.file }}.webp 640w, {{ $srcBase }}/width=960,metadata=none,onerror=redirect,format=webp/{{ $img.file }}.webp 960w, {{ $srcBase }}/width=1280,metadata=none,onerror=redirect,format=webp/{{ $img.file }}.webp 1280w, {{ $srcBase }}/width=1920,metadata=none,onerror=redirect,format=webp/{{ $img.file }}.webp 1920w" sizes="100vw" type="image/webp">
+            <source srcset="{{ $srcBase }}/width=640,metadata=none,onerror=redirect,format=jpeg/{{ $img.file }}.jpg 640w, {{ $srcBase }}/width=960,metadata=none,onerror=redirect,format=jpeg/{{ $img.file }}.jpg 960w, {{ $srcBase }}/width=1280,metadata=none,onerror=redirect,format=jpeg/{{ $img.file }}.jpg 1280w, {{ $srcBase }}/width=1920,metadata=none,onerror=redirect,format=jpeg/{{ $img.file }}.jpg 1920w" sizes="100vw" type="image/jpeg">
+            <img src="{{ $srcBase }}/width=640,metadata=none,onerror=redirect/{{ $img.file }}{{ $img.ext }}" alt="{{ .Title }}" width="{{ $img.width }}"
+                height="{{ $img.height }}" class="post-feature-photo">
         </picture>
     </a>
 </figure>

@@ -1,0 +1,24 @@
+{{- $srcBase := .baseURL -}}
+{{- $srcExt := path.Ext .src -}}
+{{- $srcFile := strings.TrimSuffix $srcExt .src -}}
+
+{{- $transforms := .transforms | default "" -}}
+{{- $imgURL := "" -}}
+{{- if $transforms -}}
+  {{- $imgURL = printf "%s/%s/%s%s" $srcBase $transforms $srcFile $srcExt -}}
+{{- else -}}
+  {{- $imgURL = printf "%s%s%s" $srcBase $srcFile $srcExt -}}
+{{- end -}}
+
+{{- $srcWidth := 0 -}}
+{{- $srcHeight := 0 -}}
+{{- with try (resources.GetRemote $imgURL) -}}
+  {{- with .Err -}}
+    {{- warnf "Failed to fetch %s: %s" $imgURL . -}}
+  {{- else with .Value -}}
+    {{- $srcWidth = .Width -}}
+    {{- $srcHeight = .Height -}}
+  {{- end -}}
+{{- end -}}
+
+{{- return (dict "file" $srcFile "ext" $srcExt "width" $srcWidth "height" $srcHeight) -}}
