@@ -26,7 +26,7 @@
 {{ $main := resources.Get "css/main.scss" | css.Sass | minify | fingerprint }}
 {{ $dark := resources.Get "css/syntax-dark.css" | minify | fingerprint }}
 {{ $light := resources.Get "css/syntax-light.css" | minify | fingerprint }}
-<link rel="stylesheet" href="{{ $main.RelPermalink }}" integrity="{{ $main.Data.Integrity }}">
+<link rel="stylesheet" href="{{ $main.RelPermalink }}">
 
 {{ if eq .Type "writing" }}
 <style media="screen">
