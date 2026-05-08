@@ -9,7 +9,7 @@ article ul li:has(> svg) > svg {
 article ul li:has(> svg)::before {
   content: "";
   position: absolute;
-  transform: translate(-1.2em, 0.4375em);
+  transform: translate(-1.15em, 0.4375em);
   width: var(--heart-size);
   height: var(--heart-size);
   background: url("/heart-marker.svg");
