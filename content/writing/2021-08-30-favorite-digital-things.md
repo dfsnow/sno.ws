@@ -107,7 +107,7 @@ These posts have inspired or influenced me in some way. They're things I reread 
 - [All the Best Engineering Advice I Stole From Non-Technical People](https://bellmar.medium.com/all-the-best-engineering-advice-i-stole-from-non-technical-people-eb7f90ca2f5f) - Big wisdom
 - [Choose Boring Technology](https://mcfunley.com/choose-boring-technology) - Stop reinventing ssh and grasping for shiny things
 - [Drunk Post: Things I've learned as a Sr Engineer](https://old.reddit.com/r/ExperiencedDevs/comments/nmodyl/drunk_post_things_ive_learned_as_a_sr_engineer/) - Strong opinions, mostly true
-- [FAANG Interview Advice](https://www.zainrizvi.io/blog/the-interviewing-advice-no-one-shares/) - Good general interview advice, not just for FAANG
+- [FAANG Interview Advice](https://zainrizvi.io/blog/the-interviewing-advice-no-one-shares/) - Good general interview advice, not just for FAANG
 - [Fast Software, the Best Software](https://craigmod.com/essays/fast_software/) - Speed > lots of features
 - [I Wish My Web Server Were in the Corner of My Room](https://interconnected.org/home/2022/10/10/servers) - Mix virtual and physical
 - [The Infrastructure of a One-Man SaaS](https://anthonynsimon.com/blog/one-man-saas-architecture/) - Load balancing and AWS and K8s
