@@ -40,7 +40,7 @@ These are the blogs I read regularly. They've influenced my thinking and helped 
 ### San Francisco
 
 - [Jasmine Sun](https://jasmi.news/) - {{< heart title="Favorite" >}} Essays on AI, SF culture, and China
-- [Mission Local](https://missionlocal.org/) - Is a blog? No. But it's on here for a reason
+- [Mission Local](https://missionlocal.org/) - Is it a blog? No. But it's on here for a reason
 
 ### General
 
