@@ -9,7 +9,7 @@
 {{ end }}
 {{ $srcExt := strings.TrimPrefix "." $img.ext }}
 {{ $cfBase := printf "%s/%s" $srcBase $srcExt }}
-{{ $srcset := dict "baseURL" $cfBase "path" $img.file "widths" (slice 640 960 1280 1600) "maxWidth" $img.width }}
+{{ $srcset := dict "baseURL" $cfBase "path" $img.file "widths" (slice 640 960 1280) "maxWidth" $img.width }}
 <picture>
     <source srcset="{{ (partial "cf-srcset" (merge $srcset (dict "format" "avif" "ext" "avif"))).srcset }}" sizes="(max-width: 880px) 100vw, 880px" type="image/avif">
     <source srcset="{{ (partial "cf-srcset" (merge $srcset (dict "format" "webp" "ext" "webp"))).srcset }}" sizes="(max-width: 880px) 100vw, 880px" type="image/webp">

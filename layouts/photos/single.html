@@ -8,13 +8,12 @@
 
 {{ $srcBase := .Site.Params.photosURL }}
 {{ $img := partial "image-meta" (dict "baseURL" $srcBase "src" .Params.src "transforms" "metadata=none") }}
-{{ $srcset := dict "baseURL" $srcBase "path" (printf "/%s" $img.file) "widths" (slice 640 960 1280 1920) "maxWidth" $img.width "height" $img.height }}
+{{ $srcset := dict "baseURL" $srcBase "path" (printf "/%s" $img.file) "widths" (slice 640 960 1280) "maxWidth" $img.width }}
 
 <figure class="post-feature-frame">
     <a href="{{ $srcBase }}/metadata=none,onerror=redirect,format=jpeg/{{ $img.file }}{{ $img.ext }}">
-        {{ $avif := partial "cf-srcset" (merge $srcset (dict "format" "avif" "ext" "avif" "maxPixels" 2000000)) }}
         <picture>
-            <source srcset="{{ $avif.srcset }}" sizes="100vw" type="image/avif">
+            <source srcset="{{ (partial "cf-srcset" (merge $srcset (dict "format" "avif" "ext" "avif"))).srcset }}" sizes="100vw" type="image/avif">
             <source srcset="{{ (partial "cf-srcset" (merge $srcset (dict "format" "webp" "ext" "webp"))).srcset }}" sizes="100vw" type="image/webp">
             <source srcset="{{ (partial "cf-srcset" (merge $srcset (dict "format" "jpeg" "ext" "jpg"))).srcset }}" sizes="100vw" type="image/jpeg">
             <img src="{{ $srcBase }}/width=640,metadata=none,onerror=redirect/{{ $img.file }}{{ $img.ext }}" alt="{{ .Title }}" width="{{ $img.width }}"
