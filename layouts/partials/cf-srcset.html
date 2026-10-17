@@ -1,0 +1,25 @@
+{{- /*
+Build a CF Images srcset for one output format. Returns a dict with the
+candidate list as srcset.
+
+CF Images returns the unconverted original when a width is not smaller than
+the original, so widths at or above maxWidth are left out.
+
+When maxPixels is set, widths whose output has more pixels than maxPixels are
+also left out. CF Images falls back to another format for large AVIF output.
+*/ -}}
+{{- $maxPixels := .maxPixels | default 0 -}}
+{{- $height := .height | default 0 -}}
+{{- $entries := slice -}}
+{{- range .widths -}}
+  {{- if or (eq $.maxWidth 0) (lt . $.maxWidth) -}}
+    {{- $pixels := 0 -}}
+    {{- if and (gt $height 0) (gt $.maxWidth 0) -}}
+      {{- $pixels = mul . (math.Round (div (mul . $height 1.0) $.maxWidth)) -}}
+    {{- end -}}
+    {{- if or (eq $maxPixels 0) (le $pixels $maxPixels) -}}
+      {{- $entries = $entries | append (printf "%s/width=%d,metadata=none,onerror=redirect,format=%s%s.%s %dw" $.baseURL . $.format $.path $.ext .) -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- return dict "srcset" (delimit $entries ", ") -}}

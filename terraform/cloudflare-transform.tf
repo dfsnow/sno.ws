@@ -19,5 +19,19 @@ resource "cloudflare_ruleset" "sno-ws-transform" {
         }
       }
     },
+    {
+      action      = "rewrite"
+      description = "Redirect /posts/ to CF Images URL"
+      enabled     = true
+      expression  = "(http.host eq \"content.sno.ws\") and (starts_with(http.request.uri.path, \"/posts/\")) and (not (any(http.request.headers[\"via\"][*] contains \"image-resizing\")))"
+
+      action_parameters = {
+        uri = {
+          path = {
+            expression = "wildcard_replace(http.request.uri.path, \"/posts/*/*/*.*\", \"/cdn-cgi/image/$${2}/posts/$${3}.$${1}\")"
+          }
+        }
+      }
+    },
   ]
 }

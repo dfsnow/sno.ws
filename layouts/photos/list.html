@@ -10,6 +10,7 @@
 
     {{ $srcBase := .Site.Params.photosURL }}
     {{ $img := partial "image-meta" (dict "baseURL" $srcBase "src" .Params.src "transforms" "metadata=none") }}
+    {{ $srcset := dict "baseURL" $srcBase "path" (printf "/%s" $img.file) "widths" (slice 320 640 960) "maxWidth" $img.width "height" $img.height }}
 
     {{ $aspectRatio := 1.5 }}
     {{ if and (gt $img.width 0) (gt $img.height 0) }}
@@ -18,10 +19,11 @@
 
     <figure class="photo-frame" style="flex-grow: {{ printf "%.4f" $aspectRatio }}; flex-basis: {{ printf "%.0f" (mul $aspectRatio 375) }}px;">
         <a href="{{ .RelPermalink }}">
+            {{ $avif := partial "cf-srcset" (merge $srcset (dict "format" "avif" "ext" "avif" "maxPixels" 2000000)) }}
             <picture>
-                <source srcset="{{ $srcBase }}/width=320,metadata=none,onerror=redirect,format=avif/{{ $img.file }}.avif 320w, {{ $srcBase }}/width=640,metadata=none,onerror=redirect,format=avif/{{ $img.file }}.avif 640w, {{ $srcBase }}/width=960,metadata=none,onerror=redirect,format=avif/{{ $img.file }}.avif 960w" sizes="(max-width: 720px) 100vw, 480px" type="image/avif">
-                <source srcset="{{ $srcBase }}/width=320,metadata=none,onerror=redirect,format=webp/{{ $img.file }}.webp 320w, {{ $srcBase }}/width=640,metadata=none,onerror=redirect,format=webp/{{ $img.file }}.webp 640w, {{ $srcBase }}/width=960,metadata=none,onerror=redirect,format=webp/{{ $img.file }}.webp 960w" sizes="(max-width: 720px) 100vw, 480px" type="image/webp">
-                <source srcset="{{ $srcBase }}/width=320,metadata=none,onerror=redirect,format=jpeg/{{ $img.file }}.jpg 320w, {{ $srcBase }}/width=640,metadata=none,onerror=redirect,format=jpeg/{{ $img.file }}.jpg 640w, {{ $srcBase }}/width=960,metadata=none,onerror=redirect,format=jpeg/{{ $img.file }}.jpg 960w" sizes="(max-width: 720px) 100vw, 480px" type="image/jpeg">
+                <source srcset="{{ $avif.srcset }}" sizes="(max-width: 720px) 100vw, 480px" type="image/avif">
+                <source srcset="{{ (partial "cf-srcset" (merge $srcset (dict "format" "webp" "ext" "webp"))).srcset }}" sizes="(max-width: 720px) 100vw, 480px" type="image/webp">
+                <source srcset="{{ (partial "cf-srcset" (merge $srcset (dict "format" "jpeg" "ext" "jpg"))).srcset }}" sizes="(max-width: 720px) 100vw, 480px" type="image/jpeg">
                 <img src="{{ $srcBase }}/width=640,metadata=none,onerror=redirect/{{ $img.file }}{{ $img.ext }}" alt="{{ .Title }}" width="{{ $img.width }}"
                   height="{{ $img.height }}" loading="lazy">
             </picture>

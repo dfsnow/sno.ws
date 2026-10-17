@@ -1,10 +1,20 @@
 {{ if .IsNamedParams }}
 {{ $srcBase := .Site.Params.postURL }}
 {{ $img := partial "image-meta" (dict "baseURL" $srcBase "src" (.Get "src")) }}
-{{ $srcType := replaceRE ".jpg" "jpeg" $img.ext | replaceRE "\\." "" }}
+{{/* CF Images output format for each supported original extension */}}
+{{ $formats := dict ".png" "png" ".jpg" "jpeg" ".jpeg" "jpeg" ".webp" "webp" }}
+{{ $format := index $formats (lower $img.ext) }}
+{{ if not $format }}
+{{ errorf "picture-embed does not support the %q extension: %s" $img.ext (.Get "src") }}
+{{ end }}
+{{ $srcExt := strings.TrimPrefix "." $img.ext }}
+{{ $cfBase := printf "%s/%s" $srcBase $srcExt }}
+{{ $srcset := dict "baseURL" $cfBase "path" $img.file "widths" (slice 640 960 1280 1600) "maxWidth" $img.width }}
 <picture>
-    <source srcset="{{ $srcBase }}{{ $img.file }}{{ $img.ext }}" type="image/{{ $srcType }}">
-    <img src="{{ $srcBase }}{{ $img.file }}{{ $img.ext }}" alt='{{ .Get "alt" }}' width='{{ $img.width }}'
+    <source srcset="{{ (partial "cf-srcset" (merge $srcset (dict "format" "avif" "ext" "avif"))).srcset }}" sizes="(max-width: 880px) 100vw, 880px" type="image/avif">
+    <source srcset="{{ (partial "cf-srcset" (merge $srcset (dict "format" "webp" "ext" "webp"))).srcset }}" sizes="(max-width: 880px) 100vw, 880px" type="image/webp">
+    <source srcset="{{ (partial "cf-srcset" (merge $srcset (dict "format" $format "ext" $srcExt))).srcset }}" sizes="(max-width: 880px) 100vw, 880px" type="image/{{ $format }}">
+    <img src="{{ $cfBase }}/width=640,metadata=none,onerror=redirect{{ $img.file }}{{ $img.ext }}" alt='{{ .Get "alt" }}' width='{{ $img.width }}'
         height='{{ $img.height }}' loading="lazy">
 </picture>
 {{ end }}

@@ -27,7 +27,7 @@ resource "cloudflare_pages_project" "sno-ws" {
       env_vars = {
         HUGO_VERSION = {
           type  = "plain_text"
-          value = "0.154.0"
+          value = "0.164.0"
         }
       }
     }
