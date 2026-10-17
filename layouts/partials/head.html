@@ -49,7 +49,7 @@
 }
 </script>
 
-{{- if and (eq .Section "writing") (not .IsNode) }}
+{{- if and (eq .Section "writing") .IsPage }}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
