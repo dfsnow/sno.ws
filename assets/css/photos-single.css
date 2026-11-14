@@ -5,8 +5,8 @@
 .content .post-feature-frame {
   display: flex;
   justify-content: center;
-  max-height: calc(100vh - 18rem);
-  margin-top: 0.5rem;
+  max-height: calc(100vh - 11.25rem);
+  margin-top: 0.3125rem;
 }
 
 .post-feature-photo {
@@ -21,9 +21,9 @@
   margin: auto;
 }
 
-@media only screen and (max-width: 720px) {
+@media (max-width: 45em) {
   .content .post-feature-frame {
-    margin-left: -2rem;
-    margin-right: -2rem;
+    margin-left: -1.25rem;
+    margin-right: -1.25rem;
   }
 }

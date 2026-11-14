@@ -52,9 +52,9 @@
   fill: var(--heart-hover);
 }
 
-@media (max-width: 720px) {
+@media (max-width: 45em) {
   .content {
-    padding: 2rem 0;
+    padding: 1.25rem 0;
   }
 
   .post-list-photos > .photo-frame {

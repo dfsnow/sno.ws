@@ -8,14 +8,14 @@ recommended = "false"
 
 Recently, I've been working on a project that requires the element-wise comparison of many rows. The goal is to calculate a sort of similarity score between two tables. A simplified version of the data/problem looks like this:
 
-<span style="margin:-1rem;display:block;text-align:center;"><strong>Table X</strong></span>
+<span style="margin:-0.625rem;display:block;text-align:center;"><strong>Table X</strong></span>
 
 | ID  | V1  | V2  | V3  | V4  | V5  |
 |:---:|:---:|:---:|:---:|:---:|:---:|
 | X1  |  9  |  3  |  2  |  4  |  5  |
 | X2  |  9  |  1  |  2  |  1  |  1  |
 
-<span style="margin-bottom:-1rem;display:block;text-align:center;"><strong>Table Y</strong></span>
+<span style="margin-bottom:-0.625rem;display:block;text-align:center;"><strong>Table Y</strong></span>
 
 | ID  | V1  | V2  | V3  | V4  | V5  |
 |:---:|:---:|:---:|:---:|:---:|:---:|

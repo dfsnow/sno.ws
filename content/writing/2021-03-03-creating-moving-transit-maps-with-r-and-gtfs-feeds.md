@@ -10,7 +10,7 @@ styles = [ "css/full-width-media.scss" ]
 <style media="screen">
   :root { --add-media-width: 80px }
   .content .video-holder {
-    margin: 2rem auto;
+    margin: 1.25rem auto;
   }
 </style>
 
