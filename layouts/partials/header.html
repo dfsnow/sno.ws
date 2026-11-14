@@ -4,10 +4,17 @@
           <a href="/" class="link-nowrap-nodec">{{ .Site.Title }}</a>
         </h1>
         <ul class="navbar-internal-links">
+            {{- /* "page" on the section's own page; "true" on its articles (e.g. a book review under reading).
+                 Top-level misc pages (e.g. hearts and ratings) fall under about. */}}
+            {{ $current := . -}}
             {{ range .Site.Menus.main.ByWeight -}}
             <li>
                 {{ .Pre }}
-                <a href="{{ .URL }}" class="link-nowrap-nodec" title="Link to {{ .Name }} section">
+                <a href="{{ .URL }}" class="link-nowrap-nodec" title="Link to {{ .Name }} section"
+                    {{- if eq $current.RelPermalink .URL }} aria-current="page"
+                    {{- else if eq $current.Section .Identifier }} aria-current="true"
+                    {{- else if and $current.IsPage (eq $current.Section "") (eq .Identifier "about") }} aria-current="true"
+                    {{- end }}>
                     {{- .Name -}}
                 </a>
                 {{ .Post }}

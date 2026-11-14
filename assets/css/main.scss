@@ -269,6 +269,16 @@ ol {
   position: sticky;
   background-color: var(--bg-color);
   border-bottom: 1.5px solid var(--gray-accent-1);
+
+  // The current-section arrow redraws this background + border with a notch,
+  // so drop both here. Fallback to plain background + border if no :has()
+  //
+  // stylelint-disable-next-line no-descending-specificity
+  &:has(.navbar-internal-links [aria-current]) {
+    background-color: transparent;
+    border-bottom-width: 0;
+    padding-bottom: 1.5px;
+  }
 }
 
 .navbar-content {
@@ -297,6 +307,61 @@ ol {
     margin: 0;
     padding: 0;
     line-height: 1;
+
+    // Arrow cut into the navbar's pointing up at the current section
+    [aria-current] {
+      --notch: 0.55em;
+      --rule: 1.5px;
+
+      display: inline-flex;
+      justify-content: center;
+
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 200vw;
+      }
+
+      &::before {
+        z-index: -1;
+        background-color: var(--bg-color);
+        clip-path: polygon(
+          0 0,
+          100% 0,
+          100% 100%,
+          calc(50% + var(--notch) + var(--rule) * 1.2071) 100%,
+          50% calc(100% - var(--notch) - var(--rule) * 1.2071),
+          calc(50% - var(--notch) - var(--rule) * 1.2071) 100%,
+          0 100%
+        );
+      }
+
+      &::after {
+        background-color: var(--gray-accent-1);
+        clip-path: polygon(
+          0 calc(100% - var(--rule)),
+          calc(50% - var(--notch) - var(--rule) * 0.2071) calc(100% - var(--rule)),
+          50% calc(100% - var(--notch) - var(--rule) * 1.2071),
+          calc(50% + var(--notch) + var(--rule) * 0.2071) calc(100% - var(--rule)),
+          100% calc(100% - var(--rule)),
+          100% 100%,
+          calc(50% + var(--notch) - var(--rule) * 0.2071) 100%,
+          50% calc(100% - var(--notch) + var(--rule) * 0.2071),
+          calc(50% - var(--notch) + var(--rule) * 0.2071) 100%,
+          0 100%
+        );
+
+        // Forced colors replaces backgrounds with canvas, which would hide the
+        // stroke; draw it in the system text color instead
+        @media (forced-colors: active) {
+          forced-color-adjust: none;
+          background-color: CanvasText;
+        }
+      }
+    }
   }
 
   > .navbar-external-links {
@@ -415,6 +480,13 @@ blockquote p,
 
   .navbar {
     position: static;
+
+    // The arrow comes from the left here, so restore the plain rule
+    &:has(.navbar-internal-links [aria-current]) {
+      background-color: var(--bg-color);
+      border-bottom-width: 1.5px;
+      padding-bottom: 0;
+    }
   }
 
   .navbar-content {
@@ -434,6 +506,46 @@ blockquote p,
 
       a {
         text-decoration: underline;
+      }
+
+      // Links stack vertically here, so arrow comes in from the left instead
+      [aria-current] {
+        position: relative;
+
+        &::before,
+        &::after {
+          content: "";
+          position: absolute;
+          top: 50%;
+          right: calc(100% + 0.3em);
+          translate: 0 -50%;
+        }
+
+        &::before {
+          // Spans the .navbar-content inline padding, starting at the screen edge
+          bottom: auto;
+          z-index: auto;
+          width: calc(1.25rem - 0.3em);
+          background-color: transparent;
+          border: 0;
+          border-top: 1.5px solid var(--gray-accent-1);
+          clip-path: none;
+        }
+
+        &::after {
+          --arrow-size: 0.45em;
+
+          bottom: auto;
+          box-sizing: border-box;
+          width: var(--arrow-size);
+          height: var(--arrow-size);
+          rotate: 45deg;
+          background-color: transparent;
+          border-top: 1.5px solid var(--gray-accent-1);
+          border-right: 1.5px solid var(--gray-accent-1);
+          clip-path: none;
+          forced-color-adjust: auto;
+        }
       }
     }
 
