@@ -23,6 +23,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="text-scale" content="scale">
+<meta name="color-scheme" content="light dark">
 
 {{ $main := resources.Get "css/main.scss" | css.Sass | minify | fingerprint }}
 {{ $dark := resources.Get "css/syntax-dark.css" | minify | fingerprint }}

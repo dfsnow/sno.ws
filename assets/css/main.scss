@@ -15,6 +15,8 @@
   --visited-link-color: #8f5baa;
   --full-width: 640px;
   --add-media-width: 240px;
+
+  color-scheme: light dark;
 }
 
 html {
@@ -270,7 +272,6 @@ ol {
 
   // The current-section arrow redraws this background + border with a notch,
   // so drop both here. Fallback to plain background + border if no :has()
-  //
   // stylelint-disable-next-line no-descending-specificity
   &:has(.navbar-internal-links [aria-current]) {
     background-color: transparent;
@@ -597,10 +598,6 @@ blockquote p,
     --heart-hover: #FFA07A;
     --link-color: #6aa6d0;
     --visited-link-color: #b28ec6;
-  }
-
-  html {
-    color-scheme: dark;
   }
 
   .notice::before,
