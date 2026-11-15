@@ -7,9 +7,9 @@
 {{- $label := index $labels (string $rating) -}}
 {{- $signed := cond (gt $rating 0) (printf "+%d" $rating) (string $rating) -}}
 {{- if .link -}}
-<a class="book-rating" href="/hearts-and-ratings">
+<a class="book-rating" data-rating="{{ $rating }}" href="/hearts-and-ratings">
 {{- else -}}
-<span class="book-rating">
+<span class="book-rating" data-rating="{{ $rating }}">
 {{- end }}
     {{- $count := math.Abs $rating | int -}}
     {{- $d := "M1 7H9" -}}

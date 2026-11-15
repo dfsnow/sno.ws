@@ -11,6 +11,8 @@
   --heart-size: 0.75em;
   --notice-color: #a0cefb;
   --warning-color: #d9c98d;
+  --rating-up-color: light-dark(#0072b2, #56b4e9);
+  --rating-down-color: light-dark(#d55e00, #e69f00);
   --link-color: light-dark(#2979bc, #6aa6d0);
   --visited-link-color: light-dark(#8f5baa, #b28ec6);
   --full-width: 640px;
@@ -176,8 +178,18 @@ ol {
   vertical-align: -0.1em;
   text-decoration: none;
 
+  // Tint the chevrons by rating: blue above 0, orange below 0, gray at 0
+  --rating-hue: var(--gray-accent-1);
+  --rating-tint: 0%;
+
+  &[data-rating$="1"] { --rating-tint: 25%; }
+  &[data-rating$="2"] { --rating-tint: 50%; }
+  &[data-rating$="3"] { --rating-tint: 100%; }
+  &[data-rating]:not([data-rating^="-"], [data-rating="0"]) { --rating-hue: var(--rating-up-color); }
+  &[data-rating^="-"] { --rating-hue: var(--rating-down-color); }
+
   // Set here rather than on the SVG so hover can recolor it
-  stroke: var(--gray-accent-1);
+  stroke: color-mix(in oklab, var(--rating-hue) var(--rating-tint), var(--gray-accent-1));
 
   &:is(:link, :visited) {
     color: inherit;
