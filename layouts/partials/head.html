@@ -26,7 +26,7 @@
 <meta name="text-scale" content="scale">
 <meta name="color-scheme" content="light dark">
 
-{{ $main := resources.Get "css/main.scss" | css.Sass | minify | fingerprint }}
+{{ $main := resources.Get "css/main.scss" | css.Sass (dict "transpiler" "dartsass") | minify | fingerprint }}
 {{ $dark := resources.Get "css/syntax-dark.css" | minify | fingerprint }}
 {{ $light := resources.Get "css/syntax-light.css" | minify | fingerprint }}
 <link rel="stylesheet" href="{{ $main.RelPermalink }}">

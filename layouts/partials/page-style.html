@@ -3,7 +3,7 @@
     {{ range .Params.styles }}
         {{ $resources = $resources | append (resources.Get . ) -}}
     {{ end }}
-    {{ $path := printf "css/%s%s" .File.BaseFileName "-page-style.css" }}
-    {{ $css := $resources | resources.Concat $path | css.Sass | minify | fingerprint }}
+    {{ $path := printf "css/%s%s" .File.BaseFileName "-page-style.scss" }}
+    {{ $css := $resources | resources.Concat $path | css.Sass (dict "transpiler" "dartsass") | minify | fingerprint }}
     <style media="screen">{{ $css.Content | safeCSS }}</style>
 {{ end }}
