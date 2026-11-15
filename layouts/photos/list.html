@@ -6,7 +6,7 @@
 
 {{ define "main" }}
 <div class="post-list-photos">
-    {{ range where $.Site.RegularPages "Section" "photos" }}
+    {{ range $i, $_ := where $.Site.RegularPages "Section" "photos" }}
 
     {{ $srcBase := .Site.Params.photosURL }}
     {{ $img := partial "image-meta" (dict "baseURL" $srcBase "src" .Params.src "transforms" "metadata=none") }}
@@ -24,7 +24,7 @@
                 <source srcset="{{ (partial "cf-srcset" (merge $srcset (dict "format" "webp" "ext" "webp"))).srcset }}" sizes="(max-width: 720px) 100vw, 480px" type="image/webp">
                 <source srcset="{{ (partial "cf-srcset" (merge $srcset (dict "format" "jpeg" "ext" "jpg"))).srcset }}" sizes="(max-width: 720px) 100vw, 480px" type="image/jpeg">
                 <img src="{{ $srcBase }}/width=640,metadata=none,onerror=redirect/{{ $img.file }}{{ $img.ext }}" alt="{{ .Title }}" width="{{ $img.width }}"
-                  height="{{ $img.height }}" loading="lazy">
+                  height="{{ $img.height }}"{{ if eq $i 0 }} fetchpriority="high"{{ else if ge $i 3 }} loading="lazy"{{ end }}>
             </picture>
         </a>
         {{ if eq .Params.recommended "true" }}

@@ -17,7 +17,7 @@
             <source srcset="{{ (partial "cf-srcset" (merge $srcset (dict "format" "webp" "ext" "webp"))).srcset }}" sizes="100vw" type="image/webp">
             <source srcset="{{ (partial "cf-srcset" (merge $srcset (dict "format" "jpeg" "ext" "jpg"))).srcset }}" sizes="100vw" type="image/jpeg">
             <img src="{{ $srcBase }}/width=640,metadata=none,onerror=redirect/{{ $img.file }}{{ $img.ext }}" alt="{{ .Title }}" width="{{ $img.width }}"
-                height="{{ $img.height }}" class="post-feature-photo">
+                height="{{ $img.height }}" class="post-feature-photo" fetchpriority="high">
         </picture>
     </a>
 </figure>
