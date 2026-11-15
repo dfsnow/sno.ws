@@ -24,6 +24,11 @@ html {
   scrollbar-gutter: stable;
   scroll-padding-top: 7em;
   -webkit-text-size-adjust: 100%;
+
+  // Needed alongside the body rule below. With only body set, its overflow
+  // propagates to the viewport as hidden, which still scrolls sideways
+  // (drag-select, scrollTo) into the navbar arrow's 200vw pseudo-elements
+  overflow-x: clip;
 }
 
 body {
@@ -141,6 +146,13 @@ ol {
     padding: 0 0.25rem;
     font-family: Monaco, monospace;
     background-color: var(--gray-accent-4);
+
+    // Keep the smaller monospace box inside the parent's line box. Otherwise
+    // Chromium grows each line holding code by a fraction of a pixel
+    line-height: 1;
+
+    // Long paths and identifiers have no break opportunities in Chromium/WebKit
+    overflow-wrap: break-word;
   }
 
   pre {
@@ -181,8 +193,17 @@ ol {
     color: inherit;
   }
 
+  // With a label, sit on the label's baseline. An icon-only rating has no
+  // text baseline, so it keeps the nudge above
+  // stylelint-disable-next-line no-descending-specificity
+  &:has(> span) {
+    align-items: baseline;
+    vertical-align: baseline;
+  }
+
   > svg {
     flex: none;
+    align-self: center;
     width: 0.7143em;
     height: 1em;
     fill: none;

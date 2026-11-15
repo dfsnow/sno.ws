@@ -24,7 +24,7 @@
                 <source srcset="{{ (partial "cf-srcset" (merge $srcset (dict "format" "webp" "ext" "webp"))).srcset }}" sizes="(max-width: 720px) 100vw, 480px" type="image/webp">
                 <source srcset="{{ (partial "cf-srcset" (merge $srcset (dict "format" "jpeg" "ext" "jpg"))).srcset }}" sizes="(max-width: 720px) 100vw, 480px" type="image/jpeg">
                 <img src="{{ $srcBase }}/width=640,metadata=none,onerror=redirect/{{ $img.file }}{{ $img.ext }}" alt="{{ .Title }}" width="{{ $img.width }}"
-                  height="{{ $img.height }}"{{ if eq $i 0 }} fetchpriority="high"{{ else if ge $i 3 }} loading="lazy"{{ end }}>
+                  height="{{ $img.height }}"{{ if and (gt $img.width 0) (gt $img.height 0) }} style="aspect-ratio: {{ $img.width }} / {{ $img.height }};"{{ end }}{{ if eq $i 0 }} fetchpriority="high"{{ else if ge $i 3 }} loading="lazy"{{ end }}>
             </picture>
         </a>
         {{ if eq .Params.recommended "true" }}
