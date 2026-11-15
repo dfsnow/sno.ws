@@ -21,6 +21,7 @@
 
 html {
   height: 100%;
+  scrollbar-gutter: stable;
   scroll-padding-top: 7em;
   -webkit-text-size-adjust: 100%;
 }
@@ -32,7 +33,7 @@ body {
   margin: 0 auto;
   line-height: 1.5;
   min-height: 100%;
-  overflow: hidden scroll;
+  overflow-x: clip;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -92,7 +93,7 @@ figcaption {
 
   .header-link-icon {
     display: none;
-    padding-left: 0.4em;
+    padding-inline-start: 0.4em;
   }
 
   &:is(:hover, :focus-visible, :active) .header-link-icon {
@@ -119,7 +120,7 @@ figure {
     font-size: 0.875rem;
     font-style: italic;
     text-align: center;
-    margin-top: 0.375rem;
+    margin-block-start: 0.375rem;
     padding: 0 0.625rem;
   }
 }
@@ -198,13 +199,13 @@ ol {
 .post-list {
   display: grid;
   row-gap: 0.3125rem;
-  margin-right: -30px;
+  margin-inline-end: -30px;
 
   .post-list-info {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    margin-right: 0.3125rem;
+    margin-inline-end: 0.3125rem;
 
     // This is a fix for the SVG external link icon
     // extending the underline text decoration
@@ -256,8 +257,8 @@ ol {
   > .post-rating-row > a.post-rating {
     display: inline-flex;
     gap: 0.15em;
-    padding-top: 0.15em;
-    margin-left: -0.1em;
+    padding-block-start: 0.15em;
+    margin-inline-start: -0.1em;
 
     > svg circle {
       fill: none;
@@ -469,7 +470,7 @@ blockquote p,
 
   .post-list,
   .post-list > .post-list-info {
-    margin-right: inherit;
+    margin-inline-end: inherit;
     white-space: normal;
   }
 
@@ -479,8 +480,8 @@ blockquote p,
     }
 
     > .post-list-misc {
-      padding-left: 0.625rem;
-      justify-self: left;
+      padding-inline-start: 0.625rem;
+      justify-self: start;
       padding-bottom: 1.25em;
     }
 
