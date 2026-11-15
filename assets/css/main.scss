@@ -1,18 +1,18 @@
 :root {
-  --bg-color: #ffffff;
-  --text-color: #484848;
+  --bg-color: light-dark(#ffffff, #000000);
+  --text-color: light-dark(#484848, #d7d7d7);
   --icon-color: #949494;
   --gray-accent-1: #636363;
-  --gray-accent-2: #555555;
-  --gray-accent-3: #eeeeee;
-  --gray-accent-4: #e1e1e1;
+  --gray-accent-2: light-dark(#555555, #ababab);
+  --gray-accent-3: light-dark(#eeeeee, #1b1b1b);
+  --gray-accent-4: light-dark(#e1e1e1, #333333);
   --heart-color: #FF0000;
-  --heart-hover: #8B0000;
+  --heart-hover: light-dark(#8B0000, #FFA07A);
   --heart-size: 0.75em;
   --notice-color: #a0cefb;
   --warning-color: #d9c98d;
-  --link-color: #2979bc;
-  --visited-link-color: #8f5baa;
+  --link-color: light-dark(#2979bc, #6aa6d0);
+  --visited-link-color: light-dark(#8f5baa, #b28ec6);
   --full-width: 640px;
   --add-media-width: 240px;
 
@@ -35,7 +35,7 @@ body {
   background-color: var(--bg-color);
   color: var(--text-color);
   font-family: "Helvetica Neue", Arial, sans-serif;
-  margin: 0 auto;
+  margin: 0;
   line-height: 1.5;
   min-height: 100%;
   overflow-x: hidden; // Fallback for browsers without clip
@@ -155,26 +155,16 @@ ol {
     overflow-wrap: break-word;
   }
 
+  // Box styles (margin, padding, border, background) come from the shared
+  // blockquote/notice rule below
   pre {
-    display: block;
-    white-space: pre;
-    margin: 1.25em 0;
-    padding: 1.25em;
     overflow-x: auto;
-    word-break: break-all;
-    word-wrap: break-word;
-    border: thin solid var(--gray-accent-4);
-    border-radius: 3px;
     font-family: Monaco, monospace;
-  }
-
-  pre code,
-  pre {
-    background-color: var(--gray-accent-3);
   }
 
   pre code {
     padding: 0;
+    background-color: var(--gray-accent-3);
   }
 }
 
@@ -282,11 +272,10 @@ ol {
     white-space: pre;
   }
 
-  .post-list-misc {
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
+  .post-list-misc,
+  .post-list-rating {
+    display: grid;
+    place-items: center;
   }
 }
 
@@ -323,11 +312,13 @@ ol {
 
   // The current-section arrow redraws this background + border with a notch,
   // so drop both here. Fallback to plain background + border if no :has()
-  // stylelint-disable-next-line no-descending-specificity
-  &:has(.navbar-internal-links [aria-current]) {
-    background-color: transparent;
-    border-bottom-width: 0;
-    padding-bottom: 1.5px;
+  @media (width > 45em) {
+    // stylelint-disable-next-line no-descending-specificity
+    &:has(.navbar-internal-links [aria-current]) {
+      background-color: transparent;
+      border-bottom-width: 0;
+      padding-bottom: 1.5px;
+    }
   }
 }
 
@@ -336,7 +327,6 @@ ol {
   grid-template-columns: 0.3fr 1.9fr 5.25em;
   max-width: var(--full-width);
   margin: auto;
-  z-index: 999;
   padding: 1em 1.25rem;
   align-items: baseline;
 
@@ -361,55 +351,58 @@ ol {
 
     // Arrow cut into the navbar's pointing up at the current section
     [aria-current] {
-      --notch: 0.5em;
-      --rule: 1.5px;
-
       display: inline-flex;
       justify-content: center;
 
-      &::before,
-      &::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        width: 200vw;
-      }
+      // Small screens draw a chevron instead (see the media query below)
+      @media (width > 45em) {
+        --notch: 0.5em;
+        --rule: 1.5px;
 
-      &::before {
-        z-index: -1;
-        background-color: var(--bg-color);
-        clip-path: polygon(
-          0 0,
-          100% 0,
-          100% 100%,
-          calc(50% + var(--notch) + var(--rule) * 1.2071) 100%,
-          50% calc(100% - var(--notch) - var(--rule) * 1.2071),
-          calc(50% - var(--notch) - var(--rule) * 1.2071) 100%,
-          0 100%
-        );
-      }
+        &::before,
+        &::after {
+          content: "";
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          width: 200vw;
+        }
 
-      &::after {
-        background-color: var(--gray-accent-1);
-        clip-path: polygon(
-          0 calc(100% - var(--rule)),
-          calc(50% - var(--notch) - var(--rule) * 0.2071) calc(100% - var(--rule)),
-          50% calc(100% - var(--notch) - var(--rule) * 1.2071),
-          calc(50% + var(--notch) + var(--rule) * 0.2071) calc(100% - var(--rule)),
-          100% calc(100% - var(--rule)),
-          100% 100%,
-          calc(50% + var(--notch) - var(--rule) * 0.2071) 100%,
-          50% calc(100% - var(--notch) + var(--rule) * 0.2071),
-          calc(50% - var(--notch) + var(--rule) * 0.2071) 100%,
-          0 100%
-        );
+        &::before {
+          z-index: -1;
+          background-color: var(--bg-color);
+          clip-path: polygon(
+            0 0,
+            100% 0,
+            100% 100%,
+            calc(50% + var(--notch) + var(--rule) * 1.2071) 100%,
+            50% calc(100% - var(--notch) - var(--rule) * 1.2071),
+            calc(50% - var(--notch) - var(--rule) * 1.2071) 100%,
+            0 100%
+          );
+        }
 
-        // Forced colors replaces backgrounds with canvas, which would hide the
-        // stroke; draw it in the system text color instead
-        @media (forced-colors: active) {
-          forced-color-adjust: none;
-          background-color: CanvasText;
+        &::after {
+          background-color: var(--gray-accent-1);
+          clip-path: polygon(
+            0 calc(100% - var(--rule)),
+            calc(50% - var(--notch) - var(--rule) * 0.2071) calc(100% - var(--rule)),
+            50% calc(100% - var(--notch) - var(--rule) * 1.2071),
+            calc(50% + var(--notch) + var(--rule) * 0.2071) calc(100% - var(--rule)),
+            100% calc(100% - var(--rule)),
+            100% 100%,
+            calc(50% + var(--notch) - var(--rule) * 0.2071) 100%,
+            50% calc(100% - var(--notch) + var(--rule) * 0.2071),
+            calc(50% - var(--notch) + var(--rule) * 0.2071) 100%,
+            0 100%
+          );
+
+          // Forced colors replaces backgrounds with canvas, which would hide the
+          // stroke; draw it in the system text color instead
+          @media (forced-colors: active) {
+            forced-color-adjust: none;
+            background-color: CanvasText;
+          }
         }
       }
     }
@@ -424,13 +417,15 @@ ol {
 }
 
 .navbar-external-links > .navbar-external-link {
+  --icon-size: 1.4em;
+
   display: block;
-  width: 1.4em;
-  height: 1.4em;
+  width: var(--icon-size);
+  height: var(--icon-size);
 
   > svg {
-    width: 1.4em;
-    height: 1.4em;
+    width: 100%;
+    height: 100%;
   }
 }
 
@@ -492,9 +487,6 @@ blockquote p,
 
   > .post-list-rating {
     grid-column: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
   }
 
   > .post-list-info {
@@ -559,13 +551,6 @@ blockquote p,
 
   .navbar {
     position: static;
-
-    // The arrow comes from the left here, so restore the plain rule
-    &:has(.navbar-internal-links [aria-current]) {
-      background-color: var(--bg-color);
-      border-bottom-width: 1.5px;
-      padding-bottom: 0;
-    }
   }
 
   .navbar-content {
@@ -591,10 +576,6 @@ blockquote p,
       [aria-current] {
         position: relative;
 
-        &::before {
-          content: none;
-        }
-
         &::after {
           --chevron-size: 0.4em;
 
@@ -602,17 +583,13 @@ blockquote p,
           position: absolute;
           top: 50%;
           right: calc(100% + 0.45em);
-          bottom: auto;
           translate: 0 -50%;
           box-sizing: border-box;
           width: var(--chevron-size);
           height: var(--chevron-size);
           rotate: 45deg;
-          background-color: transparent;
           border-top: 1.5px solid var(--gray-accent-1);
           border-right: 1.5px solid var(--gray-accent-1);
-          clip-path: none;
-          forced-color-adjust: auto;
         }
       }
     }
@@ -621,14 +598,7 @@ blockquote p,
   }
 
   .navbar-external-links > .navbar-external-link {
-    display: block;
-    width: 1.6em;
-    height: 1.6em;
-
-    svg {
-      width: 1.6em;
-      height: 1.6em;
-    }
+    --icon-size: 1.6em;
   }
 
   #writing,
@@ -639,14 +609,16 @@ blockquote p,
     grid-template-columns: max-content 1fr;
   }
 
-  #writing {
-    > :nth-child(3n + 1) { grid-column: 1 / span 2; }
+  .post-list > .post-list-info,
+  .post-list > .post-list-links {
+    grid-column: 1 / -1;
   }
 
   #reading {
     grid-template-columns: max-content max-content 1fr;
     margin-inline-start: 0;
 
+    // Needs the id to outrank the wide-screen column placement
     > .post-list-info { grid-column: 1 / -1; }
 
     > .post-list-date,
@@ -662,9 +634,6 @@ blockquote p,
   }
 
   #talks {
-    > :nth-child(4n + 1) { grid-column: 1 / span 2; }
-    > :nth-child(4n + 2) { grid-column: 1 / span 2; }
-
     > .post-list-links {
       > :nth-child(2n + 1):empty { display: none; }
 
@@ -675,18 +644,6 @@ blockquote p,
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --bg-color: #000000;
-    --text-color: #d7d7d7;
-    --gray-accent-1: #636363;
-    --gray-accent-2: #ababab;
-    --gray-accent-3: #1b1b1b;
-    --gray-accent-4: #333333;
-    --heart-hover: #FFA07A;
-    --link-color: #6aa6d0;
-    --visited-link-color: #b28ec6;
-  }
-
   .notice::before,
   .warning::before {
     background: var(--bg-color);
