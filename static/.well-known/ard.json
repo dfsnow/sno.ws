@@ -1,0 +1,35 @@
+{
+  "specVersion": "1.0",
+  "host": {
+    "displayName": "Dan Snow",
+    "identifier": "https://sno.ws",
+    "documentationUrl": "https://sno.ws/about/"
+  },
+  "entries": [
+    {
+      "identifier": "urn:air:sno.ws:site:llms-txt",
+      "displayName": "sno.ws site guide (llms.txt)",
+      "type": "text/markdown",
+      "url": "https://sno.ws/llms.txt",
+      "description": "Markdown overview of Dan Snow's personal website: writing on data science, healthcare, local government, and technology, plus book reviews, photos, and talk slides.",
+      "tags": ["personal-website", "blog", "data-science"],
+      "representativeQueries": [
+        "what does Dan Snow write about",
+        "find Dan Snow's blog posts on data science",
+        "list Dan Snow's book reviews and talks"
+      ]
+    },
+    {
+      "identifier": "urn:air:sno.ws:feed:writing",
+      "displayName": "sno.ws writing feed (RSS)",
+      "type": "application/rss+xml",
+      "url": "https://sno.ws/index.xml",
+      "description": "RSS feed of Dan Snow's latest blog posts.",
+      "tags": ["rss", "blog"],
+      "representativeQueries": [
+        "get Dan Snow's latest blog posts",
+        "subscribe to Dan Snow's writing"
+      ]
+    }
+  ]
+}
