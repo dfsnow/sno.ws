@@ -10,19 +10,22 @@
 
     {{ $srcBase := .Site.Params.photosURL }}
     {{ $img := partial "image-meta" (dict "baseURL" $srcBase "src" .Params.src "transforms" "metadata=none") }}
-    {{ $srcset := dict "baseURL" $srcBase "path" (printf "/%s" $img.file) "widths" (slice 320 640 960) "maxWidth" $img.width }}
+    {{ $srcset := dict "baseURL" $srcBase "path" (printf "/%s" $img.file) "widths" (slice 320 480 640 750 960 1280 1600) "maxWidth" $img.width "maxHeight" $img.height }}
 
     {{ $aspectRatio := 1.5 }}
     {{ if and (gt $img.width 0) (gt $img.height 0) }}
       {{ $aspectRatio = div (mul $img.width 1.0) $img.height }}
     {{ end }}
 
+    {{ $basis := mul $aspectRatio 375 }}
+    {{ $sizes := printf "(max-width: %.0fpx) 100vw, (max-width: %.0fpx) 50vw, %.0fpx" (mul $basis 2) (mul $basis 3) (mul $basis 1.2) }}
+
     <figure class="photo-frame" style="flex-grow: {{ printf "%.4f" $aspectRatio }}; flex-basis: {{ printf "%.0f" (mul $aspectRatio 375) }}px;">
         <a href="{{ .RelPermalink }}">
             <picture>
-                <source srcset="{{ (partial "cf-srcset" (merge $srcset (dict "format" "avif" "ext" "avif"))).srcset }}" sizes="(max-width: 720px) 100vw, 480px" type="image/avif">
-                <source srcset="{{ (partial "cf-srcset" (merge $srcset (dict "format" "webp" "ext" "webp"))).srcset }}" sizes="(max-width: 720px) 100vw, 480px" type="image/webp">
-                <source srcset="{{ (partial "cf-srcset" (merge $srcset (dict "format" "jpeg" "ext" "jpg"))).srcset }}" sizes="(max-width: 720px) 100vw, 480px" type="image/jpeg">
+                <source srcset="{{ (partial "cf-srcset" (merge $srcset (dict "format" "avif" "ext" "avif"))).srcset }}" sizes="{{ $sizes }}" type="image/avif">
+                <source srcset="{{ (partial "cf-srcset" (merge $srcset (dict "format" "webp" "ext" "webp"))).srcset }}" sizes="{{ $sizes }}" type="image/webp">
+                <source srcset="{{ (partial "cf-srcset" (merge $srcset (dict "format" "jpeg" "ext" "jpg"))).srcset }}" sizes="{{ $sizes }}" type="image/jpeg">
                 <img src="{{ $srcBase }}/width=640,metadata=none,onerror=redirect/{{ $img.file }}{{ $img.ext }}" alt="{{ .Title }}" width="{{ $img.width }}"
                   height="{{ $img.height }}"{{ if and (gt $img.width 0) (gt $img.height 0) }} style="aspect-ratio: {{ $img.width }} / {{ $img.height }};"{{ end }}{{ if eq $i 0 }} fetchpriority="high"{{ else if ge $i 3 }} loading="lazy"{{ end }}>
             </picture>

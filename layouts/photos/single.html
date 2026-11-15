@@ -8,14 +8,21 @@
 
 {{ $srcBase := .Site.Params.photosURL }}
 {{ $img := partial "image-meta" (dict "baseURL" $srcBase "src" .Params.src "transforms" "metadata=none") }}
-{{ $srcset := dict "baseURL" $srcBase "path" (printf "/%s" $img.file) "widths" (slice 640 960 1280) "maxWidth" $img.width }}
+{{ $srcset := dict "baseURL" $srcBase "path" (printf "/%s" $img.file) "widths" (slice 640 750 960 1280 1600 1920 2560) "maxWidth" $img.width "maxHeight" $img.height }}
+
+{{/* The photo is capped by the frame height (see photos-single.css), so its
+     width is the smaller of the viewport and that height times its aspect */}}
+{{ $sizes := "100vw" }}
+{{ if and (gt $img.width 0) (gt $img.height 0) }}
+  {{ $sizes = printf "min(100vw, calc((100svh - 11.25rem) * %.4f))" (div (mul $img.width 1.0) $img.height) }}
+{{ end }}
 
 <figure class="post-feature-frame">
     <a href="{{ $srcBase }}/metadata=none,onerror=redirect,format=jpeg/{{ $img.file }}{{ $img.ext }}">
         <picture>
-            <source srcset="{{ (partial "cf-srcset" (merge $srcset (dict "format" "avif" "ext" "avif"))).srcset }}" sizes="100vw" type="image/avif">
-            <source srcset="{{ (partial "cf-srcset" (merge $srcset (dict "format" "webp" "ext" "webp"))).srcset }}" sizes="100vw" type="image/webp">
-            <source srcset="{{ (partial "cf-srcset" (merge $srcset (dict "format" "jpeg" "ext" "jpg"))).srcset }}" sizes="100vw" type="image/jpeg">
+            <source srcset="{{ (partial "cf-srcset" (merge $srcset (dict "format" "avif" "ext" "avif"))).srcset }}" sizes="{{ $sizes }}" type="image/avif">
+            <source srcset="{{ (partial "cf-srcset" (merge $srcset (dict "format" "webp" "ext" "webp"))).srcset }}" sizes="{{ $sizes }}" type="image/webp">
+            <source srcset="{{ (partial "cf-srcset" (merge $srcset (dict "format" "jpeg" "ext" "jpg"))).srcset }}" sizes="{{ $sizes }}" type="image/jpeg">
             <img src="{{ $srcBase }}/width=640,metadata=none,onerror=redirect/{{ $img.file }}{{ $img.ext }}" alt="{{ .Title }}" width="{{ $img.width }}"
                 height="{{ $img.height }}" class="post-feature-photo" fetchpriority="high">
         </picture>

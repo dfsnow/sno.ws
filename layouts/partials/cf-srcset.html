@@ -2,13 +2,26 @@
 Build a CF Images srcset for one output format. Returns a dict with the
 candidate list as srcset.
 
-CF Images returns the unconverted original when a width is not smaller than
-the original, so widths at or above maxWidth are left out.
+CF Images never upscales, so widths at or above maxWidth are replaced by a
+single candidate at the original width. Without it, an original that is
+narrower than the largest requested width would have no candidate for
+high-DPI screens.
+
+AVIF output is limited to 1600px on the longest side. Larger AVIF candidates
+are served as WebP from the same URL.
 */ -}}
 {{- $entries := slice -}}
+{{- $capped := false -}}
 {{- range .widths -}}
-  {{- if or (eq $.maxWidth 0) (lt . $.maxWidth) -}}
-    {{- $entries = $entries | append (printf "%s/width=%d,metadata=none,onerror=redirect,format=%s%s.%s %dw" $.baseURL . $.format $.path $.ext .) -}}
+  {{- $width := . -}}
+  {{- if and (gt $.maxWidth 0) (ge . $.maxWidth) -}}
+    {{- $width = $.maxWidth -}}
+  {{- end -}}
+  {{- if not (and $capped (eq $width $.maxWidth)) -}}
+    {{- $entries = $entries | append (printf "%s/width=%d,quality=80,metadata=none,onerror=redirect,format=%s%s.%s %dw" $.baseURL $width $.format $.path $.ext $width) -}}
+  {{- end -}}
+  {{- if and (gt $.maxWidth 0) (eq $width $.maxWidth) -}}
+    {{- $capped = true -}}
   {{- end -}}
 {{- end -}}
 {{- return dict "srcset" (delimit $entries ", ") -}}

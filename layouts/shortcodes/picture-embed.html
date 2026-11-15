@@ -9,11 +9,21 @@
 {{ end }}
 {{ $srcExt := strings.TrimPrefix "." $img.ext }}
 {{ $cfBase := printf "%s/%s" $srcBase $srcExt }}
-{{ $srcset := dict "baseURL" $cfBase "path" $img.file "widths" (slice 640 960 1280) "maxWidth" $img.width }}
+{{ $srcset := dict "baseURL" $cfBase "path" $img.file "widths" (slice 480 640 750 960 1280 1600 1920) "maxWidth" $img.width "maxHeight" $img.height }}
+
+{{/* Rendered width depends on the page layout. See main.scss for the default
+     column and full-width-media.scss for the wider, height-capped one. */}}
+{{ $sizes := "(max-width: 680px) calc(100vw - 2.5rem), 640px" }}
+{{ if in (.Page.Params.styles | default slice) "css/full-width-media.scss" }}
+  {{ $sizes = "(max-width: 920px) 100vw, 920px" }}
+  {{ if and (gt $img.width 0) (gt $img.height 0) }}
+    {{ $sizes = printf "min(100vw, 920px, calc(90svh * %.4f))" (div (mul $img.width 1.0) $img.height) }}
+  {{ end }}
+{{ end }}
 <picture>
-    <source srcset="{{ (partial "cf-srcset" (merge $srcset (dict "format" "avif" "ext" "avif"))).srcset }}" sizes="(max-width: 880px) 100vw, 880px" type="image/avif">
-    <source srcset="{{ (partial "cf-srcset" (merge $srcset (dict "format" "webp" "ext" "webp"))).srcset }}" sizes="(max-width: 880px) 100vw, 880px" type="image/webp">
-    <source srcset="{{ (partial "cf-srcset" (merge $srcset (dict "format" $format "ext" $srcExt))).srcset }}" sizes="(max-width: 880px) 100vw, 880px" type="image/{{ $format }}">
+    <source srcset="{{ (partial "cf-srcset" (merge $srcset (dict "format" "avif" "ext" "avif"))).srcset }}" sizes="{{ $sizes }}" type="image/avif">
+    <source srcset="{{ (partial "cf-srcset" (merge $srcset (dict "format" "webp" "ext" "webp"))).srcset }}" sizes="{{ $sizes }}" type="image/webp">
+    <source srcset="{{ (partial "cf-srcset" (merge $srcset (dict "format" $format "ext" $srcExt))).srcset }}" sizes="{{ $sizes }}" type="image/{{ $format }}">
     <img src="{{ $cfBase }}/width=640,metadata=none,onerror=redirect{{ $img.file }}{{ $img.ext }}" alt='{{ .Get "alt" }}' width='{{ $img.width }}'
         height='{{ $img.height }}' loading="lazy">
 </picture>
