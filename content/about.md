@@ -4,7 +4,7 @@ title = "About"
 
 Hi there! My name is Dan.
 
-I'm a data engineer for [DataSF](https://www.sf.gov/departments--city-administrator--datasf--about), where I help build data infrastructure for the City of San Francisco. I previously did a stint in [healthcare data journalism](https://www.pricepoints.health) at [Turquoise Health](https://turquoise.health). Before moving to SF, I was the Director of Data Science at the [Cook County Assessor’s Office](https://github.com/ccao-data), where I helped estimate the home values used to determine property taxes.
+I'm a data engineer for [DataSF](https://github.com/DataSF), where I help build data infrastructure for the City of San Francisco. I previously did a stint in [healthcare data journalism](https://www.pricepoints.health) at [Turquoise Health](https://turquoise.health). Before moving to SF, I was the Director of Data Science at the [Cook County Assessor’s Office](https://github.com/ccao-data), where I helped estimate the home values used to determine property taxes.
 
 In my free time, I like to [read]({{< relref "reading" >}}), rock climb, bike, and hang out with my cat [Mimi]({{< relref "photos/2020-11-30-mimi.md" >}}).
 
