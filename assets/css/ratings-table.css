@@ -2,8 +2,13 @@
   text-align: right;
   vertical-align: top;
   font-weight: bold;
-  white-space: pre;
-  padding: 10px 6px 0 0;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+  padding: 10px 12px 0 0;
+}
+
+.rating-table .rating .book-rating {
+  margin-inline-start: 0.35em;
 }
 
 .rating-table td {

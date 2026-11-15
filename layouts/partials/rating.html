@@ -1,0 +1,33 @@
+{{- /*
+  Book rating (-3 to 3) as stacked chevrons: one per point, up for positive,
+  down for negative, a dash for 0. Params: rating, link, label
+*/ -}}
+{{- $rating := int .rating -}}
+{{- $labels := dict "3" "Amazing" "2" "Great" "1" "Fine" "0" "Mediocre" "-1" "Bad" "-2" "Awful" "-3" "DNF'd" -}}
+{{- $label := index $labels (string $rating) -}}
+{{- $signed := cond (gt $rating 0) (printf "+%d" $rating) (string $rating) -}}
+{{- if .link -}}
+<a class="book-rating" href="/hearts-and-ratings">
+{{- else -}}
+<span class="book-rating">
+{{- end }}
+    {{- $count := math.Abs $rating | int -}}
+    {{- $d := "M1 7H9" -}}
+    {{- if $count -}}
+    {{- $d = "" -}}
+    {{- /* Chevrons are 4 tall and 4 apart, centered in the 14 tall viewBox */ -}}
+    {{- range seq 0 (sub $count 1) -}}
+    {{- $y := add (sub 7 (mul 2 $count)) (mul 4 .) -}}
+    {{- if gt $rating 0 -}}
+    {{- $d = printf "%sM1 %dL5 %dL9 %d" $d (add $y 4) $y (add $y 4) -}}
+    {{- else -}}
+    {{- $d = printf "%sM1 %dL5 %dL9 %d" $d $y (add $y 4) $y -}}
+    {{- end -}}
+    {{- end -}}
+    {{- end }}
+    <svg role="img" aria-label="Rating: {{ $label }}, {{ $signed }} on a scale of -3 to +3" viewBox="0 0 10 14">
+        <title>{{ $label }} ({{ $signed }})</title>
+        <path d="{{ $d }}" />
+    </svg>
+    {{- if .label }}<span>{{ $label }}</span>{{ end }}
+{{ if .link }}</a>{{ else }}</span>{{ end -}}

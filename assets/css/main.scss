@@ -166,6 +166,42 @@ ol {
   }
 }
 
+// Book rating chevrons
+.book-rating {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3em;
+  vertical-align: -0.1em;
+  text-decoration: none;
+
+  // Set here rather than on the SVG so hover can recolor it
+  stroke: var(--gray-accent-1);
+
+  &:is(:link, :visited) {
+    color: inherit;
+  }
+
+  > svg {
+    flex: none;
+    width: 0.7143em;
+    height: 1em;
+    fill: none;
+    stroke-width: 1.5px;
+
+    > path {
+      vector-effect: non-scaling-stroke;
+    }
+  }
+
+  &:hover {
+    stroke: var(--text-color);
+
+    > span {
+      text-decoration: underline;
+    }
+  }
+}
+
 .hover-icon {
   svg {
     fill: var(--icon-color);
@@ -249,32 +285,11 @@ ol {
     color: var(--link-color);
   }
 
-  // For inline ordinal ratings on books and media
-  > .post-rating-row {
-    font-size: 1.17em;
-    margin-block: 1em;
-  }
-
-  > .post-rating-row > a.post-rating {
-    display: inline-flex;
-    gap: 0.15em;
-    padding-block-start: 0.15em;
-    margin-inline-start: -0.1em;
-
-    > svg circle {
-      fill: none;
-      stroke: var(--icon-color);
-      stroke-width: 1px;
-
-      &.active {
-        fill: var(--icon-color);
-      }
-
-      &:hover {
-        fill: var(--text-color);
-        stroke: var(--text-color);
-      }
-    }
+  > .post-rating {
+    white-space: nowrap;
+    margin-inline-start: 0.3em;
+    padding-inline-start: 0.6em;
+    border-inline-start: 1.5px solid var(--gray-accent-1);
   }
 }
 
@@ -325,7 +340,7 @@ ol {
 
     // Arrow cut into the navbar's pointing up at the current section
     [aria-current] {
-      --notch: 0.55em;
+      --notch: 0.5em;
       --rule: 1.5px;
 
       display: inline-flex;
@@ -447,7 +462,35 @@ blockquote p,
 }
 
 #reading {
-  grid-template-columns: 1.35fr 0.85fr 5.25em 30px;
+  grid-template-columns: 30px 1.35fr 0.85fr 5.25em 30px;
+  margin-inline-start: -30px;
+
+  // Source order is for the small-screen layout (rating after date). Explicit
+  // columns plus dense packing reorder the cells within each row here
+  grid-auto-flow: row dense;
+
+  > .post-list-rating {
+    grid-column: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  > .post-list-info {
+    grid-column: 2;
+  }
+
+  > .post-list-author {
+    grid-column: 3;
+  }
+
+  > .post-list-date {
+    grid-column: 4;
+  }
+
+  > .post-list-misc {
+    grid-column: 5;
+  }
 }
 
 #talks {
@@ -523,37 +566,26 @@ blockquote p,
         text-decoration: underline;
       }
 
-      // Links stack vertically here, so arrow comes in from the left instead
+      // Links stack vertically here, so a chevron comes in from the left instead
       [aria-current] {
         position: relative;
 
-        &::before,
+        &::before {
+          content: none;
+        }
+
         &::after {
+          --chevron-size: 0.4em;
+
           content: "";
           position: absolute;
           top: 50%;
-          right: calc(100% + 0.3em);
+          right: calc(100% + 0.45em);
+          bottom: auto;
           translate: 0 -50%;
-        }
-
-        &::before {
-          // Spans the .navbar-content inline padding, starting at the screen edge
-          bottom: auto;
-          z-index: auto;
-          width: calc(1.25rem - 0.3em);
-          background-color: transparent;
-          border: 0;
-          border-top: 1.5px solid var(--gray-accent-1);
-          clip-path: none;
-        }
-
-        &::after {
-          --arrow-size: 0.45em;
-
-          bottom: auto;
           box-sizing: border-box;
-          width: var(--arrow-size);
-          height: var(--arrow-size);
+          width: var(--chevron-size);
+          height: var(--chevron-size);
           rotate: 45deg;
           background-color: transparent;
           border-top: 1.5px solid var(--gray-accent-1);
@@ -590,7 +622,25 @@ blockquote p,
     > :nth-child(3n + 1) { grid-column: 1 / span 2; }
   }
 
-  #reading, #talks {
+  #reading {
+    grid-template-columns: max-content max-content 1fr;
+    margin-inline-start: 0;
+
+    > .post-list-info { grid-column: 1 / -1; }
+
+    > .post-list-date,
+    > .post-list-rating,
+    > .post-list-misc {
+      grid-column: auto;
+    }
+
+    > .post-list-rating {
+      padding-inline-start: 0.75rem;
+      padding-bottom: 1.25em;
+    }
+  }
+
+  #talks {
     > :nth-child(4n + 1) { grid-column: 1 / span 2; }
     > :nth-child(4n + 2) { grid-column: 1 / span 2; }
 
