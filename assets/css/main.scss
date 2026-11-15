@@ -261,6 +261,10 @@ ol {
   row-gap: 0.3125rem;
   margin-inline-end: -30px;
 
+  // Source order is for the small-screen layout (heart right after the title).
+  // Dense packing lets the heart take the last column of its row here
+  grid-auto-flow: row dense;
+
   .post-list-info {
     overflow: hidden;
     text-overflow: ellipsis;
@@ -288,6 +292,10 @@ ol {
   .post-list-rating {
     display: grid;
     place-items: center;
+  }
+
+  .post-list-misc {
+    grid-column: -2;
   }
 }
 
@@ -493,10 +501,8 @@ blockquote p,
   grid-template-columns: 30px 1.35fr 0.85fr 5.25em 30px;
   margin-inline-start: -30px;
 
-  // Source order is for the small-screen layout (rating after date). Explicit
+  // Source order is for the small-screen layout (rating after title). Explicit
   // columns plus dense packing reorder the cells within each row here
-  grid-auto-flow: row dense;
-
   > .post-list-rating {
     grid-column: 1;
   }
@@ -543,14 +549,32 @@ blockquote p,
     white-space: normal;
   }
 
+  // Flow the rating and heart inline after the title, so they follow its last
+  // word even when it wraps. Everything else takes its own line below
   .post-list {
-    > .post-list-date {
-      padding-bottom: 1.25em;
+    display: block;
+
+    > .post-list-info,
+    > .post-list-rating,
+    > .post-list-misc {
+      display: inline;
     }
 
-    > .post-list-misc {
-      padding-inline-start: 0.625rem;
-      justify-self: start;
+    // Adds to the word space already between the inline boxes
+    > .post-list-rating > .book-rating {
+      margin-inline-start: 0.3em;
+    }
+
+    > .post-list-misc > .link-fave-heart {
+      margin-inline-start: 0.2em;
+    }
+
+    > .post-list-author,
+    > .post-list-date {
+      display: block;
+    }
+
+    > .post-list-date {
       padding-bottom: 1.25em;
     }
 
@@ -613,36 +637,8 @@ blockquote p,
     --icon-size: 1.6em;
   }
 
-  #writing,
-  #reading,
-  #talks {
-    gap: 0;
-    grid-auto-flow: row dense;
-    grid-template-columns: max-content 1fr;
-  }
-
-  .post-list > .post-list-info,
-  .post-list > .post-list-links {
-    grid-column: 1 / -1;
-  }
-
   #reading {
-    grid-template-columns: max-content max-content 1fr;
     margin-inline-start: 0;
-
-    // Needs the id to outrank the wide-screen column placement
-    > .post-list-info { grid-column: 1 / -1; }
-
-    > .post-list-date,
-    > .post-list-rating,
-    > .post-list-misc {
-      grid-column: auto;
-    }
-
-    > .post-list-rating {
-      padding-inline-start: 0.75rem;
-      padding-bottom: 1.25em;
-    }
   }
 
   #talks {

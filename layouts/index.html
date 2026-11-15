@@ -16,13 +16,13 @@
         </a>
         {{ end }}
     </div>
-    <time class="post-list-date" datetime='{{ .Date.Format "2006-01-02" }}'>{{ .Date.Format "2006-01-02" }}</time>
     <div class="post-list-misc">
         {{ if eq .Params.recommended "true"}}
         {{ partial "heart" (dict "title" "Personal favorite" "width" $.Site.Params.heartSize "height"
         $.Site.Params.heartSize ) }}
         {{ end }}
     </div>
+    <time class="post-list-date" datetime='{{ .Date.Format "2006-01-02" }}'>{{ .Date.Format "2006-01-02" }}</time>
     {{ end }}
 </div>
 {{ end }}

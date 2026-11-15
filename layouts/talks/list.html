@@ -8,6 +8,12 @@
     {{ else }}
     <div class="post-list-info">{{ .Title }}</div>
     {{ end }}
+    <div class="post-list-misc">
+        {{ if eq .Params.recommended "true"}}
+        {{ partial "heart" (dict "title" "Recommended talk" "width" $.Site.Params.heartSize "height"
+        $.Site.Params.heartSize ) }}
+        {{ end }}
+    </div>
     <div class="post-list-links">
         <div class="post-list-info">
             {{- if isset .Params "slides" -}}
@@ -25,12 +31,6 @@
         </div>
     </div>
     <time class="post-list-date" datetime='{{ .Date.Format "2006-01-02" }}'>{{ .Date.Format "2006-01-02" }}</time>
-    <div class="post-list-misc">
-        {{ if eq .Params.recommended "true"}}
-        {{ partial "heart" (dict "title" "Recommended talk" "width" $.Site.Params.heartSize "height"
-        $.Site.Params.heartSize ) }}
-        {{ end }}
-    </div>
     {{ end }}
 </div>
 {{ end }}

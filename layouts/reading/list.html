@@ -10,10 +10,6 @@
     {{ else }}
     <div class="post-list-info">{{ .Title }}</div>
     {{ end }}
-    <div class="post-list-info post-list-author">
-        {{ delimit .Params.author ", " }}
-    </div>
-    <time class="post-list-date" datetime='{{ .Date.Format "2006-01-02" }}'>{{ .Date.Format "2006-01-02" }}</time>
     <div class="post-list-rating">
         {{ with .Params.rating }}{{ partial "rating" (dict "rating" . "link" true) }}{{ end }}
     </div>
@@ -23,6 +19,10 @@
         $.Site.Params.heartSize ) }}
         {{ end }}
     </div>
+    <div class="post-list-info post-list-author">
+        {{ delimit .Params.author ", " }}
+    </div>
+    <time class="post-list-date" datetime='{{ .Date.Format "2006-01-02" }}'>{{ .Date.Format "2006-01-02" }}</time>
     {{ end }}
 </div>
 {{ end }}
