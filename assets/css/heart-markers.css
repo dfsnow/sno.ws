@@ -22,6 +22,7 @@ article ul li:not(:has(> svg)) {
 
 article ul li:not(:has(> svg))::before {
   content: "•";
+  content: "•" / "";
   position: absolute;
   transform: translate(-0.8em, -0.2em);
   font-size: 1.3em;

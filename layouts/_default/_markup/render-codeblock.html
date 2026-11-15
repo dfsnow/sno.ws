@@ -1,0 +1,8 @@
+{{- /*
+Code blocks scroll horizontally, so make the <pre> a named region. Hugo's
+highlighter already adds tabindex="0" for keyboard access.
+*/ -}}
+{{- $result := transform.HighlightCodeBlock . -}}
+{{- $label := cond (ne .Type "") (printf "Code block: %s" .Type) "Code block" -}}
+{{- $attrs := printf `<pre role="region" aria-label="%s" ` $label -}}
+{{- replaceRE `<pre ` $attrs $result.Wrapped 1 | safeHTML -}}
