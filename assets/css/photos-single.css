@@ -5,6 +5,7 @@
 .content .post-feature-frame {
   display: flex;
   justify-content: center;
+  max-height: calc(100vh - 11.25rem); /* Fallback for browsers without dvh */
   max-height: calc(100dvh - 11.25rem);
   margin-block-start: 0.3125rem;
 }

@@ -11,6 +11,7 @@
 .content picture,
 .content svg:not(.hover-icon svg) {
   display: flex;
+  max-height: 90vh; // Fallback for browsers without dvh
   max-height: 90dvh;
   max-width: calc(var(--full-width) + var(--add-media-width));
   margin: 1.875rem auto;
