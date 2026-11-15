@@ -61,13 +61,4 @@ pygmentsUseClasses = true
   linkify = false
 
 [outputs]
-  home = ["HTML", "rss", "rssxsl"]
-
-[outputFormats]
-  [outputFormats.rssxsl]
-    baseName = "index"
-    mediaType = "application/xslt+xml"
-
-[mediaTypes]
-  [mediaTypes."application/xslt+xml"]
-    suffixes = ["xsl"]
+  home = ["HTML", "rss"]
