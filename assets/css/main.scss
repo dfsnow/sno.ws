@@ -78,17 +78,17 @@ h6 {
 .header-link {
   text-decoration: none;
 
+  &:is(:link, :visited) {
+    color: inherit;
+  }
+
   .header-link-icon {
     display: none;
     padding-left: 0.4em;
   }
 
-  :is(h1, h2, h3, h4, h5, h6) {
-    color: var(--text-color);
-
-    &:is(:hover, :focus, :active) .header-link-icon {
-      display: inline;
-    }
+  &:is(:hover, :focus-visible, :active) .header-link-icon {
+    display: inline;
   }
 }
 
@@ -240,7 +240,12 @@ ol {
   }
 
   // For inline ordinal ratings on books and media
-  > h3 > a.post-rating {
+  > .post-rating-row {
+    font-size: 1.17em;
+    margin-block: 1em;
+  }
+
+  > .post-rating-row > a.post-rating {
     display: inline-flex;
     gap: 0.15em;
     padding-top: 0.15em;
@@ -291,6 +296,7 @@ ol {
 
   > .navbar-title {
     font-size: 1.1875rem;
+    font-weight: bold;
     margin: 0;
     padding-top: 0.2em;
     white-space: nowrap;

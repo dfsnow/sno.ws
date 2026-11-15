@@ -1,8 +1,15 @@
 <header class="navbar">
     <nav class="navbar-content">
+        {{- /* Single pages carry their own <h1>, so the site title is only the h1 on list pages */}}
+        {{ if .IsPage -}}
+        <p class="navbar-title">
+          <a href="/" class="link-nowrap-nodec">{{ .Site.Title }}</a>
+        </p>
+        {{- else -}}
         <h1 class="navbar-title">
           <a href="/" class="link-nowrap-nodec">{{ .Site.Title }}</a>
         </h1>
+        {{- end }}
         <ul class="navbar-internal-links">
             {{- /* "page" on the section's own page; "true" on its articles (e.g. a book review under reading).
                  Top-level misc pages (e.g. hearts and ratings) fall under about. */}}
